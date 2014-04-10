@@ -2,6 +2,7 @@ VeloCampus
 ==========
 
 Projet de BDD site d'administration de locations de vélo
+*Fonctionalités :*
 
 **Partie admistrateur :**  
 *La partie adnistrateur est accéssible par deux admins et certaines parties sont accéssible par des modos aussi*    
@@ -15,7 +16,7 @@ _(photos ou paiement en attente)_
  * Ra-jout de fiche vélo, fiche de suivi 
  * Modification des fiches vélos, fiches de suivi
  * Suivi de réparation du vélo  
-_(type réparation, pièce changé, cout réparation, date réparation)_
+_(type réparation, pièce changée, cout réparation, date réparation)_
  * Ajout de photos/informations
  * Importation d'un calendrier google+
  * Administration du forum
