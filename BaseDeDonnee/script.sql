@@ -33,6 +33,8 @@ CREATE TABLE Velo(
     id_location Int ,
     id_Etat     Int ,
     id_adherent Int ,
+    id_taille   Int ,
+    id_type     Int ,
     PRIMARY KEY (id_velo )
 )ENGINE=InnoDB;
 
@@ -81,6 +83,20 @@ CREATE TABLE Reparation(
 )ENGINE=InnoDB;
 
 
+CREATE TABLE _Type(
+    id_type      int (11) Auto_increment  NOT NULL ,
+    libelle_type Varchar (25) ,
+    PRIMARY KEY (id_type )
+)ENGINE=InnoDB;
+
+
+CREATE TABLE Taille(
+    id_taille      int (11) Auto_increment  NOT NULL ,
+    libelle_taille Varchar (25) ,
+    PRIMARY KEY (id_taille )
+)ENGINE=InnoDB;
+
+
 CREATE TABLE subit(
     id_velo       Int NOT NULL ,
     id_reparation Int NOT NULL ,
@@ -93,6 +109,8 @@ ALTER TABLE Cotisation ADD CONSTRAINT FK_Cotisation_id_adherent FOREIGN KEY (id_
 ALTER TABLE Velo ADD CONSTRAINT FK_Velo_id_location FOREIGN KEY (id_location) REFERENCES Location(id_location);
 ALTER TABLE Velo ADD CONSTRAINT FK_Velo_id_Etat FOREIGN KEY (id_Etat) REFERENCES Etat(id_Etat);
 ALTER TABLE Velo ADD CONSTRAINT FK_Velo_id_adherent FOREIGN KEY (id_adherent) REFERENCES Adherent(id_adherent);
+ALTER TABLE Velo ADD CONSTRAINT FK_Velo_id_taille FOREIGN KEY (id_taille) REFERENCES Taille(id_taille);
+ALTER TABLE Velo ADD CONSTRAINT FK_Velo_id_type FOREIGN KEY (id_type) REFERENCES Type(id_type);
 ALTER TABLE Cadenas ADD CONSTRAINT FK_Cadenas_id_velo FOREIGN KEY (id_velo) REFERENCES Velo(id_velo);
 ALTER TABLE Location ADD CONSTRAINT FK_Location_id_velo FOREIGN KEY (id_velo) REFERENCES Velo(id_velo);
 ALTER TABLE Location ADD CONSTRAINT FK_Location_id_adherent FOREIGN KEY (id_adherent) REFERENCES Adherent(id_adherent);
