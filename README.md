@@ -5,7 +5,7 @@ Projet de BDD site d'administration de locations de vélo
 
 **Partie admistrateur :**  
 *La partie adnistrateur est accéssible par deux admins et certaines parties sont accéssible par des modos aussi*    
- * Mail liste des adhérents*  
+ * Mail liste des adhérents  
 _(nom, prénom, formation, date de naissance, lieu de naissance, adresse, code postale, téléphone portable, adresse e-mail, photos)_
  * Suivi des vélos  
 _(numéro vélo, numeros cadenas(3 cadenas), date location, état du vélo, durée location, prolongation (ou non), date retour, état de retour)_
