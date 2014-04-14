@@ -110,7 +110,7 @@ ALTER TABLE Velo ADD CONSTRAINT FK_Velo_id_location FOREIGN KEY (id_location) RE
 ALTER TABLE Velo ADD CONSTRAINT FK_Velo_id_Etat FOREIGN KEY (id_Etat) REFERENCES Etat(id_Etat);
 ALTER TABLE Velo ADD CONSTRAINT FK_Velo_id_adherent FOREIGN KEY (id_adherent) REFERENCES Adherent(id_adherent);
 ALTER TABLE Velo ADD CONSTRAINT FK_Velo_id_taille FOREIGN KEY (id_taille) REFERENCES Taille(id_taille);
-ALTER TABLE Velo ADD CONSTRAINT FK_Velo_id_type FOREIGN KEY (id_type) REFERENCES Type(id_type);
+ALTER TABLE Velo ADD CONSTRAINT FK_Velo_id_type FOREIGN KEY (id_type) REFERENCES _Type(id_type);
 ALTER TABLE Cadenas ADD CONSTRAINT FK_Cadenas_id_velo FOREIGN KEY (id_velo) REFERENCES Velo(id_velo);
 ALTER TABLE Location ADD CONSTRAINT FK_Location_id_velo FOREIGN KEY (id_velo) REFERENCES Velo(id_velo);
 ALTER TABLE Location ADD CONSTRAINT FK_Location_id_adherent FOREIGN KEY (id_adherent) REFERENCES Adherent(id_adherent);
