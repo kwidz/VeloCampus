@@ -1,0 +1,11 @@
+###Doc :
+
+<div class="container">    est le contenu pricipale.
+Dans le conteneur on ajoute ensuite un simple tableau de div : exemple :
+<div class="row'>   >> premiere ligne
+  <div class="span7"></span> div dans la premiere ligne de taille 7
+  <div class="span5"></span> div dans la premiere ligne de taille 5
+</div>
+<div class="row'>  >> deuxieme ligne
+  <div class="span12"></span>  div dans la deuxieme ligne de taille 12
+</div>
