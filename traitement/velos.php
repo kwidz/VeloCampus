@@ -1,9 +1,5 @@
 <?php
-	include("../static/menu.html");
+	include("../header.html");
+	include("../menu.html");
+	include("../footer.html");
 ?>
-
-
-<?php
-	include("../static/footer.html");
-?>
-

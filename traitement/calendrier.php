@@ -1,11 +1,10 @@
-<?php
-	include("../static/menu.html");
-?>
-
 
 <?php
-	include("../static/footer.html");
+	include("../header.html");
+	include("../menu.html");
+	include("../footer.html");
 ?>
+
 
 
 
