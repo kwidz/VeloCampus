@@ -12,11 +12,14 @@
 				
 					<!-- Structure du menu -->
 					<div class=class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
-						<ul class="nav navbar">
-							<a class="brand" href="../acceuil/index.php">Accueil</a>
-								<li class="dropdown">
-										<a class="brand" href="../traitement/velos.php" class="dropdown-toggle" data-toggle="dropdown">Vélos<b class="caret"></b></a>
-											<ul class="dropdown-menu">
+						
+							<ul class="nav navbar-nav navbar-right">
+									<li><a class="brand" href="../acceuil/index.php">Accueil</a></li>
+									<li><a class="brand" href="../traitement/photos.php">Photos</a></li>
+									<li><a class="brand" href="../traitement/calendrier.php">Calendrier</a></li>
+									<li class="dropdown">
+									<a class="brand" href="../traitement/velos.php" class="dropdown-toggle" data-toggle="dropdown">Vélos<b class="caret"></b></a>
+										<ul class="dropdown-menu">
 												<li class="divider"></li>
 												<li><a href="../traitement/velos.php">Vélos</a></li>
 												<li class="divider"></li>
@@ -24,14 +27,19 @@
 												<li class="divider"></li>
 												<!--<li class="nav-header">Autres liens</li>-->
 												<li><a href="../traitement/vtc.php">VTC</a></li>
-												
-											</ul>
-										</li>
+										</ul>
+									</li>
+									<li><a class="brand" href="../traitement/reparations.php">Reparations</a></li> <!-- si on met class "active" à li l'onglet est blanc-->
+								
 							
-							<li><a class="brand" href="../traitement/reparations.php">Reparations</a></li> 
-							<!-- si on met class "active" à li l'onglet est blanc-->
-								<ul class="nav navbar-nav navbar-right"><li> <a class="brand" href="../traitement/photos.php">Photos</a></li></ul>
-								<ul class="nav navbar-nav navbar-left"><li><a class="brand" href="../traitement/calendrier.php">Calendrier</a></li></ul>
+								
+							
+							
+							
+								<ul class="nav navbar-nav navbar-left">
+									<li><button type="button" class="btn btn-default">Sign in</button></li>
+								</ul>
+								
 									
 						</ul>
 					</div>
