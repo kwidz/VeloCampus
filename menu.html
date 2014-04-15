@@ -92,9 +92,20 @@
     </ul>
     
     <ul class="nav navbar-nav navbar-right">
-      <li><a href="../traitement/register.php"><button type="button" class="btn btn-danger " >S'inscrire</button></a></li>
-      <li><a href="../traitement/login.php"><button type="button" class="btn btn-warning " >Se connecter</button></a></li>
-      
+      <li>
+      	<a href="#">
+      		<button type="button" class="btn btn-danger" data-toggle="modal" data-target="#modalInscription">
+      			S'inscrire
+      		</button>
+      	</a>
+      </li>
+      <li>
+      	<a href="#">
+      		<button type="button" class="btn btn-warning" data-toggle="modal" data-target="#modalConnnexion">
+      			Se connecter
+      		</button>
+      	</a>
+      </li> 
     </ul>
   </div><!-- /.navbar-collapse -->
 </nav>
@@ -103,7 +114,52 @@
 </div>
 
 
+<!-- Modal Inscription -->
+<div class="modal fade" id="modalInscription" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+        <h4 class="modal-title" id="myModalLabel">Inscription</h4>
+      </div>
+      <div class="modal-body">
+
+        <form>
+        	Nom : <input type="text"></input><br/><br/>
+        	Prenom : <input type="text"></input><br/><br/>
+        	Adresse Mail : <input type="text"></input><br/><br/>
+        	Mot de passe : <input type="text"></input><br/><br/>
+        	Confirmer : <input type="text"></input>
+        </form>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-default" data-dismiss="modal">Fermer</button>
+        <button type="button" class="btn btn-primary">Valider</button>
+      </div>
+    </div>
+  </div>
+</div>
 
 
+<!-- Modal Connexion -->
+<div class="modal fade" id="modalConnnexion" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+        <h4 class="modal-title" id="myModalLabel">Connexion</h4>
+      </div>
+      <div class="modal-body">
 
-
+        <form>
+        	Adresse Mail : <input type="text"></input><br/><br/>
+        	Mot de passe : <input type="text"></input><br/><br/>
+        </form>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-default" data-dismiss="modal">Fermer</button>
+        <button type="button" class="btn btn-primary">Se connecter</button>
+      </div>
+    </div>
+  </div>
+</div>
