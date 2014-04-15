@@ -59,5 +59,46 @@
 </div>
 
 
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="utf-8">
+    <title>Titre</title>
+    <link rel="stylesheet" href="css/bootstrap.css" />
+    <script type="text/javascript" src="js/bootstrap.js"></script>
+    <script type="text/javascript" src="js/jquery.js"></script>
+    <script type="text/javascript" src="js/bootstrap-modal.js"></script>
+</head>
+<body>
+    <a href="#infos" role="button" class="btn" data-toggle="modal">Launch demo modal</a>
+<div class="modal hide fade" id="infos">
+    <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+        <h3>Modal header</h3>
+    </div>
+    <form action="login.php?l=fr" target="_blank" method="POST" class="form-horizontal" style="margin:0">
+        <div class="modal-body">
+            <div class="control-group">
+                <label class="control-label" for="input-email">Adresse email</label>
+                <div class="controls">
+                    <input type="text" id="input-email" name="email" placeholder="Adresse email">
+                </div>
+            </div>
+            <div class="control-group">
+                <label class="control-label" for="input-password">Mot de passe</label>
+                <div class="controls">
+                    <input type="text" id="input-password" name="email" placeholder="Mot de passe">
+                </div>
+            </div>
+        </div>
+        <div class="modal-footer">
+            <input type="submit" class="btn btn-info" value="Connexion" onclick="$('#infos').modal('hide');" />
+        </div>
+    </form>
+</div>
+</body>
+</head>
+
+
 	</body>
 <html>
