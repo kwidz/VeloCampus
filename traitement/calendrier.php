@@ -8,7 +8,7 @@
 
 
 
-<div class="row" style="background-color:Gainsboro;border-radius:10px;border:3px solid #222222" >
+<div class="row" style="background-color:#dcdcdc; border-radius:10px;border:3px solid #222222" id="contenu">
   <div class="col-md-12">
   	<br/><br/>
 		<center>
@@ -20,9 +20,7 @@
   </div>
 </div>
 
-       
-
-
+      
 
 
 <?php

@@ -7,6 +7,7 @@
   <div class="col-md-12">
         EXEMPLE : <br/>
         il faut ecrire dedans
+        <iframe src="http://tlmvpsp.france2.fr/" width="1000" height="600"></iframe>
 
   </div>
 </div>
