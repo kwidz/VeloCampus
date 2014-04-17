@@ -134,4 +134,4 @@ ALTER TABLE subit ADD CONSTRAINT FK_subit_id_velo FOREIGN KEY (id_velo) REFERENC
 ALTER TABLE subit ADD CONSTRAINT FK_subit_id_reparation FOREIGN KEY (id_reparation) REFERENCES Reparation(id_reparation);
 
 -- Ajout d'un adhérent bidon de test
-INSERT INTO Adherent VALUES (null,'Limballe','Pierre','04/08/1995','Le creusot','1 rue gaston defferre Belfort','90000','0688370492','pierre.limballe@hotmail.fr','1337',null,null,null);
+INSERT INTO Adherent VALUES (null,'Limballe','Pierre','04/08/1995','Le creusot','1 rue gaston defferre Belfort','90000','0688370492','a@a.fr','1337',null,null,null);

@@ -1,11 +1,8 @@
-
 <?php
 	include("../header.html");
 	include("../menulog.html");
 
 ?>
-
-
 
 
 <div class="row" style="background-color:Gainsboro; border-radius:10px;border:3px solid #222222">
