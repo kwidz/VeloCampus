@@ -3,6 +3,19 @@
 #------------------------------------------------------------
 
 
+
+DROP TABLE IF EXISTS subit;
+DROP TABLE IF EXISTS Taille;
+DROP TABLE IF EXISTS _Type;
+DROP TABLE IF EXISTS Reparation;
+DROP TABLE IF EXISTS Etat;
+DROP TABLE IF EXISTS Message;
+DROP TABLE IF EXISTS Location;
+DROP TABLE IF EXISTS Cadenas;
+DROP TABLE IF EXISTS Velo;
+DROP TABLE IF EXISTS Cotisation;
+DROP TABLE IF EXISTS Adherent;
+
 CREATE TABLE Adherent(
     id_adherent             int (11) Auto_increment  NOT NULL ,
     nom_adherent            Varchar (50) ,
@@ -11,8 +24,8 @@ CREATE TABLE Adherent(
     lieu_naissance_adherent Varchar (25) ,
     adresse_adherent        Varchar (150) ,
     code_Postal_Adherent    Int ,
-    telephone_adherent      Varchar (25) ,
-    adresse_mail_adherent   Varchar (25) ,
+    telephone_adherent      Varchar (15) ,
+    adresse_mail_adherent   Varchar (50) ,
     password_adherent       Varchar (100) ,
     photo_adherent          Varchar (100) ,
     id_cotisation           Int ,
@@ -120,3 +133,5 @@ ALTER TABLE Message ADD CONSTRAINT FK_Message_id_adherent_Adherent FOREIGN KEY (
 ALTER TABLE subit ADD CONSTRAINT FK_subit_id_velo FOREIGN KEY (id_velo) REFERENCES Velo(id_velo);
 ALTER TABLE subit ADD CONSTRAINT FK_subit_id_reparation FOREIGN KEY (id_reparation) REFERENCES Reparation(id_reparation);
 
+-- Ajout d'un adhérent bidon de test
+INSERT INTO Adherent VALUES (null,'Limballe','Pierre','04/08/1995','Le creusot','1 rue gaston defferre Belfort','90000','0688370492','pierre.limballe@hotmail.fr','1337',null,null,null);
