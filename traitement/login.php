@@ -7,10 +7,10 @@
 		$mysqli = new mysqli("127.0.0.1","velo","velo","velo");
 		$result = $mysqli->query("SELECT * FROM Adherent WHERE adresse_mail_adherent='".$mail."' AND password_adherent='".$pass."';");
 		if($result->num_rows) {
-			echo "Connected !<br>";
+			echo "Connected !<br><script>document.location.href='../..';<script>";
+			$_SESSION['log']="test";
 		}
 		else {
-			$_SESSION['log']="test";
 			echo "Failed...";
 		}
 	}
