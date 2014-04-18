@@ -10,6 +10,7 @@
 			echo "Connected !<br>";
 		}
 		else {
+			$_SESSION['log']="test";
 			echo "Failed...";
 		}
 	}
