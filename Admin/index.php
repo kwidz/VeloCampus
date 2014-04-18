@@ -1,2 +1,2 @@
-<script> document.location.href="accueil/index.php"
+<script> document.location.href="Accueil/index.php"
 </script>
