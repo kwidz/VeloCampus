@@ -63,20 +63,23 @@
         <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
         <h4 class="modal-title" id="myModalLabel" ><strong>Inscription</strong></h4>
       </div>
-      <div class="modal-body">
-
-        <form>
-        	Nom : <input type="text" class="form-control" placeholder="Text input" required/><br/><br/>
-        	Prenom : <input type="text" class="form-control" placeholder="Text input" required/><br/><br/>
-        	Adresse Mail : <input type="email" class="form-control" id="inputEmail" placeholder="Email" required/><br/><br/>
-        	Mot de passe : <input type="password" class="form-control" id="inputPassword" placeholder="Password" required/><br/><br/>
-        	Confirmer : <input type="password" class="form-control" id="inputPassword" placeholder="Password" required/></input>
-        </form>
-      </div>
-      <div class="modal-footer">
-        <button type="button" class="btn btn-default" data-dismiss="modal">Fermer</button>
-        <button type="button" class="btn btn-info">Valider</button>
-      </div>
+      <form method="post" action="../traitement/register.php">
+        <div class="modal-body">
+        	Nom : <input type="text" class="form-control" id="inputNom" placeholder="Text input" name="inputNom" required/><br/><br/>
+        	Prenom : <input type="text" class="form-control" id="inputPrenom" placeholder="Text input" name="inputPrenom" required/><br/><br/>
+          Date de naissance : <input type="date" class="form-control" id="inputDateNaissance" placeholder="Text input" name="inputDateNaissance" required/><br/><br/>
+          Adresse : <input type="text" class="form-control" id="inputAdresse" placeholder="Text input" name="inputAdresse" required/><br/><br/>
+          Code Postal : <input type="text" class="form-control" id="inputCP" placeholder="Text input" name="inputCP" required/><br/><br/>
+          N° Tel : <input type="text" class="form-control" id="inputTelephone" placeholder="Text input" name="inputTelephone" required/><br/><br/>
+        	Adresse Mail : <input type="email" class="form-control" id="inputEmail" placeholder="Email" name="inputEmail" required/><br/><br/>
+        	Mot de passe : <input type="password" class="form-control" id="inputPassword" placeholder="Password" name="inputPassword" required/><br/><br/>
+        	Confirmer : <input type="password" class="form-control" id="inputConfirmPassword" placeholder="Password" name="inputConfirmPassword" required/></input>
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-default" data-dismiss="modal">Fermer</button>
+          <button type="submit" class="btn btn-info">Valider</button>
+        </div>
+      </form>
     </div>
   </div>
 </div>

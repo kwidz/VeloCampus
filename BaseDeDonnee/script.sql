@@ -4,16 +4,27 @@
 
 
 
+SET foreign_key_checks = 0; 
 DROP TABLE IF EXISTS subit;
+SET foreign_key_checks = 0; 
 DROP TABLE IF EXISTS Taille;
+SET foreign_key_checks = 0; 
 DROP TABLE IF EXISTS _Type;
+SET foreign_key_checks = 0; 
 DROP TABLE IF EXISTS Reparation;
+SET foreign_key_checks = 0; 
 DROP TABLE IF EXISTS Etat;
+SET foreign_key_checks = 0; 
 DROP TABLE IF EXISTS Message;
+SET foreign_key_checks = 0; 
 DROP TABLE IF EXISTS Location;
+SET foreign_key_checks = 0; 
 DROP TABLE IF EXISTS Cadenas;
+SET foreign_key_checks = 0; 
 DROP TABLE IF EXISTS Velo;
+SET foreign_key_checks = 0; 
 DROP TABLE IF EXISTS Cotisation;
+SET foreign_key_checks = 0; 
 DROP TABLE IF EXISTS Adherent;
 
 CREATE TABLE Adherent(
@@ -21,7 +32,7 @@ CREATE TABLE Adherent(
     nom_adherent            Varchar (50) ,
     prenom_adherent         Varchar (50) ,
     date_naissance_adherent Date ,
-    lieu_naissance_adherent Varchar (25) ,
+    -- lieu_naissance_adherent Varchar (25) ,
     adresse_adherent        Varchar (150) ,
     code_Postal_Adherent    Int ,
     telephone_adherent      Varchar (15) ,
@@ -134,4 +145,4 @@ ALTER TABLE subit ADD CONSTRAINT FK_subit_id_velo FOREIGN KEY (id_velo) REFERENC
 ALTER TABLE subit ADD CONSTRAINT FK_subit_id_reparation FOREIGN KEY (id_reparation) REFERENCES Reparation(id_reparation);
 
 -- Ajout d'un adhérent bidon de test
-INSERT INTO Adherent VALUES (null,'Limballe','Pierre','04/08/1995','Le creusot','1 rue gaston defferre Belfort','90000','0688370492','a@a.fr','1337',null,null,null);
+INSERT INTO Adherent VALUES (null,'Limballe','Pierre','1995-08-04','1 rue gaston defferre Belfort','90000','0688370492','a@a.fr','1337',null,null,null);
