@@ -10,6 +10,10 @@
 		$mail = $_POST['inputEmail'];
 		$pass = $_POST['inputPassword'];
 		$confPass = $_POST['inputConfirmPassword'];
+		if (isset($_POST['inputPhoto'])) {
+			$photo = $_POST['inputPhoto'];
+		}
+		echo $photo;
 		$mysqli = new mysqli("127.0.0.1","velo","velo","velo");
 		$query = "INSERT INTO Adherent VALUES (null,'".$nom."','".$prenom."','".$dateNaissance."','".$adresse."','".$codepostal."','".$telephone."','".$mail."','".$pass."',null,null,null);";
 		$result = $mysqli->query($query);
