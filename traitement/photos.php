@@ -12,9 +12,10 @@
   	}
 
 ?>
-<div class="row" style="background-color:Gainsboro;border-radius:10px;border:3px solid #222222" >
+<div class="row" style="background-color:#F5F5F5;border-radius:10px;border:3px solid #222222" >
   <div class="col-md-12">
         EXEMPLE : <br/>
+        
         <img src="http://ctf.notsosecure.com/9128938921839838/images/not-admin.gif">
 
   </div>

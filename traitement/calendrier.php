@@ -14,7 +14,7 @@
 ?>
 
 
-<div class="row" style="background-color:Gainsboro; border-radius:10px;border:3px solid #222222">
+<div class="row" style="background-color:#F5F5F5; border-radius:10px;border:3px solid #222222">
   <div class="col-md-12">
   	<br/><br/>
 		<center>
