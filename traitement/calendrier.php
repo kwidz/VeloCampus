@@ -1,6 +1,12 @@
 <?php
+	session_start();
 	include("../header.html");
-	include("../menulog.html");
+	if (isset($_SESSION['log'])) {
+    	include("../menulog.html");
+  	}
+  	else {
+    	include("../menu.html");
+ 	}
 
 ?>
 

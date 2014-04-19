@@ -9,6 +9,8 @@
 		if($result->num_rows) {
 			echo "Connected !<br><script>document.location.href='../..';<script>";
 			$_SESSION['log']="test";
+			sleep(3);
+			header("Location: ..");
 		}
 		else {
 			echo "Failed...";
