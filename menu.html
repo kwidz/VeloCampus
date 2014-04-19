@@ -66,11 +66,11 @@
       <div class="modal-body">
 
         <form>
-        	Nom : <input type="text" class="form-control" placeholder="Text input"><br/><br/>
-        	Prenom : <input type="text" class="form-control" placeholder="Text input"><br/><br/>
-        	Adresse Mail : <input type="email" class="form-control" id="inputEmail" placeholder="Email"><br/><br/>
-        	Mot de passe : <input type="password" class="form-control" id="inputPassword" placeholder="Password"><br/><br/>
-        	Confirmer : <input type="password" class="form-control" id="inputPassword" placeholder="Password"></input>
+        	Nom : <input type="text" class="form-control" placeholder="Text input" required/><br/><br/>
+        	Prenom : <input type="text" class="form-control" placeholder="Text input" required/><br/><br/>
+        	Adresse Mail : <input type="email" class="form-control" id="inputEmail" placeholder="Email" required/><br/><br/>
+        	Mot de passe : <input type="password" class="form-control" id="inputPassword" placeholder="Password" required/><br/><br/>
+        	Confirmer : <input type="password" class="form-control" id="inputPassword" placeholder="Password" required/></input>
         </form>
       </div>
       <div class="modal-footer">
@@ -92,8 +92,8 @@
       </div>
       <form method="post" action="../traitement/login.php">
         <div class="modal-body">
-        	Adresse Mail : <input type="email" class="form-control" id="inputEmail" name="inputEmail" placeholder="Email"><br/><br/>
-        	Mot de passe : <input type="password" class="form-control" id="inputPassword" name="inputPassword" placeholder="Password"><br/><br/>
+        	Adresse Mail : <input type="email" class="form-control" id="inputEmail" name="inputEmail" placeholder="Email" required/><br/><br/>
+        	Mot de passe : <input type="password" class="form-control" id="inputPassword" name="inputPassword" placeholder="Password" required/><br/><br/>
           <input type="checkbox" id="remindMe"> Se souvenir de moi
         </div>
         <div class="modal-footer">

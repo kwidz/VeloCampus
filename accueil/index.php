@@ -1,13 +1,16 @@
 <?php
   session_start();
-  
   include("../header.html");
-  if (isset($_SESSION['log'])) {
-    include("../menulog.html");
-  }
-  else {
-    include("../menu.html");
-  }
+  if (isset($_SESSION['log']) && $_SESSION['log'] == 1) {
+      include("../menulog.html");
+    }
+    else {
+      include("../menu.html");
+      if (isset($_SESSION['log']) && $_SESSION['log'] == 0) {
+        $_SESSION = array(); 
+        include("../banniereErreurConn.html");
+      }
+    }
 ?>
 
 <div class="row" style="background-color:Gainsboro;border-radius:10px;border:3px solid #222222" >
@@ -18,7 +21,7 @@
     Vous trouverez ici toutes les informations sur notre association basée à Belfort et Montbéliard.<br/>
     Vous pourez adhérer, louer des vélos, demandé à reparer des vélos, suivre notre actualités... <br/>
     <br/>
-    Et surtout n'hésitez pas à vous contacter : <a>velocampusdulyon@gmail.com</a>
+    Et surtout n'hésitez pas à vous contacter : <a>velocampusdulion@gmail.com</a>
     <br/><br/>
     <img src="../images/logo.png"  class="btn btn-default" style="border:2px solid black"><br/><br/>
 
