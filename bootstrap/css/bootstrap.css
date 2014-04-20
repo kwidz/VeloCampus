@@ -6015,6 +6015,15 @@ button.close {
   margin-right: auto;
   margin-left: auto;
 }
+#monModalDialog {
+  position: relative;
+  z-index: 1050;
+  width: 50%;
+  
+  padding: 10px;
+  margin-right: auto;
+  margin-left: auto;
+}
 
 .modal-content {
   position: relative;

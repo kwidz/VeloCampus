@@ -21,7 +21,7 @@ ul {
 }
 ul li {     
   list-style:none;
-  margin-bottom:25px;           
+          
 }
 ul li img {
   cursor: pointer;
@@ -45,7 +45,7 @@ ul li img {
   <li class="col-lg-2 col-md-2 col-sm-3 col-xs-4" style="padding:15px"><img height="180px" width="180px" src="../images/fond3.jpg"/></li>
   <li class="col-lg-2 col-md-2 col-sm-3 col-xs-4" style="padding:15px"><img height="180px" width="180px" src="../images/fond2.jpg"/></li>
   <li class="col-lg-2 col-md-2 col-sm-3 col-xs-4" style="padding:15px"><img height="180px" width="180px" src="../images/photos/first_Event/images.jpeg"/></li>
-  <li class="col-lg-2 col-md-2 col-sm-3 col-xs-4" style="padding:15px"><img height="180px" width="180px" src="../images/photos/first_Event/images.jpeg"/></li>
+  <li class="col-lg-2 col-md-2 col-sm-3 col-xs-4" style="padding:15px"><img height="180px" width="180px" src="../images/photos/first_Event/images2.jpeg"/></li>
   <li class="col-lg-2 col-md-2 col-sm-3 col-xs-4" style="padding:15px"><img height="180px" width="180px" src="../images/photos/first_Event/images.jpeg"/></li>
   <li class="col-lg-2 col-md-2 col-sm-3 col-xs-4" style="padding:15px"><img height="180px" width="180px" src="../images/photos/first_Event/images.jpeg"/></li>
   <li class="col-lg-2 col-md-2 col-sm-3 col-xs-4" style="padding:15px"><img height="180px" width="180px" src="../images/photos/first_Event/images.jpeg"/></li>
@@ -56,8 +56,8 @@ ul li img {
 <script src="dist/js/bootstrap.min.js"></script>
 
 <div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
-  <div class="modal-dialog">
-    <div class="modal-content">         
+  <div class="modal-dialog" id="monModalDialog">
+    <div class="modal-content" >         
       <div class="modal-body">  
         <script>
         $('li img').on('click',function(){
