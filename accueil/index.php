@@ -59,7 +59,7 @@
     <br/>
     Et surtout n'hésitez pas à vous contacter : <a>velocampusdulion@gmail.com</a>
     <br/><br/>
-    <img src="../images/logo.png"  class="btn btn-default" style="border:2px solid black"><br/><br/>
+    <img src="../images/logo.png"  class="btn btn-default img-responsive" style="border:2px solid black"><br/><br/>
 
 </center>
   </div>
