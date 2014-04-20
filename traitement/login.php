@@ -8,10 +8,10 @@
 		if($result->num_rows) {
 			$_SESSION['log']=1;
 			if (isset($_POST['remindMe']) && $_POST['remindMe'] == true) {
-				setcookie("Session", "connected", time()+2592000, "/", "localhost");
+				setcookie('Session', $mail, time()+2592000, "/", "localhost");
 			}
 			else {
-				setcookie("Session", "connected", 0, "/", "localhost");
+				setcookie('Session', $mail, 0, "/", "localhost");
 			}
 		}
 		else {

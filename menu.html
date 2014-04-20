@@ -75,7 +75,8 @@
         	<i>*</i> Mot de passe : <input type="password" class="form-control" id="inputPassword" placeholder="Mot de passe" name="inputPassword" required/><br/><br/>
         	<i>*</i> Confirmer : <input type="password" class="form-control" id="inputConfirmPassword" placeholder="Mot de passe" name="inputConfirmPassword" required/><br/><br/>
           <!-- ########################## Geoffrey pour toi ! (Upload de la photo) ############################### -->
-          Photo de profil : <input type="file" class="form-control" id="inputPhoto" name="inputPhoto"><br/><br/>
+          <input type="hidden" name="MAX_FILE_SIZE" value="5242880" />
+          Photo de profil : <i>(taille maximale 5mo)</i><input type="file" class="form-control" id="inputPhoto" name="inputPhoto"><br/><br/>
           <i>* Champs obligatoires. </i>
         </div>
         <div class="modal-footer">
