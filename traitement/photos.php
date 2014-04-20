@@ -41,11 +41,10 @@ ul li img {
 
 
 <ul class="row" style="background-color:#F5F5F5;border-radius:10px;border:3px solid #222222">
-  <li class="col-lg-2 col-md-2 col-sm-3 col-xs-4" style="padding:15px"><img height="180px" width="180px" src="../images/fond4.jpg" onclick="modal()"/></li>
-  <li class="col-lg-2 col-md-2 col-sm-3 col-xs-4" style="padding:15px"><img height="180px" width="180px" src="../images/fond3.jpg"/></li>
-  <li class="col-lg-2 col-md-2 col-sm-3 col-xs-4" style="padding:15px"><img height="180px" width="180px" src="../images/fond2.jpg"/></li>
-  <li class="col-lg-2 col-md-2 col-sm-3 col-xs-4" style="padding:15px"><img height="180px" width="180px" src="../images/photos/first_Event/images.jpeg"/></li>
-  <li class="col-lg-2 col-md-2 col-sm-3 col-xs-4" style="padding:15px"><img height="180px" width="180px" src="../images/photos/first_Event/images2.jpeg"/></li>
+  <li class="col-lg-2 col-md-2 col-sm-3 col-xs-4" style="padding:15px"><img height="180px" width="180px" src="http://www.fond-ecran-hd.net/pc-driver/756.jpg"/></li>
+  <li class="col-lg-2 col-md-2 col-sm-3 col-xs-4" style="padding:15px"><img height="180px" width="180px" src="http://img0.mxstatic.com/wallpapers/db39f0537b1ac209bcbc93b512f40f1e_large.jpeg"/></li>
+  <li class="col-lg-2 col-md-2 col-sm-3 col-xs-4" style="padding:15px"><img height="180px" width="180px" src="http://img1.mxstatic.com/wallpapers/7f889952f4fb17f5daac59dc21dd10cd_large.jpeg"/></li>
+  <li class="col-lg-2 col-md-2 col-sm-3 col-xs-4" style="padding:15px"><img height="180px" width="180px" src="http://www.fantom-xp.com/wallpapers/23/Waterfall_high_quality_hd_wallpaper.jpg"/></li>
   <li class="col-lg-2 col-md-2 col-sm-3 col-xs-4" style="padding:15px"><img height="180px" width="180px" src="../images/photos/first_Event/images.jpeg"/></li>
   <li class="col-lg-2 col-md-2 col-sm-3 col-xs-4" style="padding:15px"><img height="180px" width="180px" src="../images/photos/first_Event/images.jpeg"/></li>
   <li class="col-lg-2 col-md-2 col-sm-3 col-xs-4" style="padding:15px"><img height="180px" width="180px" src="../images/photos/first_Event/images.jpeg"/></li>
