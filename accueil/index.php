@@ -34,7 +34,18 @@
             $row = $result->fetch_array(MYSQLI_ASSOC);
             foreach ($row as $i => $value) {
               if ($value) {
-                echo "<img src='".$value."'  width='100' height='100'/>";
+                $tailleImage = getimagesize($value);
+                if ($tailleImage[0] > $tailleImage[1]) {
+                  $coeff = $tailleImage[0] / 100;
+                  $tailleModif = $tailleImage[1]/$coeff;
+                  echo "<img src='".$value."' width='100' height='".$tailleModif."'/>";
+                }
+                else if ($tailleImage[1] > $tailleImage[0]) {
+                  $coeff = $tailleImage[1] / 100;
+                  $tailleModif = $tailleImage[0]/$coeff;
+                  echo "<img src='".$value."' width='".$tailleModif."' height='100'/>";
+                }
+                else echo "<img src='".$value."' width='100' height='100'/>";
               }
             }
           } 
