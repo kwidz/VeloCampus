@@ -7,7 +7,12 @@
 		$result = $mysqli->query("SELECT * FROM Adherent WHERE adresse_mail_adherent='".$mail."' AND password_adherent='".$pass."';");
 		if($result->num_rows) {
 			$_SESSION['log']=1;
-			echo "Connected !";
+			if (isset($_POST['remindMe']) && $_POST['remindMe'] == true) {
+				setcookie("Session", "connected", time()+2592000, "/", "localhost");
+			}
+			else {
+				setcookie("Session", "connected", 0, "/", "localhost");
+			}
 		}
 		else {
 			$_SESSION['log']=0;
