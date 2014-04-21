@@ -1,6 +1,6 @@
 
 <?php
-    $serveur="localhost";
+    $serveur="127.0.0.1";
     $user="velo";
     $pass="velo";
     $base="velo"; 
