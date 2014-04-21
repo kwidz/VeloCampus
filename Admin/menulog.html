@@ -54,7 +54,47 @@
         </div>
   </div>
   <div class="col-md-6" >
-   <img src="../images/postit.png"  width="600" height="600" ><br/><br/> 
+
+   <img src="../images/postit.png"  width="600" height="600"  style="position:absolute;z-index:1">
+
+<div class="row"><br/><br/><br/><br/><br/>
+    <div class="col-md-9 col-md-offset-2" style="position:absolute;z-index:2">
+      <?php 
+      require_once("../co.php");
+      $sql = 'SELECT * FROM Postit';
+      $res = $mysqli->query($sql);
+      $i = 0;
+      while (NULL !== ($row = $res->fetch_array())){
+        $i++;
+        if($i%2==0){
+          echo '<p><h4 style="color:blue">'.$row['nom_postit'].'</h4>'.$row['message_postit'].'<a class="glyphicon glyphicon-remove" style="color:red"></a></p>';
+        }
+        else { echo '<p><h4 style="color:green">'.$row['nom_postit'].'</h4>'.$row['message_postit'].'<a class="glyphicon glyphicon-remove" style="color:red"></a></p>';}
+      }
+
+      ?>
+      
+        <div class="row">
+          <div class="col-md-20 " style="position:absolute;z-index:3">
+            <form class="form-inline" role="form" method="post" action="../traitement/postit.php">
+              <div class="form-group">
+                <label class="sr-only">nom</label>
+                <input type="text" class="form-control" id="nom" placeholder="Pseudo" >
+              </div>
+            <div class="form-group">
+              <label class="sr-only">mess</label>
+              <input type="text" class="form-control" id="mess" placeholder="Message">
+            </div>
+              <button type="submit" class="btn btn-default">send</button>
+            </form>
+          </div>
+        </div>
+  </div>
+</div>
+   
+
+
+
   </div>
   <div class="col-md-3" >
     <div class="panel panel-default">
