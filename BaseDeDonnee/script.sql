@@ -155,5 +155,5 @@ ALTER TABLE subit ADD CONSTRAINT FK_subit_id_reparation FOREIGN KEY (id_reparati
 
 -- Ajout d'un adhérent bidon de test
 INSERT INTO Adherent VALUES (null,'Limballe','Pierre','1995-08-04','1 rue gaston defferre Belfort','90000','0688370492','a@a.fr','1337',null,null,null);
---Ajout  d'un Admin
+
 INSERT INTO Admin VALUES (null,'Admin','Admin');
