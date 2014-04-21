@@ -1,21 +1,12 @@
 <div class="row">
     <div class="col-md-12">
-    	<div type="button" data-toggle="modal" data-target="#modalConnnexion">Pour se connecter c'est par ici ! </div>
-    </div>
-</div>
-
-<!-- Modal Connexion -->
-<div class="modal fade" id="modalConnnexion" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
-  <div class="modal-dialog">
-    <div class="modal-content">
-      <div class="modal-header">
-        <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+    	<div class="modal-header">
         <h4 class="modal-title" id="myModalLabel"><strong>Connexion</strong></h4>
       </div>
       <form method="post" action="../traitement/login.php">
         <div class="modal-body">
-        	Adresse Mail : <input type="email" class="form-control" id="inputEmail" name="inputEmail" placeholder="Email" required/><br/><br/>
-        	Mot de passe : <input type="password" class="form-control" id="inputPassword" name="inputPassword" placeholder="Password" required/><br/><br/>
+          Pseudo : <input type="text" class="form-control" id="inputEmail" name="inputEmail" placeholder="Email" required/><br/><br/>
+          Mot de passe : <input type="password" class="form-control" id="inputPassword" name="inputPassword" placeholder="Password" required/><br/><br/>
           <input type="checkbox" id="remindMe" name="remindMe"> Se souvenir de moi
         </div>
         <div class="modal-footer">
@@ -23,6 +14,10 @@
           <button type="submit" class="btn btn-success">Se connecter</button>
         </div>
       </form>
+ 
     </div>
-  </div> 
 </div>
+
+<!-- Modal Connexion -->
+
+      
