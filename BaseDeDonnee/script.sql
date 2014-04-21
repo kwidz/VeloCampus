@@ -28,6 +28,8 @@ SET foreign_key_checks = 0;
 DROP TABLE IF EXISTS Adherent;
 SET foreign_key_checks = 0; 
 DROP TABLE IF EXISTS Admin;
+SET foreign_key_checks = 0; 
+DROP TABLE IF EXISTS Postit;
 
 CREATE TABLE Adherent(
     id_adherent             int (11) Auto_increment  NOT NULL ,
@@ -52,6 +54,13 @@ CREATE TABLE Admin(
     pseudo_admin varchar(50),
     password_admin varchar(100),
     PRIMARY KEY (id_admin)
+)ENGINE=InnoDB;
+
+CREATE TABLE Postit(
+    id_postit int (11) Auto_increment  NOT NULL ,
+    nom_postit varchar(50),
+    message_postit varchar(300),
+    PRIMARY KEY (id_postit)
 )ENGINE=InnoDB;
 
 CREATE TABLE Cotisation(
@@ -157,3 +166,6 @@ ALTER TABLE subit ADD CONSTRAINT FK_subit_id_reparation FOREIGN KEY (id_reparati
 INSERT INTO Adherent VALUES (null,'Limballe','Pierre','1995-08-04','1 rue gaston defferre Belfort','90000','0688370492','a@a.fr','1337',null,null,null);
 
 INSERT INTO Admin VALUES (null,'Admin','Admin');
+
+INSERT INTO Postit VALUES (null,'romain','besoin daide jeudi');
+INSERT INTO Postit VALUES (null,'sarah','max, as tu fais les compte?');
