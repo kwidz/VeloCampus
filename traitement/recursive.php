@@ -23,18 +23,18 @@ function parcourir_repertoire($repertoire)
         else
         {
             // mes modifs
-            $tailleImage = getimagesize($repertoire.'/'.$fichier);
-            if ($tailleImage[0] > $tailleImage[1]) {
-              $coeff = $tailleImage[0] / 180;
-              $tailleModif = $tailleImage[1]/$coeff;
-              print '<li class="col-lg-2 col-md-2 col-sm-3 col-xs-4" style="padding:15px"><img width="180px" height="'.$tailleModif.'px" src="'.$repertoire.'/'.$fichier.'"/></li>';
-            }
-            else if ($tailleImage[1] > $tailleImage[0]) {
-              $coeff = $tailleImage[1] / 180;
-              $tailleModif = $tailleImage[0]/$coeff;
-              print '<li class="col-lg-2 col-md-2 col-sm-3 col-xs-4" style="padding:15px"><img width="'.$tailleModif.'px" height="180px" src="'.$repertoire.'/'.$fichier.'"/></li>';
-            }
-            print '<li class="col-lg-2 col-md-2 col-sm-3 col-xs-4" style="padding:15px"><img height="180px" width="180px" src="'.$repertoire.'/'.$fichier.'"/></li>';
+            // $tailleImage = getimagesize($repertoire.'/'.$fichier);
+            // if ($tailleImage[0] > $tailleImage[1]) {
+            //   $coeff = $tailleImage[0] / 180;
+            //   $tailleModif = $tailleImage[1]/$coeff;
+              print '<li class="col-lg-2 col-md-2 col-sm-3 col-xs-4" style="padding:15px"><img width="180px" height="120px" src="'.$repertoire.'/'.$fichier.'"/></li>';
+            // }
+            // else if ($tailleImage[1] > $tailleImage[0]) {
+            //   $coeff = $tailleImage[1] / 180;
+            //   $tailleModif = $tailleImage[0]/$coeff;
+            //   print '<li class="col-lg-2 col-md-2 col-sm-3 col-xs-4" style="padding:15px"><img width="120px" height="180px" src="'.$repertoire.'/'.$fichier.'"/></li>';
+            // }
+           // print '<li class="col-lg-2 col-md-2 col-sm-3 col-xs-4" style="padding:15px"><img height="180px" width="180px" src="'.$repertoire.'/'.$fichier.'"/></li>';
         }
     }
     closedir($le_repertoire);
