@@ -31,7 +31,7 @@
             $row = $result->fetch_array(MYSQLI_ASSOC);
             foreach ($row as $i => $value) {
               $prenom = $value;
-              echo "Tu es de retour ".$value." !&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;";
+              echo "Tu es de retour ".$value." !";
             }
 
             $query = "SELECT photo_adherent FROM Adherent WHERE prenom_adherent='".$prenom."';";
@@ -43,14 +43,14 @@
                 if ($tailleImage[0] > $tailleImage[1]) {
                   $coeff = $tailleImage[0] / 100;
                   $tailleModif = $tailleImage[1]/$coeff;
-                  echo "<img src='".$value."' width='100' height='".$tailleModif."'/>";
+                  echo "&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<img src='".$value."' width='100' height='".$tailleModif."'/>";
                 }
                 else if ($tailleImage[1] > $tailleImage[0]) {
                   $coeff = $tailleImage[1] / 100;
                   $tailleModif = $tailleImage[0]/$coeff;
-                  echo "<img src='".$value."' width='".$tailleModif."' height='100'/>";
+                  echo "&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<img src='".$value."' width='".$tailleModif."' height='100'/>";
                 }
-                else echo "<img src='".$value."' width='100' height='100'/>";
+                else echo "&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<img src='".$value."' width='100' height='100'/>";
               }
             }
           } 
