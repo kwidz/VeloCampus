@@ -2,14 +2,19 @@
 <?php
   session_start();
   include("../header.html");
-  if (isset($_SESSION['log']) && $_SESSION['log'] == 1) {
+  if (isset($_SESSION['log']) && $_SESSION['log'] == 2) {
       include("../menulog.html");
     }
     else {
       include("../menu.html");
-      if (isset($_SESSION['log']) && $_SESSION['log'] == 0) {
+      if (isset($_SESSION['log']) && $_SESSION['log'] == 4) {
         $_SESSION = array(); 
-        include("../banniereErreurConn.html");
+        ?>
+        <div class="row">
+          <div class="col-md-12">
+            <div class="alert alert-danger">Aucune correspondance Pseudo/mot de passe trouvée. Veuillez réessayer.</div>
+          </div>
+        </div><?php
       }
     }
 ?>
