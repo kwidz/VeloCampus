@@ -59,7 +59,7 @@ CREATE TABLE Admin(
 CREATE TABLE Postit(
     id_postit int (11) Auto_increment  NOT NULL ,
     nom_postit varchar(50),
-    message_postit varchar(300),
+    message_postit Text,
     PRIMARY KEY (id_postit)
 )ENGINE=InnoDB;
 
