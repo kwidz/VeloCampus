@@ -26,6 +26,8 @@ SET foreign_key_checks = 0;
 DROP TABLE IF EXISTS Cotisation;
 SET foreign_key_checks = 0; 
 DROP TABLE IF EXISTS Adherent;
+SET foreign_key_checks = 0; 
+DROP TABLE IF EXISTS Admin;
 
 CREATE TABLE Adherent(
     id_adherent             int (11) Auto_increment  NOT NULL ,
