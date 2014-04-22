@@ -7112,7 +7112,10 @@ td.visible-print {
 body {
    /*background: #c1deff !important;*/
 
-   background: url(../../images/fond7.jpg) !important;
+   /*background: url(../../images/fond.jpg)  !important;*/
+   background-repeat: no-repeat  !important;
+  background: url(../../images/foindoi2.png) !important;
+   
    filter: blur(10px);
    opacity: 1;
 
