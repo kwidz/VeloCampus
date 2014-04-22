@@ -46,7 +46,7 @@
     <img src="../images/velos/velo2.png" width="380px" height="350px"/>
     <div>
       <h4>Description :</h4>
-      Vélo de route, enjambement facile, idéal pour les balades en ville
+      Vélo de route, enjambement facile, idéal pour les balades en ville. <br/>
       <h4>Caractéristiques :</h4>
       21 vitesses à poignées tournantes <br/>
       Béquille <br/>
@@ -70,7 +70,7 @@
     <img src="../images/velos/velo1.png" width="380px" height="350px"/>  
     <div>
       <h4>Description :</h4>
-      Vélo de ville uniquement, toutes tailles, pliable en 15 secondes, facilement stockable, idéal pour les courtes distances
+      Vélo de ville uniquement, toutes tailles, pliable en 15 secondes, facilement stockable, idéal pour les courtes distances. <br/>
       <h4>Caractéristiques :</h4>
       7 vitesses <br/>
       Garde boue avant et arrière <br/>
@@ -83,7 +83,7 @@
 
 <center><h3>Riverside 1</h3></center>
 <div class="row" style="background-color:#F5F5F5;border-radius:10px;border:3px solid #222222" >
-  <div class="col-md-12">
+  <div class="col-md-12"> <br/>
     <img src="../images/velos/velo4.png" width="380px" height="350px"/>
     <div>
       <h4>Description :</h4>
