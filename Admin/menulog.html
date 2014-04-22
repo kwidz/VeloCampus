@@ -59,6 +59,7 @@
 
         <div class="row"><br/><br/><br/><br/><br/>
             <div class="col-md-9 col-md-offset-2" style="position:absolute;z-index:2">
+                <div style="overflow:auto;height:200pt">
                 <?php 
                 require_once("../co.php");
                 $sql = 'SELECT * FROM Postit';
@@ -73,19 +74,22 @@
                 }
 
                 ?>
+               
+                </div>
 
                 <div class="row">
                     <div class="col-md-20 " style="position:absolute;z-index:3">
                         <form class="form-inline" role="form" method="POST" action="../traitement/postit.php">
                             <div class="form-group">
                                 <label class="sr-only">nom</label>
-                                <textarea cols="15" rows="1" class="form-control" id="nom" name="nom" placeholder="Pseudo"></textarea>
-                                <!-- <input type="text" class="form-control" id="nom" name="nom "placeholder="Pseudo" > -->
+                                <!--<textarea cols="10" rows="1" class="form-control" id="nom" name="nom" placeholder="Pseudo"></textarea>-->
+                                <input type="text" class="form-control" placeholder="Pseudo" id="nom" name="nom">
+
                             </div>
                             <div class="form-group">
                                 <label class="sr-only">mess</label>
                                 <!-- <input type="text" class="form-control" id="mess" placeholder="Message"> -->
-              <textarea cols="50" rows="4" class="form-control" id="mess" name="mess" placeholder="Message"></textarea>
+              <textarea cols="50" rows="2" class="form-control" id="mess" name="mess" placeholder="Message"></textarea>
             </div>
 
               <button type="submit" class="btn btn-default">send</button>
