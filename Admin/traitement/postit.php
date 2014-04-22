@@ -1,6 +1,6 @@
 <?php 
 require_once("../co.php");
-	if (isset($_POST['nom']) && isset($_POST['mess'])){
+	if (isset($_POST['nom']) && !empty($_POST['nom']) && isset($_POST['mess']) && !empty($_POST['mess'])){
 		$nom = addslashes($_POST['nom']);
 		$mess = addslashes($_POST['mess']);
 		$sql = "INSERT INTO Postit VALUES (null,'".$nom."','".$mess."')";
