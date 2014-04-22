@@ -4,6 +4,8 @@
   include("../header.html");
   if (isset($_SESSION['log']) && $_SESSION['log'] == 2) {
       include("../menulog.html");
+      include("../postit.php");
+      include("../demandeInscription.php");
     }
     else {
       include("../menu.html");

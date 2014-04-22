@@ -28,11 +28,11 @@
                 <ul class="nav navbar-nav navbar-right">
 
                     <li>
-                    <a href="#">
-                        <button type="button" class="btn btn-danger" data-toggle="modal" data-target="#modalDeconnnexion">
-                            Se déconnecter
-                        </button>
-                    </a>
+                        <a href="#">
+                            <button type="button" class="btn btn-danger" data-toggle="modal" data-target="#modalDeconnnexion">
+                                Se déconnecter
+                            </button>
+                        </a>
                     </li> 
                 </ul>
             </div><!-- /.navbar-collapse -->
@@ -53,93 +53,34 @@
             <a href="#" class="list-group-item list-group-item-danger">...</a>
         </div>
     </div>
-    <div class="col-md-6" >
+    <!-- cette div ce ferme dans demande inscription -->
 
-        <img src="../images/postit.png"  width="600" height="600"  style="position:absolute;z-index:1" class="img-responsive">
 
-        <div class="row"><br/><br/><br/><br/><br/>
-            <div class="col-md-9 col-md-offset-2" style="position:absolute;z-index:2">
-                <div style="overflow:auto;height:200pt">
-                <?php 
-                require_once("../co.php");
-                $sql = 'SELECT * FROM Postit';
-                $res = $mysqli->query($sql);
-                $i = 0;
-                while (NULL !== ($row = $res->fetch_array())){
-                $i++;
-                if($i%2==0){
-                echo '<p><h4 style="color:blue">'.$row['nom_postit'].' : </h4>'.$row['message_postit'].' <a href="../traitement/suppr.php?id='.$row['id_postit'].'" class="glyphicon glyphicon-remove" style="color:red"></a></p>';
-                }
-                else { echo '<p><h4 style="color:green">'.$row['nom_postit'].' : </h4>'.$row['message_postit'].' <a href="../traitement/suppr.php?id='.$row['id_postit'].'" class="glyphicon glyphicon-remove" style="color:red"></a></p>';}
-                }
 
-                ?>
-               
-                </div>
 
-                <div class="row">
-                    <div class="col-md-20 " style="position:absolute;z-index:3">
-                        <form class="form-inline" role="form" method="POST" action="../traitement/postit.php">
-                            <div class="form-group">
-                                <label class="sr-only">nom</label>
-                                <!--<textarea cols="10" rows="1" class="form-control" id="nom" name="nom" placeholder="Pseudo"></textarea>-->
-                                <input type="text" class="form-control" placeholder="Pseudo" id="nom" name="nom">
 
-                            </div>
-                            <div class="form-group">
-                                <label class="sr-only">mess</label>
-                                <!-- <input type="text" class="form-control" id="mess" placeholder="Message"> -->
-              <textarea cols="50" rows="2" class="form-control" id="mess" name="mess" placeholder="Message"></textarea>
+
+
+
+
+
+<!-- Modal Déconnexion -->
+<div class="modal fade" id="modalDeconnnexion" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+                <h4 class="modal-title" id="myModalLabel"><strong>Déconnexion</strong></h4>
             </div>
-
-              <button type="submit" class="btn btn-default">send</button>
-            </form>
-          </div>
+            <div class="modal-body">
+                Êtes-vous sûr de vouloir vous déconnecter ?
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-default" data-dismiss="modal">Annuler</button>
+                <button type="button" class="btn btn-danger" onclick="document.location.href='../traitement/logout.php'">Se déconnecter</button>
+            </div>
         </div>
-  </div>
+    </div> 
 </div>
-
-
-
-
-  </div>
-  <div class="col-md-3" >
-    <div class="panel panel-default">
-  <!-- Default panel contents -->
-                                <div class="panel-heading">Demande d'inscription (A VALIDER) </div>
-                                <!-- <div class="panel-body"></div>-->
-
-                                <!-- Table -->
-                                <table class="table">
-                                    <tr><td>nom</td><td>prenom</td><td><a href="#">Plus d'infos</a></td><td><div class="glyphicon glyphicon-ok"></div></td><td><div class="glyphicon glyphicon-remove"></div></td></tr>
-                                </table>
-                            </div>
-
-
-
-                        </div>
-                    </div>
-
-
-
-
-                    <!-- Modal Déconnexion -->
-                    <div class="modal fade" id="modalDeconnnexion" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
-                        <div class="modal-dialog">
-                            <div class="modal-content">
-                                <div class="modal-header">
-                                    <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
-                                    <h4 class="modal-title" id="myModalLabel"><strong>Déconnexion</strong></h4>
-                                </div>
-                                <div class="modal-body">
-                                    Êtes-vous sûr de vouloir vous déconnecter ?
-                                </div>
-                                <div class="modal-footer">
-                                    <button type="button" class="btn btn-default" data-dismiss="modal">Annuler</button>
-                                    <button type="button" class="btn btn-danger" onclick="document.location.href='../traitement/logout.php'">Se déconnecter</button>
-                                </div>
-                            </div>
-                        </div> 
-                    </div>
 
 
