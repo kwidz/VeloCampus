@@ -18,17 +18,17 @@
     switch (type) {
       case "1":
         document.getElementById('tempsReparation').innerHTML = 
-          "<center>Le temps de réparation sera de 30 minutes.</center><br/>";
+          "<center>Le temps de réparation sera de 30 minutes.</center><br/><center>Ensuite enchainement de <select></select> pour poffiner la demande.</center>";
         break;
 
       case "2":
         document.getElementById('tempsReparation').innerHTML = 
-          "<center>Le temps de réparation sera d'une heure.</center><br/>";
+          "<center>Le temps de réparation sera d'une heure.</center><br/><center>Ensuite enchainement de <select></select> pour poffiner la demande.</center>";
         break;
 
       case "3":
         document.getElementById('tempsReparation').innerHTML = 
-          "<center>Le temps de réparation sera de 10 minutes.</center><br/>";
+          "<center>Le temps de réparation sera de 10 minutes.</center><br/><center>Ensuite enchainement de <select></select> pour poffiner la demande.</center>";
         break;
 
       default:
