@@ -51,7 +51,15 @@ ul li img {
 
 <div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
   <div class="modal-dialog" id="monModalDialog">
-    <div class="modal-content" >         
+
+
+    <div class="modal-content" >
+
+      <div class="modal-header" style="border-style:none;">
+        <button type="button" class="close" data-dismiss="modal">x</button>
+        
+      </div>
+
       <div class="modal-body">  
         <script>
         $(document).ready(function(){
@@ -71,6 +79,9 @@ ul li img {
 </script>
 
 </div>
+<div class="modal-footer" style="border-style: none;">
+    <button class="btn btn-danger" data-dismiss="modal">Fermer</button>
+</div>      
 </div><!-- /.modal-content -->
 </div><!-- /.modal-dialog -->
 </div><!-- /.modal -->
