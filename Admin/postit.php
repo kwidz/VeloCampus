@@ -22,7 +22,7 @@
 
             </div>
 
-            <div class="row">
+            <div class="row" style="position: relative;left: 25px;">
                 <div class="col-md-20 " style="position:absolute;z-index:3">
                     <form class="form-inline" role="form" method="POST" action="../traitement/postit.php">
                         <div class="form-group">
