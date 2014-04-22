@@ -14,31 +14,17 @@
 
 ?>
 <script>
-  function typeReparation(type) {
-    switch (type) {
-      case "1":
-        document.getElementById('descriptionReparation').innerHTML = 
-          "<center>Le temps de réparation sera de 30 minutes.</center><br/>";
-        break;
-
-      case "2":
-        document.getElementById('descriptionReparation').innerHTML = 
-          "<center>Le temps de réparation sera d'une heure.</center><br/>";
-        break;
-
-      case "3":
-        document.getElementById('descriptionReparation').innerHTML = 
-          "<center>Le temps de réparation sera de 10 minutes.</center><br/>";
-        break;
-
-      case "4":
-        document.getElementById('descriptionReparation').innerHTML = 
-          "<center>Ajouter une description pour préciser la réparation : <i>(50 car. max.)</i> <input type='text' class='form-control' cols='40' rows='1' placeholder='Description'/></center><br/>";
-        break;
-
-      default:
-        document.getElementById('descriptionReparation').innerHTML = "";
-        break;
+  function typeReparation() {
+    var m=0; 
+    for (i=1;i<7;i++) { 
+      if (eval("document.forms.reparation.checkbox"+i+".checked == true")){
+        m=m+1;
+      }
+    } 
+    if (m>=3) {
+      alert("Vous avez fait 3 choix ou plus");
+    } else {
+      alert("Vous devez cocher 3 choix ou plus");
     }
   }
 </script>
@@ -48,20 +34,44 @@
   	<div class="col-md-12">
   		<?php
   			if (isset($_SESSION['log']) && $_SESSION['log'] == 1) { ?>
-          <form>
+          <form name="reparation">
             <div>
-              <center> Entrez le type de votre réparation : </center>
-              <center> 
-                <select onchange="typeReparation(this.value)" required>
+              <center> Votre vélo est : </center>
+              <center>
+                <select required>
                   <option value="" selected></option>
-                  <option value="1">Pneu(s) creuvé(s)</option>
-                  <option value="2">Dérailleur</option>
-                  <option value="3">Lampes</option>
-                  <option value="4">Autres</option>
+                  <option value="1">Personnel</option>
+                  <option value="2">Loué à vélo campus</option>
                 </select><br/><br/>
-              </center>
+              </center> 
             </div>
-            <div id="descriptionReparation"></div>
+
+            <div></div>
+
+            <div>
+              <center> Quelle sera la/les pièces à réparer : </center>
+              <center> 
+                <input type="checkbox" name="p1" value="1"> Selle              
+                <input type="checkbox" name="p2" value="2"> Guidon
+                <input type="checkbox" name="p3" value="3"> Pédale
+                <input type="checkbox" name="p4" value="4"> Chaine
+                <input type="checkbox" name="p5" value="5"> Dérailleur avant<br/>
+                <input type="checkbox" name="p6" value="6"> Béquille
+                <input type="checkbox" name="p7" value="7"> Pneu
+                <input type="checkbox" name="p8" value="8"> Chambre à air
+                <input type="checkbox" name="p9" value="9"> Béquille
+                <input type="checkbox" name="p10" value="10"> Cadre<br/>
+                <input type="checkbox" name="p11" value="11"> Dérailleur arrière
+                <input type="checkbox" name="p12" value="12"> Pédalier
+                <input type="checkbox" name="p13" value="13"> Manette débrailleur
+                <input type="checkbox" name="p14" value="14"> Éclairages
+                <input type="checkbox" name="p15" value="15"> Patin de frein<br/>
+                <input type="checkbox" name="p16" value="16"> Disque de frein
+              </center>
+            </div><br/>
+
+            <div id="autreReparation"></div>
+
             <div>
               <center> Urgence de votre réparation : </center>
               <center>
