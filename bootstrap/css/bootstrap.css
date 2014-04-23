@@ -7114,8 +7114,9 @@ body {
 
    /*background: url(../../images/fond7.jpg) !important;*/
    
-  background: url(../../images/foindoi2.png) !important;
-  background-repeat: no-repeat  !important;
+    background: url(../../images/foindoi2.png) !important;
+    background-repeat: no-repeat !important;
+    background-attachment:fixed !important;
   
    filter: blur(10px);
    opacity: 1;
