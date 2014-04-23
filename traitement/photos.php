@@ -40,10 +40,12 @@ ul li img {
 }
 </style>
 
-  <ul class="row" >
+<!--   <div class="row" > -->
+    <!-- <div class="col-md-12"> -->
 
  <?php parcourir_repertoire('../images/photos/') ?>
-  </ul>
+<!--   </div> -->
+<!--   </div> -->
 
 
 <script src="//code.jquery.com/jquery-1.10.2.min.js"></script>
