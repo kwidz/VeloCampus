@@ -62,6 +62,7 @@
 
 <?php
 function createDirectory($directory){
+  $directory = str_replace(' ', '_', $directory);
 	mkdir("../../images/photos/".$directory,"0777");
   exec("chmod -R 777 ../../images/photos/".$directory."");
 }

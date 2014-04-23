@@ -14,8 +14,8 @@ function parcourir_repertoire($repertoire)
 
 
         if(is_dir($repertoire.'/'.$fichier))
-        {
-            print '<h3><center>'.$fichier.'</center></h3>';
+        {   $fichierreg=str_replace('_', ' ', $fichier);
+            print '<h3><center>'.$fichierreg.'</center></h3>';
             print '<ul class="row" style="background-color:#F5F5F5;border-radius:10px;border:3px solid #222222";>';
             parcourir_repertoire($repertoire.'/'.$fichier);
             print '</ul>';

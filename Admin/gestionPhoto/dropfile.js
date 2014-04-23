@@ -82,7 +82,7 @@
 			var dossier = (url.substring(url.lastIndexOf("=")+1))
 			var regexp = new RegExp('%20', 'g');
 			var dossier = dossier.replace(regexp, '\ ');
-			alert(dossier);
+			// alert(dossier);
   			xhr.setRequestHeader('x-directory-name', (url.substring(url.lastIndexOf("=")+1)));
 
 			xhr.send(file);
