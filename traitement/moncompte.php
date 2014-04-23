@@ -63,30 +63,31 @@
         echo "Bug ?";
       } ?>
       <br/>
+      <?php
+        $tailleImage = getimagesize($photo);
+        if ($tailleImage[0] > $tailleImage[1]) {
+          $coeff = $tailleImage[0] / 200;
+          $tailleModif = $tailleImage[1]/$coeff;
+          echo "<img src='".$photo."' width='200' height='".$tailleModif."'><br/><br/>";
+        }
+        else if ($tailleImage[1] > $tailleImage[0]) {
+          $coeff = $tailleImage[1] / 200;
+          $tailleModif = $tailleImage[0]/$coeff;
+          echo "<img src='".$photo."' width='".$tailleModif."' height='200'><br/><br/>";
+        }
+        else {
+          echo "<img src='".$photo."' width='200' height='200'><br/><br/>";
+        }
+      ?>
       Nom : <input class="form-control" type="text" value="<?php echo $nom;?>"> <br/> <br/>
       Prenom : <input class="form-control" type="text" value="<?php echo $prenom;?>"> <br/> <br/>
       Date de naissance : <input class="form-control" type="date" value="<?php echo $date_nassance;?>"> <br/> <br/>
       Adresse : <input class="form-control" type="text" value="<?php echo $adresse;?>"> <br/> <br/>
       Code postal : <input class="form-control" type="text" value="<?php echo $code_postal;?>"> <br/> <br/>
       Téléphone : <input class="form-control" type="text" value="<?php echo $telephone;?>"> <br/> <br/>
-      <?php
-        $tailleImage = getimagesize($photo);
-        if ($tailleImage[0] > $tailleImage[1]) {
-          $coeff = $tailleImage[0] / 100;
-          $tailleModif = $tailleImage[1]/$coeff;
-          echo "Photo : <img src='".$photo."' width='100' height='".$tailleModif."'><br/><br/>";
-        }
-        else if ($tailleImage[1] > $tailleImage[0]) {
-          $coeff = $tailleImage[1] / 100;
-          $tailleModif = $tailleImage[0]/$coeff;
-          echo "Photo : <img src='".$photo."' width='".$tailleModif."' height='100'><br/><br/>";
-        }
-        else {
-          echo "Photo : <img src='".$photo."' width='100' height='100'><br/><br/>";
-        }
-      ?>
+      Modifier l'image de compte : <br/><i>Ca vient, ca vient...</i> <br/> <br/>
       </div>
-    </div>
+    </div> <br/>
     <center><h3>Modifier mon mot de passe :</h3></center>
     <div class="row" style="background-color:#F5F5F5;border-radius:10px;border:3px solid #222222" >
       <div class="col-md-12">
