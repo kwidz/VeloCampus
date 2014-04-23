@@ -87,12 +87,11 @@ else {
 
   function supprimer($directory){
     if (is_dir($directory)){
-
       goodby($directory) ;
 
-    print ("<script language = \"JavaScript\">");
-    print ("location.href = 'supprimer.php?supprimer=dossier';");
-    print ("</script>");  
+      print ("<script language = \"JavaScript\">");
+      print ("location.href = 'supprimer.php?supprimer=dossier';");
+      print ("</script>");  
 
     }
     else{
