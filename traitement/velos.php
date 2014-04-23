@@ -43,7 +43,8 @@
         foreach ($row as $i => $value) {
           $nombre = $value;
           if ($nombre > 0) {
-            echo "Vélos encore disponibles : <b>".$value."</b>";
+            echo "Vélos encore disponibles : <b>".$value."</b><br/>";
+            echo "<a href='#'><input type='button' value='Réserver !' class='btn btn-primary' data-toggle='modal' data-target='#modalReservation'/></a><br/><br/>";
           }
           else {
             echo "Plus de vélos disponibles !";
@@ -82,7 +83,8 @@
         foreach ($row as $i => $value) {
           $nombre = $value;
           if ($nombre > 0) {
-            echo "Vélos encore disponibles : <b>".$value."</b>";
+            echo "Vélos encore disponibles : <b>".$value."</b><br/>";
+            echo "<a href='#'><input type='button' value='Réserver !' class='btn btn-primary' data-toggle='modal' data-target='#modalReservation'/></a><br/><br/>";
           }
           else {
             echo "Plus de vélos disponibles !";
@@ -114,7 +116,8 @@
         foreach ($row as $i => $value) {
           $nombre = $value;
           if ($nombre > 0) {
-            echo "Vélos encore disponibles : <b>".$value."</b>";
+            echo "Vélos encore disponibles : <b>".$value."</b><br/>";
+            echo "<a href='#'><input type='button' value='Réserver !' class='btn btn-primary' data-toggle='modal' data-target='#modalReservation'/></a><br/><br/>";
           }
           else {
             echo "Plus de vélos disponibles !";
@@ -146,7 +149,8 @@
         foreach ($row as $i => $value) {
           $nombre = $value;
           if ($nombre > 0) {
-            echo "Vélos encore disponibles : <b>".$value."</b>";
+            echo "Vélos encore disponibles : <b>".$value."</b><br/>";
+            echo "<a href='#'><input type='button' value='Réserver !' class='btn btn-primary' data-toggle='modal' data-target='#modalReservation'/></a><br/><br/>";
           }
           else {
             echo "Plus de vélos disponibles !";
@@ -160,3 +164,23 @@
 <?php
 	include("../footer.html");
 ?>
+
+
+<div class="modal fade" id="modalReservation" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+        <h4 class="modal-title" id="myModalLabel"><strong>Demande de réservation</strong></h4>
+      </div>
+      <div class="modal-body">
+        Youhou ca marche !
+        Mettre un contenu, mais je ne sais pas quoi encore
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-default" data-dismiss="modal">Annuler</button>
+        <button type="button" class="btn btn-primary" onclick="document.location.href='../traitement/logout.php'">Réserver</button>
+      </div>
+    </div>
+  </div> 
+</div>
