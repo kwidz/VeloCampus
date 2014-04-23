@@ -4,7 +4,7 @@
   include("../header.html");
   if (isset($_SESSION['log']) && $_SESSION['log'] == 2) {
       include("../menulog.html");
-      // code
+      include("addImg.php");
       include("../demandeInscription.php");
     }
     else {
