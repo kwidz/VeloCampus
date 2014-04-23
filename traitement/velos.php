@@ -11,6 +11,7 @@
         include("../banniereErreurConn.html");
       }
     }
+    $mysqli = new mysqli("127.0.0.1","velo","velo","velo");
 ?>
 
 <center><h3>VTC original b'Twin 5 night & day</h3></center>
@@ -35,6 +36,21 @@
     Cadre aluminium qui offre légèreté et dynamisme sur tous les terrains <br/>
     Potence réglable en hauteur et orientable <br/>
     <br/>
+    <?php
+      $result = $mysqli->query("SELECT count(*) FROM Velo WHERE id_type=1 and id_location IS NULL");
+      $row = $result->fetch_array(MYSQLI_ASSOC);
+      if ($row) {
+        foreach ($row as $i => $value) {
+          $nombre = $value;
+          if ($nombre > 0) {
+            echo "Vélos encore disponibles : <b>".$value."</b>";
+          }
+          else {
+            echo "Plus de vélos disponibles !";
+          }
+        }
+      }
+    ?>
   </div>
 </div>
 
@@ -59,6 +75,21 @@
     Selle en gel pour un vélo très confortable <br/>
     Potence réglable en hauteur et orientable <br/>
     <br/>
+    <?php
+      $result = $mysqli->query("SELECT count(*) FROM Velo WHERE id_type=2 and id_location IS NULL");
+      $row = $result->fetch_array(MYSQLI_ASSOC);
+      if ($row) {
+        foreach ($row as $i => $value) {
+          $nombre = $value;
+          if ($nombre > 0) {
+            echo "Vélos encore disponibles : <b>".$value."</b>";
+          }
+          else {
+            echo "Plus de vélos disponibles !";
+          }
+        }
+      }
+    ?>
   </div>
 </div>
 
@@ -76,6 +107,21 @@
     7 vitesses <br/>
     Garde boue avant et arrière <br/>
     <br/>
+    <?php
+      $result = $mysqli->query("SELECT count(*) FROM Velo WHERE id_type=3 and id_location IS NULL");
+      $row = $result->fetch_array(MYSQLI_ASSOC);
+      if ($row) {
+        foreach ($row as $i => $value) {
+          $nombre = $value;
+          if ($nombre > 0) {
+            echo "Vélos encore disponibles : <b>".$value."</b>";
+          }
+          else {
+            echo "Plus de vélos disponibles !";
+          }
+        }
+      }
+    ?>
   </div>
 </div>
 
@@ -93,6 +139,21 @@
     Pas de caractéristiques <br/>
     <br/> Pas de bol
     <br/>
+    <?php
+      $result = $mysqli->query("SELECT count(*) FROM Velo WHERE id_type=4 and id_location IS NULL");
+      $row = $result->fetch_array(MYSQLI_ASSOC);
+      if ($row) {
+        foreach ($row as $i => $value) {
+          $nombre = $value;
+          if ($nombre > 0) {
+            echo "Vélos encore disponibles : <b>".$value."</b>";
+          }
+          else {
+            echo "Plus de vélos disponibles !";
+          }
+        }
+      }
+    ?>
   </div>
 </div>
 

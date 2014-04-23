@@ -25,7 +25,6 @@
         <?php 
           if (isset($_COOKIE['Session'])) { 
             $mysqli = new mysqli("127.0.0.1","velo","velo","velo");
-
             $query = "SELECT prenom_adherent FROM Adherent WHERE adresse_mail_adherent='".html_entity_decode($_COOKIE["Session"])."';";
             $result = $mysqli->query($query);
             $row = $result->fetch_array(MYSQLI_ASSOC);
