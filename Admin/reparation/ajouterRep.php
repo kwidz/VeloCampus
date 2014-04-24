@@ -73,5 +73,5 @@ else {
 
   <?php
   include("../demandeInscription.php");
-  include("../footer.html");
+  
   ?>
