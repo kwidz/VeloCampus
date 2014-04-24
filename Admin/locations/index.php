@@ -1,10 +1,12 @@
 
 <?php
+
   session_start();
   include("../header.html");
   if (isset($_SESSION['log']) && $_SESSION['log'] == 2) {
+      include("../co.php");
       include("../menulog.html");
-      include("../postit.php");
+      include("location.php");
       include("../demandeInscription.php");
     }
     else {
