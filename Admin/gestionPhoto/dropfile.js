@@ -59,11 +59,9 @@
 				if (json.error){
 					alert(json.error);
 					return false;
-				}
-				else{
-					//$(area).clone().insertAfter(area).dropfile(o);
+				}			
 					$(area).append(json.content);
-				}
+					
 			}), false;
 			xhr.upload.addEventListener('progress',function(e){
 				if(e.lengthComputable){

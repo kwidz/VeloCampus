@@ -25,8 +25,8 @@ pour l'utilisateur  -->
   <ul class="nav nav-pills nav-stacked">
     <li class="" style="text-align: center; margin-bottom: 15px; border:solid 1px; border-radius: 5px; border-color: #CDCACA"><a href="#" data-toggle="modal" data-target="#creerLocation">Créer une Location</a></li>
     <li class="" style="text-align: center; margin-bottom: 15px; border:solid 1px; border-radius: 5px; border-color: #CDCACA"><a href="#" data-toggle="modal" data-target="#veloNonLoués">Voir les vélos non-loués</a></li>
-    <li class="" style="text-align: center; margin-bottom: 15px; border:solid 1px; border-radius: 5px; border-color: #CDCACA"><a href="#" data-toggle="modal" data-target="#selectDossier">Voir les personnes qui n'ont pas encore rendu leur vélo</a></li>
-    <li class="" style="text-align: center; margin-bottom: 15px; border:solid 1px; border-radius: 5px; border-color: #CDCACA"><a href="#" data-toggle="modal" data-target="#selectDossier">Voir toutes les locations de l'année </a></li>
+    <li class="" style="text-align: center; margin-bottom: 15px; border:solid 1px; border-radius: 5px; border-color: #CDCACA"><a href="#" data-toggle="modal" data-target="#veloNonRendus">Voir les personnes qui n'ont pas encore rendu leur vélo</a></li>
+    <li class="" style="text-align: center; margin-bottom: 15px; border:solid 1px; border-radius: 5px; border-color: #CDCACA"><a href="#" data-toggle="modal" data-target="#allLocations">Voir toutes les locations de l'année </a></li>
   </ul>
 </div>
 <!-- Premier Modal creation de location -->
@@ -163,4 +163,121 @@ pour l'utilisateur  -->
   </div> 
 </div>
 
+<!-- 3eme Modal affichage des personnes n'ayant pas encore rendu leur velo -->
+<div class="modal fade" id="veloNonRendus" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+        <h4 class="modal-title" id="myModalLabel"><strong> Vélos nons loués </strong></h4>
+      </div>
+      <div class="modal-body">
+          <table class="bordered-table"style="border:solid 1px #CDCACA; border-radius:50px">
+            <thead>
+              <tr>
+                <th>Numero du velo</th>
+                <th>Nom de l'adherent</th>
+                <th>Prenom de l'adherent</th>
+                <th>Telephone de l'adherent</th>
+                <th>Mail de l'adherent</th>
+              </tr>
+            </thead>
+            <tbody>
+            <?php
 
+              $sql="Select v.id_velo, a.nom_adherent, a.prenom_adherent, a.telephone_adherent, a.adresse_mail_adherent "
+              ."from Velo v, Adherent a, Location l "
+              ."where l.date_retour_location is NULL "
+              ."and l.id_adherent = a.id_adherent "
+              ."and l.id_velo = v.id_velo "
+              .""
+              ."order by(id_velo)";
+                $res=$mysqli->query($sql);
+                while (NULL !== ($row = $res->fetch_array())) {
+                  
+                    echo "<th>".$row[0]."</th>";
+                    echo "<th>".$row[1]."</th>";
+                    echo "<th>".$row[2]."</th>";
+                    echo "<th>".$row[3]."</th>";
+                    echo "<th>".$row[4];
+                    echo "</th>";
+                    echo "</tr>";
+                  }
+
+        ?>
+      </tbody>
+          </table>
+       
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-danger" data-dismiss="modal">Annuler</button>
+          <button type="button" class="btn btn-default" data-dismiss="modal">Ok</button>
+        
+
+
+      </div>
+    </div>
+  </div> 
+</div>
+
+
+<!-- 4eme Modal affichage de toutes les reservations -->
+<div class="modal fade" id="allLocations" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+        <h4 class="modal-title" id="myModalLabel"><strong> Vélos nons loués </strong></h4>
+      </div>
+      <div class="modal-body">
+          <table class="bordered-table"style="border:solid 1px #CDCACA; border-radius:50px">
+            <thead>
+              <tr>
+                <th>Numero du velo</th>
+                <th>Nom de l'adherent</th>
+                <th>Prenom de l'adherent</th>
+                <th>Telephone de l'adherent</th>
+                <th>Mail de l'adherent</th>
+                <th>Date de la location</th>
+                <th>Date de retour de la location</th>
+
+              </tr>
+            </thead>
+            <tbody>
+            <?php
+
+              $sql="Select v.id_velo, a.nom_adherent, a.prenom_adherent, a.telephone_adherent, a.adresse_mail_adherent, l.date_location, l.date_retour_location "
+              ."from Velo v, Adherent a, Location l "
+              ."where l.id_adherent = a.id_adherent "
+              ."and l.id_velo = v.id_velo "
+              .""
+              ."order by(id_velo)";
+                $res=$mysqli->query($sql);
+                while (NULL !== ($row = $res->fetch_array())) {
+                  
+                    echo "<th>".$row[0]."</th>";
+                    echo "<th>".$row[1]."</th>";
+                    echo "<th>".$row[2]."</th>";
+                    echo "<th>".$row[3]."</th>";
+                    echo "<th>".$row[4]."</th>";
+                    echo "<th>".$row[5]."</th>";
+                    echo "<th>".$row[6];
+                    echo "</th>";
+                    echo "</tr>";
+                  }
+
+        ?>
+      </tbody>
+          </table>
+       
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-danger" data-dismiss="modal">Annuler</button>
+          <button type="button" class="btn btn-default" data-dismiss="modal">Ok</button>
+        
+
+
+      </div>
+    </div>
+  </div> 
+</div>

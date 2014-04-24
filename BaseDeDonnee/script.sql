@@ -229,7 +229,7 @@ CREATE TABLE `Postit` (
   `nom_postit` varchar(50) DEFAULT NULL,
   `message_postit` text,
   PRIMARY KEY (`id_postit`)
-) ENGINE=InnoDB AUTO_INCREMENT=3 DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB AUTO_INCREMENT=4 DEFAULT CHARSET=latin1;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -238,7 +238,7 @@ CREATE TABLE `Postit` (
 
 LOCK TABLES `Postit` WRITE;
 /*!40000 ALTER TABLE `Postit` DISABLE KEYS */;
-INSERT INTO `Postit` VALUES (1,'romain','besoin daide jeudi'),(2,'sarah','max, as tu fais les compte?');
+INSERT INTO `Postit` VALUES (3,'geoffrey','voila fini les locations il me reste encore a gÃ©rer les retours de locations laissez le moi :)\r\net si vous avez des trucs a faire en plus sur location dites le moi !');
 /*!40000 ALTER TABLE `Postit` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -387,4 +387,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2014-04-24 21:54:24
+-- Dump completed on 2014-04-25  0:11:18

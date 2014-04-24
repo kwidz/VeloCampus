@@ -31,6 +31,9 @@
 	color: #CDCACA;
 
 }
+.lien:hover{
+  background-color: #CDDDDD;
+}
 </style>
 
 <?php
@@ -38,11 +41,20 @@
   include("../header.html");
   if (isset($_SESSION['log']) && $_SESSION['log'] == 2) {
       include("../menulog.html");?>
-      <div class="dropfile col-md-6" >
+      <div class="col-md-6">
+      <div class="dropfile" >
 
+      </div><br/>
+
+      <div class= "lien" style="text-align: center; margin-bottom: 15px; border:solid 1px; border-radius: 5px; border-color: #CDCACA" width="100%" height="35px"><a href="index.php">Retour Menu Photos</a></div>
+      <div class= "lien" style="text-align: center; margin-bottom: 15px; border:solid 1px; border-radius: 5px; border-color: #CDCACA" width="100%" height="35px"><a href="../../traitement/photos.php">Galerie Photos</a></div>
       </div>
+       
+       
       	<?php
-      include("../demandeInscription.php");
+      include("../demandeInscription.php");?>
+      
+    <?php
     }
     else {
       include("../menu.html");

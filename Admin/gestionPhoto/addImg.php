@@ -8,7 +8,7 @@
 <div class="col-md-6" >
     <ul class="nav nav-pills nav-stacked">
       <li class="active" style="text-align: center; margin-bottom: 15px;"><a href="#" data-toggle="modal" data-target="#modalAjouter">Ajouter un album</a></li>
-      <li class="active" style="text-align: center; margin-bottom: 15px;"><a href="#"data-toggle="modal" data-target="#selectDossier">Ajouter une photo</a></li>
+      <li class="active" style="text-align: center; margin-bottom: 15px;"><a href="#"data-toggle="modal" data-target="#selectDossier">Ajouter des photo</a></li>
     </ul>
 </div>
 
