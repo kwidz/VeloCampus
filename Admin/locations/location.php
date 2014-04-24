@@ -2,7 +2,12 @@
 tous les autres div sont commentés
 chaque action s'effectera dans un Modal pour eviter les lourds changement de page 
 pour l'utilisateur  -->
-
+<style>
+  th{
+    border:solid 1px #CDCACA;
+    text-align:center;
+  }
+</style>
 <div class="col-md-6" >
   <?php
 
@@ -92,10 +97,10 @@ pour l'utilisateur  -->
     <div class="modal-content">
       <div class="modal-header">
         <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
-        <h4 class="modal-title" id="myModalLabel"><strong>Création de Location</strong></h4>
+        <h4 class="modal-title" id="myModalLabel"><strong> Vélos nons loués </strong></h4>
       </div>
       <div class="modal-body">
-          <table class="zebra-striped">
+          <table class="bordered-table"style="border:solid 1px #CDCACA; border-radius:50px">
             <thead>
               <tr>
                 <th>Numero du velo</th>
@@ -104,6 +109,7 @@ pour l'utilisateur  -->
                 <th>Cadenas associés</th>
               </tr>
             </thead>
+            <tbody>
             <?php
 
               $sql="Select v.id_velo, c.id_cadenas, ty.libelle_type, t.libelle_taille "
@@ -112,19 +118,37 @@ pour l'utilisateur  -->
               ."and c.id_velo=v.id_velo "
               ."and v.id_type=ty.id_type "
               ."and v.id_taille=t.id_taille "
-              ."order by(id_velo)";
+              ."order by(id_velo) ";
                 $res=$mysqli->query($sql);
+                $number=0;
                 while (NULL !== ($row = $res->fetch_array())) {
-                   ?><tr><?php
-                      echo "<th>".$row['id_velo']."</th>";
-                      echo "<th>".$row['ty.libelle_type']."</th>";
-                      echo "<th>".$row['t.libelle_taille']."</th>";
-                      echo "<th>".$row['c.id_cadenas']."</th>";
-                      echo "</tr>";
+                  if($number==$row[0]){
+                    echo ", ".$row[1];
+                  }
+                  else if ($number==0){
+                    $number=$row[0];
+                      echo "<th>".$row[0]."</th>";
+                      echo "<th>".$row[2]."</th>";
+                      echo "<th>".$row[3]."</th>";
+                      echo "<th>".$row[1];
+
+                  }
+                  else{
+                    $number=$row[0];
+                    echo "</th>";
+                    echo "</tr>";
+                    echo "<th>".$row[0]."</th>";
+                    echo "<th>".$row[2]."</th>";
+                    echo "<th>".$row[3]."</th>";
+                    echo "<th>".$row[1];
+                  }
+                  
+                  
 
                 }
 
         ?>
+      </tbody>
           </table>
        
         </div>
