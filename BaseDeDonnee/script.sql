@@ -334,7 +334,7 @@ UNLOCK TABLES;
 
 DROP TABLE IF EXISTS `_Type`;
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
-/*!40101 SET character_set_client = utf8 */;2
+/*!40101 SET character_set_client = utf8 */;
 CREATE TABLE `_Type` (
   `id_type` int(11) NOT NULL AUTO_INCREMENT,
   `libelle_type` varchar(25) DEFAULT NULL,
