@@ -38,8 +38,8 @@ CREATE TABLE `Adherent` (
   PRIMARY KEY (`id_adherent`),
   KEY `FK_Adherent_id_cotisation` (`id_cotisation`),
   KEY `FK_Adherent_id_location` (`id_location`),
-  CONSTRAINT `FK_Adherent_id_location` FOREIGN KEY (`id_location`) REFERENCES `Location` (`id_location`),
-  CONSTRAINT `FK_Adherent_id_cotisation` FOREIGN KEY (`id_cotisation`) REFERENCES `Cotisation` (`id_cotisation`)
+  CONSTRAINT `FK_Adherent_id_cotisation` FOREIGN KEY (`id_cotisation`) REFERENCES `Cotisation` (`id_cotisation`),
+  CONSTRAINT `FK_Adherent_id_location` FOREIGN KEY (`id_location`) REFERENCES `Location` (`id_location`)
 ) ENGINE=InnoDB AUTO_INCREMENT=2 DEFAULT CHARSET=latin1;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
@@ -163,7 +163,6 @@ CREATE TABLE `Location` (
   `id_location` int(11) NOT NULL AUTO_INCREMENT,
   `prix_location` float DEFAULT NULL,
   `date_location` date DEFAULT NULL,
-  `date_depart_location` date DEFAULT NULL,
   `date_retour_location` date DEFAULT NULL,
   `id_velo` int(11) DEFAULT NULL,
   `id_adherent` int(11) DEFAULT NULL,
@@ -172,8 +171,8 @@ CREATE TABLE `Location` (
   KEY `FK_Location_id_velo` (`id_velo`),
   KEY `FK_Location_id_adherent` (`id_adherent`),
   KEY `FK_Location_id_Etat` (`id_Etat`),
-  CONSTRAINT `FK_Location_id_Etat` FOREIGN KEY (`id_Etat`) REFERENCES `Etat` (`id_Etat`),
   CONSTRAINT `FK_Location_id_adherent` FOREIGN KEY (`id_adherent`) REFERENCES `Adherent` (`id_adherent`),
+  CONSTRAINT `FK_Location_id_Etat` FOREIGN KEY (`id_Etat`) REFERENCES `Etat` (`id_Etat`),
   CONSTRAINT `FK_Location_id_velo` FOREIGN KEY (`id_velo`) REFERENCES `Velo` (`id_velo`)
 ) ENGINE=InnoDB AUTO_INCREMENT=5 DEFAULT CHARSET=latin1;
 /*!40101 SET character_set_client = @saved_cs_client */;
@@ -184,7 +183,7 @@ CREATE TABLE `Location` (
 
 LOCK TABLES `Location` WRITE;
 /*!40000 ALTER TABLE `Location` DISABLE KEYS */;
-INSERT INTO `Location` VALUES (1,250,'2014-12-12',NULL,NULL,1,1,NULL),(2,250,'2014-12-12',NULL,NULL,1,1,NULL),(3,250,'2014-12-12',NULL,NULL,1,1,NULL),(4,250,'2014-12-12',NULL,NULL,1,1,NULL);
+INSERT INTO `Location` VALUES (1,250,'2014-12-12','2014-04-08',1,1,NULL),(2,250,'2014-12-12','2015-06-02',1,1,NULL),(3,250,'2014-12-12',NULL,1,1,NULL),(4,250,'2014-12-12',NULL,1,1,NULL);
 /*!40000 ALTER TABLE `Location` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -203,8 +202,8 @@ CREATE TABLE `Message` (
   PRIMARY KEY (`id_message`),
   KEY `FK_Message_id_adherent` (`id_adherent`),
   KEY `FK_Message_id_adherent_Adherent` (`id_adherent_Adherent`),
-  CONSTRAINT `FK_Message_id_adherent_Adherent` FOREIGN KEY (`id_adherent_Adherent`) REFERENCES `Adherent` (`id_adherent`),
-  CONSTRAINT `FK_Message_id_adherent` FOREIGN KEY (`id_adherent`) REFERENCES `Adherent` (`id_adherent`)
+  CONSTRAINT `FK_Message_id_adherent` FOREIGN KEY (`id_adherent`) REFERENCES `Adherent` (`id_adherent`),
+  CONSTRAINT `FK_Message_id_adherent_Adherent` FOREIGN KEY (`id_adherent_Adherent`) REFERENCES `Adherent` (`id_adherent`)
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
@@ -310,11 +309,11 @@ CREATE TABLE `Velo` (
   KEY `FK_Velo_id_adherent` (`id_adherent`),
   KEY `FK_Velo_id_taille` (`id_taille`),
   KEY `FK_Velo_id_type` (`id_type`),
-  CONSTRAINT `FK_Velo_id_type` FOREIGN KEY (`id_type`) REFERENCES `_Type` (`id_type`),
   CONSTRAINT `FK_Velo_id_adherent` FOREIGN KEY (`id_adherent`) REFERENCES `Adherent` (`id_adherent`),
   CONSTRAINT `FK_Velo_id_Etat` FOREIGN KEY (`id_Etat`) REFERENCES `Etat` (`id_Etat`),
   CONSTRAINT `FK_Velo_id_location` FOREIGN KEY (`id_location`) REFERENCES `Location` (`id_location`),
-  CONSTRAINT `FK_Velo_id_taille` FOREIGN KEY (`id_taille`) REFERENCES `Taille` (`id_taille`)
+  CONSTRAINT `FK_Velo_id_taille` FOREIGN KEY (`id_taille`) REFERENCES `Taille` (`id_taille`),
+  CONSTRAINT `FK_Velo_id_type` FOREIGN KEY (`id_type`) REFERENCES `_Type` (`id_type`)
 ) ENGINE=InnoDB AUTO_INCREMENT=27 DEFAULT CHARSET=latin1;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
@@ -387,4 +386,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2014-04-25  0:11:18
+-- Dump completed on 2014-04-25 11:41:14

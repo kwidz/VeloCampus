@@ -27,6 +27,7 @@ pour l'utilisateur  -->
     <li class="" style="text-align: center; margin-bottom: 15px; border:solid 1px; border-radius: 5px; border-color: #CDCACA"><a href="#" data-toggle="modal" data-target="#veloNonLoués">Voir les vélos non-loués</a></li>
     <li class="" style="text-align: center; margin-bottom: 15px; border:solid 1px; border-radius: 5px; border-color: #CDCACA"><a href="#" data-toggle="modal" data-target="#veloNonRendus">Voir les personnes qui n'ont pas encore rendu leur vélo</a></li>
     <li class="" style="text-align: center; margin-bottom: 15px; border:solid 1px; border-radius: 5px; border-color: #CDCACA"><a href="#" data-toggle="modal" data-target="#allLocations">Voir toutes les locations de l'année </a></li>
+    <li class="" style="text-align: center; margin-bottom: 15px; border:solid 1px; border-radius: 5px; border-color: #CDCACA"><a href="#" data-toggle="modal" data-target="#retourLoc">ajouter un retour de Location</a></li
   </ul>
 </div>
 <!-- Premier Modal creation de location -->
@@ -75,7 +76,7 @@ pour l'utilisateur  -->
             ?>
           </select><br/>
           Prix : <input type="text" class="form-control" name="prix" value="250"><br/>
-          Date : <input type="date" name="date" value="2014-12-12"><br/>
+          Date : <input type="date" name="date"><br/>
 
 
         </div>
@@ -274,6 +275,53 @@ pour l'utilisateur  -->
         <div class="modal-footer">
           <button type="button" class="btn btn-danger" data-dismiss="modal">Annuler</button>
           <button type="button" class="btn btn-default" data-dismiss="modal">Ok</button>
+        
+
+
+      </div>
+    </div>
+  </div> 
+</div>
+
+
+<!-- 4eme Modal pour le retour des Location -->
+<div class="modal fade" id="retourLoc" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+        <h4 class="modal-title" id="myModalLabel"><strong> Retour de Location </strong></h4>
+      </div>
+      <div class="modal-body">
+              <?php $sql="Select v.id_velo, a.nom_adherent, a.prenom_adherent, l.id_location "
+              ."from Velo v, Adherent a, Location l "
+              ."where l.id_adherent = a.id_adherent "
+              ."and l.id_velo = v.id_velo "
+              ."and l.date_retour_location is NULL "
+              ."order by(l.id_location)";
+              
+              ?>
+              <form method="POST" action="traitement/dateRetour.php">
+                <select class="form-control" name="id_location">
+            <?php
+
+
+                $res=$mysqli->query($sql);
+                while (NULL !== ($row = $res->fetch_array())) {
+                                    
+                    echo '<option value="'.$row[3].'">Velo n°'.$row[0].', '.$row[1].' '.$row[2].'</option>';
+                  }
+                  ?></select>
+                  Date du retour : <input type="date" name="date"><br/><?php
+
+        ?>
+      
+       
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-danger" data-dismiss="modal">Annuler</button>
+          <input type="submit" class="btn btn-default" name="Envoyer">
+        </form>
         
 
 
