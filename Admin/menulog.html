@@ -45,6 +45,7 @@
     <div class="col-md-3" >
         <div class="list-group">
             <a href="#" class="list-group-item list-group-item-success">Importer Calendrier google</a>
+            <a href="#" class="list-group-item list-group-item-success" data-toggle="modal" data-target="#mailList" >Creer la mailling list</a>
             <a href="#" class="list-group-item list-group-item-info">Modifier texte de l'acceuil</a>
             <a href="#" class="list-group-item list-group-item-warning">Modifier photos du slide</a>
             <a href="../gestionPhoto/ajouer.php" class="list-group-item list-group-item-danger">Ajouter photos d'évenements</a>
@@ -65,23 +66,97 @@
 
 
 
-<!-- Modal Déconnexion -->
-<div class="modal fade" id="modalDeconnnexion" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
-    <div class="modal-dialog">
-        <div class="modal-content">
-            <div class="modal-header">
-                <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
-                <h4 class="modal-title" id="myModalLabel"><strong>Déconnexion</strong></h4>
+    <!-- Modal Déconnexion -->
+    <div class="modal fade" id="modalDeconnnexion" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+                    <h4 class="modal-title" id="myModalLabel"><strong>Déconnexion</strong></h4>
+                </div>
+                <div class="modal-body">
+                    Êtes-vous sûr de vouloir vous déconnecter ?
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-default" data-dismiss="modal">Annuler</button>
+                    <button type="button" class="btn btn-danger" onclick="document.location.href='../traitement/logout.php'">Se déconnecter</button>
+                </div>
             </div>
-            <div class="modal-body">
-                Êtes-vous sûr de vouloir vous déconnecter ?
+        </div> 
+    </div>
+
+    <!-- Modal Mailing List -->
+    <div class="modal fade" id="mailList" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+                    <h4 class="modal-title" id="myModalLabel"><strong>Mailling Liste</strong></h4>
+                </div>
+                <div class="modal-body">
+                    <style>
+                    th{
+                        border:solid 1px #CDCACA;
+                        text-align:center;
+                    }
+                    </style>
+                    voici votre mailling liste vous pouvez la télécharger :
+
+                    <?php
+                    //ecriture du fichier CSV
+                    include('../co.php');
+                    $sql="Select nom_adherent, prenom_adherent, adresse_mail_adherent from Adherent";
+                    $res=$mysqli->query($sql);
+                    
+                    $list = array();
+                    $list[0]=array("Name", "E-mail 1 - value");
+                    $i=1;
+                    while (NULL !== ($row = $res->fetch_array())) {
+                        $list[$i]=array( $row[0]." ".$row[1], $row[2] );
+                        $i++;
+                    }
+                    
+
+
+                    $fp = fopen("../mailling.csv", "w");
+                    foreach($list as $fields):
+                        fputcsv($fp, $fields);
+                    endforeach;
+                    fclose($fp);
+                    ?>
+
+                    <br/>
+                    <a href="../mailling.csv" target=_blank>Télécharger</a>
+                    <table class="bordered-table"style="border:solid 1px #CDCACA; border-radius:50px">
+                    <tbody>
+
+                        <?php
+                    //Lecture du fichier CSV
+                        $row = 1;
+                        if (($handle = fopen("../mailling.csv", "r")) !== FALSE){
+                            while (($data = fgetcsv($handle, 1000, ",")) !== FALSE){
+                                $num = count($data);
+                                echo "<tr>";
+                                $row++;
+                                for ($c=0; $c < $num; $c++){
+                                    echo "<th>".$data[$c]."</th>";
+                                }
+                                echo "</tr>";
+                            }
+                            fclose($handle);
+                        }
+                        ?>
+                    </tbody>
+                </table>
+                <br/>
+                <a href="../mailling.csv" target=_blank>Télécharger</a> 
+
             </div>
             <div class="modal-footer">
-                <button type="button" class="btn btn-default" data-dismiss="modal">Annuler</button>
-                <button type="button" class="btn btn-danger" onclick="document.location.href='../traitement/logout.php'">Se déconnecter</button>
+                <button type="button" class="btn btn-default" data-dismiss="modal">Fermer</button>
+
             </div>
         </div>
     </div> 
 </div>
-
 
