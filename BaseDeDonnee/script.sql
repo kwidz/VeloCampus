@@ -38,9 +38,9 @@ CREATE TABLE `Adherent` (
   PRIMARY KEY (`id_adherent`),
   KEY `FK_Adherent_id_cotisation` (`id_cotisation`),
   KEY `FK_Adherent_id_location` (`id_location`),
-  CONSTRAINT `FK_Adherent_id_cotisation` FOREIGN KEY (`id_cotisation`) REFERENCES `Cotisation` (`id_cotisation`),
-  CONSTRAINT `FK_Adherent_id_location` FOREIGN KEY (`id_location`) REFERENCES `Location` (`id_location`)
-) ENGINE=InnoDB AUTO_INCREMENT=2 DEFAULT CHARSET=latin1;
+  CONSTRAINT `FK_Adherent_id_location` FOREIGN KEY (`id_location`) REFERENCES `Location` (`id_location`) ON DELETE CASCADE,
+  CONSTRAINT `FK_Adherent_id_cotisation` FOREIGN KEY (`id_cotisation`) REFERENCES `Cotisation` (`id_cotisation`) ON DELETE CASCADE
+) ENGINE=InnoDB AUTO_INCREMENT=4 DEFAULT CHARSET=latin1;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -49,7 +49,7 @@ CREATE TABLE `Adherent` (
 
 LOCK TABLES `Adherent` WRITE;
 /*!40000 ALTER TABLE `Adherent` DISABLE KEYS */;
-INSERT INTO `Adherent` VALUES (1,'Limballe','Pierre','1995-08-04','1 rue gaston defferre Belfort',90000,'0688370492','a@a.fr','1337','../images/avatars/aaav.jpg',NULL,NULL);
+INSERT INTO `Adherent` VALUES (1,'Limballe','Pierre','1995-08-04','1 rue gaston defferre Belfort',90000,'0688370492','a@a.fr','1337','../images/avatars/aaav.jpg',NULL,NULL),(2,'Glangine','Geoffrey','1994-02-01','3 rue Gaston Defferre',90000,'0677722547','geoffrey.glangine@gmail.com','test','../images/avatars/GlangineGeoffreyav.png',NULL,NULL);
 /*!40000 ALTER TABLE `Adherent` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -117,7 +117,7 @@ CREATE TABLE `Cotisation` (
   PRIMARY KEY (`id_cotisation`),
   KEY `FK_Cotisation_id_adherent` (`id_adherent`),
   CONSTRAINT `FK_Cotisation_id_adherent` FOREIGN KEY (`id_adherent`) REFERENCES `Adherent` (`id_adherent`)
-) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB AUTO_INCREMENT=3 DEFAULT CHARSET=latin1;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -228,7 +228,7 @@ CREATE TABLE `Postit` (
   `nom_postit` varchar(50) DEFAULT NULL,
   `message_postit` text,
   PRIMARY KEY (`id_postit`)
-) ENGINE=InnoDB AUTO_INCREMENT=4 DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB AUTO_INCREMENT=5 DEFAULT CHARSET=latin1;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -237,7 +237,7 @@ CREATE TABLE `Postit` (
 
 LOCK TABLES `Postit` WRITE;
 /*!40000 ALTER TABLE `Postit` DISABLE KEYS */;
-INSERT INTO `Postit` VALUES (3,'geoffrey','voila fini les locations il me reste encore a gÃ©rer les retours de locations laissez le moi :)\r\net si vous avez des trucs a faire en plus sur location dites le moi !');
+INSERT INTO `Postit` VALUES (4,'geoffrey','je viens de finir les locations, j\'ai fait la gestion de mailling List');
 /*!40000 ALTER TABLE `Postit` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -386,4 +386,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2014-04-25 11:41:14
+-- Dump completed on 2014-04-30 13:27:51
