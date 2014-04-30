@@ -9,5 +9,6 @@
 		$mysqli = new mysqli("127.0.0.1","velo","velo","velo");
 		$result = $mysqli->query("INSERT INTO Reparation VALUES (null,'".$mail."','".$id_velo."','".$velo."','".$description."','".$urgence."',null)");
 	}
+	$_SESSION["res"] = 1;
 	header("Location: ".$_SERVER['HTTP_REFERER']);
 ?>

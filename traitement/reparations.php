@@ -3,6 +3,10 @@
 	include("../header.html");
 	if (isset($_SESSION['log']) && $_SESSION['log'] == 1) {
     	include("../menulog.html");
+      if (isset($_SESSION['res']) && $_SESSION['res'] == 1) {
+        include("../banniereReservation.html");
+        $_SESSION['res'] = 0;
+      }
   	}
   	else {
     	include("../menu.html");

@@ -14,11 +14,11 @@
     $mysqli = new mysqli("127.0.0.1","velo","velo","velo");
 ?>
 
-<center><h3>Mes infos :</h3></center>
 <div class="row" style="background-color:#F5F5F5;border-radius:10px;border:3px solid #222222" >
   <div class="col-md-12">
     <?php 
     if (isset($_SESSION['log']) && $_SESSION['log'] == 1) { 
+      echo "<center><h3>Mes infos :</h3></center>";
       $result = $mysqli->query("SELECT  nom_adherent, 
                                         prenom_adherent, 
                                         date_naissance_adherent, 
@@ -98,7 +98,7 @@
     <?php 
   } 
     else { 
-    	echo "Vous devez être connecté pour accéder à cette partie du site.";
+    	echo "<center><br/>Vous devez vous connecter pour accéder à cette partie du site.<br/><br/><center>";
     } ?>
   </div>
 </div>
