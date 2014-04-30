@@ -173,14 +173,27 @@
         <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
         <h4 class="modal-title" id="myModalLabel"><strong>Demande de réservation</strong></h4>
       </div>
-      <div class="modal-body">
-        Youhou ca marche !
-        Mettre un contenu, mais je ne sais pas quoi encore
-      </div>
-      <div class="modal-footer">
-        <button type="button" class="btn btn-default" data-dismiss="modal">Annuler</button>
-        <button type="button" class="btn btn-primary" onclick="document.location.href='../traitement/logout.php'">Réserver</button>
-      </div>
+      <?php 
+        if (isset($_SESSION['log']) && $_SESSION['log'] == 1) {
+          echo '<div class="modal-body">
+            Youhou ca marche !
+            Mettre un contenu, mais je ne sais pas quoi encore
+          </div>
+          <div class="modal-footer">
+            <button type="button" class="btn btn-default" data-dismiss="modal">Annuler</button>
+            <button type="button" class="btn btn-primary" onclick="document.location.href=\'../traitement/logout.php\'">Réserver</button>
+          </div>';
+          
+        }
+        else {
+          echo '<div class="modal-body"><div class="alert alert-danger">
+            Vous devez avoir un compte et être adhérent à l\'association pour pouvoir réserver un vélo.
+          </div></div>
+          <div class="modal-footer">
+            <button type="button" class="btn btn-danger" data-dismiss="modal">Fermer</button>
+          </div>';
+        }
+      ?>
     </div>
   </div> 
 </div>
