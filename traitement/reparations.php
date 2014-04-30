@@ -4,7 +4,7 @@
 	if (isset($_SESSION['log']) && $_SESSION['log'] == 1) {
     	include("../menulog.html");
       if (isset($_SESSION['res']) && $_SESSION['res'] == 1) {
-        include("../banniereReservation.html");
+        include("../banniereReparation.html");
         $_SESSION['res'] = 0;
       }
   	}
