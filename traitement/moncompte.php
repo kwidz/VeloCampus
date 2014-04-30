@@ -14,10 +14,10 @@
     $mysqli = new mysqli("127.0.0.1","velo","velo","velo");
 ?>
 
-<div class="row" style="background-color:#F5F5F5;border-radius:10px;border:3px solid #222222" >
-  <div class="col-md-12">
-    <?php 
-    if (isset($_SESSION['log']) && $_SESSION['log'] == 1) { 
+<?php 
+if (isset($_SESSION['log']) && $_SESSION['log'] == 1) { ?>
+  <div class="row" style="background-color:#F5F5F5;border-radius:10px;border:3px solid #222222" >
+    <div class="col-md-12"> <?php
       echo "<center><h3>Mes infos :</h3></center>";
       $result = $mysqli->query("SELECT  nom_adherent, 
                                         prenom_adherent, 
@@ -95,13 +95,14 @@
         Entrez le mot de passe actuel : <input class="form-control" type="password"> <br/> <br/>
         Entrez le nouveau mot de passe : <input class="form-control" type="password"> <br/> <br/>
         Confirmez le nouveau mot de passe : <input class="form-control" type="password"> <br/> <br/>
-    <?php 
-  } 
+      </div>
+    </div>
+  <?php
+    }
     else { 
-    	echo "<center><br/>Vous devez vous connecter pour accéder à cette partie du site.<br/><br/><center>";
-    } ?>
-  </div>
-</div>
+      echo "<div class='alert alert-danger'><center>Vous devez vous connecter pour accéder à cette partie du site.<br/><center></div>";
+    } 
+?>
 
 
 <?php

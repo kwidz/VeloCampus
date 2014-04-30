@@ -43,7 +43,7 @@
         foreach ($row as $i => $value) {
           $nombre = $value;
           if ($nombre > 0) {
-            echo "Vélos encore disponibles : <b>".$value."</b><br/>";
+            echo "Vélos encore disponibles : <b>".$value."</b><br/><br/>";
             echo "<a href='#'><input type='button' value='Réserver !' class='btn btn-primary' data-toggle='modal' data-target='#modalReservation'/></a><br/><br/>";
           }
           else {
@@ -83,7 +83,7 @@
         foreach ($row as $i => $value) {
           $nombre = $value;
           if ($nombre > 0) {
-            echo "Vélos encore disponibles : <b>".$value."</b><br/>";
+            echo "Vélos encore disponibles : <b>".$value."</b><br/><br/>";
             echo "<a href='#'><input type='button' value='Réserver !' class='btn btn-primary' data-toggle='modal' data-target='#modalReservation'/></a><br/><br/>";
           }
           else {
@@ -116,7 +116,7 @@
         foreach ($row as $i => $value) {
           $nombre = $value;
           if ($nombre > 0) {
-            echo "Vélos encore disponibles : <b>".$value."</b><br/>";
+            echo "Vélos encore disponibles : <b>".$value."</b><br/><br/>";
             echo "<a href='#'><input type='button' value='Réserver !' class='btn btn-primary' data-toggle='modal' data-target='#modalReservation'/></a><br/><br/>";
           }
           else {
@@ -149,7 +149,7 @@
         foreach ($row as $i => $value) {
           $nombre = $value;
           if ($nombre > 0) {
-            echo "Vélos encore disponibles : <b>".$value."</b><br/>";
+            echo "Vélos encore disponibles : <b>".$value."</b><br/><br/>";
             echo "<a href='#'><input type='button' value='Réserver !' class='btn btn-primary' data-toggle='modal' data-target='#modalReservation'/></a><br/><br/>";
           }
           else {

@@ -35,10 +35,10 @@
 </script> -->
 
 
-<div class="row" style="background-color:#F5F5F5;border-radius:10px;border:3px solid #222222" >
-  	<div class="col-md-12">
-  		<?php
-  			if (isset($_SESSION['log']) && $_SESSION['log'] == 1) { ?>
+  <?php
+    if (isset($_SESSION['log']) && $_SESSION['log'] == 1) { ?>
+      <div class="row" style="background-color:#F5F5F5;border-radius:10px;border:3px solid #222222" >
+      	<div class="col-md-12">
           <form method="post" name="reparation" action="envoyerReparations.php">
             <div>
               <center> Votre vélo est : </center>
@@ -83,13 +83,13 @@
               else echo "<input type='hidden' name='id_velo' value=''>";
             ?>
           </form>
-        <?php }
-  			else {
-		      echo "<center><br/>Vous devez vous connecter pour accéder à cette partie du site.<br/><br/></center>";
-		    }
-		?>
-  	</div>
-</div>
+        </div>
+      </div>
+  <?php }
+    else {
+      echo "<div class='alert alert-danger'><center>Vous devez vous connecter pour accéder à cette partie du site.<br/></center></div>";
+    }
+  ?>
 
 
 <?php
