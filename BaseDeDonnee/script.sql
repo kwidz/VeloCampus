@@ -49,7 +49,7 @@ CREATE TABLE `Adherent` (
 
 LOCK TABLES `Adherent` WRITE;
 /*!40000 ALTER TABLE `Adherent` DISABLE KEYS */;
-INSERT INTO `Adherent` VALUES (1,'Limballe','Pierre','1995-08-04','1 rue gaston defferre Belfort',90000,'0688370492','a@a.fr','1337','../images/avatars/aaav.jpg',NULL,NULL),(2,'Glangine','Geoffrey','1994-02-01','3 rue Gaston Defferre',90000,'0677722547','geoffrey.glangine@gmail.com','test','../images/avatars/GlangineGeoffreyav.png',NULL,NULL);
+INSERT INTO `Adherent` VALUES (1,'Limballe','Pierre','1995-08-04','1 rue gaston defferre Belfort',90000,'0688370492','a@a.fr','1337','../images/avatars/aaav.jpg',NULL,1),(2,'Glangine','Geoffrey','1994-02-01','3 rue Gaston Defferre',90000,'0677722547','geoffrey.glangine@gmail.com','test','../images/avatars/GlangineGeoffreyav.png',NULL,NULL);
 /*!40000 ALTER TABLE `Adherent` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -239,7 +239,7 @@ CREATE TABLE `Postit` (
 LOCK TABLES `Postit` WRITE;
 /*!40000 ALTER TABLE `Postit` DISABLE KEYS */;
 INSERT INTO `Postit` VALUES (4,'geoffrey','je viens de finir les locations, j\'ai fait la gestion de mailling List');
-INSERT INTO `Postit` VALUES (5,'pierre','regarder ligne 265 du script.sql, et modifier si besoin...');
+INSERT INTO `Postit` VALUES (5,'pierre','faire les foreign key dans la bdd pour les réparations');
 /*!40000 ALTER TABLE `Postit` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -254,15 +254,16 @@ CREATE TABLE `Reparation` (
   `id_reparation` int(11) NOT NULL AUTO_INCREMENT,
   `adresse_mail_adherent` varchar(150),
   `id_velo` int(11) DEFAULT NULL,
+  `origine` int(11) DEFAULT NULL,
   `description_reparation` text,
   `urgence` int(11) DEFAULT NULL,
   `prix_reparation` int(11) DEFAULT NULL,
-  PRIMARY KEY (`id_reparation`),
-  KEY `FK_Reparation_adresse_mail_adherent` (`adresse_mail_adherent`),
-  KEY `FK_Reparation_id_velo` (`id_velo`),
-  CONSTRAINT `FK_Reparation_adresse_mail_adherent` FOREIGN KEY (`adresse_mail_adherent`) REFERENCES `Adherent` (`adresse_mail_adherent`),
+  PRIMARY KEY (`id_reparation`)
+  /*KEY `FK_Reparation_adresse_mail_adherent` (`adresse_mail_adherent`),
+  --KEY `FK_Reparation_id_velo` (`id_velo`),
+  --CONSTRAINT `FK_Reparation_adresse_mail_adherent` FOREIGN KEY (`adresse_mail_adherent`) REFERENCES `Adherent` (`adresse_mail_adherent`),
   -- Je ne sais pas si cette ligne est juste...
-  CONSTRAINT `FK_Reparation_id_velo` FOREIGN KEY (`id_velo`) REFERENCES `Location` (`id_velo`)
+  --CONSTRAINT `FK_Reparation_id_velo` FOREIGN KEY (`id_velo`) REFERENCES `Location` (`id_velo`)*/
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 /*!40101 SET character_set_client = @saved_cs_client */;
 

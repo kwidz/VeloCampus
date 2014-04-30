@@ -67,8 +67,16 @@
             </div>
             <center><input type="submit" value="Demander réparation"/></center><br/>
             <?php 
-              echo '<input type="hidden" value="'.$_SESSION["mail"].'"/>';
-              $mysqli = new mysqli("127.0.0.1","velo","velo","velo");              
+              echo '<input type="hidden" name="mail" value="'.$_SESSION["mail"].'"/>';
+              $mysqli = new mysqli("127.0.0.1","velo","velo","velo");  
+              $result = $mysqli->query("SELECT l.id_velo FROM Location l, Adherent a WHERE a.adresse_mail_adherent='".$_SESSION["mail"]."' AND a.id_location = l.id_location");            
+              $row = $result->fetch_array(MYSQLI_ASSOC);
+              if ($row) {
+                foreach ($row as $i => $value) {
+                  echo "<input type='hidden' name='id_velo' value='".$value."'/>";
+                }
+              }
+              else echo "<input type='hidden' name='id_velo' value=''>";
             ?>
           </form>
         <?php }
