@@ -6,3 +6,4 @@ if(isset($_GET['id'])){
 	$res=$mysqli->query($sql);
 
 }
+header("Location: ".$_SERVER['HTTP_REFERER']);

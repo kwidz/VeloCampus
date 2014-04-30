@@ -40,7 +40,7 @@ CREATE TABLE `Adherent` (
   KEY `FK_Adherent_id_location` (`id_location`),
   CONSTRAINT `FK_Adherent_id_location` FOREIGN KEY (`id_location`) REFERENCES `Location` (`id_location`) ON DELETE CASCADE,
   CONSTRAINT `FK_Adherent_id_cotisation` FOREIGN KEY (`id_cotisation`) REFERENCES `Cotisation` (`id_cotisation`) ON DELETE CASCADE
-) ENGINE=InnoDB AUTO_INCREMENT=4 DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB AUTO_INCREMENT=6 DEFAULT CHARSET=latin1;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -117,7 +117,7 @@ CREATE TABLE `Cotisation` (
   PRIMARY KEY (`id_cotisation`),
   KEY `FK_Cotisation_id_adherent` (`id_adherent`),
   CONSTRAINT `FK_Cotisation_id_adherent` FOREIGN KEY (`id_adherent`) REFERENCES `Adherent` (`id_adherent`)
-) ENGINE=InnoDB AUTO_INCREMENT=3 DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB AUTO_INCREMENT=4 DEFAULT CHARSET=latin1;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -126,6 +126,7 @@ CREATE TABLE `Cotisation` (
 
 LOCK TABLES `Cotisation` WRITE;
 /*!40000 ALTER TABLE `Cotisation` DISABLE KEYS */;
+INSERT INTO `Cotisation` VALUES (3,2);
 /*!40000 ALTER TABLE `Cotisation` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -386,4 +387,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2014-04-30 13:27:51
+-- Dump completed on 2014-04-30 13:37:25
