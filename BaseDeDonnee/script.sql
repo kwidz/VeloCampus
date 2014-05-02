@@ -1,8 +1,8 @@
--- MySQL dump 10.13  Distrib 5.5.34, for debian-linux-gnu (x86_64)
+-- MySQL dump 10.13  Distrib 5.5.35, for debian-linux-gnu (x86_64)
 --
 -- Host: localhost    Database: velo
 -- ------------------------------------------------------
--- Server version	5.5.34-0ubuntu0.13.04.1
+-- Server version	5.5.35-0ubuntu0.13.10.2
 
 /*!40101 SET @OLD_CHARACTER_SET_CLIENT=@@CHARACTER_SET_CLIENT */;
 /*!40101 SET @OLD_CHARACTER_SET_RESULTS=@@CHARACTER_SET_RESULTS */;
@@ -229,7 +229,7 @@ CREATE TABLE `Postit` (
   `nom_postit` varchar(50) DEFAULT NULL,
   `message_postit` text,
   PRIMARY KEY (`id_postit`)
-) ENGINE=InnoDB AUTO_INCREMENT=7 DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB AUTO_INCREMENT=8 DEFAULT CHARSET=latin1;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -238,7 +238,7 @@ CREATE TABLE `Postit` (
 
 LOCK TABLES `Postit` WRITE;
 /*!40000 ALTER TABLE `Postit` DISABLE KEYS */;
-INSERT INTO `Postit` VALUES (4,'geoffrey','je viens de finir les locations, j\'ai fait la gestion de mailling List'),(5,'pierre','faire les foreign key dans la bdd pour les réparations'),(6,'Morgane','le lien \"plus d\'info \" marche :) \r\n');
+INSERT INTO `Postit` VALUES (4,'geoffrey','je viens de finir les locations, j\'ai fait la gestion de mailling List'),(5,'pierre','faire les foreign key dans la bdd pour les réparations'),(6,'Morgane','le lien \"plus d\'info \" marche :) \r\n'),(7,'geoffrey','cool :)');
 /*!40000 ALTER TABLE `Postit` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -391,4 +391,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2014-05-02 15:03:14
+-- Dump completed on 2014-05-02 15:46:22
