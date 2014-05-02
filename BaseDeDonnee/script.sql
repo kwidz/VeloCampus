@@ -1,8 +1,8 @@
--- MySQL dump 10.13  Distrib 5.5.35, for debian-linux-gnu (x86_64)
+-- MySQL dump 10.13  Distrib 5.5.34, for debian-linux-gnu (x86_64)
 --
 -- Host: localhost    Database: velo
 -- ------------------------------------------------------
--- Server version	5.5.35-0ubuntu0.13.10.2
+-- Server version	5.5.34-0ubuntu0.13.04.1
 
 /*!40101 SET @OLD_CHARACTER_SET_CLIENT=@@CHARACTER_SET_CLIENT */;
 /*!40101 SET @OLD_CHARACTER_SET_RESULTS=@@CHARACTER_SET_RESULTS */;
@@ -229,7 +229,7 @@ CREATE TABLE `Postit` (
   `nom_postit` varchar(50) DEFAULT NULL,
   `message_postit` text,
   PRIMARY KEY (`id_postit`)
-) ENGINE=InnoDB AUTO_INCREMENT=5 DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB AUTO_INCREMENT=7 DEFAULT CHARSET=latin1;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -238,8 +238,7 @@ CREATE TABLE `Postit` (
 
 LOCK TABLES `Postit` WRITE;
 /*!40000 ALTER TABLE `Postit` DISABLE KEYS */;
-INSERT INTO `Postit` VALUES (4,'geoffrey','je viens de finir les locations, j\'ai fait la gestion de mailling List');
-INSERT INTO `Postit` VALUES (5,'pierre','faire les foreign key dans la bdd pour les réparations');
+INSERT INTO `Postit` VALUES (4,'geoffrey','je viens de finir les locations, j\'ai fait la gestion de mailling List'),(5,'pierre','faire les foreign key dans la bdd pour les réparations'),(6,'Morgane','le lien \"plus d\'info \" marche :) \r\n');
 /*!40000 ALTER TABLE `Postit` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -252,18 +251,13 @@ DROP TABLE IF EXISTS `Reparation`;
 /*!40101 SET character_set_client = utf8 */;
 CREATE TABLE `Reparation` (
   `id_reparation` int(11) NOT NULL AUTO_INCREMENT,
-  `adresse_mail_adherent` varchar(150),
+  `adresse_mail_adherent` varchar(150) DEFAULT NULL,
   `id_velo` int(11) DEFAULT NULL,
   `origine` int(11) DEFAULT NULL,
   `description_reparation` text,
   `urgence` int(11) DEFAULT NULL,
   `prix_reparation` int(11) DEFAULT NULL,
   PRIMARY KEY (`id_reparation`)
-  /*KEY `FK_Reparation_adresse_mail_adherent` (`adresse_mail_adherent`),
-  --KEY `FK_Reparation_id_velo` (`id_velo`),
-  --CONSTRAINT `FK_Reparation_adresse_mail_adherent` FOREIGN KEY (`adresse_mail_adherent`) REFERENCES `Adherent` (`adresse_mail_adherent`),
-  -- Je ne sais pas si cette ligne est juste...
-  --CONSTRAINT `FK_Reparation_id_velo` FOREIGN KEY (`id_velo`) REFERENCES `Location` (`id_velo`)*/
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
@@ -397,4 +391,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2014-04-30 13:51:53
+-- Dump completed on 2014-05-02 15:03:14

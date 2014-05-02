@@ -1,3 +1,24 @@
+<script>function modal(id){
+	$('#modalAffiche').modal({
+    keyboard: true
+    })
+    xmlhttp=new XMLHttpRequest();
+	
+	xmlhttp.onreadystatechange=function(){
+		if (xmlhttp.readyState==4 && xmlhttp.status==200)  //si on est bien a letape 4
+			
+			document.getElementById('div').innerHTML= xmlhttp.responseText; //balise select dans le html
+			
+
+
+
+	}
+	xmlhttp.open("GET","../traitement/descr.php?id="+id,true);
+	xmlhttp.send();
+}</script>
+
+
+
 <div class="col-md-3" >
 	<div class="panel panel-default">
 		<!-- Default panel contents -->
@@ -14,10 +35,32 @@
 				. "Where a.id_adherent not in(Select id_adherent from Cotisation) ";
 			$res=$mysqli->query($sql);
 			while (NULL !== ($row = $res->fetch_array())) {
-				echo '<tr><td>'.$row[1].'</td><td>'.$row[2].'</td><td><a href="#">Plus d\'infos</a></td><td><a href="../traitement/demandeInscriptionVal.php?id='.$row[0].'"class="glyphicon glyphicon-ok"></a></td><td><a href="../traitement/demandeInscriptionSupr.php?id='.$row[0].'"class="glyphicon glyphicon-remove"></a></td></tr>';
+				echo '<tr><td>'.$row[1].'</td><td>'.$row[2].'</td><td><a onclick="modal('.$row[0].')">Plus d\'infos</a></td><td><a href="../traitement/demandeInscriptionVal.php?id='.$row[0].'"class="glyphicon glyphicon-ok"></a></td><td><a href="../traitement/demandeInscriptionSupr.php?id='.$row[0].'"class="glyphicon glyphicon-remove"></a></td></tr>';
 			}
 			?>
 		</table>
 	</div>
 </div>
 </div><!-- ce div fermé est en fait le class row de menulog ! -->
+
+<!-- modal affichant les details sur l'adg=herents selectionné grace à la fonction modal du dessu -->
+<div class="modal fade" id="modalAffiche" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+        <h4 class="modal-title" id="myModalLabel"><strong>Plus infos</strong></h4>
+      </div>
+      <form method="post" action="../#">
+        <div class="modal-body" id="div">
+     
+         
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-default" data-dismiss="modal">Fermer</button>
+         
+        </div>
+      </form>
+    </div>
+  </div> 
+</div>
