@@ -3,6 +3,7 @@
   include("../header.html");
   if (isset($_SESSION['log']) && $_SESSION['log'] == 2) {
       include("../menulog.html");
+      include("../co.php");
       include("reparation.php");
       include("../demandeInscription.php");
     }

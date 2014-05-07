@@ -33,8 +33,19 @@ else {
 
   <form role="form">
     <div class="form-group">
-      <label>Numero de l'adhérent</label>
-        <input type="int" class="form-control" id="numadh" placeholder="Numero" >
+      Nom de l'Adherent :
+          <select class="form-control" name="id_adherent" required>
+
+
+            <?php
+            $sql='Select * from Adherent order by nom_adherent';
+            $res=$mysqli->query($sql);
+            while (NULL !== ($row = $res->fetch_array())) {
+
+              echo '<option value="'.$row['id_adherent'].'">'.$row['nom_adherent'].' '.$row['prenom_adherent'].'</option>';
+            }
+            ?>
+          </select><br/>
       </div>
       <div class="form-group">
       <label>Type de vélo</label>
