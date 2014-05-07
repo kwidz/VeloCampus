@@ -1,8 +1,8 @@
--- MySQL dump 10.13  Distrib 5.5.37, for debian-linux-gnu (x86_64)
+-- MySQL dump 10.13  Distrib 5.5.34, for debian-linux-gnu (x86_64)
 --
 -- Host: localhost    Database: velo
 -- ------------------------------------------------------
--- Server version	5.5.37-0ubuntu0.13.10.1
+-- Server version	5.5.34-0ubuntu0.13.04.1
 
 /*!40101 SET @OLD_CHARACTER_SET_CLIENT=@@CHARACTER_SET_CLIENT */;
 /*!40101 SET @OLD_CHARACTER_SET_RESULTS=@@CHARACTER_SET_RESULTS */;
@@ -259,7 +259,7 @@ CREATE TABLE `Reparation` (
   PRIMARY KEY (`id_reparation`),
   KEY `id_velo` (`id_velo`),
   CONSTRAINT `fk_id_velo` FOREIGN KEY (`id_velo`) REFERENCES `Velo` (`id_velo`)
-) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB AUTO_INCREMENT=3 DEFAULT CHARSET=latin1;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -268,6 +268,7 @@ CREATE TABLE `Reparation` (
 
 LOCK TABLES `Reparation` WRITE;
 /*!40000 ALTER TABLE `Reparation` DISABLE KEYS */;
+INSERT INTO `Reparation` VALUES (1,'blabla',NULL,12,2),(2,'drfdd',NULL,12,5);
 /*!40000 ALTER TABLE `Reparation` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -356,6 +357,32 @@ LOCK TABLES `_Type` WRITE;
 INSERT INTO `_Type` VALUES (1,'VTT'),(2,'VTC'),(3,'Pliable'),(4,'Tandem');
 /*!40000 ALTER TABLE `_Type` ENABLE KEYS */;
 UNLOCK TABLES;
+
+--
+-- Table structure for table `subit`
+--
+
+DROP TABLE IF EXISTS `subit`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!40101 SET character_set_client = utf8 */;
+CREATE TABLE `subit` (
+  `id_velo` int(11) NOT NULL,
+  `id_reparation` int(11) NOT NULL,
+  PRIMARY KEY (`id_velo`,`id_reparation`),
+  KEY `FK_subit_id_reparation` (`id_reparation`),
+  CONSTRAINT `FK_subit_id_reparation` FOREIGN KEY (`id_reparation`) REFERENCES `Reparation` (`id_reparation`),
+  CONSTRAINT `FK_subit_id_velo` FOREIGN KEY (`id_velo`) REFERENCES `Velo` (`id_velo`)
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+/*!40101 SET character_set_client = @saved_cs_client */;
+
+--
+-- Dumping data for table `subit`
+--
+
+LOCK TABLES `subit` WRITE;
+/*!40000 ALTER TABLE `subit` DISABLE KEYS */;
+/*!40000 ALTER TABLE `subit` ENABLE KEYS */;
+UNLOCK TABLES;
 /*!40103 SET TIME_ZONE=@OLD_TIME_ZONE */;
 
 /*!40101 SET SQL_MODE=@OLD_SQL_MODE */;
@@ -366,4 +393,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2014-05-07 14:27:45
+-- Dump completed on 2014-05-07 15:54:53
