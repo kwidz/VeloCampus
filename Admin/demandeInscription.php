@@ -40,8 +40,8 @@
 			?>
 		</table>
 	</div>
-</div>
-</div><!-- ce div fermé est en fait le class row de menulog ! -->
+
+<!--</div> ce div fermé est en fait le class row de menulog ! -->
 
 <!-- modal affichant les details sur l'adhérent selectionné grace à la fonction modal du dessus -->
 <div class="modal fade" id="modalAffiche" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">

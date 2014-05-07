@@ -259,7 +259,7 @@ CREATE TABLE `Reparation` (
   PRIMARY KEY (`id_reparation`),
   KEY `id_velo` (`id_velo`),
   CONSTRAINT `fk_id_velo` FOREIGN KEY (`id_velo`) REFERENCES `Velo` (`id_velo`)
-) ENGINE=InnoDB AUTO_INCREMENT=3 DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB AUTO_INCREMENT=8 DEFAULT CHARSET=latin1;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -268,6 +268,7 @@ CREATE TABLE `Reparation` (
 
 LOCK TABLES `Reparation` WRITE;
 /*!40000 ALTER TABLE `Reparation` DISABLE KEYS */;
+INSERT INTO `Reparation` VALUES (3,'casse',0,NULL,2),(4,'casse',1,NULL,2),(5,'pneu crevé',2,NULL,2),(6,'cadre explosé',3,NULL,2),(7,'vélo en feu !!!!',3,NULL,2);
 /*!40000 ALTER TABLE `Reparation` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -392,4 +393,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2014-05-07 16:23:37
+-- Dump completed on 2014-05-07 16:54:59
