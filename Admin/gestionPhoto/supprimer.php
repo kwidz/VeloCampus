@@ -16,8 +16,8 @@ if (isset($_SESSION['log']) && $_SESSION['log'] == 2) {
   else{ ?>
   <div class="col-md-6" >
     <ul class="nav nav-pills nav-stacked">
-      <li class="active" style="text-align: center; margin-bottom: 15px;"><a href="supprimer.php?supprimer=dossier">Supprimer un album</a></li>
-      <li class="active" style="text-align: center; margin-bottom: 15px;"><a href="supprimer.php?supprimer=photo">Supprimer une photo</a></li>
+      <li class="" style="text-align: center; margin-bottom: 15px; border:solid 1px; border-radius: 5px; border-color: #CDCACA"><a href="supprimer.php?supprimer=dossier">Supprimer un album</a></li>
+      <li class="" style="text-align: center; margin-bottom: 15px; border:solid 1px; border-radius: 5px; border-color: #CDCACA"><a href="supprimer.php?supprimer=photo">Supprimer une photo</a></li>
     </ul>
     </div><?php
   }

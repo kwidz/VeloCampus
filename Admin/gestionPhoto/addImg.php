@@ -7,8 +7,8 @@
 
 <div class="col-md-6" >
     <ul class="nav nav-pills nav-stacked">
-      <li class="active" style="text-align: center; margin-bottom: 15px;"><a href="#" data-toggle="modal" data-target="#modalAjouter">Ajouter un album</a></li>
-      <li class="active" style="text-align: center; margin-bottom: 15px;"><a href="#"data-toggle="modal" data-target="#selectDossier">Ajouter des photo</a></li>
+      <li class="" style="text-align: center; margin-bottom: 15px; border:solid 1px; border-radius: 5px; border-color: #CDCACA"><a href="#" data-toggle="modal" data-target="#modalAjouter">Ajouter un album</a></li>
+      <li class="" style="text-align: center; margin-bottom: 15px; border:solid 1px; border-radius: 5px; border-color: #CDCACA"><a href="#"data-toggle="modal" data-target="#selectDossier">Ajouter des photo</a></li>
     </ul>
 </div>
 
@@ -79,7 +79,7 @@ function parcourir_repertoire($repertoire)
         if(is_dir($repertoire.'/'.$fichier))
         {
             
-            print '<li class="active" style="text-align: center; margin-bottom: 15px;"><a href="dragdrop.php?dossier=../../images/photos/'.$fichier.'">'.$fichier.'</a></li>';
+            print '<li class="" style="text-align: center; margin-bottom: 15px; border:solid 1px; border-radius: 5px; border-color: #CDCACA"><a href="dragdrop.php?dossier=../../images/photos/'.$fichier.'">'.$fichier.'</a></li>';
             
             parcourir_repertoire($repertoire.'/'.$fichier);
           }

@@ -44,7 +44,7 @@ pour l'utilisateur  -->
         ?>
         <form method="POST" action="traitement/ajouter.php">
           Nom de l'Adherent :
-          <select class="form-control" name="id_adherent">
+          <select class="form-control" name="id_adherent" required>
 
 
             <?php
@@ -57,7 +57,7 @@ pour l'utilisateur  -->
             ?>
           </select><br/>
           Identifiant du Velo : 
-          <select class="form-control" name="id_velo">
+          <select class="form-control" name="id_velo" required>
 
 
             <?php
@@ -75,8 +75,8 @@ pour l'utilisateur  -->
             }
             ?>
           </select><br/>
-          Prix : <input type="text" class="form-control" name="prix" value="250"><br/>
-          Date : <input type="date" name="date"><br/>
+          Prix : <input type="text" class="form-control" name="prix" value="15" required><br/>
+          Date : <input type="date" name="date" required><br/>
 
 
         </div>
@@ -312,9 +312,17 @@ pour l'utilisateur  -->
                     echo '<option value="'.$row[3].'">Velo n°'.$row[0].', '.$row[1].' '.$row[2].'</option>';
                   }
                   ?></select>
-                  Date du retour : <input type="date" name="date"><br/><?php
+        <select class="form-control" name="id_etat">
+            <?php
 
-        ?>
+                $sql2="Select * from Etat";
+                $res=$mysqli->query($sql2);
+                while (NULL !== ($row = $res->fetch_array())) {
+                                    
+                    echo '<option value="'.$row['id_etat'].'">Etat : '.$row['libelle_etat'].'</option>';
+                  }
+                  ?></select>
+                  Date du retour : <input type="date" name="date" required><br/>
       
        
         </div>
