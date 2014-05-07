@@ -103,10 +103,61 @@
         </div>
         <div class="modal-footer">
           <button type="button" class="btn btn-danger" data-dismiss="modal">Annuler</button>
-          <input type="submit" class="btn btn-default" name="creer">
+          <input type="submit" class="btn btn-default" name="Ajouter">
         </form>
 
+      </div>
+    </div>
+  </div> 
+</div>
 
+
+
+<!-- deuxieme Modal supprimer des reparation -->
+<div class="modal fade" id="suprrep" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+        <h4 class="modal-title" id="myModalLabel"><strong>Suprimer des réparation</strong></h4>
+      </div>
+      <div class="modal-body">
+        
+          <?php
+            $sql ='Select * from Reparation';
+            $res=$mysqli->query($sql);
+            ?>
+             <table class="bordered-table"style="border:solid 1px #CDCACA; border-radius:50px">
+            <thead>
+              <tr>
+                <th>idreparation</th>
+                <th>Description</th>
+                <th>prix reparation</th>
+                <th>idvelo</th>
+                <th>Supprimer</th>
+              </tr>
+            </thead>
+            <tbody>
+            <?php 
+            while (NULL !== ($row = $res->fetch_array())) {
+
+              echo '<tr><td style="border:solid 1px #CDCACA; border-radius:50px">'.$row['id_reparation'].'</td><td style="border:solid 1px #CDCACA; border-radius:50px">'.$row['description_reparation'].'</td><td style="border:solid 1px #CDCACA; border-radius:50px">'.$row['prix_reparation'].'</td><td style="border:solid 1px #CDCACA; border-radius:50px">'.$row['id_velo'].'</td><td style="border:solid 1px #CDCACA; border-radius:50px"><a href="traitement/suppRep.php?id='.$row['id_reparation'].'"class="glyphicon glyphicon-remove"></a></td></tr>' ;
+            }
+            echo '</tbody></table>'
+          ?>
+
+
+
+
+  
+
+
+
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-danger" data-dismiss="modal">Annuler</button>
+          <input type="submit" class="btn btn-default" name="Ajouter">
+        </form>
 
       </div>
     </div>
