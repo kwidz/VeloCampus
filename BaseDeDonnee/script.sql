@@ -252,9 +252,6 @@ DROP TABLE IF EXISTS `Reparation`;
 /*!40101 SET character_set_client = utf8 */;
 CREATE TABLE `Reparation` (
   `id_reparation` int(11) NOT NULL AUTO_INCREMENT,
-  `adresse_mail_adherent` varchar(150) DEFAULT NULL,
-  `id_velo` int(11) DEFAULT NULL,
-  `origine` int(11) DEFAULT NULL,
   `description_reparation` text,
   `urgence` int(11) DEFAULT NULL,
   `prix_reparation` int(11) DEFAULT NULL,

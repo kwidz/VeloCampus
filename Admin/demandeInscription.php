@@ -43,7 +43,7 @@
 </div>
 </div><!-- ce div fermé est en fait le class row de menulog ! -->
 
-<!-- modal affichant les details sur l'adg=herents selectionné grace à la fonction modal du dessu -->
+<!-- modal affichant les details sur l'adhérent selectionné grace à la fonction modal du dessus -->
 <div class="modal fade" id="modalAffiche" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
   <div class="modal-dialog">
     <div class="modal-content">
