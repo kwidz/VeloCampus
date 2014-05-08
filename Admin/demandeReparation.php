@@ -20,17 +20,17 @@
 				if($row[2] != NULL){
 					switch ($row[2]) {
 						case 1:
-							echo '<tr style="background-color:yellow"><td >'.$row[1].'</td><td>'.$row[2].'</td><td><a>Proposer Reparation</a></td></tr>';
+							echo '<tr style="background-color:yellow"><td >'.$row[1].'</td><td>'.$row[2].'</td><td><a href="#" >Proposer Reparation</a></td></tr>';
 							break;
 						case 2:
-							echo '<tr style="background-color:orange"><td >'.$row[1].'</td><td>'.$row[2].'</td><td><a>Proposer Reparation</a></td></tr>';
+							echo '<tr style="background-color:orange"><td >'.$row[1].'</td><td>'.$row[2].'</td><td><a href="#" >Proposer Reparation</a></td></tr>';
 							break;
 						case 3:
-							echo '<tr style="background-color:red"><td >'.$row[1].'</td><td>'.$row[2].'</td><td><a>Proposer Reparation</a></td></tr>';
+							echo '<tr style="background-color:red"><td >'.$row[1].'</td><td>'.$row[2].'</td><td><a href="#" >Proposer Reparation</a></td></tr>';
 							break;
 						
 						default:
-							echo '<tr><td>'.$row[1].'</td><td>'.$row[2].'</td><td><a>Proposer Reparation</a></td></tr>';
+							echo '<tr><td>'.$row[1].'</td><td>'.$row[2].'</td><td><a href="#">Proposer Reparation</a></td></tr>';
 							break;
 					}
 					
