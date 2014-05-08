@@ -24,11 +24,10 @@ function banner(etat, id_location){
 	var xhr = getXMLHttpRequest(); // Voyez la fonction getXMLHttpRequest() définie dans la partie précédente
 	xhr.onreadystatechange = function() {
         if (xhr.readyState == 4 && (xhr.status == 200 || xhr.status == 0)) {
-        		alert("OK");
-                alert(xhr.responseText); // Données textuelles récupérées
+        		document.getElementById("test").innerHTML= xhr.responseText; // Données textuelles récupérées
         }
 	};
-	xhr.open("GET", "banner.php?variable1=truc&variable2=bidule", true);
-	xhr.send(null);
+	xhr.open("GET", "banner.php?variable1=test&variable2=test2", true);
+	xhr.send();
 
 }
