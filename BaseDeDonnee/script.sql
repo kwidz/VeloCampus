@@ -239,7 +239,7 @@ CREATE TABLE `Postit` (
 
 LOCK TABLES `Postit` WRITE;
 /*!40000 ALTER TABLE `Postit` DISABLE KEYS */;
-INSERT INTO `Postit` VALUES (4,'geoffrey','je viens de finir les locations, j\'ai fait la gestion de mailling List'),(5,'pierre','faire les foreign key dans la bdd pour les réparations'),(6,'Morgane','le lien \"plus d\'info \" marche :) \r\n'),(7,'geoffrey','cool :)'),(8,'geoffrey','vois tu Ã§a pierre ?');
+INSERT INTO `Postit` VALUES (4,'geoffrey','je viens de finir les locations, j\'ai fait la gestion de mailling List'),(5,'pierre','faire les foreign key dans la bdd pour les réparations'),(6,'Morgane','le lien \"plus d\'info \" marche :) \r\n'),(7,'pierre','Pour la banière des location coté admin, préférer mettre le ?message=ok dans une variable de session qu\'on vire après l\'affichage de la page, comme ca elle n\'y est qu\'une seule fois :) (je pourrais le faire si besoin)');
 /*!40000 ALTER TABLE `Postit` ENABLE KEYS */;
 UNLOCK TABLES;
 

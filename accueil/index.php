@@ -1,6 +1,9 @@
 <?php
   session_start();
   include("../header.html");
+  $titre = str_replace("\n","<br/>",fread(fopen("titre.txt","r"), filesize("titre.txt")));
+  $contenu = str_replace("\n","<br/>",fread(fopen("contenu.txt", "r"), filesize("contenu.txt")));
+  
   if (isset($_SESSION['log']) && $_SESSION['log'] == 1) {
       include("../menulog.html");
     }
@@ -49,12 +52,14 @@
                 }
               }
             }
-            else echo "Bonjour !";
+            else echo $titre;
+            // else echo "Bonjour !";
           } 
-          else echo "Bonjour !";
+          else echo $titre;
+          // else echo "Bonjour !";
         ?>
       </h3> 
-    <br/>
+    <!-- <br/>
     Bonjour à tous et bienvenue sur notre nouveau site Internet !<br/>
     Vous trouverez ici toutes les informations sur notre association basée à Belfort et Montbéliard.<br/>
     Vous pourez adhérer, louer des vélos, demandé à reparer des vélos, suivre notre actualités... <br/>
@@ -62,7 +67,11 @@
     Et surtout n'hésitez pas à vous contacter : <a>velocampusdulion@gmail.com</a>
     <br/><br/>
     <img src="../images/logo.png"  class="btn btn-default img-responsive" style="border:2px solid black"><br/><br/>
+ -->
 
+  <?php 
+    echo '<br/>'.$contenu.'<br/><img src="../images/logo.png"  class="btn btn-default img-responsive" style="border:2px solid black"><br/><br/>';
+  ?>
 </center>
   </div>
 </div>
