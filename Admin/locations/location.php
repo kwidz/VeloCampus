@@ -293,6 +293,7 @@ pour l'utilisateur  -->
         <h4 class="modal-title" id="myModalLabel"><strong> Retour de Location </strong></h4>
       </div>
       <div class="modal-body">
+        <script type="text/javascript" src="script.js"></script>
               <?php $sql="Select v.id_velo, a.nom_adherent, a.prenom_adherent, l.id_location "
               ."from Velo v, Adherent a, Location l "
               ."where l.id_adherent = a.id_adherent "
@@ -301,8 +302,8 @@ pour l'utilisateur  -->
               ."order by(l.id_location)";
               
               ?>
-              <form method="POST" action="traitement/dateRetour.php">
-                <select class="form-control" name="id_location">
+              <form method="POST" action="traitement/dateRetour.php" name="form">
+                <select class="form-control" name="id_location" onchange="banner(document.form.id_etat.value,this.value)">
             <?php
 
 
@@ -312,16 +313,18 @@ pour l'utilisateur  -->
                     echo '<option value="'.$row[3].'">Velo n°'.$row[0].', '.$row[1].' '.$row[2].'</option>';
                   }
                   ?></select>
-        <select class="form-control" name="id_etat">
+        <select class="form-control" name="id_etat" onchange="banner(this.value,document.form.id_location.value)">
             <?php
 
                 $sql2="Select * from Etat";
                 $res=$mysqli->query($sql2);
                 while (NULL !== ($row = $res->fetch_array())) {
                                     
-                    echo '<option value="'.$row['id_etat'].'">Etat : '.$row['libelle_etat'].'</option>';
+                    echo '<option value="'.$row['id_Etat'].'">Etat : '.$row['libelle_etat'].'</option>';
                   }
                   ?></select>
+                  <div id="test">
+                  </div>
                   Date du retour : <input type="date" name="date" required><br/>
       
        
