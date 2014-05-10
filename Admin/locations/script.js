@@ -27,7 +27,7 @@ function banner(etat, id_location){
         		document.getElementById("test").innerHTML= xhr.responseText; // Données textuelles récupérées
         }
 	};
-	xhr.open("GET", "banner.php?variable1=test&variable2=test2", true);
+	xhr.open("GET", "banner.php?variable1="+etat+"&variable2="+id_location+"", true);
 	xhr.send();
 
 }

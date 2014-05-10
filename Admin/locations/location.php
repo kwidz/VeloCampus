@@ -14,10 +14,10 @@ pour l'utilisateur  -->
   if(isset($_GET['message'])
     && (!empty($_GET['message']))){
     if ($_GET['message']=="ok"){
-      echo"<center><strong>L'opération s'est déroulé avec succès !</center></strong><br/>";
+      echo"<div class='alert alert-success'><center><strong>L'opération s'est déroulé avec succès !</center></strong></div>";
     }
     else{
-      echo"<center><strong>Une erreur à été détectée avez vous bien remplis tous les champs ?</center></strong><br/>";
+      echo"<div class='alert alert-danger'><center><strong>Une erreur inconue à été détectée ! </center></strong></div>";
     }
 
   }
@@ -27,7 +27,7 @@ pour l'utilisateur  -->
     <li class="" style="text-align: center; margin-bottom: 15px; border:solid 1px; border-radius: 5px; border-color: #CDCACA"><a href="#" data-toggle="modal" data-target="#veloNonLoués">Voir les vélos non-loués</a></li>
     <li class="" style="text-align: center; margin-bottom: 15px; border:solid 1px; border-radius: 5px; border-color: #CDCACA"><a href="#" data-toggle="modal" data-target="#veloNonRendus">Voir les personnes qui n'ont pas encore rendu leur vélo</a></li>
     <li class="" style="text-align: center; margin-bottom: 15px; border:solid 1px; border-radius: 5px; border-color: #CDCACA"><a href="#" data-toggle="modal" data-target="#allLocations">Voir toutes les locations de l'année </a></li>
-    <li class="" style="text-align: center; margin-bottom: 15px; border:solid 1px; border-radius: 5px; border-color: #CDCACA"><a href="#" data-toggle="modal" data-target="#retourLoc">ajouter un retour de Location</a></li
+    <li class="" style="text-align: center; margin-bottom: 15px; border:solid 1px; border-radius: 5px; border-color: #CDCACA"><a href="#" data-toggle="modal" data-target="#retourLoc" onclick="banner(document.form.id_etat.value,document.form.id_location.value)">ajouter un retour de Location</a></li
   </ul>
 </div>
 <!-- Premier Modal creation de location -->
@@ -286,14 +286,15 @@ pour l'utilisateur  -->
 
 <!-- 4eme Modal pour le retour des Location -->
 <div class="modal fade" id="retourLoc" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+  <script type="text/javascript" src="script.js"></script>
   <div class="modal-dialog">
     <div class="modal-content">
       <div class="modal-header">
         <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
         <h4 class="modal-title" id="myModalLabel"><strong> Retour de Location </strong></h4>
       </div>
-      <div class="modal-body">
-        <script type="text/javascript" src="script.js"></script>
+      <div class="modal-body" >
+        
               <?php $sql="Select v.id_velo, a.nom_adherent, a.prenom_adherent, l.id_location "
               ."from Velo v, Adherent a, Location l "
               ."where l.id_adherent = a.id_adherent "
