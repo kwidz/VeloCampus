@@ -43,7 +43,7 @@
             <div>
               <center> Votre vélo est : </center>
               <center>
-                <select name="velo" required>
+                <select name="id_velo" required>
                   <option value="" selected></option>
                   <option value="1">Personnel</option>
                   <option value="2">Loué à vélo campus</option>
@@ -54,7 +54,7 @@
             <div></div>
 
             <div>
-              <center> Entrez la description de votre réparations, avec si possible la pièce à réparer : </center>
+              <center> Entrez la description de votre réparation, avec si possible la pièce à réparer : </center>
               <center><textarea name="description" style="height:120px; width:600px" required></textarea></center>
             </div><br/>
 

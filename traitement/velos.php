@@ -44,7 +44,6 @@
           $nombre = $value;
           if ($nombre > 0) {
             echo "Vélos encore disponibles : <b>".$value."</b><br/><br/>";
-            echo "<a href='#'><input type='button' value='Réserver !' class='btn btn-primary' data-toggle='modal' data-target='#modalReservation'/></a><br/><br/>";
           }
           else {
             echo "Plus de vélos disponibles !";
@@ -84,7 +83,6 @@
           $nombre = $value;
           if ($nombre > 0) {
             echo "Vélos encore disponibles : <b>".$value."</b><br/><br/>";
-            echo "<a href='#'><input type='button' value='Réserver !' class='btn btn-primary' data-toggle='modal' data-target='#modalReservation'/></a><br/><br/>";
           }
           else {
             echo "Plus de vélos disponibles !";
@@ -117,7 +115,6 @@
           $nombre = $value;
           if ($nombre > 0) {
             echo "Vélos encore disponibles : <b>".$value."</b><br/><br/>";
-            echo "<a href='#'><input type='button' value='Réserver !' class='btn btn-primary' data-toggle='modal' data-target='#modalReservation'/></a><br/><br/>";
           }
           else {
             echo "Plus de vélos disponibles !";
@@ -150,7 +147,6 @@
           $nombre = $value;
           if ($nombre > 0) {
             echo "Vélos encore disponibles : <b>".$value."</b><br/><br/>";
-            echo "<a href='#'><input type='button' value='Réserver !' class='btn btn-primary' data-toggle='modal' data-target='#modalReservation'/></a><br/><br/>";
           }
           else {
             echo "Plus de vélos disponibles !";
@@ -165,35 +161,3 @@
 	include("../footer.html");
 ?>
 
-
-<div class="modal fade" id="modalReservation" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
-  <div class="modal-dialog">
-    <div class="modal-content">
-      <div class="modal-header">
-        <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
-        <h4 class="modal-title" id="myModalLabel"><strong>Demande de réservation</strong></h4>
-      </div>
-      <?php 
-        if (isset($_SESSION['log']) && $_SESSION['log'] == 1) {
-          echo '<div class="modal-body">
-            Youhou ca marche !
-            Mettre un contenu, mais je ne sais pas quoi encore
-          </div>
-          <div class="modal-footer">
-            <button type="button" class="btn btn-default" data-dismiss="modal">Annuler</button>
-            <button type="button" class="btn btn-primary" onclick="document.location.href=\'../traitement/logout.php\'">Réserver</button>
-          </div>';
-          
-        }
-        else {
-          echo '<div class="modal-body"><div class="alert alert-danger">
-            Vous devez avoir un compte et être adhérent à l\'association pour pouvoir réserver un vélo.
-          </div></div>
-          <div class="modal-footer">
-            <button type="button" class="btn btn-danger" data-dismiss="modal">Fermer</button>
-          </div>';
-        }
-      ?>
-    </div>
-  </div> 
-</div>
