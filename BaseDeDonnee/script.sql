@@ -176,7 +176,7 @@ CREATE TABLE `Location` (
   CONSTRAINT `FK_Location_id_adherent` FOREIGN KEY (`id_adherent`) REFERENCES `Adherent` (`id_adherent`) ON DELETE NO ACTION,
   CONSTRAINT `FK_Location_id_Etat` FOREIGN KEY (`id_Etat`) REFERENCES `Etat` (`id_Etat`) ON DELETE NO ACTION,
   CONSTRAINT `FK_Location_id_velo` FOREIGN KEY (`id_velo`) REFERENCES `Velo` (`id_velo`) ON DELETE NO ACTION
-) ENGINE=InnoDB AUTO_INCREMENT=5 DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB AUTO_INCREMENT=7 DEFAULT CHARSET=latin1;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -185,7 +185,7 @@ CREATE TABLE `Location` (
 
 LOCK TABLES `Location` WRITE;
 /*!40000 ALTER TABLE `Location` DISABLE KEYS */;
-INSERT INTO `Location` VALUES (1,250,'2014-12-12','2014-04-08',1,1,NULL),(2,250,'2014-12-12','2015-06-02',1,1,NULL),(3,250,'2014-12-12',NULL,1,1,NULL),(4,250,'2014-12-12',NULL,1,1,NULL);
+INSERT INTO `Location` VALUES (1,250,'2014-12-12','2014-04-08',1,1,NULL),(2,250,'2014-12-12','2015-06-02',1,1,NULL),(3,250,'2014-12-12',NULL,1,1,NULL),(4,250,'2014-12-12',NULL,1,1,NULL),(5,15,'2024-03-14',NULL,13,2,NULL),(6,15,'2024-03-14',NULL,9,1,NULL);
 /*!40000 ALTER TABLE `Location` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -259,7 +259,7 @@ CREATE TABLE `Reparation` (
   PRIMARY KEY (`id_reparation`),
   KEY `id_velo` (`id_velo`),
   CONSTRAINT `fk_id_velo` FOREIGN KEY (`id_velo`) REFERENCES `Velo` (`id_velo`)
-) ENGINE=InnoDB AUTO_INCREMENT=9 DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB AUTO_INCREMENT=12 DEFAULT CHARSET=latin1;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -268,7 +268,7 @@ CREATE TABLE `Reparation` (
 
 LOCK TABLES `Reparation` WRITE;
 /*!40000 ALTER TABLE `Reparation` DISABLE KEYS */;
-INSERT INTO `Reparation` VALUES (3,'casse',0,NULL,2),(4,'casse',1,NULL,2),(5,'pneu crevé',2,NULL,2),(6,'cadre explosé',3,NULL,2),(7,'vélo en feu !!!!',3,NULL,2),(8,'je suis tombé',2,50,14);
+INSERT INTO `Reparation` VALUES (9,'velo en feu',3,150,9),(10,'pneu creve',2,15,13),(11,'extinction du feu',-1,150,9);
 /*!40000 ALTER TABLE `Reparation` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -393,4 +393,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2014-05-11 16:10:39
+-- Dump completed on 2014-05-11 17:00:51
