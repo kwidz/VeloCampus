@@ -3,7 +3,7 @@ header('content-type : application/json');
 $o=new stdClass();
 $h = getallheaders();
 $source = file_get_contents('php://input');
-$types = array('image/jpg','image/jpeg','image/png','image/gif','image/bmp');
+$types = array('image/jpg','image/jpeg','image/png','image/bmp');
 if(!in_array($h['x-file-type'], $types)){
 	$o->error = 'Type de fichier non supporté';	
 }

@@ -43,13 +43,35 @@
       include("../menulog.html");?>
       <div class="col-md-6">
       <div class="dropfile" >
-
+          <center><h4>Pour partager plusieurs photos d'un seul coups :</h4></center>
       </div><br/>
+<div>
+<?php
+echo '<form method="post" action="upload_simple.php?dossier='.$_GET['dossier'].'" enctype="multipart/form-data">';?>
+<input type="file" name="file" id="file" /><br />
 
+<input type="submit" name="submit" value="Envoyer" />
+</form>
+<?php
+  if(isset($_GET['erreur'])){
+    switch ($_GET['erreur']) {
+      case 'noproblem':
+        echo "<div class='alert alert-success'><center>Le fichier a bien été mis en ligne</center></div>";
+        break;
+      case 'erreurfich':
+        echo "<div class='alert alert-danger'><center>Type de fichier non supporté</center></div>";
+        break;
+      default:
+        echo "<div class='alert alert-danger'><center>Erreur veuillez recommencer</center></div>";
+        break;
+    }
+  }
+?>
+</div>
       <div class= "lien" style="text-align: center; margin-bottom: 15px; border:solid 1px; border-radius: 5px; border-color: #CDCACA" width="100%" height="35px"><a href="index.php">Retour Menu Photos</a></div>
       <div class= "lien" style="text-align: center; margin-bottom: 15px; border:solid 1px; border-radius: 5px; border-color: #CDCACA" width="100%" height="35px"><a href="../../traitement/photos.php">Galerie Photos</a></div>
       </div>
-       
+             
        
       	<?php
       include("../demandeInscription.php");?>
