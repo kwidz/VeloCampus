@@ -14,10 +14,10 @@
 			
 			<?php
 			include("../co.php");
-			$sql='select * from Reparation';
+			$sql='select * from Reparation order by urgence';
 			$res=$mysqli->query($sql);
 			while (NULL !== ($row = $res->fetch_array())) {
-				if($row[2] != NULL){
+				if($row[2] != -1){
 					switch ($row[2]) {
 						case 1:
 							echo '<tr style="background-color:yellow"><td >'.$row[1].'</td><td>'.$row[2].'</td><td><a href="#" >Proposer Reparation</a></td></tr>';
