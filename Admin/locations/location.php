@@ -2,6 +2,7 @@
 tous les autres div sont commentés
 chaque action s'effectera dans un Modal pour eviter les lourds changement de page 
 pour l'utilisateur  -->
+<script type="text/javascript" src="script.js"></script>
 <style>
   th{
     border:solid 1px #CDCACA;
@@ -23,7 +24,7 @@ pour l'utilisateur  -->
   }
   ?>
   <ul class="nav nav-pills nav-stacked">
-    <li class="" style="text-align: center; margin-bottom: 15px; border:solid 1px; border-radius: 5px; border-color: #CDCACA"><a href="#" data-toggle="modal" data-target="#creerLocation">Créer une Location</a></li>
+    <li class="" style="text-align: center; margin-bottom: 15px; border:solid 1px; border-radius: 5px; border-color: #CDCACA"><a href="#" data-toggle="modal" data-target="#creerLocation" onclick="gestionEtat(document.form2.id_velo.value)">Créer une Location</a></li>
     <li class="" style="text-align: center; margin-bottom: 15px; border:solid 1px; border-radius: 5px; border-color: #CDCACA"><a href="#" data-toggle="modal" data-target="#veloNonLoués">Voir les vélos non-loués</a></li>
     <li class="" style="text-align: center; margin-bottom: 15px; border:solid 1px; border-radius: 5px; border-color: #CDCACA"><a href="#" data-toggle="modal" data-target="#veloNonRendus">Voir les personnes qui n'ont pas encore rendu leur vélo</a></li>
     <li class="" style="text-align: center; margin-bottom: 15px; border:solid 1px; border-radius: 5px; border-color: #CDCACA"><a href="#" data-toggle="modal" data-target="#allLocations">Voir toutes les locations de l'année </a></li>
@@ -42,7 +43,7 @@ pour l'utilisateur  -->
         <?php
 
         ?>
-        <form method="POST" action="traitement/ajouter.php">
+        <form method="POST" action="traitement/ajouter.php" name="form2">
           Nom de l'Adherent :
           <select class="form-control" name="id_adherent" required>
 
@@ -56,8 +57,9 @@ pour l'utilisateur  -->
             }
             ?>
           </select><br/>
+          <div id="test"></div>
           Identifiant du Velo : 
-          <select class="form-control" name="id_velo" required>
+          <select class="form-control" name="id_velo" onchange="gestionEtat(this.value)"required>
 
 
             <?php
@@ -286,7 +288,7 @@ pour l'utilisateur  -->
 
 <!-- 4eme Modal pour le retour des Location -->
 <div class="modal fade" id="retourLoc" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
-  <script type="text/javascript" src="script.js"></script>
+  
   <div class="modal-dialog">
     <div class="modal-content">
       <div class="modal-header">

@@ -31,3 +31,16 @@ function banner(etat, id_location){
 	xhr.send();
 
 }
+
+function gestionEtat(id_velo){
+
+	var xhr = getXMLHttpRequest(); // Voyez la fonction getXMLHttpRequest() définie dans la partie précédente
+	xhr.onreadystatechange = function() {
+        if (xhr.readyState == 4 && (xhr.status == 200 || xhr.status == 0)) {
+        		document.getElementById("test").innerHTML= xhr.responseText; // Données textuelles récupérées
+        }
+	};
+	xhr.open("GET", "EtatVelo.php?id_velo="+id_velo+"", true);
+	xhr.send();
+
+}
