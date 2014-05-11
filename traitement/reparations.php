@@ -3,9 +3,9 @@
 	include("../header.html");
 	if (isset($_SESSION['log']) && $_SESSION['log'] == 1) {
     	include("../menulog.html");
-      if (isset($_SESSION['res']) && $_SESSION['res'] == 1) {
+      if (isset($_SESSION['rep']) && $_SESSION['rep'] == 1) {
         include("../banniereReparation.html");
-        $_SESSION['res'] = 0;
+        $_SESSION['rep'] = 0;
       }
   	}
   	else {
@@ -15,24 +15,38 @@
     		include("../banniereErreurConn.html");
     	}
   	}
-
+  $mysqli = new mysqli("127.0.0.1","velo","velo","velo");
 ?>
 
-<!-- <script>
-  function typeReparation() {
-    var m=0; 
-    for (i=1;i<7;i++) { 
-      if (eval("document.forms.reparation.checkbox"+i+".checked == true")){
-        m=m+1;
-      }
-    } 
-    if (m>=3) {
-      alert("Vous avez fait 3 choix ou plus");
-    } else {
-      alert("Vous devez cocher 3 choix ou plus");
+<script>
+  function verifieID() {
+    if (document.getElementById("id_velo").value == -1) {
+      document.getElementById("erreurIDVelo").innerHTML='<div class="alert alert-danger">Vous n\'avez aucun vélo en location.</div>';
+      document.getElementById("type_velo").value = "0";
     }
+    else document.getElementById("erreurIDVelo").innerHTML='';
   }
-</script> -->
+
+  function trouveID() {
+    if (document.getElementById("type_velo").options[document.getElementById('type_velo').selectedIndex].value == 1) {
+      document.getElementById("id_velo").value = 0;
+    }
+    else if (document.getElementById("type_velo").options[document.getElementById('type_velo').selectedIndex].value == 2) {
+      <?php 
+        $result = $mysqli->query("SELECT id_velo FROM Location l, Adherent a WHERE a.adresse_mail_adherent='".$_SESSION['mail']."' AND a.id_location=l.id_location");
+        $id = $result->fetch_array(MYSQLI_ASSOC);
+        if ($id) {
+          foreach ($id as $key => $value) {
+            $id_velo = $value;
+          }
+        }
+        else $id_velo = -1;
+      ?>
+      document.getElementById("id_velo").value = <?php echo $id_velo; ?>;
+    }
+    verifieID();
+  }
+</script>
 
 
   <?php
@@ -44,13 +58,16 @@
             <div>
               <center> Votre vélo est : </center><br/>
               <center>
-                <select class="form-control" name="id_velo" required>
+                <select class="form-control" name="type_velo" id="type_velo" onchange="trouveID()" required>
                   <option value="" selected></option>
                   <option value="1">Personnel</option>
                   <option value="2">Loué à vélo campus</option>
                 </select><br/><br/>
               </center> 
-            </div><br/>
+            </div>
+
+            <input type="hidden" name="id_velo" id="id_velo" value="0">
+            <center><div id="erreurIDVelo" name="erreurIDVelo"></div></center><br/>
 
             <div></div>
             <div>
