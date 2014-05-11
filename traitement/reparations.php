@@ -2,19 +2,19 @@
 	session_start();
 	include("../header.html");
 	if (isset($_SESSION['log']) && $_SESSION['log'] == 1) {
-    	include("../menulog.html");
-      if (isset($_SESSION['rep']) && $_SESSION['rep'] == 1) {
-        include("../banniereReparation.html");
-        $_SESSION['rep'] = 0;
-      }
+  	include("../menulog.html");
+    if (isset($_SESSION['rep']) && $_SESSION['rep'] == 1) {
+      include("../banniereReparation.html");
+      $_SESSION['rep'] = 0;
+    }
+	}
+	else {
+  	include("../menu.html");
+  	if (isset($_SESSION['log']) && $_SESSION['log'] == 0) {
+      $_SESSION = array(); 
+  		include("../banniereErreurConn.html");
   	}
-  	else {
-    	include("../menu.html");
-    	if (isset($_SESSION['log']) && $_SESSION['log'] == 0) {
-	        $_SESSION = array(); 
-    		include("../banniereErreurConn.html");
-    	}
-  	}
+	}
   $mysqli = new mysqli("127.0.0.1","velo","velo","velo");
 ?>
 

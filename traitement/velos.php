@@ -37,7 +37,7 @@
     Potence réglable en hauteur et orientable <br/>
     <br/>
     <?php
-      $result = $mysqli->query("SELECT count(*) FROM Velo WHERE id_type=1 and id_location IS NULL");
+      $result = $mysqli->query("SELECT count(*) FROM Velo v WHERE v.id_type=1 and v.id_velo NOT IN (SELECT id_velo from Location);");
       $row = $result->fetch_array(MYSQLI_ASSOC);
       if ($row) {
         foreach ($row as $i => $value) {
@@ -76,7 +76,7 @@
     Potence réglable en hauteur et orientable <br/>
     <br/>
     <?php
-      $result = $mysqli->query("SELECT count(*) FROM Velo WHERE id_type=2 and id_location IS NULL");
+      $result = $mysqli->query("SELECT count(*) FROM Velo v WHERE v.id_type=2 and v.id_velo NOT IN (SELECT id_velo from Location);");
       $row = $result->fetch_array(MYSQLI_ASSOC);
       if ($row) {
         foreach ($row as $i => $value) {
@@ -108,7 +108,7 @@
     Garde boue avant et arrière <br/>
     <br/>
     <?php
-      $result = $mysqli->query("SELECT count(*) FROM Velo WHERE id_type=3 and id_location IS NULL");
+      $result = $mysqli->query("SELECT count(*) FROM Velo v WHERE v.id_type=3 and v.id_velo NOT IN (SELECT id_velo from Location);");
       $row = $result->fetch_array(MYSQLI_ASSOC);
       if ($row) {
         foreach ($row as $i => $value) {
@@ -140,7 +140,7 @@
     <br/> Pas de bol
     <br/>
     <?php
-      $result = $mysqli->query("SELECT count(*) FROM Velo WHERE id_type=4 and id_location IS NULL");
+      $result = $mysqli->query("SELECT count(*) FROM Velo v WHERE v.id_type=4 and v.id_velo NOT IN (SELECT id_velo from Location);");
       $row = $result->fetch_array(MYSQLI_ASSOC);
       if ($row) {
         foreach ($row as $i => $value) {
