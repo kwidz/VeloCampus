@@ -5,6 +5,30 @@
     text-align:center;
   }
 </style>
+
+<script>
+
+
+
+
+function reparation(id_velo){
+
+  
+  xmlhttp=new XMLHttpRequest();
+  
+  xmlhttp.onreadystatechange=function(){
+    if (xmlhttp.readyState==4 && xmlhttp.status==200)  //si on est bien a letape 4
+      //document.getElementById("vet").style.display="block";
+      document.getElementById("rep").innerHTML= xmlhttp.responseText; //balise select dans le html
+      
+
+
+
+  }
+  xmlhttp.open("GET","traitement/affrep.php?id_velo="+id_velo,true);
+  xmlhttp.send();
+}
+</script>
 <div class="col-md-6" >
   <?php
 
@@ -23,7 +47,7 @@
 <ul class="nav nav-pills nav-stacked">
     <li class="" style="text-align: center; margin-bottom: 15px; border:solid 1px; border-radius: 5px; border-color: #CDCACA"><a href="#" data-toggle="modal" data-target="#ajrep">Ajouter des Réparations</a></li>
     <li class="" style="text-align: center; margin-bottom: 15px; border:solid 1px; border-radius: 5px; border-color: #CDCACA"><a href="#" data-toggle="modal" data-target="#suprrep">Supprimer des Réparation</a></li>
-    <li class="" style="text-align: center; margin-bottom: 15px; border:solid 1px; border-radius: 5px; border-color: #CDCACA"><a href="#" data-toggle="modal" data-target="#gererrep">Gerer les demandes de Réparatio</a></li>
+    <li class="" style="text-align: center; margin-bottom: 15px; border:solid 1px; border-radius: 5px; border-color: #CDCACA"><a href="#" data-toggle="modal" data-target="#repfvelo">Afficher réparation en fonction d'un vélo</a></li>
    
   </ul>
 </div>
@@ -150,6 +174,51 @@
 
 
   
+
+
+
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-danger" data-dismiss="modal">Annuler</button>
+          <input type="submit" class="btn btn-default" name="Ajouter">
+        </form>
+
+      </div>
+    </div>
+  </div> 
+</div>
+
+<!-- troisieme Modal reparation en fonction de velo -->
+<div class="modal fade" id="repfvelo" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+        <h4 class="modal-title" id="myModalLabel"><strong>Afficher les réparation d'un vélo</strong></h4>
+      </div>
+      <div class="modal-body">
+ 
+
+ <div class="form-group">
+      Identifiant du Velo : 
+          <select class="form-control" name="id_velo" id="id_velo" required onchange="reparation(this.value)">
+
+
+            <?php
+
+            
+            $sql='Select * from Velo';
+            $res=$mysqli->query($sql);
+            while (NULL !== ($row = $res->fetch_array())) {
+
+              echo '<option value="'.$row['id_velo'].'">'.$row['id_velo'].'</option>';
+            }
+            ?>
+          </select><br/>
+   
+    </div>
+    <div id="rep">
+    </div>
 
 
 
