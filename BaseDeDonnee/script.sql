@@ -1,8 +1,8 @@
--- MySQL dump 10.13  Distrib 5.5.34, for debian-linux-gnu (x86_64)
+-- MySQL dump 10.13  Distrib 5.5.37, for debian-linux-gnu (x86_64)
 --
 -- Host: localhost    Database: velo
 -- ------------------------------------------------------
--- Server version	5.5.34-0ubuntu0.13.04.1
+-- Server version	5.5.37-0ubuntu0.13.10.1
 
 /*!40101 SET @OLD_CHARACTER_SET_CLIENT=@@CHARACTER_SET_CLIENT */;
 /*!40101 SET @OLD_CHARACTER_SET_RESULTS=@@CHARACTER_SET_RESULTS */;
@@ -34,12 +34,9 @@ CREATE TABLE `Adherent` (
   `password_adherent` varchar(100) DEFAULT NULL,
   `photo_adherent` varchar(100) DEFAULT NULL,
   `id_cotisation` int(11) DEFAULT NULL,
-  `id_location` int(11) DEFAULT NULL,
   PRIMARY KEY (`id_adherent`),
   KEY `FK_Adherent_id_cotisation` (`id_cotisation`),
-  KEY `FK_Adherent_id_location` (`id_location`),
-  CONSTRAINT `FK_Adherent_id_cotisation` FOREIGN KEY (`id_cotisation`) REFERENCES `Cotisation` (`id_cotisation`) ON DELETE CASCADE ON UPDATE CASCADE,
-  CONSTRAINT `FK_Adherent_id_location` FOREIGN KEY (`id_location`) REFERENCES `Location` (`id_location`) ON DELETE CASCADE ON UPDATE CASCADE
+  CONSTRAINT `FK_Adherent_id_cotisation` FOREIGN KEY (`id_cotisation`) REFERENCES `Cotisation` (`id_cotisation`) ON DELETE CASCADE ON UPDATE CASCADE
 ) ENGINE=InnoDB AUTO_INCREMENT=3 DEFAULT CHARSET=latin1;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
@@ -49,7 +46,7 @@ CREATE TABLE `Adherent` (
 
 LOCK TABLES `Adherent` WRITE;
 /*!40000 ALTER TABLE `Adherent` DISABLE KEYS */;
-INSERT INTO `Adherent` VALUES (1,'Limballe','Pierre','1995-08-04','1 rue gaston defferre Belfort',90000,'0688370492','a@a.fr','1337','../images/avatars/aaav.jpg',NULL,1),(2,'Glangine','Geoffrey','1994-02-01','3 rue Gaston Defferre',90000,'0677722547','geoffrey.glangine@gmail.com','test','../images/avatars/GlangineGeoffreyav.png',NULL,NULL);
+INSERT INTO `Adherent` VALUES (1,'Limballe','Pierre','1995-08-04','1 rue gaston defferre Belfort',90000,'0688370492','a@a.fr','1337','../images/avatars/aaav.jpg',NULL),(2,'Glangine','Geoffrey','1994-02-01','3 rue Gaston Defferre',90000,'0677722547','geoffrey.glangine@gmail.com','test','../images/avatars/GlangineGeoffreyav.png',NULL);
 /*!40000 ALTER TABLE `Adherent` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -305,20 +302,14 @@ DROP TABLE IF EXISTS `Velo`;
 /*!40101 SET character_set_client = utf8 */;
 CREATE TABLE `Velo` (
   `id_velo` int(11) NOT NULL AUTO_INCREMENT,
-  `id_location` int(11) DEFAULT NULL,
   `id_Etat` int(11) DEFAULT NULL,
-  `id_adherent` int(11) DEFAULT NULL,
   `id_taille` int(11) DEFAULT NULL,
   `id_type` int(11) DEFAULT NULL,
   PRIMARY KEY (`id_velo`),
-  KEY `FK_Velo_id_location` (`id_location`),
   KEY `FK_Velo_id_Etat` (`id_Etat`),
-  KEY `FK_Velo_id_adherent` (`id_adherent`),
   KEY `FK_Velo_id_taille` (`id_taille`),
   KEY `FK_Velo_id_type` (`id_type`),
-  CONSTRAINT `FK_Velo_id_adherent` FOREIGN KEY (`id_adherent`) REFERENCES `Adherent` (`id_adherent`),
   CONSTRAINT `FK_Velo_id_Etat` FOREIGN KEY (`id_Etat`) REFERENCES `Etat` (`id_Etat`),
-  CONSTRAINT `FK_Velo_id_location` FOREIGN KEY (`id_location`) REFERENCES `Location` (`id_location`),
   CONSTRAINT `FK_Velo_id_taille` FOREIGN KEY (`id_taille`) REFERENCES `Taille` (`id_taille`),
   CONSTRAINT `FK_Velo_id_type` FOREIGN KEY (`id_type`) REFERENCES `_Type` (`id_type`)
 ) ENGINE=InnoDB AUTO_INCREMENT=27 DEFAULT CHARSET=latin1;
@@ -330,7 +321,7 @@ CREATE TABLE `Velo` (
 
 LOCK TABLES `Velo` WRITE;
 /*!40000 ALTER TABLE `Velo` DISABLE KEYS */;
-INSERT INTO `Velo` VALUES (1,NULL,1,NULL,1,1),(2,NULL,1,NULL,1,1),(3,NULL,1,NULL,1,1),(4,NULL,1,NULL,1,1),(5,NULL,1,NULL,1,1),(6,NULL,1,NULL,1,1),(7,NULL,1,NULL,1,1),(8,NULL,1,NULL,23,1),(9,NULL,1,NULL,23,1),(10,NULL,1,NULL,23,1),(11,NULL,1,NULL,23,1),(12,NULL,1,NULL,23,1),(13,NULL,1,NULL,23,1),(14,NULL,1,NULL,23,2),(15,NULL,1,NULL,23,2),(16,NULL,1,NULL,23,2),(17,NULL,1,NULL,23,2),(18,NULL,1,NULL,3,2),(19,NULL,1,NULL,3,2),(20,NULL,1,NULL,3,2),(21,NULL,1,NULL,3,2),(22,NULL,1,NULL,3,2),(23,NULL,1,NULL,3,3),(24,NULL,1,NULL,3,3),(25,NULL,1,NULL,2,3),(26,1,1,NULL,2,4);
+INSERT INTO `Velo` VALUES (1,1,1,1),(2,1,1,1),(3,1,1,1),(4,1,1,1),(5,1,1,1),(6,1,1,1),(7,1,1,1),(8,1,3,1),(9,1,2,1),(10,1,3,1),(11,1,2,1),(12,1,3,1),(13,1,2,1),(14,1,3,2),(15,1,2,2),(16,1,3,2),(17,1,3,2),(18,1,2,2),(19,1,3,2),(20,1,3,2),(21,1,3,2),(22,1,3,2),(23,1,3,3),(24,1,3,3),(25,1,2,3),(26,1,2,4);
 /*!40000 ALTER TABLE `Velo` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -393,4 +384,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2014-05-11 17:07:04
+-- Dump completed on 2014-05-11 17:27:40
