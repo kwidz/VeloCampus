@@ -40,35 +40,35 @@
       <div class="row" style="background-color:#F5F5F5;border-radius:10px;border:3px solid #222222" >
       	<div class="col-md-12">
           <form method="post" name="reparation" action="envoyerReparations.php">
+            <br/>
             <div>
-              <center> Votre vélo est : </center>
+              <center> Votre vélo est : </center><br/>
               <center>
-                <select name="id_velo" required>
+                <select class="form-control" name="id_velo" required>
                   <option value="" selected></option>
                   <option value="1">Personnel</option>
                   <option value="2">Loué à vélo campus</option>
                 </select><br/><br/>
               </center> 
-            </div>
-
-            <div></div>
-
-            <div>
-              <center> Entrez la description de votre réparation, avec si possible la pièce à réparer : </center>
-              <center><textarea name="description" style="height:120px; width:600px" required></textarea></center>
             </div><br/>
 
+            <div></div>
             <div>
-              <center> Urgence de votre réparation : </center>
+              <center> Entrez la description de votre réparation, avec si possible la pièce à réparer : </center><br/>
+              <center><textarea class="form-control" name="description" style="height:60px" required></textarea></center>
+            </div><br/><br/>
+
+            <div>
+              <center> Urgence de votre réparation : </center><br/>
               <center>
-                <select name="urgence" required>
+                <select class="form-control" name="urgence" required>
                   <option value="" selected></option>
                   <option value="1">Peu urgent</option>
                   <option value="2">Urgent</option>
                   <option value="3">Très urgent</option>
                 </select><br/><br/>
               </center>
-            </div>
+            </div><br/>
             <center><input type="submit" value="Demander réparation"/></center><br/>
             <?php 
               echo '<input type="hidden" name="mail" value="'.$_SESSION["mail"].'"/>';
