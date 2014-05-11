@@ -1,6 +1,6 @@
 
   <style>
-  th{
+  th, td{
     border:solid 1px #CDCACA;
     text-align:center;
   }
