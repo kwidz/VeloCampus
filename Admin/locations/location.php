@@ -57,7 +57,7 @@ pour l'utilisateur  -->
             }
             ?>
           </select><br/>
-          <div id="test"></div>
+
           Identifiant du Velo : 
           <select class="form-control" name="id_velo" onchange="gestionEtat(this.value)"required>
 
@@ -77,6 +77,7 @@ pour l'utilisateur  -->
             }
             ?>
           </select><br/>
+          <div id="test"></div>
           Prix : <input type="text" class="form-control" name="prix" value="15" required><br/>
           Date : <input type="date" name="date" required><br/>
 

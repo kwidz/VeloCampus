@@ -13,14 +13,14 @@ if ($id_velo) {
 
 	switch ($id_etat) {
 		case '1':
-			echo "<div class='alert alert-success'><center>le velo est : $libelle_etat </center></div>";
+			echo "<div class='alert alert-success'><center>l'état de ce velo est : $libelle_etat </center></div>";
 			break;
 		case '4':
-			echo "<div class='alert alert-danger'><center>le velo est : $libelle_etat </center></div>";
+			echo "<div class='alert alert-danger'><center>l'état de ce velo est : $libelle_etat </center></div>";
 			break;
 		
 		default:
-			echo "<div class='alert alert-warning'><center>le velo est : $libelle_etat </center></div>";
+			echo "<div class='alert alert-warning'><center>l'état de ce velo est : $libelle_etat </center></div>";
 			break;
 	}
 
