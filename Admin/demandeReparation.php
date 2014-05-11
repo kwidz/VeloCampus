@@ -15,7 +15,7 @@
 		<?php
 		include("../co.php");
 		//$sql='select * from Reparation order by urgence';
-		$sql ='Select Reparation.description_reparation, Reparation.id_velo, Reparation.urgence, Adherent.adresse_mail_adherent From Reparation, Location, Adherent where Reparation.id_velo = Location.id_velo and Location.id_adherent = Adherent.id_adherent';
+		$sql ='Select Reparation.description_reparation, Reparation.id_velo, Reparation.urgence, Adherent.adresse_mail_adherent From Reparation, Location, Adherent where Reparation.id_velo = Location.id_velo and Location.id_adherent = Adherent.id_adherent GROUP BY Reparation.id_reparation';
 		$res=$mysqli->query($sql);
 		while (NULL !== ($row = $res->fetch_array())) {
 			if($row[2] != -1){
