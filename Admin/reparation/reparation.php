@@ -68,22 +68,7 @@ function reparation(id_velo){
 
 
   <form role="form" method="POST" action="traitement/ajouter.php">
-    <!--<div class="form-group">
-      Nom de l'Adherent :
-          <select class="form-control" name="id_adherent" required>
-
-
-            <?php /*
-            $sql='Select * from Adherent order by nom_adherent';
-            $res=$mysqli->query($sql);
-            while (NULL !== ($row = $res->fetch_array())) {
-
-              echo '<option value="'.$row['id_adherent'].'">'.$row['nom_adherent'].' '.$row['prenom_adherent'].'</option>';
-            }
-            */?>
-          </select><br/>
-        
-      </div>-->
+ 
       <div class="form-group">
       Identifiant du Velo : 
           <select class="form-control" name="id_velo" id="id_velo" required>
