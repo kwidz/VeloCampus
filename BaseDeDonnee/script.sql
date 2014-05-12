@@ -34,9 +34,7 @@ CREATE TABLE `Adherent` (
   `password_adherent` varchar(100) DEFAULT NULL,
   `photo_adherent` varchar(100) DEFAULT NULL,
   `id_cotisation` int(11) DEFAULT NULL,
-  PRIMARY KEY (`id_adherent`),
-  KEY `FK_Adherent_id_cotisation` (`id_cotisation`),
-  CONSTRAINT `FK_Adherent_id_cotisation` FOREIGN KEY (`id_cotisation`) REFERENCES `Cotisation` (`id_cotisation`) ON DELETE CASCADE ON UPDATE CASCADE
+  PRIMARY KEY (`id_adherent`);
 ) ENGINE=InnoDB AUTO_INCREMENT=3 DEFAULT CHARSET=latin1;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
@@ -46,7 +44,7 @@ CREATE TABLE `Adherent` (
 
 LOCK TABLES `Adherent` WRITE;
 /*!40000 ALTER TABLE `Adherent` DISABLE KEYS */;
-INSERT INTO `Adherent` VALUES (1,'Limballe','Pierre','1995-08-04','1 rue gaston defferre Belfort',90000,'0688370492','a@a.fr','1337','../images/avatars/aaav.jpg',NULL),(2,'Glangine','Geoffrey','1994-02-01','3 rue Gaston Defferre',90000,'0677722547','geoffrey.glangine@gmail.com','test','../images/avatars/GlangineGeoffreyav.png',NULL);
+INSERT INTO `Adherent` VALUES (1,'Limballe','Pierre','1995-08-04','1 rue gaston defferre Belfort',90000,'0688370492','a@a.fr','1337','../images/avatars/aaav.jpg'),(2,'Glangine','Geoffrey','1994-02-01','3 rue Gaston Defferre',90000,'0677722547','geoffrey.glangine@gmail.com','test','../images/avatars/GlangineGeoffreyav.png');
 /*!40000 ALTER TABLE `Adherent` ENABLE KEYS */;
 UNLOCK TABLES;
 
