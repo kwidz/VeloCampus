@@ -1,5 +1,6 @@
-Bonjour à tous et bienvenue sur notre nouveau site Internet !
+  Bonjour à tous et bienvenue sur notre nouveau site Internet !
 Vous trouverez ici toutes les informations sur notre association basée à Belfort et Montbéliard.
-Vous pourez adhérer, louer des vélos, demandé à reparer des vélos, suivre notre actualités...
+Vous pourrez adhérer, louer des vélos, demandé à réparer des vélos, suivre notre actualités...
 
-Et surtout n'hésitez pas à vous contacter : <a>velocampusdulion@gmail.com</a>
+Et surtout n'hésitez pas à vous contacter : <a href="mailto:velocampusdulion@gmail.com">velocampusdulion@gmail.com</a>
+  

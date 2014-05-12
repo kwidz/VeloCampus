@@ -68,7 +68,7 @@ pour l'utilisateur  -->
             $sql='Select * '
             .'from Velo v '
             .'where v.id_velo not in(Select id_velo '
-                                          .'from Location ) '
+                                          .'from Location where date_retour_location = null ) '
             .'order by(id_velo)';
             $res=$mysqli->query($sql);
             while (NULL !== ($row = $res->fetch_array())) {
@@ -118,7 +118,7 @@ pour l'utilisateur  -->
 
               $sql="Select v.id_velo, c.id_cadenas, ty.libelle_type, t.libelle_taille "
               ."from Velo v, Cadenas c, Taille t, _Type ty "
-              ."where v.id_velo not in(Select id_velo from Location ) "
+              ."where v.id_velo not in(Select id_velo from Location where date_retour_location = null ) "
               ."and c.id_velo=v.id_velo "
               ."and v.id_type=ty.id_type "
               ."and v.id_taille=t.id_taille "
@@ -225,7 +225,7 @@ pour l'utilisateur  -->
 </div>
 
 
-<!-- 4eme Modal affichage de toutes les reservations -->
+<!-- 4eme Modal affichage de toutes les locations -->
 <div class="modal fade" id="allLocations" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
   <div class="modal-dialog">
     <div class="modal-content">
