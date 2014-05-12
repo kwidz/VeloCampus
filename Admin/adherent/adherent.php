@@ -1,8 +1,8 @@
  <style>
-  th, td{
-    border:solid 1px #CDCACA;
-    text-align:center;
-  }
+ th, td{
+  border:solid 1px #CDCACA;
+  text-align:center;
+}
 </style>
 
 
@@ -22,11 +22,11 @@
   }
   ?>
 
-<ul class="nav nav-pills nav-stacked">
+  <ul class="nav nav-pills nav-stacked">
     <li class="" style="text-align: center; margin-bottom: 15px; border:solid 1px; border-radius: 5px; border-color: #CDCACA"><a href="#" data-toggle="modal" data-target="#Ladh">Liste des adhérents</a></li>
     <li class="" style="text-align: center; margin-bottom: 15px; border:solid 1px; border-radius: 5px; border-color: #CDCACA"><a href="#" data-toggle="modal" data-target="#suprrep">Supprimer des Adhérents</a></li>
     <li class="" style="text-align: center; margin-bottom: 15px; border:solid 1px; border-radius: 5px; border-color: #CDCACA"><a href="#" data-toggle="modal" data-target="#repfvelo">Ajouter des adhérents</a></li>
-   
+    
   </ul>
 </div>
 
@@ -40,9 +40,11 @@
       <div class="modal-header">
         <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
         <h4 class="modal-title" id="myModalLabel"><center><strong>Liste des adhérents</strong></center></h4>
+
       </div>
       <div class="modal-body">
         
+
 
 
 
@@ -69,19 +71,23 @@
     </div>
 
 
-    
-  
+      </table>
+      
+
+
+      
+      
 
 
 
 
-        </div>
-        <div class="modal-footer">
-          <button type="button" class="btn btn-danger" data-dismiss="modal">Annuler</button>
-          <input type="submit" class="btn btn-default" name="Ajouter">
-        </form>
-
-      </div>
     </div>
-  </div> 
+    <div class="modal-footer">
+      <button type="button" class="btn btn-danger" data-dismiss="modal">Annuler</button>
+      <input type="submit" class="btn btn-default" name="Ajouter">
+    </form>
+
+  </div>
+</div>
+</div> 
 </div>
