@@ -1,0 +1,31 @@
+Bugs à corriger : 
+
+attention : connexion non sensible à la casse // Pierre
+fautes d'orthographes / présentation du texte // Pierre
+crypter les mdp // Geoffrey
+sécurité du cookie // Pierre
+"se souvenir de moi" // Pierre
+
+Client : 
+	dans l'accueil, bannière des nouveaux évenements avec fichier de modif // Morgane
+	/*photos : affichage non-centré // */
+	agrandissement des photos dans la page vélo // Morgane
+	mon compte : photo ? permettre la modification // Geoffrey
+
+
+Admin : 
+	FINIR VELO !!! // Auguste
+	/* lien des addresses dans la demande de réparation (coté droit) : lien inutile ? ou envoie de mail ? */
+	postit : début dans le bas des post // Morgane
+	revoir sur le coté gauche les raccourcis inutiles // Geoffrey
+	finir les liens/pages des raccourcis coté gauche // Geoffrey
+	page pour modifier mdp admin // Morgane + Geoffrey = <3
+	upload de fichiers bidons // Geoffrey
+	bannière pour confirmation réussite de modification de la page d'accueil // Pierre
+	petite image de l'onglet // Pierre
+
+
+
+
+
+
