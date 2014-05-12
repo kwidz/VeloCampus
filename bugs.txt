@@ -23,9 +23,4 @@ Admin :
 	upload de fichiers bidons // Geoffrey
 	bannière pour confirmation réussite de modification de la page d'accueil // Pierre
 	petite image de l'onglet // Pierre DONE
-
-
-
-
-
-
+	

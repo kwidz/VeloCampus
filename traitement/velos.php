@@ -11,7 +11,7 @@
         include("../banniereErreurConn.html");
       }
     }
-    $mysqli = new mysqli("127.0.0.1","velo","velo","velo");
+    include("../co.php");
 ?>
 
 <center><h3>VTC original b'Twin 5 night & day</h3></center>

@@ -91,9 +91,9 @@
                 <form method="post" action="../traitement/modifAccueil.php">
                     <div class="modal-body">
                         Titre de la page d'accueil :<br/>
-                        <input id="titre" name="titre" type="text" value="<?php echo $titre;?>" required><br/><br/>
+                        <input class="form-control" id="titre" name="titre" type="text" value="<?php echo $titre;?>" required><br/><br/>
                         Contenu de la page d'accueil :<br/>
-                        <textarea id="contenu" name="contenu" style="height:300px; width:540px" required> <?php echo $contenu;?> </textarea><br/>
+                        <textarea class="form-control" id="contenu" name="contenu" style="height:300px; width:540px" required> <?php echo $contenu;?> </textarea><br/>
                     </div>
                     <div class="modal-footer">
                         <button type="button" class="btn btn-danger" data-dismiss="modal">Annuler</button>

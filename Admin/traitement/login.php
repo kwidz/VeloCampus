@@ -3,7 +3,7 @@
 	if (isset($_POST['inputPseudo']) && isset($_POST['inputPassword'])) {
 		$pseudo = $_POST['inputPseudo'];
 		$pass = $_POST['inputPassword'];
-		$mysqli = new mysqli("127.0.0.1","velo","velo","velo");
+		require_once("../co.php");
 		$result = $mysqli->query("SELECT * FROM Admin WHERE pseudo_admin='".$pseudo."' AND password_admin='".$pass."';");
 		if($result->num_rows) {
 			$_SESSION['log']=2;

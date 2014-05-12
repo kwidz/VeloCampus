@@ -3,7 +3,7 @@
 	if (isset($_POST['inputEmail']) && isset($_POST['inputPassword'])) {
 		$mail = $_POST['inputEmail'];
 		$pass = $_POST['inputPassword'];
-		$mysqli = new mysqli("127.0.0.1","velo","velo","velo");
+		include("../co.php");
 		$result = $mysqli->query("SELECT * FROM Adherent WHERE adresse_mail_adherent='".$mail."' AND password_adherent='".$pass."';");
 		if($result->num_rows) {
 			$_SESSION['log']=1;

@@ -1,4 +1,5 @@
 <?php
+	include("../co.php");
 	if(isset($_GET["id_velo"])){
 		$id=$_GET["id_velo"];
 		$sql='SELECT * FROM velo WHERE velo.id_velo="'.$id.'"';

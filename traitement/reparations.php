@@ -15,7 +15,7 @@
       include("../banniereErreurConn.html");
     }
   }
-  $mysqli = new mysqli("127.0.0.1","velo","velo","velo");
+  include("../co.php");
 ?>
 
 

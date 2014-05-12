@@ -4,7 +4,7 @@
 		$description = $_POST['description'];
 		$urgence = $_POST['urgence'];
 		$id_velo = $_POST['id_velo'];
-		$mysqli = new mysqli("127.0.0.1","velo","velo","velo");
+		include("../co.php");
 		$result = $mysqli->query("INSERT INTO Reparation VALUES (null,'".$description."','".$urgence."',null,'".$id_velo."')");
 	}
 	$_SESSION["rep"] = 1;
