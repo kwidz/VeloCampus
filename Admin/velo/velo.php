@@ -24,11 +24,9 @@ pour l'utilisateur  -->
   }
   ?>
   <ul class="nav nav-pills nav-stacked">
-    <li class="" style="text-align: center; margin-bottom: 15px; border:solid 1px; border-radius: 5px; border-color: #CDCACA"><a href="#" data-toggle="modal" data-target="#creerLocation" onclick="gestionEtat(document.form2.id_velo.value)">Créer une Location</a></li>
-    <li class="" style="text-align: center; margin-bottom: 15px; border:solid 1px; border-radius: 5px; border-color: #CDCACA"><a href="#" data-toggle="modal" data-target="#veloNonLoués">Voir les vélos non-loués</a></li>
-    <li class="" style="text-align: center; margin-bottom: 15px; border:solid 1px; border-radius: 5px; border-color: #CDCACA"><a href="#" data-toggle="modal" data-target="#veloNonRendus">Voir les personnes qui n'ont pas encore rendu leur vélo</a></li>
-    <li class="" style="text-align: center; margin-bottom: 15px; border:solid 1px; border-radius: 5px; border-color: #CDCACA"><a href="#" data-toggle="modal" data-target="#allLocations">Voir toutes les locations de l'année </a></li>
-    <li class="" style="text-align: center; margin-bottom: 15px; border:solid 1px; border-radius: 5px; border-color: #CDCACA"><a href="#" data-toggle="modal" data-target="#retourLoc" onclick="banner(document.form.id_etat.value,document.form.id_location.value)">ajouter un retour de Location</a></li
+    <li class="" style="text-align: center; margin-bottom: 15px; border:solid 1px; border-radius: 5px; border-color: #CDCACA"><a href="#" data-toggle="modal" data-target="#creerVelo" >Ajouter un velo</a></li>
+    <li class="" style="text-align: center; margin-bottom: 15px; border:solid 1px; border-radius: 5px; border-color: #CDCACA"><a href="#" data-toggle="modal" data-target="#suppVelo">Supprimer un velo</a></li>
+    <li class="" style="text-align: center; margin-bottom: 15px; border:solid 1px; border-radius: 5px; border-color: #CDCACA"><a href="#" data-toggle="modal" data-target="#editVelo">Editer un velo</a></li
   </ul>
 </div>
 <!-- Premier Modal Ajout d'un velo -->
@@ -115,7 +113,12 @@ pour l'utilisateur  -->
         Selection du velo à supprimer :
         <select class="form-control" name="Velo_to_supp" required>
           <?php
-            
+            $sql='SELECT * FROM velo';
+            $res=$mysqli->query($sql);
+            while (NULL != ($row = $res->fetch_array())) {
+              
+            }
+
           ?>
         </select>
 
