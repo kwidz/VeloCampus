@@ -34,12 +34,12 @@
 
 
 <!-- Premier Modal Liste des adherents -->
-<div class="modal fade" id="Ladh" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
-  <div class="modal-dialog">
+<div class="modal fade" id="Ladh" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true" >
+  <div class="modal-dialog" style="width:1000px;">
     <div class="modal-content">
       <div class="modal-header">
         <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
-        <h4 class="modal-title" id="myModalLabel"><strong>Liste des adhérents</strong></h4>
+        <h4 class="modal-title" id="myModalLabel"><center><strong>Liste des adhérents</strong></center></h4>
       </div>
       <div class="modal-body">
         
@@ -51,6 +51,8 @@
   <form role="form" method="POST" action="traitement/ajouter.php">
  
       <div class="form-group">
+        <center>
+          <br/>
      <table>
       <tr><th>Nom</th><th>Prenom</th><th>Date Naissance</th><th>adresse</th><th>Code postal</th><th>telephone</th><th>Adresse Mail</th></tr>
       <?php
@@ -63,6 +65,7 @@
       ?>
 
     </table>
+  </center>
     </div>
 
 
