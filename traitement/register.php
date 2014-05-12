@@ -35,7 +35,7 @@
 		}
 
 		$mysqli = new mysqli("127.0.0.1","velo","velo","velo");
-		$query = "INSERT INTO Adherent VALUES (null,'".$nom."','".$prenom."','".$dateNaissance."','".$adresse."','".$codepostal."','".$telephone."','".$mail."','".$pass."','".$lienImage."',null);";
+		$query = "INSERT INTO Adherent VALUES (null,'".$nom."','".$prenom."','".$dateNaissance."','".$adresse."','".$codepostal."','".$telephone."','".$mail."','".$pass."','".$lienImage."');";
 		$result = $mysqli->query($query);
 		if($result) {
 			$_SESSION['log']=2;
