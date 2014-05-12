@@ -6,7 +6,7 @@
   if (isset($_SESSION['log']) && $_SESSION['log'] == 2) {
       include("../co.php");
       include("../menulog.html");      
-      include("velo.php");
+      include("location.php");
       include("../demandeInscription.php");
     }
     else {
