@@ -19,3 +19,13 @@ function getXMLHttpRequest() {
 	return xhr;
 }
 
+function formModificatio(id_velo){
+	var xhr = getXMLHttpRequest(); // Voyez la fonction getXMLHttpRequest() définie dans la partie précédente
+	xhr.onreadystatechange = function() {
+    	if (xhr.readyState == 4 && (xhr.status == 200 || xhr.status == 0)) {
+       		document.getElementById("afficheForm").innerHTML= xhr.responseText; // Données textuelles récupérées
+    	}
+	};
+	xhr.open("GET", "formModif.php?id_velo="+id_velo+"", true);
+	xhr.send();
+}
