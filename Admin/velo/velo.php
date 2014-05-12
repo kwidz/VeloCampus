@@ -87,7 +87,7 @@ pour l'utilisateur  -->
         </div>
         <div class="modal-footer">
           <button type="button" class="btn btn-danger" data-dismiss="modal">Annuler</button>
-          <input type="submit" class="btn btn-default"name="creer la Location">
+          <input type="submit" class="btn btn-default"name="creer le velo">
         </form>
 
 
@@ -116,13 +116,55 @@ pour l'utilisateur  -->
             $sql='SELECT * FROM velo';
             $res=$mysqli->query($sql);
             while (NULL != ($row = $res->fetch_array())) {
-              
+                echo'<option value="'.$row["id_velo"].'">'.$row["id_velo"].'</option>';
             }
 
           ?>
-        </select>
+
+
+        </select><br>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-danger" data-dismiss="modal">Annuler</button>
+          <input type="submit" class="btn btn-default"name="Supprimer le velo">
+        </form>
 
       </form>
     </div>
   </div> 
 </div>
+<!-- fin modal supprimer -->
+
+<!-- 3Eme Modale edition d'un velo -->
+<div class="modal fade" id="creerLocation" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+        <h4 class="modal-title" id="myModalLabel"><strong>Edition d'un Velo</strong></h4>
+      </div>
+
+      <form method="POST" action="traitement/editerVelo.php" name="form2">
+
+        Selection du velo à Editer :
+        <select class="form-control" name="Velo_to_Edit" required>
+          <?php
+            $sql='SELECT * FROM velo';
+            $res=$mysqli->query($sql);
+            while (NULL != ($row = $res->fetch_array())) {
+                echo'<option value="'.$row["id_velo"].'">'.$row["id_velo"].'</option>';
+            }
+
+          ?>
+
+          <div id="afficheForm"></div>
+
+        </select><br>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-danger" data-dismiss="modal">Annuler</button>
+          <input type="submit" class="btn btn-default"name="Supprimer le velo">
+        </form>
+
+      </div>
+  </div> 
+</div>
+<!-- fin modal Editer -->
