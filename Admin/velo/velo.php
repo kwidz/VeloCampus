@@ -24,11 +24,9 @@ pour l'utilisateur  -->
   }
   ?>
   <ul class="nav nav-pills nav-stacked">
-    <li class="" style="text-align: center; margin-bottom: 15px; border:solid 1px; border-radius: 5px; border-color: #CDCACA"><a href="#" data-toggle="modal" data-target="#creerLocation" onclick="gestionEtat(document.form2.id_velo.value)">Créer une Location</a></li>
-    <li class="" style="text-align: center; margin-bottom: 15px; border:solid 1px; border-radius: 5px; border-color: #CDCACA"><a href="#" data-toggle="modal" data-target="#veloNonLoués">Voir les vélos non-loués</a></li>
-    <li class="" style="text-align: center; margin-bottom: 15px; border:solid 1px; border-radius: 5px; border-color: #CDCACA"><a href="#" data-toggle="modal" data-target="#veloNonRendus">Voir les personnes qui n'ont pas encore rendu leur vélo</a></li>
-    <li class="" style="text-align: center; margin-bottom: 15px; border:solid 1px; border-radius: 5px; border-color: #CDCACA"><a href="#" data-toggle="modal" data-target="#allLocations">Voir toutes les locations de l'année </a></li>
-    <li class="" style="text-align: center; margin-bottom: 15px; border:solid 1px; border-radius: 5px; border-color: #CDCACA"><a href="#" data-toggle="modal" data-target="#retourLoc" onclick="banner(document.form.id_etat.value,document.form.id_location.value)">ajouter un retour de Location</a></li
+    <li class="" style="text-align: center; margin-bottom: 15px; border:solid 1px; border-radius: 5px; border-color: #CDCACA"><a href="#" data-toggle="modal" data-target="#creerVelo" >Ajouter un velo</a></li>
+    <li class="" style="text-align: center; margin-bottom: 15px; border:solid 1px; border-radius: 5px; border-color: #CDCACA"><a href="#" data-toggle="modal" data-target="#suppVelo">Supprimer un velo</a></li>
+    <li class="" style="text-align: center; margin-bottom: 15px; border:solid 1px; border-radius: 5px; border-color: #CDCACA"><a href="#" data-toggle="modal" data-target="#editVelo">Editer un velo</a></li
   </ul>
 </div>
 <!-- Premier Modal Ajout d'un velo -->
@@ -89,7 +87,7 @@ pour l'utilisateur  -->
         </div>
         <div class="modal-footer">
           <button type="button" class="btn btn-danger" data-dismiss="modal">Annuler</button>
-          <input type="submit" class="btn btn-default"name="creer la Location">
+          <input type="submit" class="btn btn-default"name="creer le velo">
         </form>
 
 
@@ -115,11 +113,58 @@ pour l'utilisateur  -->
         Selection du velo à supprimer :
         <select class="form-control" name="Velo_to_supp" required>
           <?php
-            
+            $sql='SELECT * FROM velo';
+            $res=$mysqli->query($sql);
+            while (NULL != ($row = $res->fetch_array())) {
+                echo'<option value="'.$row["id_velo"].'">'.$row["id_velo"].'</option>';
+            }
+
           ?>
-        </select>
+
+
+        </select><br>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-danger" data-dismiss="modal">Annuler</button>
+          <input type="submit" class="btn btn-default"name="Supprimer le velo">
+        </form>
 
       </form>
     </div>
   </div> 
 </div>
+<!-- fin modal supprimer -->
+
+<!-- 3Eme Modale edition d'un velo -->
+<div class="modal fade" id="creerLocation" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+        <h4 class="modal-title" id="myModalLabel"><strong>Edition d'un Velo</strong></h4>
+      </div>
+
+      <form method="POST" action="traitement/editerVelo.php" name="form2">
+
+        Selection du velo à Editer :
+        <select class="form-control" name="Velo_to_Edit" required>
+          <?php
+            $sql='SELECT * FROM velo';
+            $res=$mysqli->query($sql);
+            while (NULL != ($row = $res->fetch_array())) {
+                echo'<option value="'.$row["id_velo"].'">'.$row["id_velo"].'</option>';
+            }
+
+          ?>
+
+          <div id="afficheForm"></div>
+
+        </select><br>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-danger" data-dismiss="modal">Annuler</button>
+          <input type="submit" class="btn btn-default"name="Supprimer le velo">
+        </form>
+
+      </div>
+  </div> 
+</div>
+<!-- fin modal Editer -->
