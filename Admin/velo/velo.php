@@ -108,7 +108,7 @@ pour l'utilisateur  -->
       <?php
 
       ?>
-      <form method="POST" action="traitement/SuppVelo.php" name="form2">
+      <form method="POST" action="traitement/suppVelo.php" name="form2">
 
         Selection du velo à supprimer :
         <select class="form-control" name="Velo_to_supp" required>
@@ -146,7 +146,7 @@ pour l'utilisateur  -->
       <form method="POST" action="traitement/editerVelo.php" name="form2">
 
         Selection du velo à Editer :
-        <select class="form-control" name="Velo_to_Edit" required>
+        <select class="form-control" name="Velo_to_Edit" required onclick="formModificatio(this.value)">
           <?php
             $sql='SELECT * FROM velo';
             $res=$mysqli->query($sql);
@@ -155,10 +155,10 @@ pour l'utilisateur  -->
             }
 
           ?>
-
-          <div id="afficheForm"></div>
-
         </select><br>
+
+        <div id="afficheForm"></div>
+
         <div class="modal-footer">
           <button type="button" class="btn btn-danger" data-dismiss="modal">Annuler</button>
           <input type="submit" class="btn btn-default"name="Supprimer le velo">
