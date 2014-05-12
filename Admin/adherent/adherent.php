@@ -54,8 +54,12 @@
      <table>
       <tr><th>Nom</th><th>Prenom</th><th>Date Naissance</th><th>adresse</th><th>Code postal</th><th>telephone</th><th>Adresse Mail</th></tr>
       <?php
+      $sql = 'Select Adherent.* from Adherent, Cotisation  where Adherent.id_adherent = Cotisation.id_adherent';
+      $res=$mysqli->query($sql);
+            while (NULL !== ($row = $res->fetch_array())) {
+              echo '<tr><td>'.$row['nom_adherent'].'</td><td>'.$row['prenom_adherent'].'</td><td>'.$row['date_naissance_adherent'].'</td><td>'.$row['adresse_adherent'].'</td><td>'.$row['code_Postal_Adherent'].'</td><td>'.$row['telephone_adherent'].'</td><td>'.$row['adresse_mail_adherent'].'</td></tr>';
+            }
 
-    
       ?>
 
     </table>
