@@ -39,7 +39,7 @@
     <div class="modal-content">
       <div class="modal-header">
         <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
-        <h4 class="modal-title" id="myModalLabel"><strong>Liste des adhérents</strong></h4>
+        <h4 class="modal-title" id="myModalLabel"><strong>Liste des adhérents cotisants</strong></h4>
       </div>
       <div class="modal-body">
         
@@ -48,9 +48,9 @@
 
 
 
-  <form role="form" method="POST" action="traitement/ajouter.php">
+  
  
-      <div class="form-group">
+      
      <table>
       <tr><th>Nom</th><th>Prenom</th><th>Date Naissance</th><th>adresse</th><th>Code postal</th><th>telephone</th><th>Adresse Mail</th></tr>
       <?php
@@ -63,7 +63,7 @@
       ?>
 
     </table>
-    </div>
+   
 
 
     
