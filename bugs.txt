@@ -5,6 +5,7 @@ fautes d'orthographes / présentation du texte // Pierre
 crypter les mdp // Geoffrey
 sécurité du cookie // Pierre
 "se souvenir de moi" // Pierre
+integration des vidéos !!! //
 
 Client : 
 	dans l'accueil, bannière des nouveaux évenements avec fichier de modif // Morgane
@@ -24,4 +25,5 @@ Admin :
 	upload de fichiers bidons // Geoffrey
 	bannière pour confirmation réussite de modification de la page d'accueil // Pierre
 	petite image de l'onglet // Pierre DONE
+	mettre un lien piur retourner sur le site à la deconnexion de l'admin //
 	

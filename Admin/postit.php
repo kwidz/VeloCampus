@@ -13,9 +13,9 @@
                 while (NULL !== ($row = $res->fetch_array())){
                     $i++;
                     if($i%2==0){
-                        echo '<p><h4 style="color:blue">'.$row['nom_postit'].' : </h4>'.$row['message_postit'].' <a href="../traitement/suppr.php?id='.$row['id_postit'].'" class="glyphicon glyphicon-remove" style="color:red"></a></p>';
+                        echo '<p><h4 style="color:blue">'.$row['nom_postit'].' : </h4>'.str_replace('\\','',$row['message_postit']).' <a href="../traitement/suppr.php?id='.$row['id_postit'].'" class="glyphicon glyphicon-remove" style="color:red"></a></p>';
                     }
-                    else { echo '<p><h4 style="color:green">'.$row['nom_postit'].' : </h4>'.$row['message_postit'].' <a href="../traitement/suppr.php?id='.$row['id_postit'].'" class="glyphicon glyphicon-remove" style="color:red"></a></p>';}
+                    else { echo '<p><h4 style="color:green">'.$row['nom_postit'].' : </h4>'.str_replace('\\','',$row['message_postit']).' <a href="../traitement/suppr.php?id='.$row['id_postit'].'" class="glyphicon glyphicon-remove" style="color:red"></a></p>';}
                 }
 
                 ?>
