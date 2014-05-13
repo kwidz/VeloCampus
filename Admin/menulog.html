@@ -80,7 +80,9 @@
 
     <!-- Modal modifier titre et contenu accueil -->
     <?php $titre = fread(fopen("../../accueil/titre.txt","r"), filesize("../../accueil/titre.txt"));
-    $contenu = fread(fopen("../../accueil/contenu.txt", "r"), filesize("../../accueil/contenu.txt")); ?>
+    str_replace('\\', '', $titre);
+    $contenu = fread(fopen("../../accueil/contenu.txt", "r"), filesize("../../accueil/contenu.txt")); 
+    str_replace('\\', '', $contenu); ?>
     <div class="modal fade" id="modalModifAccueil" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
         <div class="modal-dialog">
             <div class="modal-content">
