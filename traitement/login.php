@@ -2,9 +2,9 @@
 	session_start();
 	if (isset($_POST['inputEmail']) && isset($_POST['inputPassword'])) {
 		$mail = $_POST['inputEmail'];
-		$pass = $_POST['inputPassword'];
+		$passwd = $_POST['inputPassword'];
 		include("../co.php");
-		$result = $mysqli->query("SELECT * FROM Adherent WHERE adresse_mail_adherent='".$mail."' AND password_adherent='".$pass."';");
+		$result = $mysqli->query("SELECT * FROM Adherent WHERE adresse_mail_adherent='".$mail."' AND password_adherent='".$passwd."';");
 		if($result->num_rows) {
 			$_SESSION['log']=1;
 			$_SESSION['mail']=$mail;
