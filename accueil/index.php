@@ -21,7 +21,7 @@
   	<center>
       <h3>
         <?php 
-          if (isset($_COOKIE['Session'])) { 
+          if (isset($_COOKIE['Session']) && isset($_SESSION['log']) && $_SESSION['log'] == 1) { 
             include("../co.php");
             $query = "SELECT prenom_adherent FROM Adherent WHERE adresse_mail_adherent='".html_entity_decode($_COOKIE["Session"])."';";
             $result = $mysqli->query($query);
