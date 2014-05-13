@@ -11,6 +11,7 @@ Client :
 	/*photos : affichage non-centré // */
 	agrandissement des photos dans la page vélo // Morgane
 	mon compte : photo ? permettre la modification // Geoffrey
+	Bannière d'erreur si on essaye de s'inscrire avec une adresse mail existante //
 
 
 Admin : 
