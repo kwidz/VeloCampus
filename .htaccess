@@ -1,2 +1,2 @@
 SetEnv PHP_VER 5
-DirectoryIndex index.php
+DirectoryIndex first.html index.htm index.html index.php /accueil/index.php
