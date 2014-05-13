@@ -14,6 +14,10 @@
       $_SESSION = array(); 
       include("../banniereErreurConn.html");
     }
+    else if (isset($_SESSION['log']) && $_SESSION['log'] == 2) {
+      $_SESSION = array(); 
+      include("../banniereAttenteConf.html");
+    }
   }
   include("../co.php");
 ?>

@@ -3,17 +3,19 @@ Bugs à corriger :
 attention : connexion non sensible à la casse // Pierre
 fautes d'orthographes / présentation du texte // Pierre
 crypter les mdp // Geoffrey
-sécurité du cookie // Pierre
+sécurité du cookie // Pierre DONE (à motié)
 "se souvenir de moi" // Pierre
 integration des vidéos !!! //
-revenir au referer dans les pages //
+revenir au referer dans les pages après connexion //
 
 Client : 
 	dans l'accueil, bannière des nouveaux évenements avec fichier de modif // Morgane
 	/*photos : affichage non-centré // */
 	agrandissement des photos dans la page vélo // Morgane
 	mon compte : photo ? permettre la modification // Geoffrey
-	Bannière d'erreur si on essaye de s'inscrire avec une adresse mail existante //
+	Bannière d'erreur si on essaye de s'inscrire avec une adresse mail existante // Pierre et Geoffrey
+	Bannière lorsque l'on vient de s'inscrire // Pierre DONE
+	Modifier banière erreur dans moncompte.php // Pierre
 
 
 Admin : 

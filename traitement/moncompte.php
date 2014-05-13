@@ -6,7 +6,7 @@
   	}
     else {
       include("../menu.html");
-      if (isset($_SESSION['log']) && $_SESSION['log'] == 0) {
+      if (isset($_SESSION['log']) && $_SESSION['log'] != 1) {
           $_SESSION = array(); 
         include("../banniereErreurConn.html");
       }
