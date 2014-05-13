@@ -1,12 +1,18 @@
 Bugs à corriger : 
 
-attention : connexion non sensible à la casse // Pierre
-fautes d'orthographes / présentation du texte // Pierre
-crypter les mdp // Geoffrey
-sécurité du cookie // Pierre DONE (à motié)
-"se souvenir de moi" // Pierre
-integration des vidéos !!! //
-revenir au referer dans les pages après connexion //
+N'hésitez pas à rajouter ! 
+
+
+Par endroit :
+
+Général : 
+	attention : connexion non sensible à la casse // Pierre
+	fautes d'orthographes / présentation du texte // Pierre
+	crypter les mdp // Geoffrey
+	sécurité du cookie // Pierre DONE (à motié)
+	"se souvenir de moi" // Pierre
+	integration des vidéos !!! //
+	revenir au referer dans les pages après connexion //
 
 Client : 
 	dans l'accueil, bannière des nouveaux évenements avec fichier de modif // Morgane
@@ -15,8 +21,6 @@ Client :
 	mon compte : photo ? permettre la modification // Geoffrey
 	Bannière d'erreur si on essaye de s'inscrire avec une adresse mail existante // Pierre et Geoffrey
 	Bannière lorsque l'on vient de s'inscrire // Pierre DONE
-	Modifier banière erreur dans moncompte.php // Pierre
-
 
 Admin : 
 	FINIR VELO !!! // Auguste
@@ -30,3 +34,41 @@ Admin :
 	petite image de l'onglet // Pierre DONE
 	mettre un lien piur retourner sur le site à la deconnexion de l'admin //
 	
+
+
+
+Par personnes : 
+
+Morgane :
+	dans l'accueil, bannière des nouveaux évenements avec fichier de modif // Morgane
+	agrandissement des photos dans la page vélo // Morgane
+	postit : début dans le bas des post // Morgane
+	page pour modifier mdp admin // Morgane + Geoffrey = <3
+	
+Geoffrey :
+	crypter les mdp // Geoffrey
+	mon compte : photo ? permettre la modification // Geoffrey
+	Bannière d'erreur si on essaye de s'inscrire avec une adresse mail existante // Pierre et Geoffrey
+	revoir sur le coté gauche les raccourcis inutiles // Geoffrey
+	finir les liens/pages des raccourcis coté gauche // Geoffrey
+	page pour modifier mdp admin // Morgane + Geoffrey = <3
+	upload de fichiers bidons // Geoffrey
+
+Auguste : 
+	FINIR VELO !!! // Auguste
+
+Pierre :
+	Bannière lorsque l'on vient de s'inscrire // Pierre DONE
+	petite image de l'onglet // Pierre DONE
+	sécurité du cookie // Pierre DONE (à motié)
+	attention : connexion non sensible à la casse // Pierre
+	fautes d'orthographes / présentation du texte // Pierre
+	"se souvenir de moi" // Pierre
+	Bannière d'erreur si on essaye de s'inscrire avec une adresse mail existante // Pierre et Geoffrey
+	bannière pour confirmation réussite de modification de la page d'accueil // Pierre
+
+Non attribué : 
+	integration des vidéos !!! //
+	revenir au referer dans les pages après connexion //
+	/* lien des addresses dans la demande de réparation (coté droit) : lien inutile ? ou envoie de mail ? */
+	mettre un lien piur retourner sur le site à la deconnexion de l'admin //
