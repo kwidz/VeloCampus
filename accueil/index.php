@@ -1,8 +1,8 @@
 <?php
   session_start();
   include("../header.html");
-  $titre = str_replace("\n","<br/>",fread(fopen("titre.txt","r"), filesize("titre.txt")));
-  $contenu = str_replace("\n","<br/>",fread(fopen("contenu.txt", "r"), filesize("contenu.txt")));
+  $titre = str_replace("\\","",str_replace("\n","<br/>",fread(fopen("titre.txt","r"), filesize("titre.txt"))));
+  $contenu = str_replace("\\","",str_replace("\n","<br/>",fread(fopen("contenu.txt", "r"), filesize("contenu.txt"))));
   
   if (isset($_SESSION['log']) && $_SESSION['log'] == 1) {
       include("../menulog.html");
