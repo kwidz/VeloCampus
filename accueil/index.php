@@ -4,7 +4,7 @@
   $titre = str_replace("\\","",str_replace("\n","<br/>",fread(fopen("titre.txt","r"), filesize("titre.txt"))));
   $contenu = str_replace("\\","",str_replace("\n","<br/>",fread(fopen("contenu.txt", "r"), filesize("contenu.txt"))));
   
-  if (isset($_SESSION['log']) && $_SESSION['log'] == 1) {
+  if (isset($_COOKIE['Session']) && isset($_SESSION['mail']) && $_COOKIE['Session'] == md5(md5($_SESSION['mail'])) && isset($_SESSION['log']) && $_SESSION['log'] == 1) {
       include("../menulog.html");
     }
     else {
@@ -22,7 +22,7 @@
       <?php 
         if (isset($_COOKIE['Session']) && isset($_SESSION['log']) && $_SESSION['log'] == 1) { 
           include("../co.php");
-          $query = "SELECT prenom_adherent, nom_adherent FROM Adherent WHERE adresse_mail_adherent='".html_entity_decode($_COOKIE["Session"])."';";
+          $query = "SELECT prenom_adherent, nom_adherent FROM Adherent WHERE adresse_mail_adherent='".html_entity_decode($_SESSION['mail'])."';";
           $result = $mysqli->query($query);
           $row = $result->fetch_array(MYSQLI_ASSOC);
           if ($row) {
@@ -54,29 +54,15 @@
             echo "<br/>"."<h3>".$titre."</h3>";
           }
           else echo "<h3>".$titre."</h3>";
-          // else echo "Bonjour !";
         } 
         else echo "<h3>".$titre."</h3>";
-        // else echo "Bonjour !";
       ?>
-    <!-- <br/>
-    Bonjour à tous et bienvenue sur notre nouveau site Internet !<br/>
-    Vous trouverez ici toutes les informations sur notre association basée à Belfort et Montbéliard.<br/>
-    Vous pourez adhérer, louer des vélos, demandé à reparer des vélos, suivre notre actualités... <br/>
-    <br/>
-    Et surtout n'hésitez pas à vous contacter : <a>velocampusdulion@gmail.com</a>
-    <br/><br/>
-    <img src="../images/logo.png"  class="btn btn-default img-responsive" style="border:2px solid black"><br/><br/>
- -->
-
   <?php 
     echo '<br/>'.$contenu.'<br/><img src="../images/logo.png"  class="btn btn-default img-responsive" style="border:2px solid black"><br/><br/>';
   ?>
 </center>
   </div>
 </div>
-
-
 <?php
 	include("../footer.html");
 ?>

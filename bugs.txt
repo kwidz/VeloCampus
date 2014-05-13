@@ -6,6 +6,7 @@ crypter les mdp // Geoffrey
 sécurité du cookie // Pierre
 "se souvenir de moi" // Pierre
 integration des vidéos !!! //
+revenir au referer dans les pages //
 
 Client : 
 	dans l'accueil, bannière des nouveaux évenements avec fichier de modif // Morgane

@@ -9,10 +9,10 @@
 		if($result->num_rows) {
 			$_SESSION['log']=2;
 			if (isset($_POST['remindMe']) && $_POST['remindMe'] == true) {
-				setcookie('Session', $pseudo, time()+2592000, "/", null);
+				setcookie('Session', md5(md5("carotte")), time()+2592000, "/", null);
 			}
 			else {
-				setcookie('Session', $pseudo, 0, "/", null);
+				setcookie('Session', md5(md5("carotte")), 0, "/", null);
 			}
 		}
 		else {

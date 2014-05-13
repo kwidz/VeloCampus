@@ -9,10 +9,10 @@
 			$_SESSION['log']=1;
 			$_SESSION['mail']=$mail;
 			if (isset($_POST['remindMe']) && $_POST['remindMe'] == true) {
-				setcookie('Session', $mail, time()+2592000, "/", null);
+				setcookie('Session', md5(md5($mail)), time()+2592000, "/", null);
 			}
 			else {
-				setcookie('Session', $mail, 0, "/", null);
+				setcookie('Session', md5(md5($mail)), 0, "/", null);
 			}
 		}
 		else {
