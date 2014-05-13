@@ -1,6 +1,4 @@
-
 <?php
-
   session_start();
   include("../header.html");
   if (isset($_SESSION['log']) && $_SESSION['log'] == 2) {

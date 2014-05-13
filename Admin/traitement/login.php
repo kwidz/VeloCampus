@@ -1,6 +1,6 @@
 <?php
 	session_start();
-	$referer = $_SERVER['HTTP_REFERER'];
+	// $referer = $_SERVER['HTTP_REFERER'];
 	if (isset($_POST['inputPseudo']) && isset($_POST['inputPassword'])) {
 		$pseudo = $_POST['inputPseudo'];
 		$passwd = $_POST['inputPassword'];
@@ -19,5 +19,9 @@
 			$_SESSION['log']=4;
 		}
 	}
-	header("Location: ".$referer);
+	// header("Location: ".$referer);
 ?>
+
+<script type="text/javascript">
+	document.location.href="../";
+</script>
