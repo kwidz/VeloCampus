@@ -68,7 +68,7 @@
             <a href="#" class="list-group-item list-group-item-danger">Ajouter un historique de reunions</a>
             <a href="#" class="list-group-item list-group-item-danger">Voir les historiques</a>
             <a href="../../accueil/index.php" class="list-group-item list-group-item-danger">Voir le Site public</a>
-            <a href="#" class="list-group-item list-group-item-success" data-toggle="modalChangemdp" data-target="#mailList" >Changer le mot de passe admin</a>
+            <a href="#" class="list-group-item list-group-item-success" data-toggle="modal" data-target="#modalChangemdp" >Changer le mot de passe admin</a>
             
         </div>
     </div>
@@ -108,18 +108,16 @@
                         Nouveau mot de passe :<br/>
                         <input class="form-control" id="mdp1" name="mdp1" type="password" value="" required><br/><br/>
                         Confirmer nouveau mot de passe :<br/>
-                        <input class="form-control" id="mdp1" name="mdp1" type="password" value="" required><br/><br/>
+                        <input class="form-control" id="mdp2" name="mdp2" type="password" value="" required><br/><br/>
                         
                     </div>
                     <div class="modal-footer">
+                        
+                        <input type="submit" class="btn btn-default" value="modifier" >
                         <button type="button" class="btn btn-danger" data-dismiss="modal">Annuler</button>
-                        <button type="submit" class="btn btn-default">Modifier</button>
                     </div>
                 </form>
-                <div class="modal-footer">
-                    <button type="button" class="btn btn-default" data-dismiss="modal">Annuler</button>
-                    <button type="button" class="btn btn-danger" onclick="document.location.href='../traitement/logout.php'">Se déconnecter</button>
-                </div>
+                
             </div>
         </div> 
     </div>
