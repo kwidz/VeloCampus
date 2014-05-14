@@ -28,19 +28,30 @@
                         <div class="form-group">
                             <label class="sr-only">nom</label>
                             <!--<textarea cols="10" rows="1" class="form-control" id="nom" name="nom" placeholder="Pseudo"></textarea>-->
-                            <input type="text" class="form-control" placeholder="Pseudo" id="nom" name="nom">
+                            <br/><input type="text" class="form-control" placeholder="Pseudo" id="nom" name="nom"><br/>
 
                         </div>
                         <div class="form-group">
                             <label class="sr-only">mess</label>
                             <!-- <input type="text" class="form-control" id="mess" placeholder="Message"> -->
-                            <textarea cols="50" rows="2" class="form-control" id="mess" name="mess" placeholder="Message"></textarea>
+                            <textarea cols="50" rows="2" class="form-control" id="mess" name="mess" placeholder="Message"></textarea><br/><br/>
                         </div>
 
-                        <button type="submit" class="btn btn-default">send</button>
+                        <button name="send" id="send" type="submit" class="btn btn-default">Poster</button><i>&nbsp;(Raccourci ctrl+enter)</i>
                     </form>
                 </div>
             </div>
         </div>
     </div>
 </div>
+
+
+<script type="text/javascript">
+    document.onkeyup = function(e) {
+        if (e.ctrlKey == true) {
+            if(e.which == 13) {
+                $('#send').click();
+            }
+        }
+    }   
+</script>

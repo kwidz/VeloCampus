@@ -1,4 +1,4 @@
-<!-- Page de création de locations de velo Le premier div correspond au menu 
+<!-- Page de création de velo Le premier div correspond au menu 
 tous les autres div sont commentés
 chaque action s'effectera dans un Modal pour eviter les lourds changement de page 
 pour l'utilisateur  -->
@@ -24,13 +24,13 @@ pour l'utilisateur  -->
   }
   ?>
   <ul class="nav nav-pills nav-stacked">
-    <li class="" style="text-align: center; margin-bottom: 15px; border:solid 1px; border-radius: 5px; border-color: #CDCACA"><a href="#" data-toggle="modal" data-target="#creerVelo" >Ajouter un velo</a></li>
+    <li class="" style="text-align: center; margin-bottom: 15px; border:solid 1px; border-radius: 5px; border-color: #CDCACA"><a href="#" data-toggle="modal" data-target="#creerVelo" onclick="ajoutVelo(document.formAjout.select_etat.value, document.formAjout.select_taille.value , document.formAjout.select_type.value)" >Ajouter un velo</a></li>
     <li class="" style="text-align: center; margin-bottom: 15px; border:solid 1px; border-radius: 5px; border-color: #CDCACA"><a href="#" data-toggle="modal" data-target="#suppVelo">Supprimer un velo</a></li>
     <li class="" style="text-align: center; margin-bottom: 15px; border:solid 1px; border-radius: 5px; border-color: #CDCACA"><a href="#" data-toggle="modal" data-target="#editVelo">Editer un velo</a></li
   </ul>
 </div>
 <!-- Premier Modal Ajout d'un velo -->
-<div class="modal fade" id="creerLocation" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+<div class="modal fade" id="creerVelo" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
   <div class="modal-dialog">
     <div class="modal-content">
       <div class="modal-header">
@@ -41,10 +41,10 @@ pour l'utilisateur  -->
         <?php
 
         ?>
-        <form method="POST" action="traitement/ajouterVelo.php" name="form2">
+        <form method="POST" action="traitement/ajouterVelo.php" name="formAjout">
         
         Etat du velo :
-        <select class="form-control" name="taille_velo" required>
+        <select class="form-control" name="select_etat" id="select_etat" required>
 
          	<?php
          		$sql="SELECT * from etat order by id_Etat";
@@ -59,7 +59,7 @@ pour l'utilisateur  -->
         
          
          Taille du velo :
-         <select class="form-control" name="taille_velo" required>
+         <select class="form-control" name="select_taille" id="select_taille" required>
 
          	<?php
          		$sql2="SELECT * from taille order by id_taille";
@@ -72,7 +72,7 @@ pour l'utilisateur  -->
          </select><br>
 
          Type du velo :
-        <select class="form-control" name="type_velo" required>
+        <select class="form-control" name="select_type" id="select_type" required>
 
         	<?php
         		$sql3="SELECT * from _type order by id_type";
@@ -98,7 +98,7 @@ pour l'utilisateur  -->
 <!-- fin modal creer -->
 
 <!-- second modale, supprimer velo -->
-<div class="modal fade" id="creerLocation" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+<div class="modal fade" id="suppVelo" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
   <div class="modal-dialog">
     <div class="modal-content">
       <div class="modal-header">
@@ -116,7 +116,11 @@ pour l'utilisateur  -->
             $sql='SELECT * FROM velo';
             $res=$mysqli->query($sql);
             while (NULL != ($row = $res->fetch_array())) {
-                echo'<option value="'.$row["id_velo"].'">'.$row["id_velo"].'</option>';
+              $sql2='SELECT libelle_type from velo where id_type='.$row["id_type"];
+                $res2=$mysqli->query($sql2);
+                while (NULL != ($row2 = $res2->fetch_array())) {
+                  echo'<option value="'.$row["id_velo"].'">'.$row["id_velo"].' '.$row2["libelle_type"].'</option>';
+                }
             }
 
           ?>
@@ -135,7 +139,7 @@ pour l'utilisateur  -->
 <!-- fin modal supprimer -->
 
 <!-- 3Eme Modale edition d'un velo -->
-<div class="modal fade" id="creerLocation" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+<div class="modal fade" id="editionVelo" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
   <div class="modal-dialog">
     <div class="modal-content">
       <div class="modal-header">

@@ -1,12 +1,10 @@
-
 <?php
-
   session_start();
   include("../header.html");
-  if (isset($_SESSION['log']) && $_SESSION['log'] == 2) {
+  if (isset($_COOKIE['Session']) && $_COOKIE['Session'] == md5(md5("carotte")) && isset($_SESSION['log']) && $_SESSION['log'] == 3) {
       include("../co.php");
       include("../menulog.html");      
-      include("location.php");
+      include("velo.php");
       include("../demandeInscription.php");
     }
     else {
