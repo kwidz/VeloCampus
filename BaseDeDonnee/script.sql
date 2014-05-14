@@ -32,9 +32,8 @@ CREATE TABLE `Adherent` (
   `telephone_adherent` varchar(15) DEFAULT NULL,
   `adresse_mail_adherent` varchar(50) DEFAULT NULL,
   `password_adherent` varchar(100) DEFAULT NULL,
-  `photo_adherent` varchar(100) DEFAULT NULL,
   PRIMARY KEY (`id_adherent`)
-) ENGINE=InnoDB AUTO_INCREMENT=3 DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB AUTO_INCREMENT=8 DEFAULT CHARSET=latin1;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -43,7 +42,7 @@ CREATE TABLE `Adherent` (
 
 LOCK TABLES `Adherent` WRITE;
 /*!40000 ALTER TABLE `Adherent` DISABLE KEYS */;
-INSERT INTO `Adherent` VALUES (1,'Limballe','Pierre','1995-08-04','1 rue gaston defferre Belfort',90000,'0688370492','a@a.fr','1337','../images/avatars/aaav.jpg'),(2,'Glangine','Geoffrey','1994-02-01','3 rue Gaston Defferre',90000,'0677722547','geoffrey.glangine@gmail.com','test','../images/avatars/GlangineGeoffreyav.png');
+INSERT INTO `Adherent` VALUES (1,'Limballe','Pierre','1995-08-04','1 rue gaston defferre Belfort',90000,'0688370492','a@a.fr','1337'),(2,'Glangine','Geoffrey','1994-02-01','3 rue Gaston Defferre',90000,'0677722547','geoffrey.glangine@gmail.com','test'),(3,'a','a','0000-00-00','a',0,'a','a@a.fr','velo'),(4,'test','test','2012-06-06','test',20000,'000','fr@fr.fr','velo'),(5,'atata','atata','0000-00-00','atata',222,'0677722547','ata@ata.fr','velo'),(7,'test','t','0000-00-00','test',222,'0677722547','z@z.fr','098f6bcd4621d373cade4e832627b4f6');
 /*!40000 ALTER TABLE `Adherent` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -68,7 +67,7 @@ CREATE TABLE `Admin` (
 
 LOCK TABLES `Admin` WRITE;
 /*!40000 ALTER TABLE `Admin` DISABLE KEYS */;
-INSERT INTO `Admin` VALUES (1,'Admin','Admin');
+INSERT INTO `Admin` VALUES (1,'Admin','21232f297a57a5a743894a0e4a801fc3');
 /*!40000 ALTER TABLE `Admin` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -111,7 +110,7 @@ CREATE TABLE `Cotisation` (
   PRIMARY KEY (`id_cotisation`),
   KEY `FK_Cotisation_id_adherent` (`id_adherent`),
   CONSTRAINT `FK_Cotisation_id_adherent` FOREIGN KEY (`id_adherent`) REFERENCES `Adherent` (`id_adherent`) ON DELETE CASCADE ON UPDATE CASCADE
-) ENGINE=InnoDB AUTO_INCREMENT=4 DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB AUTO_INCREMENT=7 DEFAULT CHARSET=latin1;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -120,7 +119,7 @@ CREATE TABLE `Cotisation` (
 
 LOCK TABLES `Cotisation` WRITE;
 /*!40000 ALTER TABLE `Cotisation` DISABLE KEYS */;
-INSERT INTO `Cotisation` VALUES (3,2);
+INSERT INTO `Cotisation` VALUES (3,2),(6,3),(5,4),(4,5);
 /*!40000 ALTER TABLE `Cotisation` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -381,4 +380,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2014-05-12 17:37:47
+-- Dump completed on 2014-05-14 15:56:52
