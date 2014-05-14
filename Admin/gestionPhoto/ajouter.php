@@ -1,7 +1,7 @@
 <?php
   session_start();
   include("../header.html");
-  if (isset($_SESSION['log']) && $_SESSION['log'] == 2) {
+  if (isset($_SESSION['log']) && $_SESSION['log'] == 3) {
       include("../menulog.html");
       include("addImg.php");
       include("../demandeInscription.php");
