@@ -10,11 +10,10 @@
 		$mail = $_POST['inputEmail'];
 		$passwd = $_POST['inputPassword'];
 		$confPass = $_POST['inputConfirmPassword'];
-		$lienImage = null;
 
 		include("../co.php");
 		$passwd=md5($passwd);
-		$query = "INSERT INTO Adherent VALUES (null,'".$nom."','".$prenom."','".$dateNaissance."','".$adresse."','".$codepostal."','".$telephone."','".$mail."','".$passwd."','".$lienImage."');";
+		$query = "INSERT INTO Adherent VALUES (null,'".$nom."','".$prenom."','".$dateNaissance."','".$adresse."','".$codepostal."','".$telephone."','".$mail."','".$passwd."');";
 		$result = $mysqli->query($query);
 		if($result) {
 			$_SESSION['log']=2;

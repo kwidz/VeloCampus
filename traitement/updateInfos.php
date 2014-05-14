@@ -1,6 +1,7 @@
 <?php
 	session_start();
 	include("../co.php");
+	$_SESSION['update'] = 0;
 	if (isset($_POST['nom']) && isset($_POST['prenom']) && isset($_POST['date_naissance']) && isset($_POST['adresse']) && isset($_POST['code_postal']) && isset($_POST['tel'])) {
 		$nom = $_POST['nom'];
 		$prenom = $_POST['prenom'];
@@ -11,7 +12,10 @@
 		$result = $mysqli->query("SELECT password_adherent FROM Adherent WHERE adresse_mail_adherent='".$_SESSION['mail']."'");
 		$row = $result->fetch_array(MYSQLI_ASSOC);
 		if ($row) {
-			$result = $mysqli->query("UPDATE Adherent SET nom_adherent='".$nom."',prenom_adherent='".$prenom."',date_naissance_adherent='".$date_naissance."',adresse_adherent='".$adresse."',code_Postal_adherent='".$code_postal."',telephone_adherent='".$tel."'");
+			$result = $mysqli->query("UPDATE Adherent SET nom_adherent='".$nom."',prenom_adherent='".$prenom."',date_naissance_adherent='".$date_naissance."',adresse_adherent='".$adresse."',code_Postal_adherent='".$code_postal."',telephone_adherent='".$tel."' WHERE adresse_mail_adherent='".$_SESSION['mail']."'");
+			if ($result) {
+				$_SESSION['update'] = 1;
+			}
 		}
 	}
 
@@ -24,7 +28,10 @@
 			$result = $mysqli->query("SELECT password_adherent FROM Adherent WHERE adresse_mail_adherent='".$_SESSION['mail']."'");
 			$row = $result->fetch_array(MYSQLI_ASSOC);
 			if ($row) {
-			$result = $mysqli->query("UPDATE Adherent SET password_adherent='".$new_mdp."'");
+				$result = $mysqli->query("UPDATE Adherent SET password_adherent='".md5($new_mdp)."' WHERE adresse_mail_adherent='".$_SESSION['mail']."'");
+				if ($result) {
+					$_SESSION['update'] = 2;
+				}
 			}
 		}
 	}

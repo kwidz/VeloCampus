@@ -15,7 +15,19 @@
         include("../banniereAttenteConf.html");
       }
     }
+    if (isset($_SESSION['update'])) {
+      if ($_SESSION['update'] == 1) {
+        include("../banniereMajOkGen.html");
+      }
+      if ($_SESSION['update'] == 2) {
+        include("../banniereMajOkPass.html");
+      }
+      if ($_SESSION['update'] == 0) {
+        include("../banniereErreurMaj.html");
+      }
+    }
     include("../co.php");
+    $_SESSION['update'] = -1;
 ?>
 
 <?php 
@@ -78,7 +90,7 @@ if (isset($_SESSION['log']) && $_SESSION['log'] == 1) { ?>
     </div>
     </form> <br/>
     <center><h3>Modifier mon mot de passe :</h3></center>
-    <form>
+    <form method="post" action="updateInfos.php">
     <div class="row" style="background-color:#F5F5F5;border-radius:10px;border:3px solid #222222" >
       <div class="col-md-12">
         <br/>
