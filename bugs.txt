@@ -32,7 +32,7 @@ Admin :
 	finir les liens/pages des raccourcis coté gauche // Geoffrey
 	page pour modifier mdp admin // Morgane + Geoffrey = <3
 	upload de fichiers bidons // Geoffrey
-	bannière pour confirmation réussite de modification de la page d'accueil // Pierre
+	bannière pour confirmation réussite de modification de la page d'accueil // Pierre DONE
 	petite image de l'onglet // Pierre DONE
 	mettre un lien piur retourner sur le site à la deconnexion de l'admin //
 	
@@ -48,7 +48,7 @@ Morgane :
 	page pour modifier mdp admin // Morgane + Geoffrey = <3
 	
 Geoffrey :
-	crypter les mdp // Geoffrey
+	crypter les mdp // Geoffrey 
 	mon compte : photo ? permettre la modification // Geoffrey
 	Bannière d'erreur si on essaye de s'inscrire avec une adresse mail existante // Pierre et Geoffrey
 	revoir sur le coté gauche les raccourcis inutiles // Geoffrey
@@ -60,6 +60,7 @@ Auguste :
 	FINIR VELO !!! // Auguste
 
 Pierre :
+	bannière pour confirmation réussite de modification de la page d'accueil // Pierre DONE
 	Bannière lorsque l'on vient de s'inscrire // Pierre DONE
 	petite image de l'onglet // Pierre DONE
 	sécurité du cookie // Pierre DONE (à motié)
@@ -67,7 +68,6 @@ Pierre :
 	fautes d'orthographes / présentation du texte // Pierre
 	"se souvenir de moi" // Pierre
 	Bannière d'erreur si on essaye de s'inscrire avec une adresse mail existante // Pierre et Geoffrey
-	bannière pour confirmation réussite de modification de la page d'accueil // Pierre
 
 Non attribué : 
 	integration des vidéos !!! //
