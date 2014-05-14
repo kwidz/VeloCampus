@@ -4,7 +4,7 @@
   if (isset($_SESSION['log']) && $_SESSION['log'] == 3) {
       include("../co.php");
       include("../menulog.html");      
-      include("location.php");
+      include("velo.php");
       include("../demandeInscription.php");
     }
     else {
