@@ -8,5 +8,6 @@
   $openContenu = fopen("../../accueil/contenu.txt", "wr");
   fputs($openTitre, $titre);
   fputs($openContenu, $contenu);
+  $_SESSION['modif'] = "accueil";
   header("Location: ".$_SERVER['HTTP_REFERER']);
 ?>

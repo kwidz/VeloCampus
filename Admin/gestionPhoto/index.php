@@ -1,10 +1,14 @@
 <?php
   session_start();
   include("../header.html");
-  if (isset(isset($_COOKIE['Session']) && $_COOKIE['Session'] == md5(md5("carotte")) && $_SESSION['log']) && $_SESSION['log'] == 3) {
+  if (isset($_COOKIE['Session']) && $_COOKIE['Session'] == md5(md5("carotte")) && $_SESSION['log'] && $_SESSION['log'] == 3) {
       include("../menulog.html");
       include("gestion.php");
       include("../demandeInscription.php");
+      if (isset($_SESSION['modif']) && $_SESSION['modif'] == "accueil") {
+        include("../banniereMenuUpdate.html");
+        $_SESSION['modif'] = "";
+      }
     }
     else {
       include("../menu.html");
