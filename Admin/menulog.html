@@ -1,3 +1,4 @@
+
 <div class="row">
     <div class="col-md-12">
         <nav class="navbar navbar-default" role="navigation">
@@ -40,6 +41,11 @@
         </nav>
     </div>
 </div>
+
+<?php if (isset($_SESSION['modif']) && $_SESSION['modif'] == "accueil") {
+      include("../banniereMenuUpdate.html");
+      $_SESSION['modif'] = "";
+    } ?>
 
 <div class="row">
     <div class="col-md-3" >

@@ -5,10 +5,6 @@
     include("../menulog.html");
     include("../postit.php");
     include("../demandeInscription.php");
-    if (isset($_SESSION['modif']) && $_SESSION['modif'] == "accueil") {
-      include("../banniereMenuUpdate.html");
-      $_SESSION['modif'] = "";
-    }
   }
   else {
     include("../menu.html");
