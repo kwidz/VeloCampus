@@ -4,6 +4,7 @@
 	if (isset($_POST['inputPseudo']) && isset($_POST['inputPassword'])) {
 		$pseudo = $_POST['inputPseudo'];
 		$passwd = $_POST['inputPassword'];
+		$passwd=md5($passwd);
 		require_once("../co.php");
 		$result = $mysqli->query("SELECT * FROM Admin WHERE pseudo_admin='".$pseudo."' AND password_admin='".$passwd."';");
 		if($result->num_rows) {

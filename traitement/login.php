@@ -3,6 +3,7 @@
 	if (isset($_POST['inputEmail']) && isset($_POST['inputPassword'])) {
 		$mail = $_POST['inputEmail'];
 		$passwd = $_POST['inputPassword'];
+		$passwd=md5($passwd);
 		include("../co.php");
 		$result = $mysqli->query("SELECT * FROM Adherent WHERE adresse_mail_adherent='".$mail."' AND password_adherent='".$passwd."';");
 		if($result->num_rows) {
