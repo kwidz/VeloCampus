@@ -20,6 +20,7 @@
 
 <?php 
 if (isset($_SESSION['log']) && $_SESSION['log'] == 1) { ?>
+<form method="post" action="updateInfos.php">
   <div class="row" style="background-color:#F5F5F5;border-radius:10px;border:3px solid #222222" >
     <div class="col-md-12"> <?php
       echo "<center><h3>Mes infos :</h3></center>";
@@ -29,8 +30,7 @@ if (isset($_SESSION['log']) && $_SESSION['log'] == 1) { ?>
                                         adresse_adherent, 
                                         code_Postal_Adherent, 
                                         telephone_adherent, 
-                                        password_adherent, 
-                                        photo_adherent FROM Adherent WHERE adresse_mail_adherent='".$_SESSION['mail']."'");
+                                        password_adherent FROM Adherent WHERE adresse_mail_adherent='".$_SESSION['mail']."'");
       $row = $result->fetch_array(MYSQLI_ASSOC);
       if ($row) {
         foreach ($row as $i => $value) {
@@ -67,40 +67,28 @@ if (isset($_SESSION['log']) && $_SESSION['log'] == 1) { ?>
         echo "Bug ?";
       } ?>
       <br/>
-      <?php
-        $tailleImage = getimagesize($photo);
-        if ($tailleImage[0] > $tailleImage[1]) {
-          $coeff = $tailleImage[0] / 200;
-          $tailleModif = $tailleImage[1]/$coeff;
-          echo "<img src='".$photo."' width='200' height='".$tailleModif."'><br/><br/>";
-        }
-        else if ($tailleImage[1] > $tailleImage[0]) {
-          $coeff = $tailleImage[1] / 200;
-          $tailleModif = $tailleImage[0]/$coeff;
-          echo "<img src='".$photo."' width='".$tailleModif."' height='200'><br/><br/>";
-        }
-        else {
-          echo "<img src='".$photo."' width='200' height='200'><br/><br/>";
-        }
-      ?>
-      Nom : <input class="form-control" type="text" value="<?php echo $nom;?>"> <br/> <br/>
-      Prenom : <input class="form-control" type="text" value="<?php echo $prenom;?>"> <br/> <br/>
-      Date de naissance : <input class="form-control" type="date" value="<?php echo $date_nassance;?>"> <br/> <br/>
-      Adresse : <input class="form-control" type="text" value="<?php echo $adresse;?>"> <br/> <br/>
-      Code postal : <input class="form-control" type="text" value="<?php echo $code_postal;?>"> <br/> <br/>
-      Téléphone : <input class="form-control" type="text" value="<?php echo $telephone;?>"> <br/> <br/>
-      Modifier l'image de compte : <br/><i>Ca vient, ca vient...</i> <br/> <br/>
+      Nom : <input name="nom" id="nom" class="form-control" type="text" value="<?php echo $nom;?>" required> <br/> <br/>
+      Prenom : <input name="prenom" id="prenom" class="form-control" type="text" value="<?php echo $prenom;?>" required> <br/> <br/>
+      Date de naissance : <input name="date_naissance" id="date_naissance" class="form-control" type="date" value="<?php echo $date_nassance;?>" required> <br/> <br/>
+      Adresse : <input name="adresse" id="adresse" class="form-control" type="text" value="<?php echo $adresse;?>" required> <br/> <br/>
+      Code postal : <input name="code_postal" id="code_postal" class="form-control" type="text" value="<?php echo $code_postal;?>" required> <br/> <br/>
+      Téléphone : <input name="tel" id="tel" class="form-control" type="text" value="<?php echo $telephone;?>" required> <br/> <br/>
+      <input type="submit" class="btn" value="Modifier"><br/><br/>
       </div>
-    </div> <br/>
+    </div>
+    </form> <br/>
     <center><h3>Modifier mon mot de passe :</h3></center>
+    <form>
     <div class="row" style="background-color:#F5F5F5;border-radius:10px;border:3px solid #222222" >
       <div class="col-md-12">
         <br/>
-        Entrez le mot de passe actuel : <input class="form-control" type="password"> <br/> <br/>
-        Entrez le nouveau mot de passe : <input class="form-control" type="password"> <br/> <br/>
-        Confirmez le nouveau mot de passe : <input class="form-control" type="password"> <br/> <br/>
+        Entrez le mot de passe actuel : <input name="pass" id="pass" class="form-control" type="password" required> <br/> <br/>
+        Entrez le nouveau mot de passe : <input name="newpass1" id="newpass1" class="form-control" type="password" required> <br/> <br/>
+        Confirmez le nouveau mot de passe : <input name="newpass2" id="newpass2" class="form-control" type="password" required> <br/> <br/>
+      <input type="submit" class="btn" value="Modifier"><br/><br/>
       </div>
     </div>
+    </form>
   <?php
     }
     else { 
