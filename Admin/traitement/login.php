@@ -1,7 +1,7 @@
 <?php
 	session_start();
 	// $referer = $_SERVER['HTTP_REFERER'];
-	if (isset($_POST['inputPseudo']) && isset($_POST['inputPassword'])) {
+	if (isset($_POST['inputPseudo']) && isset($_POST['inputPassword'])&& !empty($_POST['inputPseudo']) && !empty($_POST['inputPassword'])) {
 		$pseudo = $_POST['inputPseudo'];
 		$passwd = $_POST['inputPassword'];
 		$passwd=md5($passwd);
