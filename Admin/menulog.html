@@ -46,7 +46,14 @@
       include("../banniereMenuUpdate.html");
       $_SESSION['modif'] = "";
     } ?>
-
+    <?php if (isset($_SESSION['modif']) && $_SESSION['modif'] == "mdptrue") {
+      include("../banniereMenupswdtrue.html");
+      $_SESSION['modif'] = "";
+    } ?>
+    <?php if (isset($_SESSION['modif']) && $_SESSION['modif'] == "mdpfalse") {
+      include("../banniereMenupswdfalse.html");
+      $_SESSION['modif'] = "";
+    } ?>
 <div class="row">
     <div class="col-md-3" >
         <div class="list-group">
