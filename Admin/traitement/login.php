@@ -1,7 +1,8 @@
 <?php
-	session_start();
+session_start();
 	// $referer = $_SERVER['HTTP_REFERER'];
-	if (isset($_POST['inputPseudo']) && isset($_POST['inputPassword'])&& !empty($_POST['inputPseudo']) && !empty($_POST['inputPassword'])) {
+if (isset($_POST['inputPseudo']) && isset($_POST['inputPassword'])&& !empty($_POST['inputPseudo']) && !empty($_POST['inputPassword'])) {
+	if($_POST['inputPseudo']==="Admin" || $_POST['inputPseudo']==="admin"){
 		$pseudo = $_POST['inputPseudo'];
 		$passwd = $_POST['inputPassword'];
 		$passwd=md5($passwd);
@@ -20,9 +21,10 @@
 			$_SESSION['log']=4;
 		}
 	}
+}
 	// header("Location: ".$referer);
 ?>
 
 <script type="text/javascript">
-	document.location.href="../";
+document.location.href="../";
 </script>
