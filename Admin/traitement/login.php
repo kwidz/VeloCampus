@@ -7,7 +7,7 @@
 		require_once("../co.php");
 		$result = $mysqli->query("SELECT * FROM Admin WHERE pseudo_admin='".$pseudo."' AND password_admin='".$passwd."';");
 		if($result->num_rows) {
-			$_SESSION['log']=2;
+			$_SESSION['log']=3;
 			if (isset($_POST['remindMe']) && $_POST['remindMe'] == true) {
 				setcookie('Session', md5(md5("carotte")), time()+2592000, "/", null);
 			}

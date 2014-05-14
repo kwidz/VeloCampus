@@ -21,6 +21,8 @@ Client :
 	mon compte : photo ? permettre la modification // Geoffrey
 	Bannière d'erreur si on essaye de s'inscrire avec une adresse mail existante // Pierre et Geoffrey
 	Bannière lorsque l'on vient de s'inscrire // Pierre DONE
+	ou nous trouver ? (map google map) //
+	page des partenaires //
 
 Admin : 
 	FINIR VELO !!! // Auguste
@@ -70,5 +72,8 @@ Pierre :
 Non attribué : 
 	integration des vidéos !!! //
 	revenir au referer dans les pages après connexion //
+	/*photos : affichage non-centré // */
 	/* lien des addresses dans la demande de réparation (coté droit) : lien inutile ? ou envoie de mail ? */
 	mettre un lien piur retourner sur le site à la deconnexion de l'admin //
+	ou nous trouver ? (map google map) //
+	page des partenaires //
