@@ -21,7 +21,7 @@
       </div>
       <div class="modal-body">
         <form method="POST" action="ajouter.php">
-        	Titre de l'album : <input type="text" id="title" name="title">
+        	Titre de l'album : (Attention veuillez ne pas mettre de carractères spéciaux)<br/> <input type="text" id="title" name="title">
 
       </div>
       <div class="modal-footer">
