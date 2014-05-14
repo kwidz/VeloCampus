@@ -35,7 +35,7 @@
 				. "Where a.id_adherent not in(Select id_adherent from Cotisation) ";
 			$res=$mysqli->query($sql);
 			while (NULL !== ($row = $res->fetch_array())) {
-				echo '<tr><td>'.$row[1].'</td><td>'.$row[2].'</td><td><a onclick="modal('.$row[0].')" href="#">Plus d\'infos</a></td><td><a href="../traitement/demandeInscriptionVal.php?id='.$row[0].'"class="glyphicon glyphicon-ok"></a></td><td><a href="../traitement/demandeInscriptionSupr.php?id='.$row[0].'"class="glyphicon glyphicon-remove"></a></td></tr>';
+				echo '<tr><td style="background-color:LightBlue"><b>'.$row[1].'</b></td><td>'.$row[2].'</td><td><a onclick="modal('.$row[0].')" href="#">Plus d\'infos</a></td><td><a href="../traitement/demandeInscriptionVal.php?id='.$row[0].'"class="glyphicon glyphicon-ok"></a></td><td><a href="../traitement/demandeInscriptionSupr.php?id='.$row[0].'"class="glyphicon glyphicon-remove"></a></td></tr>';
 			}
 			?>
 		</table>

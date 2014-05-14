@@ -43,6 +43,7 @@ Par personnes :
 
 Morgane :
 	dans l'accueil, bannière des nouveaux évenements avec fichier de modif // Morgane
+	<marquee behavior="scroll" direction="up" height="140" scrollamount="1" scrolldelay="60" onMouseOver="this.stop()" onMouseOut="this.start()">Votre texte </marquee>
 	agrandissement des photos dans la page vélo // Morgane
 	postit : début dans le bas des post // Morgane
 	page pour modifier mdp admin // Morgane + Geoffrey = <3

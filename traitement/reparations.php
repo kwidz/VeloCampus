@@ -24,8 +24,7 @@
 
 
   <?php
-    if (isset($_SESSION['log']) && $_SESSION['log'] == 1) { ?>
-      <?php
+    if (isset($_SESSION['log']) && $_SESSION['log'] == 1) { 
         $result = $mysqli->query("SELECT id_velo from Location WHERE id_adherent = (SELECT id_adherent FROM Adherent WHERE adresse_mail_adherent='".$_SESSION['mail']."');");
         $row = $result->fetch_array(MYSQLI_ASSOC);
         $id_velo = -1;
@@ -34,7 +33,11 @@
            $id_velo = $value;
           }
         }
+        else {
+          include("../banniereReparationErreur.html");
+        }
       if ($id_velo != -1) {
+        echo "AAAAAAAAA";
         $result = $mysqli->query("SELECT date_location from Location WHERE id_adherent = (SELECT id_adherent FROM Adherent WHERE adresse_mail_adherent='".$_SESSION['mail']."');");
         $row = $result->fetch_array(MYSQLI_ASSOC);
         if ($row) {

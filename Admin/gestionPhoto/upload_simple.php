@@ -1,4 +1,5 @@
 <?php
+session_start();
 $types = array('image/jpg','image/jpeg','image/png','image/gif','image/bmp');
 if(!in_array($_FILES['file']['type'] , $types)){
 	$erreur="erreurfich";	
@@ -9,10 +10,10 @@ else{
 	$resultat = move_uploaded_file($_FILES['file']['tmp_name'],$nom);
 	exec('chmod -R 777'.$_GET['dossier'].'');
 	if($resultat)
-		$erreur="noproblem";
+		$_SESSION['erreur'] = 1;
 	else
-		$erreur="erreur";
+		$_SESSION['erreur'] = 2;
 }
-echo "<script>document.location.href='dragdrop.php?dossier=".$_GET['dossier']."&erreur=".$erreur."'</script>";
+echo "<script>document.location.href='dragdrop.php?dossier=".$_GET['dossier']."'</script>";
 
 ?>

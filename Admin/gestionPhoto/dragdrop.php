@@ -1,4 +1,3 @@
-
 <script type="text/javascript" src="jQuery.js">
 </script>
 <script type="text/javascript" src="dropfile.js"></script>
@@ -53,14 +52,17 @@ echo '<form method="post" action="upload_simple.php?dossier='.$_GET['dossier'].'
 <input type="submit" name="submit" value="Envoyer" />
 </form>
 <?php
-  if(isset($_GET['erreur'])){
-    switch ($_GET['erreur']) {
-      case 'noproblem':
+  if(isset($_SESSION['erreur'])){
+    switch ($_SESSION['erreur']) {
+      case 1:
         echo "<div class='alert alert-success'><center>Le fichier a bien été mis en ligne</center></div>";
+        $_SESSION['erreur'] = -1;
         break;
-      case 'erreurfich':
+      case 2:
         echo "<div class='alert alert-danger'><center>Type de fichier non supporté</center></div>";
+        $_SESSION['erreur'] = -1;
         break;
+      case -1: break;
       default:
         echo "<div class='alert alert-danger'><center>Erreur veuillez recommencer</center></div>";
         break;

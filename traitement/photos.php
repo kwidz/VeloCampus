@@ -1,6 +1,6 @@
 <?php
-include("recursive.php");
 session_start();
+include("recursive.php");
 include("../header.html");
 if (isset($_SESSION['log']) && $_SESSION['log'] == 1) {
  include("../menulog.html");

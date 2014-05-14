@@ -25,7 +25,7 @@
 			if($row[2] != -1){
 				switch ($row[2]) {
 					case 1:
-					echo '<tr style="background-color:yellow"><td >'.$row[0].'</td><td><a href="#" >';
+					echo '<tr ><td style="background-color:GoldenRod"><b>'.$row[0].'</></td><td><a href="#" >';
 					/*$sql2='Select a.adresse_mail_adherent from Adherent a, Reparation r, Location l where r.id_velo = l.id_velo and l.id_adherent = a.id_adherent and r.id_reparation='.$row[0];
 
 			
@@ -36,7 +36,7 @@
 					echo $row[3].'</a></td></tr>';
 					break;
 					case 2:
-					echo '<tr style="background-color:orange"><td >'.$row[0].'</td><td><a href="#" >';
+					echo '<tr ><td style="background-color:DarkOrange"><b>'.$row[0].'</b></td><td><a href="#" >';
 /*$sql2='Select a.adresse_mail_adherent from Adherent a, Reparation r, Location l where r.id_velo = l.id_velo and l.id_adherent = a.id_adherent and r.id_reparation='.$row[0];
 
 				
@@ -47,7 +47,7 @@
 					echo $row[3].'</a></td></tr>';
 					break;
 					case 3:
-					echo '<tr style="background-color:red"><td >'.$row[0].'</td><td><a href="#" >';
+					echo '<tr ><td style="background-color:DarkRed"><b>'.$row[0].'</b></td><td><a href="#" >';
 /*$sql2='Select a.adresse_mail_adherent from Adherent a, Reparation r, Location l where r.id_velo = l.id_velo and l.id_adherent = a.id_adherent and r.id_reparation='.$row[0];
 				
 					$res2=$mysqli->query($sql2);
@@ -60,7 +60,7 @@
 					break;
 
 					default:
-					echo '<tr><td>'.$row[0].'</td><td><a href="#">';
+					echo '<tr><td><b>'.$row[0].'</b></td><td><a href="#">';
 
 /*$sql2='Select a.adresse_mail_adherent from Adherent a, Reparation r, Location l where r.id_velo = l.id_velo and l.id_adherent = a.id_adherent and r.id_reparation='.$row[0];
 					
