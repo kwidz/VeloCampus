@@ -24,7 +24,7 @@ pour l'utilisateur  -->
   }
   ?>
   <ul class="nav nav-pills nav-stacked">
-    <li class="" style="text-align: center; margin-bottom: 15px; border:solid 1px; border-radius: 5px; border-color: #CDCACA"><a href="#" data-toggle="modal" data-target="#creerVelo" >Ajouter un velo</a></li>
+    <li class="" style="text-align: center; margin-bottom: 15px; border:solid 1px; border-radius: 5px; border-color: #CDCACA"><a href="#" data-toggle="modal" data-target="#creerVelo" onclick="ajoutVelo(document.formAjout.select_etat.value, document.formAjout.select_taille.value , document.formAjout.select_type.value)" >Ajouter un velo</a></li>
     <li class="" style="text-align: center; margin-bottom: 15px; border:solid 1px; border-radius: 5px; border-color: #CDCACA"><a href="#" data-toggle="modal" data-target="#suppVelo">Supprimer un velo</a></li>
     <li class="" style="text-align: center; margin-bottom: 15px; border:solid 1px; border-radius: 5px; border-color: #CDCACA"><a href="#" data-toggle="modal" data-target="#editVelo">Editer un velo</a></li
   </ul>
@@ -41,10 +41,10 @@ pour l'utilisateur  -->
         <?php
 
         ?>
-        <form method="POST" action="traitement/ajouterVelo.php" name="form3">
+        <form method="POST" action="traitement/ajouterVelo.php" name="formAjout">
         
         Etat du velo :
-        <select class="form-control" name="taille_velo" required>
+        <select class="form-control" name="select_etat" id="select_etat" required>
 
          	<?php
          		$sql="SELECT * from etat order by id_Etat";
@@ -59,7 +59,7 @@ pour l'utilisateur  -->
         
          
          Taille du velo :
-         <select class="form-control" name="taille_velo" required>
+         <select class="form-control" name="select_taille" id="select_taille" required>
 
          	<?php
          		$sql2="SELECT * from taille order by id_taille";
@@ -72,7 +72,7 @@ pour l'utilisateur  -->
          </select><br>
 
          Type du velo :
-        <select class="form-control" name="type_velo" required>
+        <select class="form-control" name="select_type" id="select_type" required>
 
         	<?php
         		$sql3="SELECT * from _type order by id_type";
