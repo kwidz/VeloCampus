@@ -7113,10 +7113,11 @@ body {
    /*background: #c1deff !important;*/
 
    /*background: url(../../images/fond7.jpg) !important;*/
-   
-    background: url(../../images/fondDegrade.jpg) !important;
+   background: -moz-linear-gradient(top, #8AD3FF, white);
+   background-repeat: no-repeat;
+   /* background: url(../../images/fondDegrade.jpg) !important;
     background-repeat: repeat-x !important;
-    background-attachment:fixed !important;
+    background-attachment:fixed !important;*/
 
   
    filter: blur(10px);
