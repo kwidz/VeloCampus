@@ -1,4 +1,4 @@
-<!-- Page de création de locations de velo Le premier div correspond au menu 
+<!-- Page de création de velo Le premier div correspond au menu 
 tous les autres div sont commentés
 chaque action s'effectera dans un Modal pour eviter les lourds changement de page 
 pour l'utilisateur  -->
@@ -30,7 +30,7 @@ pour l'utilisateur  -->
   </ul>
 </div>
 <!-- Premier Modal Ajout d'un velo -->
-<div class="modal fade" id="creerLocation" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+<div class="modal fade" id="creerVelo" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
   <div class="modal-dialog">
     <div class="modal-content">
       <div class="modal-header">
@@ -41,7 +41,7 @@ pour l'utilisateur  -->
         <?php
 
         ?>
-        <form method="POST" action="traitement/ajouterVelo.php" name="form2">
+        <form method="POST" action="traitement/ajouterVelo.php" name="form3">
         
         Etat du velo :
         <select class="form-control" name="taille_velo" required>
@@ -98,7 +98,7 @@ pour l'utilisateur  -->
 <!-- fin modal creer -->
 
 <!-- second modale, supprimer velo -->
-<div class="modal fade" id="creerLocation" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+<div class="modal fade" id="suppVelo" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
   <div class="modal-dialog">
     <div class="modal-content">
       <div class="modal-header">
@@ -116,7 +116,11 @@ pour l'utilisateur  -->
             $sql='SELECT * FROM velo';
             $res=$mysqli->query($sql);
             while (NULL != ($row = $res->fetch_array())) {
-                echo'<option value="'.$row["id_velo"].'">'.$row["id_velo"].'</option>';
+              $sql2='SELECT libelle_type from velo where id_type='.$row["id_type"];
+                $res2=$mysqli->query($sql2);
+                while (NULL != ($row2 = $res2->fetch_array())) {
+                  echo'<option value="'.$row["id_velo"].'">'.$row["id_velo"].' '.$row2["libelle_type"].'</option>';
+                }
             }
 
           ?>
@@ -135,7 +139,7 @@ pour l'utilisateur  -->
 <!-- fin modal supprimer -->
 
 <!-- 3Eme Modale edition d'un velo -->
-<div class="modal fade" id="creerLocation" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+<div class="modal fade" id="editionVelo" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
   <div class="modal-dialog">
     <div class="modal-content">
       <div class="modal-header">
