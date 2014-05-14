@@ -19,13 +19,28 @@ function getXMLHttpRequest() {
 	return xhr;
 }
 
-function formModificatio(id_velo){
+function banner(etat, id_location){
+
 	var xhr = getXMLHttpRequest(); // Voyez la fonction getXMLHttpRequest() définie dans la partie précédente
 	xhr.onreadystatechange = function() {
-    	if (xhr.readyState == 4 && (xhr.status == 200 || xhr.status == 0)) {
-       		document.getElementById("afficheForm").innerHTML= xhr.responseText; // Données textuelles récupérées
-    	}
+        if (xhr.readyState == 4 && (xhr.status == 200 || xhr.status == 0)) {
+        		document.getElementById("test").innerHTML= xhr.responseText; // Données textuelles récupérées
+        }
 	};
-	xhr.open("GET", "formModif.php?id_velo="+id_velo+"", true);
+	xhr.open("GET", "banner.php?variable1="+etat+"&variable2="+id_location+"", true);
 	xhr.send();
+
+}
+
+function ajoutVelo(etat, taille, type){
+
+	var xhr = getXMLHttpRequest(); // Voyez la fonction getXMLHttpRequest() définie dans la partie précédente
+	xhr.onreadystatechange = function() {
+        if (xhr.readyState == 4 && (xhr.status == 200 || xhr.status == 0)) {
+        		document.getElementById("test").innerHTML= xhr.responseText; // Données textuelles récupérées
+        }
+	};
+	xhr.open("GET", "ajoutVelo.php?Etat="+etat+"&Taille="+taille+"&type="+type, true);
+	xhr.send();
+
 }
