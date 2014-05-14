@@ -18,6 +18,17 @@
         </div>
       </div><?php
     }
+    else if(isset($_SESSION['log']) && $_SESSION['log'] == 18){
+      $_SESSION = array(); 
+
+      ?>
+      <div class="row">
+        <div class="col-md-12">
+          <div class="alert alert-danger">Are you a noob ? not ? Then, Try again BITCH !</div>
+        </div>
+      </div><?php
+
+    }
   }
 ?>
 

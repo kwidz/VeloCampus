@@ -21,6 +21,9 @@ if (isset($_POST['inputPseudo']) && isset($_POST['inputPassword'])&& !empty($_PO
 			$_SESSION['log']=4;
 		}
 	}
+	else {
+			$_SESSION['log']=18;
+		}
 }
 	// header("Location: ".$referer);
 ?>
