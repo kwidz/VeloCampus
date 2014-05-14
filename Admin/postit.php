@@ -4,7 +4,7 @@
 
     <div class="row"><br/><br/><br/><br/><br/>
         <div class="col-md-9 col-md-offset-2" style="position:absolute;z-index:2">
-            <div style="overflow:auto;height:200pt">
+            <div style="overflow:auto;height:200pt" id="box">
                 <?php 
                 require_once("../co.php");
                 $sql = 'SELECT * FROM Postit';
@@ -21,6 +21,7 @@
                 ?>
 
             </div>
+            <!-- <script>document.getElementById('box').scrollBottom</script> -->
 
             <div class="row" style="position: relative;left: 25px;">
                 <div class="col-md-20 " style="position:absolute;z-index:3">
