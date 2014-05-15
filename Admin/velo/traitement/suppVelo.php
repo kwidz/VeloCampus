@@ -1,22 +1,20 @@
-<!-- page pour supprimer un velo dans la bdd -->
+<!--cette page traite la suppression de la base de donnée d'un velo
+-->
 <?php
-	include('../../co.php');
-	if(isset($_POST["Velo_to_supp"]) && !empty($_POST["Velo_to_supp"])){
-		$idVelo = $_POST["Velo_to_supp"];
-
-		$sql = 'DELETE * FROM velo where id_velo ="'.$idVelo.'"';
-		$res=$mysqli->query($sql);	
-
+include('../../co.php');
+if((!empty($_POST["supp_id_velo"])) && ((isset($_POST["supp_id_velo"])))){
+	//$id = $_POST["supp_id_velo"];
+	$sql='delete from velo where id_velo = '.$_POST["supp_id_velo"];
+	$res=$mysqli->query($sql);
 	?><script>
-			window.location='../index.php?message=ok';
-		</script><?php
+	window.location='../index.php?message=ok';
+	</script><?php
 
 
-	}
-	else{
-		?><script>
-			window.location='../index.php?message=notok';
-		</script><?php
-	}
-
+}else{
+	?>
+	<script>
+	window.location='../index.php?message=notok';
+	</script><?php
+}
 ?>
