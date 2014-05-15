@@ -1,6 +1,6 @@
 if test $# -eq 0
 then
-    echo "tu oublies le message de commit"
+    echo "Tu oublies le message de commit Morgane !"
 else
     
     echo "ecrivez velo : "
