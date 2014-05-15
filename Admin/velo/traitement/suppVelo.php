@@ -4,7 +4,7 @@
 include('../../co.php');
 if((!empty($_POST["supp_id_velo"])) && ((isset($_POST["supp_id_velo"])))){
 	//$id = $_POST["supp_id_velo"];
-	$sql='delete from velo where id_velo = '.$_POST["supp_id_velo"];
+	$sql='delete from Velo where id_velo = '.$_POST["supp_id_velo"];
 	$res=$mysqli->query($sql);
 	?><script>
 	window.location='../index.php?message=ok';
