@@ -5,7 +5,33 @@
 }
 </style>
 
+<script>
+function ConfirmationSuppr(id_adherent){
+  if(confirm("êes vous sur de vouloir Supprimer cet adhérent ?")){
+    alert(id_adherent);
 
+    xmlhttp=new XMLHttpRequest();
+
+    xmlhttp.onreadystatechange=function(){
+    if (xmlhttp.readyState==4 && xmlhttp.status==200)  //si on est bien a letape 4
+      //document.getElementById("vet").style.display="block";
+      document.getElementById("Confirme").innerHTML=""+xmlhttp.responseText; //balise select dans le html
+      
+
+
+
+    }
+    xmlhttp.open("GET","traitement/suppr.php?id_adherent="+id_adherent,true);
+    xmlhttp.send();
+
+
+
+  }
+}
+
+
+
+</script>
 
 <div class="col-md-6" >
   <?php
@@ -43,52 +69,52 @@
 
       </div>
       <div class="modal-body">
-        
 
 
 
 
 
 
-  <form role="form" method="POST" action="traitement/ajouter.php">
- 
-      <div class="form-group">
-        <center>
-          <br/>
-     <table>
-      <tr><th>Nom</th><th>Prenom</th><th>Date Naissance</th><th>adresse</th><th>Code postal</th><th>telephone</th><th>Adresse Mail</th></tr>
-      <?php
-      $sql = 'Select Adherent.* from Adherent, Cotisation  where Adherent.id_adherent = Cotisation.id_adherent';
-      $res=$mysqli->query($sql);
-            while (NULL !== ($row = $res->fetch_array())) {
-              echo '<tr><td>'.$row['nom_adherent'].'</td><td>'.$row['prenom_adherent'].'</td><td>'.$row['date_naissance_adherent'].'</td><td>'.$row['adresse_adherent'].'</td><td>'.$row['code_Postal_Adherent'].'</td><td>'.$row['telephone_adherent'].'</td><td>'.$row['adresse_mail_adherent'].'</td></tr>';
-            }
 
-      ?>
+        <form role="form" method="POST" action="traitement/ajouter.php">
 
-    </table>
-  </center>
+          <div class="form-group">
+            <center>
+              <br/>
+              <table>
+                <tr><th>Nom</th><th>Prenom</th><th>Date Naissance</th><th>adresse</th><th>Code postal</th><th>telephone</th><th>Adresse Mail</th></tr>
+                <?php
+                $sql = 'Select Adherent.* from Adherent, Cotisation  where Adherent.id_adherent = Cotisation.id_adherent';
+                $res=$mysqli->query($sql);
+                while (NULL !== ($row = $res->fetch_array())) {
+                  echo '<tr><td>'.$row['nom_adherent'].'</td><td>'.$row['prenom_adherent'].'</td><td>'.$row['date_naissance_adherent'].'</td><td>'.$row['adresse_adherent'].'</td><td>'.$row['code_Postal_Adherent'].'</td><td>'.$row['telephone_adherent'].'</td><td>'.$row['adresse_mail_adherent'].'</td></tr>';
+                }
+
+                ?>
+
+              </table>
+            </center>
+          </div>
+
+
+        </table>
+
+
+
+
+
+
+
+
+
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-danger" data-dismiss="modal">Annuler</button>
+        <input type="submit" class="btn btn-default" name="Ajouter">
+      </form>
+
     </div>
-
-
-      </table>
-      
-
-
-      
-      
-
-
-
-
-    </div>
-    <div class="modal-footer">
-      <button type="button" class="btn btn-danger" data-dismiss="modal">Annuler</button>
-      <input type="submit" class="btn btn-default" name="Ajouter">
-    </form>
-
   </div>
-</div>
 </div> 
 </div>
 
@@ -105,51 +131,53 @@
 
       </div>
       <div class="modal-body">
-        
 
 
 
 
 
 
-  <form role="form" method="POST" action="traitement/ajouter.php">
- 
-      <div class="form-group">
-        <center>
-          <br/>
-     <table>
-      <tr><th>Nom</th><th>Prenom</th><th>Date Naissance</th><th>adresse</th><th>Code postal</th><th>telephone</th><th>Adresse Mail</th><th>Supprimer</th></tr>
-      <?php
-      $sql = 'Select Adherent.* from Adherent, Cotisation  where Adherent.id_adherent = Cotisation.id_adherent';
-      $res=$mysqli->query($sql);
-            while (NULL !== ($row = $res->fetch_array())) {
-              echo '<tr><td>'.$row['nom_adherent'].'</td><td>'.$row['prenom_adherent'].'</td><td>'.$row['date_naissance_adherent'].'</td><td>'.$row['adresse_adherent'].'</td><td>'.$row['code_Postal_Adherent'].'</td><td>'.$row['telephone_adherent'].'</td><td>'.$row['adresse_mail_adherent'].'</td><td><a href="../traitement/suppr.php?id='.$row['id_adherent'].'"class="glyphicon glyphicon-remove"></a></td></tr>';
-            }
 
-      ?>
+        <form role="form" method="POST" action="traitement/ajouter.php">
 
-    </table>
-  </center>
+          <div class="form-group">
+            <center>
+              <br/>
+              <table>
+                <tr><th>Nom</th><th>Prenom</th><th>Date Naissance</th><th>adresse</th><th>Code postal</th><th>telephone</th><th>Adresse Mail</th><th>Supprimer</th></tr>
+                <?php
+                $sql = 'Select Adherent.* from Adherent, Cotisation  where Adherent.id_adherent = Cotisation.id_adherent';
+                $res=$mysqli->query($sql);
+                while (NULL !== ($row = $res->fetch_array())) {
+                  echo '<tr><td>'.$row['nom_adherent'].'</td><td>'.$row['prenom_adherent'].'</td><td>'.$row['date_naissance_adherent'].'</td><td>'.$row['adresse_adherent'].'</td><td>'.$row['code_Postal_Adherent'].'</td><td>'.$row['telephone_adherent'].'</td><td>'.$row['adresse_mail_adherent'].'</td><td onclick="ConfirmationSuppr('.$row['id_adherent'].')"><a href="#" class="glyphicon glyphicon-remove"></a></td></tr>';
+                }
+
+                ?>
+
+              </table>
+              <br/>
+              <div id="Confirme"></div>
+            </center>
+          </div>
+
+
+       
+
+
+
+
+
+
+
+
+
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-danger" data-dismiss="modal">Annuler</button>
+        <input type="submit" class="btn btn-default" name="Ajouter">
+      </form>
+
     </div>
-
-
-      </table>
-      
-
-
-      
-      
-
-
-
-
-    </div>
-    <div class="modal-footer">
-      <button type="button" class="btn btn-danger" data-dismiss="modal">Annuler</button>
-      <input type="submit" class="btn btn-default" name="Ajouter">
-    </form>
-
   </div>
-</div>
 </div> 
 </div>
