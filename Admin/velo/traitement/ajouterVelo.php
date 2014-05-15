@@ -14,7 +14,7 @@ if(((!empty($_POST['etat_velo']))
 $taille=$_POST["taille_velo"];
 $type=$_POST["type_velo"];
 
-$sql='INSERT INTO velo(id_Etat, id_taille, id_type) Values("'.$etat.'", "'.$taille.'", "'.$type.'")';
+$sql='INSERT INTO Velo(id_Etat, id_taille, id_type) Values("'.$etat.'", "'.$taille.'", "'.$type.'")';
 $res=$mysqli->query($sql);
 ?><script>
 window.location='../index.php?message=ok';
