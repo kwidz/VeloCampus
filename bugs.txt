@@ -10,7 +10,7 @@ Général :
 	fautes d'orthographes / présentation du texte // Pierre
 	crypter les mdp // Geoffrey
 	sécurité du cookie // Pierre DONE (à motié)
-	"se souvenir de moi" // Pierre
+	"se souvenir de moi" // Pierre DONE
 	integration des vidéos !!! //
 	revenir au referer dans les pages après connexion //
 
@@ -64,11 +64,11 @@ Pierre :
 	bannière pour confirmation réussite de modification de la page d'accueil // Pierre DONE
 	Bannière lorsque l'on vient de s'inscrire // Pierre DONE
 	petite image de l'onglet // Pierre DONE
-	sécurité du cookie // Pierre DONE (à motié)
-	attention : connexion non sensible à la casse // Pierre
-	fautes d'orthographes / présentation du texte // Pierre
-	"se souvenir de moi" // Pierre
+	sécurité du cookie // Pierre DONE 
+	attention : connexion non sensible à la casse // Pierre DONE
+	"se souvenir de moi" // Pierre DONE
 	Bannière d'erreur si on essaye de s'inscrire avec une adresse mail existante // Pierre et Geoffrey
+	fautes d'orthographes / présentation du texte // Pierre
 
 Non attribué : 
 	integration des vidéos !!! //

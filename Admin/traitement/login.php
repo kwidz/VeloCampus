@@ -14,7 +14,7 @@ if (isset($_POST['inputPseudo']) && isset($_POST['inputPassword'])&& !empty($_PO
 				setcookie('Session', md5(md5("carotte")), time()+2592000, "/", null);
 			}
 			else {
-				setcookie('Session', md5(md5("carotte")), 0, "/", null);
+				setcookie('Session', md5(md5("carotte")), 3600, "/", null);
 			}
 		}
 		else {
