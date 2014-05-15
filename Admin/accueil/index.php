@@ -24,7 +24,7 @@
       ?>
       <div class="row">
         <div class="col-md-12">
-          <div class="alert alert-danger">Are you a noob ? not ? Then, Try again BITCH !</div>
+          <div class="alert alert-danger">Are you a noob ? Not ? Then, try again BITCH !</div>
         </div>
       </div><?php
 
