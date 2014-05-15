@@ -18,7 +18,9 @@ th{
     if ($_GET['message']=="ok"){
       echo"<div class='alert alert-success'><center><strong>L'opération s'est déroulé avec succès !</center></strong></div>";
     }
-    else{
+    else if ($_GET['message']=="errId") {
+      echo"<div class='alert alert-danger'><center><strong>L'Identifiant souhaité est déjà utilisé veuillez en choisir un autre</center></strong></div>";
+    } else {
       echo"<div class='alert alert-danger'><center><strong>Une erreur inconue à été détectée ! </center></strong></div>";
     }
 
@@ -46,6 +48,9 @@ th{
         </div>
 
         <div class="modal-body">
+
+          Identifiant du velo :
+          <input type="text" name="id_velo" required><br><br>
 
           Etat du velo :
           <select class="form-control" name="etat_velo" required>

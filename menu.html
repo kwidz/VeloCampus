@@ -17,7 +17,14 @@
   <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
     <ul class="nav navbar-nav">
       <li><a class="navbar-brand" href="../accueil/index.php"><h4><div class="glyphicon glyphicon-home"></div>&nbsp;&nbsp;Accueil</h4></a></li>
-      <li><a class="navbar-brand" href="../traitement/photos.php"><h4><div class="glyphicon glyphicon-camera"></div>&nbsp;&nbsp;Photos</h4></a></li>
+      <li class="dropdown">
+        <a href="#" class="dropdown-toggle" data-toggle="dropdown"><h4><div class="glyphicon glyphicon-camera"></div>&nbsp;&nbsp;Médias</h4></a>
+        <ul class="dropdown-menu">
+          <li><a href="../traitement/photos.php">Photos</a></li>
+          <li class="divider"></li>
+          <li><a href="../traitement/videos.php">Vidéos</a></li>
+        </ul>
+      </li>
       <li><a class="navbar-brand" href="../traitement/calendrier.php"><h4><div class="glyphicon glyphicon-calendar"></div>&nbsp;&nbsp;Évènements</h4></a></li>
       <li><a class="navbar-brand" href="../traitement/reparations.php"><h4><div class="glyphicon glyphicon-wrench"></div>&nbsp;&nbsp;Réparations</h4></a></li>
       <li><a class="navbar-brand" href="../traitement/velos.php"><h4><div class="glyphicon glyphicon-star"></div>&nbsp;&nbsp;Vélos</h4></a></li>
