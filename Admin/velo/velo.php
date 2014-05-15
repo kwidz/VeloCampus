@@ -11,6 +11,7 @@ th{
 </style>
 <div class="col-md-6" >
   <?php
+  
 
   if(isset($_GET['message'])
     && (!empty($_GET['message']))){

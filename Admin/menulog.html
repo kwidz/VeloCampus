@@ -21,40 +21,51 @@
                     <!-- envoi vers une page de photos qui permet de suprimmer modifier ajouter -->
                     <li><a class="navbar-brand" href="../reparation"><h4>Gérer Réparations</h4></a></li>
                     <!-- envoi vers une page de reparation qui permet de suprimmer modifier ajouter -->
-                    <li><a class="navbar-brand" href="../velo"><h4>Gérer Vélos</h4></a></li>
-                    <!-- envoi vers une page de photos qui permet de suprimmer modifier ajouter -->
-                    <!--<li><a href="#"><button type="button" class="btn btn-default" data-toggle="modal" data-target="#modalDeconnnexion">Importer calendrier</button></a></li>-->
-                    <li><a class="navbar-brand" href="../locations"><h4>Gérer Locations</h4></a></li>
-                    <li><a class="navbar-brand" href="../adherent"><h4>Gérer Adhérents</h4></a></li>
-                </ul>
-                <ul class="nav navbar-nav navbar-right">
+                    <!-- <li><a class="navbar-brand" href="../velo"><h4>Gérer Vélos</h4></a></li> -->
+                    <li class="dropdown">
+                        <a href="#" class="dropdown-toggle" data-toggle="dropdown" ><h4>Gérer vélo</h4></a>
+                      <ul class="dropdown-menu">
+                        <li><a href="../velo">Velo</a></li>
+                        <li class="divider"></li>
+                        <li><a href="#">Cadenas</a></li>
+                        <li class="divider"></li>
+                        <li><a href="#">Type</a></li>
+                        
+                    </ul>
+                </li>
+                <!-- envoi vers une page de photos qui permet de suprimmer modifier ajouter -->
+                <!--<li><a href="#"><button type="button" class="btn btn-default" data-toggle="modal" data-target="#modalDeconnnexion">Importer calendrier</button></a></li>-->
+                <li><a class="navbar-brand" href="../locations"><h4>Gérer Locations</h4></a></li>
+                <li><a class="navbar-brand" href="../adherent"><h4>Gérer Adhérents</h4></a></li>
+            </ul>
+            <ul class="nav navbar-nav navbar-right">
 
-                    <li>
-                        <a href="#">
-                            <button type="button" class="btn btn-danger" data-toggle="modal" data-target="#modalDeconnnexion">
-                                Se déconnecter
-                            </button>
-                        </a>
-                    </li> 
-                </ul>
-            </div><!-- /.navbar-collapse -->
-        </nav>
-    </div>
+                <li>
+                    <a href="#">
+                        <button type="button" class="btn btn-danger" data-toggle="modal" data-target="#modalDeconnnexion">
+                            Se déconnecter
+                        </button>
+                    </a>
+                </li> 
+            </ul>
+        </div><!-- /.navbar-collapse -->
+    </nav>
+</div>
 </div>
 
 
 <?php if (isset($_SESSION['modif']) && $_SESSION['modif'] == "accueil") {
-      include("../banniereMenuUpdate.html");
-      $_SESSION['modif'] = "";
-    } ?>
-    <?php if (isset($_SESSION['modif']) && $_SESSION['modif'] == "mdptrue") {
-      include("../banniereMenupswdtrue.html");
-      $_SESSION['modif'] = "";
-    } ?>
-    <?php if (isset($_SESSION['modif']) && $_SESSION['modif'] == "mdpfalse") {
-      include("../banniereMenupswdfalse.html");
-      $_SESSION['modif'] = "";
-    } ?>
+  include("../banniereMenuUpdate.html");
+  $_SESSION['modif'] = "";
+} ?>
+<?php if (isset($_SESSION['modif']) && $_SESSION['modif'] == "mdptrue") {
+  include("../banniereMenupswdtrue.html");
+  $_SESSION['modif'] = "";
+} ?>
+<?php if (isset($_SESSION['modif']) && $_SESSION['modif'] == "mdpfalse") {
+  include("../banniereMenupswdfalse.html");
+  $_SESSION['modif'] = "";
+} ?>
 
 <div class="row">
     <div class="col-md-3" >
@@ -93,8 +104,8 @@
             </div>
         </div> 
     </div>
-<!-- modal changement de mot de passe admin -->
-<div class="modal fade" id="modalChangemdp" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+    <!-- modal changement de mot de passe admin -->
+    <div class="modal fade" id="modalChangemdp" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
         <div class="modal-dialog">
             <div class="modal-content">
                 <div class="modal-header">
@@ -112,7 +123,7 @@
                         
                     </div>
                     <div class="modal-footer">
-                        
+
                         <input type="submit" class="btn btn-default" value="modifier" >
                         <button type="button" class="btn btn-danger" data-dismiss="modal">Annuler</button>
                     </div>
@@ -194,36 +205,36 @@
                     <br/>
                     <a href="../mailling.csv" target=_blank>Télécharger</a>
                     <table class="bordered-table"style="border:solid 1px #CDCACA; border-radius:50px">
-                    <tbody>
+                        <tbody>
 
-                        <?php
+                            <?php
                     //Lecture du fichier CSV
-                        $row = 1;
-                        if (($handle = fopen("../mailling.csv", "r")) !== FALSE){
-                            while (($data = fgetcsv($handle, 1000, ",")) !== FALSE){
-                                $num = count($data);
-                                echo "<tr>";
-                                $row++;
-                                for ($c=0; $c < $num; $c++){
-                                    echo "<th>".$data[$c]."</th>";
+                            $row = 1;
+                            if (($handle = fopen("../mailling.csv", "r")) !== FALSE){
+                                while (($data = fgetcsv($handle, 1000, ",")) !== FALSE){
+                                    $num = count($data);
+                                    echo "<tr>";
+                                    $row++;
+                                    for ($c=0; $c < $num; $c++){
+                                        echo "<th>".$data[$c]."</th>";
+                                    }
+                                    echo "</tr>";
                                 }
-                                echo "</tr>";
+                                fclose($handle);
                             }
-                            fclose($handle);
-                        }
-                        ?>
-                    </tbody>
-                </table>
-                <br/>
-                <a href="../mailling.csv" target=_blank>Télécharger</a> 
+                            ?>
+                        </tbody>
+                    </table>
+                    <br/>
+                    <a href="../mailling.csv" target=_blank>Télécharger</a> 
 
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-danger" data-dismiss="modal">Fermer</button>
+
+                </div>
             </div>
-            <div class="modal-footer">
-                <button type="button" class="btn btn-danger" data-dismiss="modal">Fermer</button>
+        </div> 
 
-            </div>
-        </div>
-    </div> 
-
-</div>
+    </div>
 
