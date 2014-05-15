@@ -49,13 +49,11 @@ Morgane :
 	page pour modifier mdp admin // Morgane + Geoffrey = <3
 	
 Geoffrey :
-	crypter les mdp // Geoffrey 
-	mon compte : photo ? permettre la modification // Geoffrey
-	Bannière d'erreur si on essaye de s'inscrire avec une adresse mail existante // Pierre et Geoffrey
+	
+	
 	revoir sur le coté gauche les raccourcis inutiles // Geoffrey
 	finir les liens/pages des raccourcis coté gauche // Geoffrey
-	page pour modifier mdp admin // Morgane + Geoffrey = <3
-	upload de fichiers bidons // Geoffrey
+	
 
 Auguste : 
 	FINIR VELO !!! // Auguste

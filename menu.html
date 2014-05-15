@@ -9,6 +9,7 @@
       <span class="icon-bar"></span>
       <span class="icon-bar"></span>
       <span class="icon-bar"></span>
+      <script src="../Adressemail.js"></script>
     </button>
   </div>
 
@@ -61,7 +62,8 @@
           <i>*</i> Adresse : <input type="text" class="form-control" id="inputAdresse" placeholder="Ex : 1 rue de la Paix" name="inputAdresse" required/><br/><br/>
           <i>*</i> Code Postal : <input type="text" class="form-control" id="inputCP" placeholder="Ex : 90000" name="inputCP" required/><br/><br/>
           <i>*</i> N° Tel : <input type="text" class="form-control" id="inputTelephone" placeholder="Ex : 0123456789" name="inputTelephone" required/><br/><br/>
-        	<i>*</i> Adresse Mail : <input type="email" class="form-control" id="inputEmail" placeholder="Ex : monmail@free.fr" name="inputEmail" required/><br/><br/>
+        	<i>*</i> Adresse Mail : <input type="email" class="form-control" id="inputEmail" placeholder="Ex : monmail@mcstn.fr" name="inputEmail" onkeyup="banner(this.value)" required/><br/><br/>
+          <div id="banniere"></div>
         	<i>*</i> Mot de passe : <input type="password" class="form-control" id="inputPassword" placeholder="Mot de passe" name="inputPassword" required/><br/><br/>
         	<i>*</i> Confirmer : <input type="password" class="form-control" id="inputConfirmPassword" placeholder="Mot de passe" name="inputConfirmPassword" required/><br/><br/>
          
