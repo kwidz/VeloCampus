@@ -13,7 +13,7 @@
 				setcookie('Session', md5(md5($mail)), time()+2592000, "/", null);
 			}
 			else {
-				setcookie('Session', md5(md5($mail)), 3600, "/", null);
+				setcookie('Session', md5(md5($mail)), time()+3600, "/", null);
 			}
 		}
 		else {
