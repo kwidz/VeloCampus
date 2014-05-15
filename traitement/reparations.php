@@ -37,7 +37,6 @@
           include("../banniereReparationErreur.html");
         }
       if ($id_velo != -1) {
-        echo "AAAAAAAAA";
         $result = $mysqli->query("SELECT date_location from Location WHERE id_adherent = (SELECT id_adherent FROM Adherent WHERE adresse_mail_adherent='".$_SESSION['mail']."');");
         $row = $result->fetch_array(MYSQLI_ASSOC);
         if ($row) {

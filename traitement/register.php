@@ -11,7 +11,6 @@
 		$passwd = $_POST['inputPassword'];
 		$confPass = $_POST['inputConfirmPassword'];
 		include("../co.php");
-
 		$passwd=md5($passwd);
 		$query = "INSERT INTO Adherent VALUES (null,'".$nom."','".$prenom."','".$dateNaissance."','".$adresse."','".$codepostal."','".$telephone."','".$mail."','".$passwd."');";
 		echo $query;
