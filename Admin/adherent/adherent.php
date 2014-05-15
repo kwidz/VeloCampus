@@ -7,15 +7,15 @@
 
 <script>
 function ConfirmationSuppr(id_adherent){
-  if(confirm("êes vous sur de vouloir Supprimer cet adhérent ?")){
-    alert(id_adherent);
+  if(confirm("êtes vous sur de vouloir Supprimer cet adhérent ?")){
+   
 
     xmlhttp=new XMLHttpRequest();
 
     xmlhttp.onreadystatechange=function(){
     if (xmlhttp.readyState==4 && xmlhttp.status==200)  //si on est bien a letape 4
       //document.getElementById("vet").style.display="block";
-      document.getElementById("Confirme").innerHTML=""+xmlhttp.responseText; //balise select dans le html
+      document.getElementById("Confirme").innerHTML=xmlhttp.responseText; //balise select dans le html
       
 
 
@@ -29,6 +29,29 @@ function ConfirmationSuppr(id_adherent){
   }
 }
 
+
+function ConfirmationsupprTout(){
+  if(confirm("êtes vous sur de vouloir Supprimer TOUS les adhérents ???")){
+   
+
+    xmlhttp=new XMLHttpRequest();
+
+    xmlhttp.onreadystatechange=function(){
+    if (xmlhttp.readyState==4 && xmlhttp.status==200)  //si on est bien a letape 4
+      //document.getElementById("vet").style.display="block";
+      document.getElementById("Confirme").innerHTML=xmlhttp.responseText; //balise select dans le html
+      
+
+
+
+    }
+    xmlhttp.open("GET","traitement/supprTout.php",true);
+    xmlhttp.send();
+
+
+
+  }
+}
 
 
 </script>
@@ -157,6 +180,8 @@ function ConfirmationSuppr(id_adherent){
               </table>
               <br/>
               <div id="Confirme"></div>
+              <br/>
+              <button  type="button" class="btn btn-default" onclick="ConfirmationsupprTout()">Supprimer TOUS les adhérents</button>
             </center>
           </div>
 

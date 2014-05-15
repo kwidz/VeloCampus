@@ -1,6 +1,21 @@
+ </center>  
+
+ / /
+ L_L_
+/    \
+|00  |       _______
+|_/  |      /  ___  \
+|    |     /  /   \  \
+|    |_____\  \_  /  /
+ \          \____/  /_____
+  \ _______________/______\.............................
+
+
+
+<center>
 Bonjour à tous et bienvenue sur notre nouveau site Internet !
 Vous trouverez ici toutes les informations sur notre association basée à Belfort et Montbéliard.
 Vous pourrez adhérer, louer des vélos, demandé à réparer des vélos, suivre notre actualités...
 
 Et surtout n'hésitez pas à vous contacter : <a href="mailto:velocampusdulion@gmail.com">velocampusdulion@gmail.com</a>
-  
+     
