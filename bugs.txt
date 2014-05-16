@@ -49,8 +49,6 @@ Morgane :
 	page pour modifier mdp admin // Morgane + Geoffrey = <3
 	
 Geoffrey :
-	
-	
 	revoir sur le coté gauche les raccourcis inutiles // Geoffrey
 	finir les liens/pages des raccourcis coté gauche // Geoffrey
 	
@@ -59,13 +57,6 @@ Auguste :
 	FINIR VELO !!! // Auguste
 
 Pierre :
-	bannière pour confirmation réussite de modification de la page d'accueil // Pierre DONE
-	Bannière lorsque l'on vient de s'inscrire // Pierre DONE
-	petite image de l'onglet // Pierre DONE
-	sécurité du cookie // Pierre DONE 
-	attention : connexion non sensible à la casse // Pierre DONE
-	"se souvenir de moi" // Pierre DONE
-	Bannière d'erreur si on essaye de s'inscrire avec une adresse mail existante // Pierre et Geoffrey
 	fautes d'orthographes / présentation du texte // Pierre
 
 Non attribué : 
