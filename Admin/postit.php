@@ -1,11 +1,14 @@
+
 <div class="col-md-6" >
 
     <img src="../images/postit.png"  width="600" height="600"  style="position:absolute;z-index:1" class="img-responsive">
 
-    <div class="row"><br/><br/><br/><br/><br/>
+    <div class="row" >
+
+        <br/><br/><br/><br/><br/>
         <div class="col-md-9 col-md-offset-2" style="position:absolute;z-index:2">
             <div style="overflow:auto;height:200pt" id="box">
-                <?php 
+          <?php 
                 require_once("../co.php");
                 $sql = 'SELECT * FROM Postit';
                 $res = $mysqli->query($sql);
@@ -19,7 +22,7 @@
                 }
 
                 ?>
-
+                <script>document.getElementById("box").scrollTop = document.getElementById("box").scrollHeight;</script>
             </div>
             <!-- <script>document.getElementById('box').scrollBottom</script> -->
 
