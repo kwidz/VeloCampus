@@ -327,7 +327,7 @@ pour l'utilisateur  -->
                     echo '<option value="'.$row['id_Etat'].'">Etat : '.$row['libelle_etat'].'</option>';
                   }
                   ?></select>
-                  <div id="test">
+                  <div id="baniereajaxaralonge">
                   </div>
                   Date du retour : <input type="date" name="date" required><br/>
       
