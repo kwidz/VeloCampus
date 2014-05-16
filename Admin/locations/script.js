@@ -21,7 +21,7 @@ function getXMLHttpRequest() {
 
 function banner(etat, id_location){
 
-	var xhr = getXMLHttpRequest(); // Voyez la fonction getXMLHttpRequest() définie dans la partie précédente
+	var xhr = getXMLHttpRequest(); 
 	xhr.onreadystatechange = function() {
         if (xhr.readyState == 4 && (xhr.status == 200 || xhr.status == 0)) {
         		document.getElementById("test").innerHTML= xhr.responseText; // Données textuelles récupérées
@@ -34,7 +34,7 @@ function banner(etat, id_location){
 
 function gestionEtat(id_velo){
 
-	var xhr = getXMLHttpRequest(); // Voyez la fonction getXMLHttpRequest() définie dans la partie précédente
+	var xhr = getXMLHttpRequest();
 	xhr.onreadystatechange = function() {
         if (xhr.readyState == 4 && (xhr.status == 200 || xhr.status == 0)) {
         		document.getElementById("test").innerHTML= xhr.responseText; // Données textuelles récupérées
