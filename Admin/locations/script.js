@@ -24,7 +24,9 @@ function banner(etat, id_location){
 	var xhr = getXMLHttpRequest(); 
 	xhr.onreadystatechange = function() {
         if (xhr.readyState == 4 && (xhr.status == 200 || xhr.status == 0)) {
-        		document.getElementById("test").innerHTML= xhr.responseText; // Données textuelles récupérées
+        		
+        		document.getElementById("baniereajaxaralonge").innerHTML= xhr.responseText; // Données textuelles récupérées
+        		
         }
 	};
 	xhr.open("GET", "banner.php?variable1="+etat+"&variable2="+id_location+"", true);
