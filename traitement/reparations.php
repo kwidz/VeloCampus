@@ -54,8 +54,8 @@
                 <input type="hidden" name="id_velo" id="id_velo" value="<?php echo $id_velo;?>">
                 <div></div>
                 <div>
-                  <center> Entrez la description de votre réparation, avec si possible la pièce à réparer : </center><br/>
-                  <center><textarea class="form-control" name="description" style="height:60px" required></textarea></center>
+                  <center> Entrez une brève description de votre réparation : </center><br/>
+                  <center><input type="text" class="form-control" name="description" required></center>
                 </div><br/><br/>
 
                 <div>
