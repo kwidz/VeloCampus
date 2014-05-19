@@ -17,7 +17,7 @@
  	}
 
  	if(isset($_SESSION['mail'])) {
- 		if ($_SESSION['mail'] == -1) {
+ 		if ($_SESSION['mail'] == 1) {
 	 		include("../banniereMailEnvoye.html");
 	 	}
 	 	else if ($_SESSION['mail'] == -1) {
