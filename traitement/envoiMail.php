@@ -1,6 +1,7 @@
 <?php
 	session_start();
 	$Email = $_POST['email']; 
+	$EmailFrom = "site@velocampus.fr";
 	$EmailTo = "pierre.limballe@gmail.com";
 	$Subject = $_POST['subject'];
 	$Name = Trim(stripslashes($_POST['name'])); 
