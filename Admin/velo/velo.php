@@ -3,6 +3,7 @@ tous les autres div sont commentés
 chaque action s'effectera dans un Modal pour eviter les lourds changement de page 
 pour l'utilisateur  -->
 <script type="text/javascript" src="script.js"></script>
+<script type="text/javascript" src="traitement.js"></script>
 <style>
 th{
   border:solid 1px #CDCACA;
@@ -30,6 +31,7 @@ th{
     <li class="" style="text-align: center; margin-bottom: 15px; border:solid 1px; border-radius: 5px; border-color: #CDCACA"><a href="#" data-toggle="modal" data-target="#creerVelo" >Ajouter un velo</a></li>
     <li class="" style="text-align: center; margin-bottom: 15px; border:solid 1px; border-radius: 5px; border-color: #CDCACA"><a href="#" data-toggle="modal" data-target="#suppVelo">Supprimer un Velo</a></li>
     <li class="" style="text-align: center; margin-bottom: 15px; border:solid 1px; border-radius: 5px; border-color: #CDCACA"><a href="#" data-toggle="modal" data-target="#editionVelo">Edition d'un velo</a></li>
+     <li class="" style="text-align: center; margin-bottom: 15px; border:solid 1px; border-radius: 5px; border-color: #CDCACA"><a href="#" data-toggle="modal" data-target="#ajoutCadenas">ajouter un cadenas</a></li>
   </ul>
 </div>
 
@@ -132,3 +134,41 @@ th{
   </div> 
 </div>
 <!-- fin modal creer -->
+
+
+
+
+<div class="modal fade" id="ajoutCadenas" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <form method="POST" action="traitement/veloAjoutCadenas.php" name="formLiaisonCadenasVelo">
+        <div class="modal-header">
+          <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+          <h4 class="modal-title" id="myModalLabel"><strong>Ajouter un cadenas</strong></h4>
+        </div>
+        <div class="modal-body">
+
+          selectionner un velo :
+           <select class="form-control" name="supp_id_velo" onchange="testbibiphoque(this.value)" required>
+            <?php
+            $sql="SELECT * from Velo";
+            $res=$mysqli->query($sql);
+            while (NULL !==($row = $res->fetch_array())) {
+              echo '<option value="'.$row["id_velo"].'">'.$row["id_velo"].'</option>';
+            }
+            ?>
+          </select>
+          
+          <div id="test"></div>
+
+
+        </div>
+
+        <div class="modal-footer">
+          <button type="button" class="btn btn-danger" data-dismiss="modal">Annuler</button>
+          <input type="submit" class="btn btn-default"name="creer la Location">
+        </div>
+      </form>
+    </div>
+  </div> 
+</div>
