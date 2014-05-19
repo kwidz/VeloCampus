@@ -45,7 +45,7 @@
 <div class="row" style="background-color:#F5F5F5;border-radius:10px;border:3px solid #222222" >
  	<div class="col-md-12">
  		<br/>
-	 	<center><b>Vous pouvez nous contacter à l'adresse suivante : </b><a>velocampusdulion@gmail.com</a><br/>Ou directement par le formulaire ci-dessous :</center><br/>
+	 	<center><b>Vous pouvez nous contacter à l'adresse suivante : </b><a href="#">velocampusdulion@gmail.com</a><br/>Ou directement par le formulaire ci-dessous :</center><br/>
 	 	<center>
 		 	<form method="post" action="envoiMail.php">
 			 	Nom <br/><input class="form-control" type="text" name="name" id="name" required><br/><br/>

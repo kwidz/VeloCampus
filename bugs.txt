@@ -58,11 +58,12 @@ Auguste :
 
 Pierre :
 	fautes d'orthographes / présentation du texte // Pierre
+	page des partenaires // Pierre
 
 Non attribué : 
 	integration des vidéos !!! // 
 	/*photos : affichage non-centré // */
 	/* lien des addresses dans la demande de réparation (coté droit) : lien inutile ? ou envoie de mail ? */
-	mettre un lien piur retourner sur le site à la deconnexion de l'admin //
-	ou nous trouver ? (map google map) //
-	page des partenaires //
+	mettre un lien pour retourner sur le site à la deconnexion de l'admin //
+	Vérif avant connexion si le compte est vélidé //
+	attribut min max pour les input date, régler le problème avec firefox
