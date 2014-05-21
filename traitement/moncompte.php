@@ -54,7 +54,16 @@ if (isset($_SESSION['log']) && $_SESSION['log'] == 1) { ?>
               $prenom = $value;
               break;
             case 'date_naissance_adherent':
-              $date_nassance = $value;
+              $date_naissance = $value;
+              
+              $u_agent = $_SERVER['HTTP_USER_AGENT'];
+              if (strstr($u_agent,"Mozilla")) {
+                if (!strstr($u_agent,"Chrome")) {
+                  $tabDate = explode('-' , $date_naissance);
+                  $date_naissance = $tabDate[2]."-".$tabDate[1]."-".$tabDate[0];
+                }
+              } 
+
               break;
             case 'adresse_adherent':
               $adresse = $value;
@@ -81,7 +90,7 @@ if (isset($_SESSION['log']) && $_SESSION['log'] == 1) { ?>
       <br/>
       Nom : <input name="nom" id="nom" class="form-control" type="text" value="<?php echo $nom;?>" required> <br/> <br/>
       Prenom : <input name="prenom" id="prenom" class="form-control" type="text" value="<?php echo $prenom;?>" required> <br/> <br/>
-      Date de naissance : <input name="date_naissance" id="date_naissance" class="form-control" type="date" value="<?php echo $date_nassance;?>" required> <br/> <br/>
+      Date de naissance : <input name="date_naissance" id="date_naissance" class="form-control" type="date" value="<?php echo $date_naissance;?>" required> <br/> <br/>
       Adresse : <input name="adresse" id="adresse" class="form-control" type="text" value="<?php echo $adresse;?>" required> <br/> <br/>
       Code postal : <input name="code_postal" id="code_postal" class="form-control" type="text" value="<?php echo $code_postal;?>" required> <br/> <br/>
       Téléphone : <input name="tel" id="tel" class="form-control" type="text" value="<?php echo $telephone;?>" required> <br/> <br/>

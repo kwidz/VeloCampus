@@ -6,6 +6,8 @@
 		$nom = $_POST['nom'];
 		$prenom = $_POST['prenom'];
 		$date_naissance = $_POST['date_naissance'];
+		$tabDate = explode('-' , $date_naissance);
+        $date_naissance = $tabDate[2]."-".$tabDate[1]."-".$tabDate[0];
 		$adresse = $_POST['adresse'];
 		$code_postal = $_POST['code_postal'];
 		$tel = $_POST['tel'];
@@ -23,7 +25,6 @@
 		$mdp = $_POST['pass'];
 		$new_mdp = $_POST['newpass1'];
 		$new_mdp2 = $_POST['newpass2'];
-
 		if ($new_mdp == $new_mdp2) {
 			$result = $mysqli->query("SELECT password_adherent FROM Adherent WHERE adresse_mail_adherent='".$_SESSION['mail']."'");
 			$row = $result->fetch_array(MYSQLI_ASSOC);

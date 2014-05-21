@@ -13,14 +13,11 @@
 		include("../co.php");
 		$passwd=md5($passwd);
 		$query = "INSERT INTO Adherent VALUES (null,'".$nom."','".$prenom."','".$dateNaissance."','".$adresse."','".$codepostal."','".$telephone."','".$mail."','".$passwd."');";
-		echo $query;
 		$result = $mysqli->query($query);
 		if($result) {
-			echo "good";
 			$_SESSION['log']=2;
 		}
 		else {
-			echo "bad";
 			$_SESSION['log']=0;
 		}
 	}
