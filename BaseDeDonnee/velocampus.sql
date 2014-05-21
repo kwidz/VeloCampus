@@ -25,7 +25,7 @@ SET time_zone = "+00:00";
 --
 -- Structure de la table `Adherent`
 --
-DROP TABLE IF EXISTS `Adherent`
+DROP TABLE IF EXISTS `Adherent`;
 CREATE TABLE IF NOT EXISTS `Adherent` (
   `id_adherent` int(11) NOT NULL AUTO_INCREMENT,
   `nom_adherent` varchar(50) DEFAULT NULL,
@@ -50,7 +50,7 @@ CREATE TABLE IF NOT EXISTS `Adherent` (
 --
 -- Structure de la table `Admin`
 --
-DROP TABLE IF EXISTS `Admin`
+DROP TABLE IF EXISTS `Admin`;
 CREATE TABLE IF NOT EXISTS `Admin` (
   `id_admin` int(11) NOT NULL AUTO_INCREMENT,
   `pseudo_admin` varchar(50) DEFAULT NULL,
@@ -70,7 +70,7 @@ INSERT INTO `Admin` (`id_admin`, `pseudo_admin`, `password_admin`) VALUES
 --
 -- Structure de la table `Cadenas`
 --
-DROP TABLE IF EXISTS `Cadenas`
+DROP TABLE IF EXISTS `Cadenas`;
 CREATE TABLE IF NOT EXISTS `Cadenas` (
   `id_cadenas` int(11) NOT NULL AUTO_INCREMENT,
   `id_velo` int(11) DEFAULT NULL,
@@ -84,7 +84,7 @@ CREATE TABLE IF NOT EXISTS `Cadenas` (
 -- Structure de la table `Cotisation`
 --
 
-DROP TABLE IF EXISTS `Cotisation`
+DROP TABLE IF EXISTS `Cotisation`;
 CREATE TABLE IF NOT EXISTS `Cotisation` (
   `id_cotisation` int(11) NOT NULL AUTO_INCREMENT,
   `id_adherent` int(11) DEFAULT NULL,
@@ -103,7 +103,7 @@ CREATE TABLE IF NOT EXISTS `Cotisation` (
 --
 -- Structure de la table `Etat`
 --
-DROP TABLE IF EXISTS `Etat`
+DROP TABLE IF EXISTS `Etat`;
 CREATE TABLE IF NOT EXISTS `Etat` (
   `id_Etat` int(11) NOT NULL AUTO_INCREMENT,
   `libelle_etat` varchar(100) DEFAULT NULL,
@@ -125,7 +125,7 @@ INSERT INTO `Etat` (`id_Etat`, `libelle_etat`) VALUES
 --
 -- Structure de la table `Location`
 --
-DROP TABLE IF EXISTS `Location`
+DROP TABLE IF EXISTS `Location`;
 CREATE TABLE IF NOT EXISTS `Location` (
   `id_location` int(11) NOT NULL AUTO_INCREMENT,
   `prix_location` float DEFAULT NULL,
@@ -151,7 +151,7 @@ CREATE TABLE IF NOT EXISTS `Location` (
 --
 -- Structure de la table `Message`
 --
-DROP TABLE IF EXISTS `Message`
+DROP TABLE IF EXISTS `Message`;
 CREATE TABLE IF NOT EXISTS `Message` (
   `id_message` int(11) NOT NULL AUTO_INCREMENT,
   `contenu_message` text,
@@ -167,7 +167,7 @@ CREATE TABLE IF NOT EXISTS `Message` (
 --
 -- Structure de la table `Postit`
 --
-DROP TABLE IF EXISTS `Postit`
+DROP TABLE IF EXISTS `Postit`;
 CREATE TABLE IF NOT EXISTS `Postit` (
   `id_postit` int(11) NOT NULL AUTO_INCREMENT,
   `nom_postit` varchar(50) DEFAULT NULL,
@@ -190,7 +190,7 @@ INSERT INTO `Postit` (`id_postit`, `nom_postit`, `message_postit`) VALUES
 --
 -- Structure de la table `Reparation`
 --
-DROP TABLE IF EXISTS `Reparation`
+DROP TABLE IF EXISTS `Reparation`;
 CREATE TABLE IF NOT EXISTS `Reparation` (
   `id_reparation` int(11) NOT NULL AUTO_INCREMENT,
   `description_reparation` text,
@@ -206,7 +206,7 @@ CREATE TABLE IF NOT EXISTS `Reparation` (
 --
 -- Structure de la table `Taille`
 --
-DROP TABLE IF EXISTS `Taille`
+DROP TABLE IF EXISTS `Taille`;
 CREATE TABLE IF NOT EXISTS `Taille` (
   `id_taille` int(11) NOT NULL AUTO_INCREMENT,
   `libelle_taille` varchar(25) DEFAULT NULL,
@@ -227,7 +227,7 @@ INSERT INTO `Taille` (`id_taille`, `libelle_taille`) VALUES
 --
 -- Structure de la table `Velo`
 --
-DROP TABLE IF EXISTS `Velo`
+DROP TABLE IF EXISTS `Velo`;
 CREATE TABLE IF NOT EXISTS `Velo` (
   `id_velo` int(11) NOT NULL AUTO_INCREMENT,
   `id_Etat` int(11) DEFAULT NULL,
@@ -253,7 +253,7 @@ INSERT INTO `Velo` (`id_velo`, `id_Etat`, `id_taille`, `id_type`) VALUES
 --
 -- Structure de la table `_Type`
 --
-DROP TABLE IF EXISTS `_Type`
+DROP TABLE IF EXISTS `_Type`;
 CREATE TABLE IF NOT EXISTS `_Type` (
   `id_type` int(11) NOT NULL AUTO_INCREMENT,
   `libelle_type` varchar(25) DEFAULT NULL,
