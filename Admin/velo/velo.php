@@ -193,7 +193,7 @@ th{
               echo '<option value="'.$row["id_velo"].'">'.$row["id_velo"].'</option>';
             }
             ?>
-          </select>
+          </select><br/>
           Etat du velo :
           <select class="form-control" name="etat_velo" required>
             <?php
@@ -203,7 +203,7 @@ th{
               echo'<option value="'.$row["id_Etat"].'">'.$row["libelle_etat"].'';
             }
             ?>
-          </select></br>
+          </select><br/>
 
           Taille du velo :
           <select class="form-control" name="taille_velo" required>
@@ -214,7 +214,7 @@ th{
               echo'<option value="'.$row["id_taille"].'">'.$row["libelle_taille"].'</option>';
             }
             ?>
-          </select><br>
+          </select><br/>
 
           Type de velo :
           <select class="form-control" name="type_velo" required>
@@ -224,6 +224,7 @@ th{
             while (NULL !== ($row = $res->fetch_array())) {
               echo '<option value="'.$row["id_type"].'">'.$row["libelle_type"].'</option>';
             }?>
+          </select><br/>
         </div>
 
         <div class="modal-footer">
