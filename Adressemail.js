@@ -24,7 +24,19 @@ function banner(adresse){
 	var xhr = getXMLHttpRequest(); // Voyez la fonction getXMLHttpRequest() définie dans la partie précédente
 	xhr.onreadystatechange = function() {
         if (xhr.readyState == 4 && (xhr.status == 200 || xhr.status == 0)) {
-        		document.getElementById("banniere").innerHTML= xhr.responseText; // Données textuelles récupérées
+        		 // Données textuelles récupérées
+        		
+        		var json = jQuery.parseJSON(xhr.responseText);
+        		if (json.error){
+					document.getElementById("banniere").innerHTML= json.error;
+					document.getElementById('Valider').disabled='disabled';
+				}	
+				else{
+					document.getElementById("banniere").innerHTML= json.content;
+					document.getElementById('Valider').disabled='';
+				}
+				
+					
         }
 	};
 	xhr.open("GET", "../banner.php?adresse="+adresse+"", true);

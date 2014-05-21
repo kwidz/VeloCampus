@@ -3,7 +3,7 @@ tous les autres div sont commentés
 chaque action s'effectera dans un Modal pour eviter les lourds changement de page 
 pour l'utilisateur  -->
 <script type="text/javascript" src="script.js"></script>
-<script type="text/javascript" src="traitement.js"></script>
+<script type="text/javascript" src="ajax.js"></script>
 <style>
 th{
   border:solid 1px #CDCACA;
@@ -172,3 +172,36 @@ th{
     </div>
   </div> 
 </div>
+
+<!-- Second Modal modifier Velo -->
+<div class="modal fade" id="editionVelo" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <form method="POST" action="traitement/suppVelo.php" name="formSuppVelo">
+        <div class="modal-header">
+          <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+          <h4 class="modal-title" id="myModalLabel"><strong>Création de Location</strong></h4>
+        </div>
+        <div class="modal-body">
+
+          Velo à modifier :
+          <select class="form-control" name="supp_id_velo" onchange="modifierVelo(this.value)" required>
+            <?php
+            $sql="SELECT * from Velo";
+            $res=$mysqli->query($sql);
+            while (NULL !==($row = $res->fetch_array())) {
+              echo '<option value="'.$row["id_velo"].'">'.$row["id_velo"].'</option>';
+            }
+            ?>
+          </select>
+        </div>
+
+        <div class="modal-footer">
+          <button type="button" class="btn btn-danger" data-dismiss="modal">Annuler</button>
+          <input type="submit" class="btn btn-default"name="creer la Location">
+        </div>
+      </form>
+    </div>
+  </div> 
+</div>
+<!-- fin modal modifier -->
