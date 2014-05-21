@@ -43,16 +43,7 @@ CREATE TABLE IF NOT EXISTS `Adherent` (
 -- Contenu de la table `Adherent`
 --
 
-INSERT INTO `Adherent` (`id_adherent`, `nom_adherent`, `prenom_adherent`, `date_naissance_adherent`, `adresse_adherent`, `code_Postal_Adherent`, `telephone_adherent`, `adresse_mail_adherent`, `password_adherent`) VALUES
-(4, '1', '1', '0000-00-00', 'ata', 90000, '0677722547', 'ata@ata.fr', 'velocampus90'),
-(5, '1', '1', '0001-01-01', 'test', 0, '000', 'test@test.fr', '098f6bcd4621d373cade4e832627b4f6'),
-(10, '1', '1', '2014-05-24', '1 rue Gaston Defferre', 90000, '33688370492', 'p@l.fr', '83878c91171338902e0fe0fb97a8c47a'),
-(11, '1', '1', '0000-00-00', '3 rue gaston defferre', 90000, '0677722547', 'geoffrey.glangine@gmail.com', '1916a590c963a38d9aa4a806e9acda50'),
-(12, '1', '1', '0000-00-00', '1 rue de la paux', 15000, '0654659856', 'thejailpad@gmail.com', 'da4c5b2c65103765139715c7d52a6a35'),
-(13, '1', '1', '2014-05-19', 'ZAP', 0, 'ZAP', 'foo-bar@example.com', '903a98d709fa4683aaaa036b84c125a6'),
-(14, '1', '1', '0000-00-00', '2 rue de la poissonnerie', 90000, '0699969825(just', 'clementra.ravier@gmail.com', 'fec9ae5500aa2936dae3c22e396d52eb'),
-(15, '1', '1', '0000-00-00', 'Rue de mes couillesï¿½;SELECT VERSION()', 69000, '012345678ï¿½;SE', 'toto@gmail.com', '81dc9bdb52d04dc20036dbd8313ed055'),
-(16, '1', '1', '2014-05-20', '1 rue Gaston Defferre', 90000, '33688370492', 'a@aaa.fr', '0cc175b9c0f1b6a831c399e269772661');
+
 
 -- --------------------------------------------------------
 
@@ -104,15 +95,7 @@ CREATE TABLE IF NOT EXISTS `Cotisation` (
 -- Contenu de la table `Cotisation`
 --
 
-INSERT INTO `Cotisation` (`id_cotisation`, `id_adherent`) VALUES
-(6, 4),
-(7, 5),
-(9, 11),
-(10, 12),
-(11, 13),
-(12, 14),
-(13, 15),
-(14, 16);
+
 
 -- --------------------------------------------------------
 
@@ -160,9 +143,7 @@ CREATE TABLE IF NOT EXISTS `Location` (
 -- Contenu de la table `Location`
 --
 
-INSERT INTO `Location` (`id_location`, `prix_location`, `date_location`, `date_retour_location`, `id_velo`, `id_adherent`, `id_Etat`) VALUES
-(7, 15, '2012-02-02', NULL, 3, 4, NULL),
-(8, 15, '1994-01-01', NULL, 1, 11, NULL);
+
 
 -- --------------------------------------------------------
 
