@@ -177,7 +177,7 @@ th{
 <div class="modal fade" id="editionVelo" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
   <div class="modal-dialog">
     <div class="modal-content">
-      <form method="POST" action="traitement/suppVelo.php" name="formSuppVelo">
+      <form method="POST" action="traitement/modifierVelo.php" name="formSuppVelo">
         <div class="modal-header">
           <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
           <h4 class="modal-title" id="myModalLabel"><strong>Création de Location</strong></h4>
@@ -185,7 +185,7 @@ th{
         <div class="modal-body">
 
           Velo à modifier :
-          <select class="form-control" name="supp_id_velo" onchange="modifierVelo(this.value)" required>
+          <select class="form-control" name="id_velo"  required>
             <?php
             $sql="SELECT * from Velo";
             $res=$mysqli->query($sql);
@@ -194,6 +194,36 @@ th{
             }
             ?>
           </select>
+          Etat du velo :
+          <select class="form-control" name="etat_velo" required>
+            <?php
+            $sql="SELECT * from Etat";
+            $res=$mysqli->query($sql);
+            while (NULL !== ($row = $res->fetch_array())){
+              echo'<option value="'.$row["id_Etat"].'">'.$row["libelle_etat"].'';
+            }
+            ?>
+          </select></br>
+
+          Taille du velo :
+          <select class="form-control" name="taille_velo" required>
+            <?php
+            $sql="SELECT * from Taille";
+            $res = $mysqli->query($sql);
+            while (NULL !== ($row = $res->fetch_array())) {
+              echo'<option value="'.$row["id_taille"].'">'.$row["libelle_taille"].'</option>';
+            }
+            ?>
+          </select><br>
+
+          Type de velo :
+          <select class="form-control" name="type_velo" required>
+            <?php
+            $sql="SELECT * from _Type";
+            $res = $mysqli->query($sql);
+            while (NULL !== ($row = $res->fetch_array())) {
+              echo '<option value="'.$row["id_type"].'">'.$row["libelle_type"].'</option>';
+            }?>
         </div>
 
         <div class="modal-footer">
