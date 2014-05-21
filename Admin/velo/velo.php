@@ -224,7 +224,7 @@ th{
             while (NULL !== ($row = $res->fetch_array())) {
               echo '<option value="'.$row["id_type"].'">'.$row["libelle_type"].'</option>';
             }?>
-          </select><br/>
+          </select>
         </div>
 
         <div class="modal-footer">
