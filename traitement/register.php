@@ -4,7 +4,6 @@
 		$nom = $_POST['inputNom'];
 		$prenom = $_POST['inputPrenom'];
 		$dateNaissance = $_POST['inputDateNaissance'];
-		echo $dateNaissance;
 		$u_agent = $_SERVER['HTTP_USER_AGENT'];
         if (strstr($u_agent,"Mozilla")) {
             if (!strstr($u_agent,"Chrome")) {
@@ -29,5 +28,5 @@
 			$_SESSION['log']=0;
 		}
 	}
-	//header("Location: ".$_SERVER['HTTP_REFERER']);
+	header("Location: ".$_SERVER['HTTP_REFERER']);
 ?>

@@ -15,6 +15,10 @@ else {
    $_SESSION = array(); 
    include("../banniereAttenteConf.html");
  }
+      else if (isset($_SESSION['log']) && $_SESSION['log'] == 5) {
+         $_SESSION = array(); 
+        include("../banniereAttenteCompteAct.html");
+      }
 }
 ?>
 
