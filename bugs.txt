@@ -51,6 +51,7 @@ Morgane :
 Geoffrey :
 	revoir sur le coté gauche les raccourcis inutiles // Geoffrey
 	finir les liens/pages des raccourcis coté gauche // Geoffrey
+	droits sur les fichiers sur le serveur (comme ceux de l'accueil) // Geoffrey
 	
 
 Auguste : 

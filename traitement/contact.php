@@ -35,7 +35,7 @@
 	  		<iframe width="1100" height="600" frameborder="0" scrolling="no" marginheight="0" marginwidth="0" src="https://maps.google.fr/maps?f=q&amp;source=s_q&amp;hl=fr&amp;geocode=&amp;q=rue+engel+gros+Belfort&amp;aq=&amp;sll=47.642514,6.838968&amp;sspn=0.003271,0.008256&amp;t=h&amp;ie=UTF8&amp;hq=&amp;hnear=Rue+Engel+Gros,+90000+Belfort&amp;ll=47.642301,6.838544&amp;spn=0.003271,0.008256&amp;z=16&amp;output=embed"></iframe>
 	  		<br />
 	  		<small>
-	  			<a href="https://maps.google.fr/maps?f=q&amp;source=embed&amp;hl=fr&amp;geocode=&amp;q=rue+engel+gros+Belfort&amp;aq=&amp;sll=47.642514,6.838968&amp;sspn=0.003271,0.008256&amp;t=h&amp;ie=UTF8&amp;hq=&amp;hnear=Rue+Engel+Gros,+90000+Belfort&amp;ll=47.642301,6.838544&amp;spn=0.003271,0.008256&amp;z=14" style="color:#0000FF;text-align:left">Agrandir le plan</a>
+	  			<a href="https://maps.google.fr/maps?f=q&amp;source=embed&amp;hl=fr&amp;geocode=&amp;q=rue+engel+gros+Belfort&amp;aq=&amp;sll=47.642481,6.839&amp;sspn=0.003271,0.008256&amp;t=h&amp;ie=UTF8&amp;hq=&amp;hnear=Rue+Engel+Gros,+90000+Belfort&amp;ll=47.642481,6.839&amp;spn=0.003271,0.008256&amp;z=14" style="color:#0000FF;text-align:left">Agrandir le plan</a>
 	  		</small>
   		</center>
   	</div>
