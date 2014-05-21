@@ -1,2 +1,5 @@
 SetEnv PHP_VER 5
 DirectoryIndex first.html index.htm index.html index.php /accueil/index.php
+<Files accueil/titre.txt acceuil/contenu.txt>
+deny from all
+</Files>
