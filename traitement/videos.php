@@ -23,7 +23,20 @@ else {
 ?>
 
 <center>
-  <?php include("videos.txt") ?>
+  <?php
+  	include("../co.php");
+  	$sql = "SELECT titre_video, lien_video FROM Video";
+  	$result = $mysqli->query($sql);
+  	$i = 0;
+  	while (NULL !== ($row = $result->fetch_array())) {
+		echo "<h3>".$row['titre_video']."</h3><br/>";
+		echo '<iframe width="800" height="450" src="//www.youtube.com/embed/'.$row['lien_video'].'" frameborder="0" allowfullscreen></iframe><br/><br/>';
+  		$i++;
+  	}
+  	if ($i == 0) {
+  		echo "<h3>Pas de vidéos !</h3>";
+  	}
+  ?>
 </center>
 
 <?php

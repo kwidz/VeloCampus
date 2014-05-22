@@ -48,12 +48,9 @@
         		<?php 
         			$sql = "SELECT titre_video FROM Video";
         			$res = $mysqli->query($sql);
-        			$row = $res->fetch_array(MYSQLI_ASSOC);
-        			foreach ($row as $key => $value) {
-        				echo "<option>".$value."</option>";
-        			}
-        			/*foreach ($res as $key => $value) {
-        			}*/
+        			while (NULL !== ($row = $res->fetch_array())) {
+                echo "<option>".$row['titre_video']."</option>";
+              }
         		?>
         	</select>
       	</div>

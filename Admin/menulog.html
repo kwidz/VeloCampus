@@ -75,7 +75,11 @@
     $_SESSION["Vid"] = 0;
 } ?>
 <?php if(isset($_SESSION['Vid']) && $_SESSION['Vid'] == -1) {
-    include("../banniereVideoErreur.html");
+    include("../banniereVideoErreurAdd.html");
+    $_SESSION["Vid"] = 0;
+} ?>
+<?php if(isset($_SESSION['Vid']) && $_SESSION['Vid'] == -2) {
+    include("../banniereVideoErreurDel.html");
     $_SESSION["Vid"] = 0;
 } ?>
 
