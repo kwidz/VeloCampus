@@ -6,12 +6,12 @@
 		$lien = $_POST['lien'];
 		$link = explode("=", $lien);
 		echo $link[1];
-		$sql = 'INSERT INTO Video VALUES(null,"'.$titre.'","'.$link.'");';
+		$sql = 'INSERT INTO Video VALUES(null,"'.$titre.'","'.$link[1].'");';
 		$res=$mysqli->query($sql);
 		if ($res) {
-			$_SESSION['addVid'] = 1;
-			echo "good";
+			$_SESSION['Vid'] = 1;
 		}
-		else echo "bad :(";
+		else $_SESSION['Vid'] = -1;
 	}
+	header("Location: ".$_SERVER['HTTP_REFERER']);
 ?>

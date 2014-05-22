@@ -66,6 +66,19 @@
   include("../banniereMenupswdfalse.html");
   $_SESSION['modif'] = "";
 } ?>
+<?php if(isset($_SESSION['Vid']) && $_SESSION['Vid'] == 1) {
+    include("../banniereVideoAdded.html");
+    $_SESSION["Vid"] = 0;
+} ?>
+<?php if(isset($_SESSION['Vid']) && $_SESSION['Vid'] == 2) {
+    include("../banniereVideoDel.html");
+    $_SESSION["Vid"] = 0;
+} ?>
+<?php if(isset($_SESSION['Vid']) && $_SESSION['Vid'] == -1) {
+    include("../banniereVideoErreur.html");
+    $_SESSION["Vid"] = 0;
+} ?>
+
 
 <div class="row">
     <div class="col-md-3" >

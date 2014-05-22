@@ -45,6 +45,16 @@
         	Selectionner une vidéo à supprimer :<br/><br/>
         	<select class="form-control" id="video" name="video" required>
         		<option></option>
+        		<?php 
+        			$sql = "SELECT titre_video FROM Video";
+        			$res = $mysqli->query($sql);
+        			$row = $res->fetch_array(MYSQLI_ASSOC);
+        			foreach ($row as $key => $value) {
+        				echo "<option>".$value."</option>";
+        			}
+        			/*foreach ($res as $key => $value) {
+        			}*/
+        		?>
         	</select>
       	</div>
       	<div class="modal-footer">

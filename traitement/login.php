@@ -19,7 +19,6 @@
 		else {
 			$result = $mysqli->query("SELECT * FROM Adherent A WHERE A.adresse_mail_adherent='".$mail."' AND A.password_adherent='".$passwd."';");
 			if ($result->num_rows) {
-				echo "test";
 				$_SESSION['log']=5;
 			}
 			else $_SESSION['log']=0;
