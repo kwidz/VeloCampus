@@ -23,10 +23,7 @@ else {
 ?>
 
 <center>
-  <h3> Première vidéo ! </h3>
-  <iframe width="560" height="315" src="//www.youtube.com/embed/iktNXq3K5ps" frameborder="0" allowfullscreen></iframe>
-  <!-- <iframe width="711" height="400" src="//www.youtube.com/embed/iktNXq3K5ps" frameborder="0" allowfullscreen></iframe> -->
-  <!-- 400 711 -->
+  <?php include("videos.txt") ?>
 </center>
 
 <?php

@@ -7,7 +7,7 @@
 
 <script>
 function ConfirmationSuppr(id_adherent){
-  if(confirm("êtes vous sur de vouloir Supprimer cet adhérent ?")){
+  if(confirm("Êtes vous sur de vouloir supprimer cet adhérent ?")){
    
 
     xmlhttp=new XMLHttpRequest();
@@ -31,7 +31,7 @@ function ConfirmationSuppr(id_adherent){
 
 
 function ConfirmationsupprTout(){
-  if(confirm("êtes vous sur de vouloir Supprimer TOUS les adhérents ???")){
+  if(confirm("Êtes vous sur de vouloir supprimer TOUS les adhérents ?")){
    
 
     xmlhttp=new XMLHttpRequest();
@@ -65,7 +65,7 @@ function ConfirmationsupprTout(){
       echo"<center><strong>L'opération s'est déroulé avec succès !</center></strong><br/>";
     }
     else{
-      echo"<center><strong>Une erreur à été détectée avez vous bien remplis tous les champs ?</center></strong><br/>";
+      echo"<center><strong>Une erreur à été détectée. Avez-vous bien rempli tous les champs ?</center></strong><br/>";
     }
 
   }
@@ -73,9 +73,8 @@ function ConfirmationsupprTout(){
 
   <ul class="nav nav-pills nav-stacked">
     <li class="" style="text-align: center; margin-bottom: 15px; border:solid 1px; border-radius: 5px; border-color: #CDCACA"><a href="#" data-toggle="modal" data-target="#Ladh">Liste des adhérents</a></li>
-    <li class="" style="text-align: center; margin-bottom: 15px; border:solid 1px; border-radius: 5px; border-color: #CDCACA"><a href="#" data-toggle="modal" data-target="#Suprad">Supprimer des Adhérents</a></li>
-    <li class="" style="text-align: center; margin-bottom: 15px; border:solid 1px; border-radius: 5px; border-color: #CDCACA"><a href="#" data-toggle="modal" data-target="#repfvelo">Ajouter des adhérents</a></li>
-    
+    <li class="" style="text-align: center; margin-bottom: 15px; border:solid 1px; border-radius: 5px; border-color: #CDCACA"><a href="#" data-toggle="modal" data-target="#Suprad">Supprimer des adhérents</a></li>
+    <li class="" style="text-align: center; margin-bottom: 15px; border:solid 1px; border-radius: 5px; border-color: #CDCACA"><a href="../../">Ajouter des adhérents</a></li>
   </ul>
 </div>
 
@@ -105,7 +104,7 @@ function ConfirmationsupprTout(){
             <center>
               <br/>
               <table>
-                <tr><th>Nom</th><th>Prenom</th><th>Date Naissance</th><th>adresse</th><th>Code postal</th><th>telephone</th><th>Adresse Mail</th></tr>
+                <tr><th>Nom</th><th>Prénom</th><th>Date naissance</th><th>Adresse</th><th>Code postal</th><th>Téléphone</th><th>Adresse Mail</th></tr>
                 <?php
                 $sql = 'Select Adherent.* from Adherent, Cotisation  where Adherent.id_adherent = Cotisation.id_adherent';
                 $res=$mysqli->query($sql);

@@ -8,7 +8,7 @@
 <div class="col-md-6" >
     <ul class="nav nav-pills nav-stacked">
       <li class="" style="text-align: center; margin-bottom: 15px; border:solid 1px; border-radius: 5px; border-color: #CDCACA"><a href="#" data-toggle="modal" data-target="#modalAjouter">Ajouter un album</a></li>
-      <li class="" style="text-align: center; margin-bottom: 15px; border:solid 1px; border-radius: 5px; border-color: #CDCACA"><a href="#"data-toggle="modal" data-target="#selectDossier">Ajouter des photo</a></li>
+      <li class="" style="text-align: center; margin-bottom: 15px; border:solid 1px; border-radius: 5px; border-color: #CDCACA"><a href="#"data-toggle="modal" data-target="#selectDossier">Ajouter des photos</a></li>
     </ul>
 </div>
 
@@ -21,7 +21,7 @@
       </div>
       <div class="modal-body">
         <form method="POST" action="ajouter.php">
-        	Titre de l'album : (Attention veuillez ne pas mettre de carractères spéciaux)<br/> <input type="text" id="title" name="title">
+        	Titre de l'album : <i>(Attention veuillez ne pas mettre de carractères spéciaux)</i><br/><br/> <input type="text" class="form-control" id="title" name="title">
 
       </div>
       <div class="modal-footer">
