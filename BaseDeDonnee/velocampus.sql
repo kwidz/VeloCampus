@@ -3,7 +3,7 @@
 -- http://www.phpmyadmin.net
 --
 -- Client: database:3306
--- Généré le: Mer 21 Mai 2014 à 21:53
+-- Généré le: Jeu 22 Mai 2014 à 11:13
 -- Version du serveur: 1.0.9
 -- Version de PHP: 5.4.4-14+deb7u9
 
@@ -25,7 +25,7 @@ SET time_zone = "+00:00";
 --
 -- Structure de la table `Adherent`
 --
-DROP TABLE IF EXISTS `Adherent`;
+
 CREATE TABLE IF NOT EXISTS `Adherent` (
   `id_adherent` int(11) NOT NULL AUTO_INCREMENT,
   `nom_adherent` varchar(50) DEFAULT NULL,
@@ -37,20 +37,26 @@ CREATE TABLE IF NOT EXISTS `Adherent` (
   `adresse_mail_adherent` varchar(50) DEFAULT NULL,
   `password_adherent` varchar(100) DEFAULT NULL,
   PRIMARY KEY (`id_adherent`)
-) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=17 ;
+) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=24 ;
 
 --
 -- Contenu de la table `Adherent`
 --
 
-
+INSERT INTO `Adherent` (`id_adherent`, `nom_adherent`, `prenom_adherent`, `date_naissance_adherent`, `adresse_adherent`, `code_Postal_Adherent`, `telephone_adherent`, `adresse_mail_adherent`, `password_adherent`) VALUES
+(17, 'admin', '1', '0000-00-00', '1', 69000, '012345678', 'toto@gmail.com', '81dc9bdb52d04dc20036dbd8313ed055'),
+(18, 'fuck you', 'nvidia', '0000-00-00', '1', 90000, '33688370492', 'bb@bb.fr', '21ad0bd836b90d08f4cf640b4c298e7c'),
+(20, 'f', 'f', '0000-00-00', 'f', 0, '0', 'f@f.fr', '8fa14cdd754f91cc6554c9e71929cce7'),
+(21, 'test', 'test', '0001-01-01', '0', 0, '0', 't@t.fr', 'e358efa489f58062f10dd7316b65649e'),
+(22, 'Limballe', 'Pierre', '0020-02-22', '1 rue Gaston Defferre', 90000, '33688370492', 'p@l.fr', '83878c91171338902e0fe0fb97a8c47a'),
+(23, 'k', 'k', '1995-08-04', 'k', 9, '9', 'k@k.fr', '8ce4b16b22b58894aa86c421e8759df3');
 
 -- --------------------------------------------------------
 
 --
 -- Structure de la table `Admin`
 --
-DROP TABLE IF EXISTS `Admin`;
+
 CREATE TABLE IF NOT EXISTS `Admin` (
   `id_admin` int(11) NOT NULL AUTO_INCREMENT,
   `pseudo_admin` varchar(50) DEFAULT NULL,
@@ -70,7 +76,7 @@ INSERT INTO `Admin` (`id_admin`, `pseudo_admin`, `password_admin`) VALUES
 --
 -- Structure de la table `Cadenas`
 --
-DROP TABLE IF EXISTS `Cadenas`;
+
 CREATE TABLE IF NOT EXISTS `Cadenas` (
   `id_cadenas` int(11) NOT NULL AUTO_INCREMENT,
   `id_velo` int(11) DEFAULT NULL,
@@ -84,26 +90,29 @@ CREATE TABLE IF NOT EXISTS `Cadenas` (
 -- Structure de la table `Cotisation`
 --
 
-DROP TABLE IF EXISTS `Cotisation`;
 CREATE TABLE IF NOT EXISTS `Cotisation` (
   `id_cotisation` int(11) NOT NULL AUTO_INCREMENT,
   `id_adherent` int(11) DEFAULT NULL,
   PRIMARY KEY (`id_cotisation`),
   KEY `FK_Cotisation_id_adherent` (`id_adherent`)
-) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=15 ;
+) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=19 ;
 
 --
 -- Contenu de la table `Cotisation`
 --
 
-
+INSERT INTO `Cotisation` (`id_cotisation`, `id_adherent`) VALUES
+(15, 17),
+(16, 18),
+(17, 21),
+(18, 22);
 
 -- --------------------------------------------------------
 
 --
 -- Structure de la table `Etat`
 --
-DROP TABLE IF EXISTS `Etat`;
+
 CREATE TABLE IF NOT EXISTS `Etat` (
   `id_Etat` int(11) NOT NULL AUTO_INCREMENT,
   `libelle_etat` varchar(100) DEFAULT NULL,
@@ -125,7 +134,7 @@ INSERT INTO `Etat` (`id_Etat`, `libelle_etat`) VALUES
 --
 -- Structure de la table `Location`
 --
-DROP TABLE IF EXISTS `Location`;
+
 CREATE TABLE IF NOT EXISTS `Location` (
   `id_location` int(11) NOT NULL AUTO_INCREMENT,
   `prix_location` float DEFAULT NULL,
@@ -140,18 +149,12 @@ CREATE TABLE IF NOT EXISTS `Location` (
   KEY `FK_Location_id_Etat` (`id_Etat`)
 ) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=9 ;
 
---
--- Contenu de la table `Location`
---
-
-
-
 -- --------------------------------------------------------
 
 --
 -- Structure de la table `Message`
 --
-DROP TABLE IF EXISTS `Message`;
+
 CREATE TABLE IF NOT EXISTS `Message` (
   `id_message` int(11) NOT NULL AUTO_INCREMENT,
   `contenu_message` text,
@@ -167,13 +170,13 @@ CREATE TABLE IF NOT EXISTS `Message` (
 --
 -- Structure de la table `Postit`
 --
-DROP TABLE IF EXISTS `Postit`;
+
 CREATE TABLE IF NOT EXISTS `Postit` (
   `id_postit` int(11) NOT NULL AUTO_INCREMENT,
   `nom_postit` varchar(50) DEFAULT NULL,
   `message_postit` text,
   PRIMARY KEY (`id_postit`)
-) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=37 ;
+) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=38 ;
 
 --
 -- Contenu de la table `Postit`
@@ -190,7 +193,7 @@ INSERT INTO `Postit` (`id_postit`, `nom_postit`, `message_postit`) VALUES
 --
 -- Structure de la table `Reparation`
 --
-DROP TABLE IF EXISTS `Reparation`;
+
 CREATE TABLE IF NOT EXISTS `Reparation` (
   `id_reparation` int(11) NOT NULL AUTO_INCREMENT,
   `description_reparation` text,
@@ -206,7 +209,7 @@ CREATE TABLE IF NOT EXISTS `Reparation` (
 --
 -- Structure de la table `Taille`
 --
-DROP TABLE IF EXISTS `Taille`;
+
 CREATE TABLE IF NOT EXISTS `Taille` (
   `id_taille` int(11) NOT NULL AUTO_INCREMENT,
   `libelle_taille` varchar(25) DEFAULT NULL,
@@ -227,7 +230,7 @@ INSERT INTO `Taille` (`id_taille`, `libelle_taille`) VALUES
 --
 -- Structure de la table `Velo`
 --
-DROP TABLE IF EXISTS `Velo`;
+
 CREATE TABLE IF NOT EXISTS `Velo` (
   `id_velo` int(11) NOT NULL AUTO_INCREMENT,
   `id_Etat` int(11) DEFAULT NULL,
@@ -251,9 +254,22 @@ INSERT INTO `Velo` (`id_velo`, `id_Etat`, `id_taille`, `id_type`) VALUES
 -- --------------------------------------------------------
 
 --
+-- Structure de la table `Video`
+--
+
+CREATE TABLE IF NOT EXISTS `Video` (
+  `id_video` int(200) NOT NULL AUTO_INCREMENT,
+  `titre_video` varchar(200) DEFAULT NULL,
+  `lien_video` varchar(200) DEFAULT NULL,
+  PRIMARY KEY (`id_video`)
+) ENGINE=InnoDB DEFAULT CHARSET=latin1 AUTO_INCREMENT=1 ;
+
+-- --------------------------------------------------------
+
+--
 -- Structure de la table `_Type`
 --
-DROP TABLE IF EXISTS `_Type`;
+
 CREATE TABLE IF NOT EXISTS `_Type` (
   `id_type` int(11) NOT NULL AUTO_INCREMENT,
   `libelle_type` varchar(25) DEFAULT NULL,
