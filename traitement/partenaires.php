@@ -20,7 +20,31 @@
       }
  	}
 
+include("../co.php");
+//
+// Les parties commentées sont les "vraies"
+//
+//$sql = "SELECT nom_partenaire, description_partenaire, photo_partenaire FROM Partenaire";
+$sql = "SELECT nom_adherent, prenom_adherent FROM Adherent";
+$result = $mysqli->query($sql);
+if ($result) {
+  echo "<center>";
+  while (NULL !== ($row = $result->fetch_array())) {
+    //echo "<h3>".$row['nom_partenaire']."</h3>";
+    //echo "<i>".$row['description_partenaire']."</i>";
+    //echo "<img src='".$row['photo_partenaire']."'></img><br/><br/>";
+    echo "<h3>".$row['nom_adherent']."</h3>";
+    echo "<i>".$row['prenom_adherent']."</i><br/><br/>";
+  }
+  echo "</center>";
+}
+else {
+  echo "Bad :(";
+}
+
 ?>
+
+
 
 <?php
 	include("../footer.html");

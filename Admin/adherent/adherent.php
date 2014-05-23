@@ -8,48 +8,29 @@
 <script>
 function ConfirmationSuppr(id_adherent){
   if(confirm("Êtes vous sur de vouloir supprimer cet adhérent ?")){
-   
-
-    xmlhttp=new XMLHttpRequest();
-
+   xmlhttp=new XMLHttpRequest();
     xmlhttp.onreadystatechange=function(){
     if (xmlhttp.readyState==4 && xmlhttp.status==200)  //si on est bien a letape 4
       //document.getElementById("vet").style.display="block";
       document.getElementById("Confirme").innerHTML=xmlhttp.responseText; //balise select dans le html
-      
-
-
-
     }
     xmlhttp.open("GET","traitement/suppr.php?id_adherent="+id_adherent,true);
     xmlhttp.send();
-
-
-
   }
 }
 
 
 function ConfirmationsupprTout(){
   if(confirm("Êtes vous sur de vouloir supprimer TOUS les adhérents ?")){
-   
-
     xmlhttp=new XMLHttpRequest();
 
     xmlhttp.onreadystatechange=function(){
     if (xmlhttp.readyState==4 && xmlhttp.status==200)  //si on est bien a letape 4
       //document.getElementById("vet").style.display="block";
       document.getElementById("Confirme").innerHTML=xmlhttp.responseText; //balise select dans le html
-      
-
-
-
     }
     xmlhttp.open("GET","traitement/supprTout.php",true);
     xmlhttp.send();
-
-
-
   }
 }
 
@@ -78,9 +59,6 @@ function ConfirmationsupprTout(){
   </ul>
 </div>
 
-
-
-
 <!-- Premier Modal Liste des adherents -->
 <div class="modal fade" id="Ladh" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true" >
   <div class="modal-dialog" style="width:1000px;">
@@ -88,16 +66,8 @@ function ConfirmationsupprTout(){
       <div class="modal-header">
         <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
         <h4 class="modal-title" id="myModalLabel"><center><strong>Liste des adhérents</strong></center></h4>
-
       </div>
       <div class="modal-body">
-
-
-
-
-
-
-
         <form role="form" method="POST" action="traitement/ajouter.php">
 
           <div class="form-group">
@@ -117,30 +87,16 @@ function ConfirmationsupprTout(){
               </table>
             </center>
           </div>
-
-
         </table>
-
-
-
-
-
-
-
-
-
       </div>
       <div class="modal-footer">
         <button type="button" class="btn btn-danger" data-dismiss="modal">Annuler</button>
         <input type="submit" class="btn btn-default" name="Ajouter">
       </form>
-
     </div>
   </div>
 </div> 
 </div>
-
-
 
 
 <!-- Deuxieme Modal Supprimer des adherents -->
@@ -153,13 +109,6 @@ function ConfirmationsupprTout(){
 
       </div>
       <div class="modal-body">
-
-
-
-
-
-
-
         <form role="form" method="POST" action="traitement/ajouter.php">
 
           <div class="form-group">
@@ -183,24 +132,11 @@ function ConfirmationsupprTout(){
               <button  type="button" class="btn btn-default" onclick="ConfirmationsupprTout()">Supprimer TOUS les adhérents</button>
             </center>
           </div>
-
-
-       
-
-
-
-
-
-
-
-
-
       </div>
       <div class="modal-footer">
         <button type="button" class="btn btn-danger" data-dismiss="modal">Annuler</button>
         <input type="submit" class="btn btn-default" name="Ajouter">
       </form>
-
     </div>
   </div>
 </div> 
