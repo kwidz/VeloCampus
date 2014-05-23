@@ -252,7 +252,7 @@ CREATE TABLE `Reparation` (
   PRIMARY KEY (`id_reparation`),
   KEY `id_velo` (`id_velo`),
   CONSTRAINT `fk_id_velo` FOREIGN KEY (`id_velo`) REFERENCES `Velo` (`id_velo`)
-) ENGINE=InnoDB AUTO_INCREMENT=13 DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB AUTO_INCREMENT=26 DEFAULT CHARSET=latin1;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -261,7 +261,7 @@ CREATE TABLE `Reparation` (
 
 LOCK TABLES `Reparation` WRITE;
 /*!40000 ALTER TABLE `Reparation` DISABLE KEYS */;
-INSERT INTO `Reparation` VALUES (9,'velo en feu',3,150,9),(10,'pneu creve',2,15,13),(11,'extinction du feu',-1,150,9),(12,'cadre pliÃ©',2,NULL,1);
+INSERT INTO `Reparation` VALUES (9,'velo en feu',3,150,9),(10,'pneu creve',2,15,13),(11,'extinction du feu',-1,150,9),(12,'cadre pliÃ©',2,NULL,1),(13,'test',-1,2,3),(14,'test',-1,10,3),(15,'tzstt',-1,13,5),(16,'ttttt',-1,10,2),(17,'tttt',-1,10,7),(18,'ppp',-1,56,8),(19,'gdf',-1,12,2),(21,'sdv',-1,12,2),(23,'jj',-1,10,5);
 /*!40000 ALTER TABLE `Reparation` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -322,6 +322,30 @@ INSERT INTO `Velo` VALUES (1,1,1,1),(2,1,1,1),(3,1,1,1),(4,1,1,1),(5,1,1,1),(6,1
 UNLOCK TABLES;
 
 --
+-- Table structure for table `Video`
+--
+
+DROP TABLE IF EXISTS `Video`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!40101 SET character_set_client = utf8 */;
+CREATE TABLE `Video` (
+  `id_video` int(200) NOT NULL AUTO_INCREMENT,
+  `titre_video` varchar(200) DEFAULT NULL,
+  `lien_video` varchar(200) DEFAULT NULL,
+  PRIMARY KEY (`id_video`)
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+/*!40101 SET character_set_client = @saved_cs_client */;
+
+--
+-- Dumping data for table `Video`
+--
+
+LOCK TABLES `Video` WRITE;
+/*!40000 ALTER TABLE `Video` DISABLE KEYS */;
+/*!40000 ALTER TABLE `Video` ENABLE KEYS */;
+UNLOCK TABLES;
+
+--
 -- Table structure for table `_Type`
 --
 
@@ -371,12 +395,7 @@ LOCK TABLES `subit` WRITE;
 /*!40000 ALTER TABLE `subit` ENABLE KEYS */;
 UNLOCK TABLES;
 /*!40103 SET TIME_ZONE=@OLD_TIME_ZONE */;
-CREATE TABLE IF NOT EXISTS `Video` (
-  `id_video` int(200) NOT NULL AUTO_INCREMENT,
-  `titre_video` varchar(200) DEFAULT NULL,
-  `lien_video` varchar(200) DEFAULT NULL,
-  PRIMARY KEY (`id_video`)
-) ENGINE=InnoDB DEFAULT CHARSET=latin1 AUTO_INCREMENT=1 ;
+
 /*!40101 SET SQL_MODE=@OLD_SQL_MODE */;
 /*!40014 SET FOREIGN_KEY_CHECKS=@OLD_FOREIGN_KEY_CHECKS */;
 /*!40014 SET UNIQUE_CHECKS=@OLD_UNIQUE_CHECKS */;
@@ -385,4 +404,4 @@ CREATE TABLE IF NOT EXISTS `Video` (
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2014-05-16 13:06:46
+-- Dump completed on 2014-05-23 14:28:21
