@@ -57,31 +57,56 @@
 <?php if (isset($_SESSION['modif']) && $_SESSION['modif'] == "accueil") {
   include("../banniereMenuUpdate.html");
   $_SESSION['modif'] = "";
-} ?>
-<?php if (isset($_SESSION['modif']) && $_SESSION['modif'] == "mdptrue") {
+} 
+if (isset($_SESSION['modif']) && $_SESSION['modif'] == "mdptrue") {
   include("../banniereMenupswdtrue.html");
   $_SESSION['modif'] = "";
-} ?>
-<?php if (isset($_SESSION['modif']) && $_SESSION['modif'] == "mdpfalse") {
+} 
+if (isset($_SESSION['modif']) && $_SESSION['modif'] == "mdpfalse") {
   include("../banniereMenupswdfalse.html");
   $_SESSION['modif'] = "";
-} ?>
-<?php if(isset($_SESSION['Vid']) && $_SESSION['Vid'] == 1) {
+} 
+if(isset($_SESSION['Vid']) && $_SESSION['Vid'] == 1) {
     include("../banniereVideoAdded.html");
     $_SESSION["Vid"] = 0;
-} ?>
-<?php if(isset($_SESSION['Vid']) && $_SESSION['Vid'] == 2) {
+} 
+if(isset($_SESSION['Vid']) && $_SESSION['Vid'] == 2) {
     include("../banniereVideoDel.html");
     $_SESSION["Vid"] = 0;
-} ?>
-<?php if(isset($_SESSION['Vid']) && $_SESSION['Vid'] == -1) {
+} 
+if(isset($_SESSION['Vid']) && $_SESSION['Vid'] == -1) {
     include("../banniereVideoErreurAdd.html");
     $_SESSION["Vid"] = 0;
-} ?>
-<?php if(isset($_SESSION['Vid']) && $_SESSION['Vid'] == -2) {
+} 
+if(isset($_SESSION['Vid']) && $_SESSION['Vid'] == -2) {
     include("../banniereVideoErreurDel.html");
     $_SESSION["Vid"] = 0;
-} ?>
+} 
+if(isset($_SESSION['ajPar']) && $_SESSION['ajPar'] == 1) {
+    include("../banniereParadd.html");
+    $_SESSION['ajPar'] = 0;
+}
+if(isset($_SESSION['ajPar']) && $_SESSION['ajPar'] == -1) {
+    include("../banniereParaddErr.html");
+    $_SESSION['ajPar'] = 0;
+}
+if (isset($_SESSION['modPar']) && $_SESSION['modPar'] == 1) {
+    include("../banniereParmod.html");
+    $_SESSION['modPar'] = 0;
+}
+if (isset($_SESSION['modPar']) && $_SESSION['modPar'] == -1) {
+    include("../banniereParmodErr.html");
+    $_SESSION['modPar'] = 0;
+}
+if (isset($_SESSION['delPar']) && $_SESSION['delPar'] == 1) {
+    include("../bannierePardel.html");
+    $_SESSION['delPar'] = 0;
+}
+if (isset($_SESSION['delPar']) && $_SESSION['delPar'] == -1) {
+    include("../bannierePardelErr.html");
+    $_SESSION['delPar'] = 0;
+}
+?>
 
 
 <div class="row">

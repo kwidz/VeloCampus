@@ -237,6 +237,22 @@ INSERT INTO `Postit` VALUES (4,'geoffrey','je viens de finir les locations, j\'a
 UNLOCK TABLES;
 
 --
+-- Table structure for table `Partenaire`
+--
+
+DROP TABLE IF EXISTS `Partenaire`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!40101 SET character_set_client = utf8 */;
+CREATE TABLE `Partenaire` (
+  `id_partenaire` int(11) NOT NULL AUTO_INCREMENT,
+  `nom_partenaire` varchar(50) DEFAULT NULL,
+  `description_partenaire` text,
+  `photo_partenaire` varchar(70) DEFAULT NULL,
+  PRIMARY KEY (`id_partenaire`)
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+/*!40101 SET character_set_client = @saved_cs_client */;
+
+--
 -- Table structure for table `Reparation`
 --
 

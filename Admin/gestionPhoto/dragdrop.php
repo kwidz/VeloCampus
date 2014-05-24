@@ -42,7 +42,7 @@
       include("../menulog.html");?>
       <div class="col-md-6">
       <div class="dropfile" >
-          <center><h4>Pour partager plusieurs photos d'un seul coups :</h4></center>
+          <center><h4>Pour partager plusieurs photos d'un seul coup :</h4></center>
       </div><br/>
 <div>
 <?php

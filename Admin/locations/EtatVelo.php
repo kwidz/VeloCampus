@@ -27,7 +27,7 @@ if ($id_velo) {
 	
 	
 } else {
-	echo "<br/><div class='alert alert-danger'><center>Erreur champs.</center></div>";
+	echo "<br/><div class='alert alert-danger'><center>Erreur champ.</center></div>";
 }
 
 ?>
