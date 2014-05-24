@@ -1,5 +1,4 @@
-
-  <style>
+<style>
   th, td{
     border:solid 1px #CDCACA;
     text-align:center;
@@ -32,7 +31,7 @@ function reparation(id_velo){
 <div class="col-md-6" >
   <?php
 
-  if(isset($_GET['message'])
+  /*if(isset($_GET['message'])
     && (!empty($_GET['message']))){
     if ($_GET['message']=="ok"){
       echo"<center><strong>L'opération s'est déroulé avec succès !</center></strong><br/>";
@@ -41,7 +40,16 @@ function reparation(id_velo){
       echo"<center><strong>Une erreur à été détectée avez vous bien remplis tous les champs ?</center></strong><br/>";
     }
 
+  }*/
+  if (isset($_SESSION['reparation']) && $_SESSION['reparation'] == 30) {
+    include("banniereReparationAdd.html");
+    
+    $_SESSION['reparation'] = "";
   }
+  else if (isset($_SESSION['reparation']) && $_SESSION['reparation'] == -30){
+     include("banniereReparationAddERROR.html");
+    $_SESSION['reparation'] = "";
+  } 
   ?>
 
 <ul class="nav nav-pills nav-stacked">
