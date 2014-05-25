@@ -20,14 +20,14 @@
       }
  	}
 
- 	if(isset($_SESSION['mail'])) {
- 		if ($_SESSION['mail'] == 1) {
+ 	if(isset($_SESSION['email'])) {
+ 		if ($_SESSION['email'] == 1) {
 	 		include("../banniereMailEnvoye.html");
 	 	}
-	 	else if ($_SESSION['mail'] == -1) {
+	 	else if ($_SESSION['email'] == -1) {
 	 		include("../banniereMailErreur.html");
 	 	}
-	 	$_SESSION['mail'] = 0;
+	 	$_SESSION['email'] = 0;
  	}
 ?>
 

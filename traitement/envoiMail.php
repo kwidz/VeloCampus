@@ -11,11 +11,11 @@
 	$success = mail($EmailTo, $Subject, $Body, "From: <$EmailFrom>");
 	
 	if ($success) {
-		$_SESSION['mail'] = 1;
+		$_SESSION['email'] = 1;
 	}
 
 	else {
-		$_SESSION['mail'] = -1;
+		$_SESSION['email'] = -1;
 	}
 	header("Location: ".$_SERVER['HTTP_REFERER']);
 ?>
