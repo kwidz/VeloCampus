@@ -22,7 +22,7 @@
 <div class="col-md-3" >
 	<div class="panel panel-default">
 		<!-- Default panel contents -->
-		<div class="panel-heading">Demande d'inscription (A VALIDER) </div>
+		<div class="panel-heading">Demandes d'inscription (à valider) </div>
 		<!-- <div class="panel-body"></div>-->
 
 		<!-- Table -->

@@ -69,9 +69,9 @@ echo '<form method="post" action="upload_simple.php?dossier='.$_GET['dossier'].'
     }
   }
 ?>
-</div>
-      <div class= "lien" style="text-align: center; margin-bottom: 15px; border:solid 1px; border-radius: 5px; border-color: #CDCACA" width="100%" height="35px"><a href="index.php">Retour Menu Photos</a></div>
-      <div class= "lien" style="text-align: center; margin-bottom: 15px; border:solid 1px; border-radius: 5px; border-color: #CDCACA" width="100%" height="35px"><a href="../../traitement/photos.php">Galerie Photos</a></div>
+</div><br/>
+      <div class= "lien" style="text-align: center; margin-bottom: 15px; border:solid 1px; border-radius: 5px; border-color: #CDCACA" width="100%" height="35px"><a href="index.php">Retour menu photos</a></div>
+      <div class= "lien" style="text-align: center; margin-bottom: 15px; border:solid 1px; border-radius: 5px; border-color: #CDCACA" width="100%" height="35px"><a href="../../traitement/photos.php">Galerie photos</a></div>
       </div>
              
        

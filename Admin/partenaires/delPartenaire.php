@@ -14,5 +14,5 @@
 			$_SESSION['delPar'] = -1;
 		}
 	}
-	//header("Location: ".$_SERVER['HTTP_REFERER']);
+	header("Location: ".$_SERVER['HTTP_REFERER']);
 ?>

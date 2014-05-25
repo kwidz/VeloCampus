@@ -24,11 +24,11 @@ pour l'utilisateur  -->
   }
   ?>
   <ul class="nav nav-pills nav-stacked">
-    <li class="" style="text-align: center; margin-bottom: 15px; border:solid 1px; border-radius: 5px; border-color: #CDCACA"><a href="#" data-toggle="modal" data-target="#creerLocation" onclick="gestionEtat(document.form2.id_velo.value)">Créer une Location</a></li>
+    <li class="" style="text-align: center; margin-bottom: 15px; border:solid 1px; border-radius: 5px; border-color: #CDCACA"><a href="#" data-toggle="modal" data-target="#creerLocation" onclick="gestionEtat(document.form2.id_velo.value)">Créer une location</a></li>
     <li class="" style="text-align: center; margin-bottom: 15px; border:solid 1px; border-radius: 5px; border-color: #CDCACA"><a href="#" data-toggle="modal" data-target="#veloNonLoués">Voir les vélos non-loués</a></li>
     <li class="" style="text-align: center; margin-bottom: 15px; border:solid 1px; border-radius: 5px; border-color: #CDCACA"><a href="#" data-toggle="modal" data-target="#veloNonRendus">Voir les personnes qui n'ont pas encore rendu leur vélo</a></li>
     <li class="" style="text-align: center; margin-bottom: 15px; border:solid 1px; border-radius: 5px; border-color: #CDCACA"><a href="#" data-toggle="modal" data-target="#allLocations">Voir toutes les locations de l'année </a></li>
-    <li class="" style="text-align: center; margin-bottom: 15px; border:solid 1px; border-radius: 5px; border-color: #CDCACA"><a href="#" data-toggle="modal" data-target="#retourLoc" onclick="banner(document.form.id_etat.value,document.form.id_location.value)">ajouter un retour de Location</a></li>
+    <li class="" style="text-align: center; margin-bottom: 15px; border:solid 1px; border-radius: 5px; border-color: #CDCACA"><a href="#" data-toggle="modal" data-target="#retourLoc" onclick="banner(document.form.id_etat.value,document.form.id_location.value)">Ajouter un retour de location</a></li>
   </ul>
 </div>
 <!-- Premier Modal creation de location -->
@@ -37,16 +37,16 @@ pour l'utilisateur  -->
     <div class="modal-content">
       <div class="modal-header">
         <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
-        <h4 class="modal-title" id="myModalLabel"><strong>Création de Location</strong></h4>
+        <h4 class="modal-title" id="myModalLabel"><strong>Création de location</strong></h4>
       </div>
       <div class="modal-body">
         <?php
 
         ?>
         <form method="POST" action="traitement/ajouter.php" name="form2">
-          Nom de l'Adherent :
+          Nom de l'adhérent :
           <select class="form-control" name="id_adherent" required>
-
+          <option></option>
 
             <?php
             $sql='Select * from Adherent order by nom_adherent';
@@ -58,9 +58,8 @@ pour l'utilisateur  -->
             ?>
           </select><br/>
 
-          Identifiant du Velo : 
+          Identifiant du vélo : 
           <select class="form-control" name="id_velo" onchange="gestionEtat(this.value)"required>
-
 
             <?php
 
@@ -79,7 +78,7 @@ pour l'utilisateur  -->
           </select><br/>
           <div id="test"></div>
           Prix : <input type="text" class="form-control" name="prix" value="15" required><br/>
-          Date : <input type="date" name="date" required><br/>
+          Date : <input type="date" class="form-control" name="date" required><br/>
 
 
         </div>
@@ -101,15 +100,15 @@ pour l'utilisateur  -->
     <div class="modal-content">
       <div class="modal-header">
         <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
-        <h4 class="modal-title" id="myModalLabel"><strong> Vélos nons loués </strong></h4>
+        <h4 class="modal-title" id="myModalLabel"><strong> Vélos non loués </strong></h4>
       </div>
       <div class="modal-body">
           <table class="bordered-table"style="border:solid 1px #CDCACA; border-radius:50px">
             <thead>
               <tr>
-                <th>Numero du velo</th>
-                <th>Type du velo</th>
-                <th>Taille du velo</th>
+                <th>Numéro du vélo</th>
+                <th>Type du vélo</th>
+                <th>Taille du vélo</th>
                 <th>Cadenas associés</th>
               </tr>
             </thead>
@@ -158,7 +157,7 @@ pour l'utilisateur  -->
         </div>
         <div class="modal-footer">
           <button type="button" class="btn btn-danger" data-dismiss="modal">Annuler</button>
-          <button type="button" class="btn btn-default" data-dismiss="modal">Ok</button>
+          <button type="button" class="btn btn-default" data-dismiss="modal">Fermer</button>
         
 
 
@@ -173,17 +172,17 @@ pour l'utilisateur  -->
     <div class="modal-content">
       <div class="modal-header">
         <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
-        <h4 class="modal-title" id="myModalLabel"><strong> Vélos nons loués </strong></h4>
+        <h4 class="modal-title" id="myModalLabel"><strong> Vélos non rendus </strong></h4>
       </div>
       <div class="modal-body">
           <table class="bordered-table"style="border:solid 1px #CDCACA; border-radius:50px">
             <thead>
               <tr>
-                <th>Numero du velo</th>
-                <th>Nom de l'adherent</th>
-                <th>Prenom de l'adherent</th>
-                <th>Telephone de l'adherent</th>
-                <th>Mail de l'adherent</th>
+                <th>Numéro du vélo</th>
+                <th>Nom de l'adhérent</th>
+                <th>Prénom de l'adhérent</th>
+                <th>Téléphone de l'adhérent</th>
+                <th>Mail de l'adhérent</th>
               </tr>
             </thead>
             <tbody>
@@ -215,7 +214,7 @@ pour l'utilisateur  -->
         </div>
         <div class="modal-footer">
           <button type="button" class="btn btn-danger" data-dismiss="modal">Annuler</button>
-          <button type="button" class="btn btn-default" data-dismiss="modal">Ok</button>
+          <button type="button" class="btn btn-default" data-dismiss="modal">Fermer</button>
         
 
 
@@ -237,11 +236,11 @@ pour l'utilisateur  -->
           <table class="bordered-table"style="border:solid 1px #CDCACA; border-radius:50px">
             <thead>
               <tr>
-                <th>Numero du velo</th>
-                <th>Nom de l'adherent</th>
-                <th>Prenom de l'adherent</th>
-                <th>Telephone de l'adherent</th>
-                <th>Mail de l'adherent</th>
+                <th>Numéro du vélo</th>
+                <th>Nom de l'adhérent</th>
+                <th>Prénom de l'adhérent</th>
+                <th>Téléphone de l'adhérent</th>
+                <th>Mail de l'adhérent</th>
                 <th>Date de la location</th>
                 <th>Date de retour de la location</th>
 
@@ -294,7 +293,7 @@ pour l'utilisateur  -->
     <div class="modal-content">
       <div class="modal-header">
         <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
-        <h4 class="modal-title" id="myModalLabel"><strong> Retour de Location </strong></h4>
+        <h4 class="modal-title" id="myModalLabel"><strong> Retour de location </strong></h4>
       </div>
       <div class="modal-body" >
         
@@ -307,6 +306,7 @@ pour l'utilisateur  -->
               
               ?>
               <form method="POST" action="traitement/dateRetour.php" name="form">
+              Sélectionner le vélo loué :
                 <select class="form-control" name="id_location" onchange="banner(document.form.id_etat.value,this.value)">
             <?php
 
@@ -314,9 +314,10 @@ pour l'utilisateur  -->
                 $res=$mysqli->query($sql);
                 while (NULL !== ($row = $res->fetch_array())) {
                                     
-                    echo '<option value="'.$row[3].'">Velo n°'.$row[0].', '.$row[1].' '.$row[2].'</option>';
+                    echo '<option value="'.$row[3].'">n°'.$row[0].', '.$row[1].' '.$row[2].'</option>';
                   }
-                  ?></select>
+                  ?></select><br/>
+        Sélectionner l'état du vélo :
         <select class="form-control" name="id_etat" onchange="banner(this.value,document.form.id_location.value)">
             <?php
 
@@ -324,12 +325,12 @@ pour l'utilisateur  -->
                 $res=$mysqli->query($sql2);
                 while (NULL !== ($row = $res->fetch_array())) {
                                     
-                    echo '<option value="'.$row['id_Etat'].'">Etat : '.$row['libelle_etat'].'</option>';
+                    echo '<option value="'.$row['id_Etat'].'">'.$row['libelle_etat'].'</option>';
                   }
                   ?></select>
                   <div id="baniereajaxaralonge">
                   </div>
-                  Date du retour : <input type="date" name="date" required><br/>
+                  Date du retour : <input class="form-control" type="date" name="date" required><br/>
       
        
         </div>

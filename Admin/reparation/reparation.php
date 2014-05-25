@@ -53,9 +53,9 @@ function reparation(id_velo){
   ?>
 
 <ul class="nav nav-pills nav-stacked">
-    <li class="" style="text-align: center; margin-bottom: 15px; border:solid 1px; border-radius: 5px; border-color: #CDCACA"><a href="#" data-toggle="modal" data-target="#ajrep">Ajouter des Réparations</a></li>
-    <li class="" style="text-align: center; margin-bottom: 15px; border:solid 1px; border-radius: 5px; border-color: #CDCACA"><a href="#" data-toggle="modal" data-target="#suprrep">Supprimer des Réparation</a></li>
-    <li class="" style="text-align: center; margin-bottom: 15px; border:solid 1px; border-radius: 5px; border-color: #CDCACA"><a href="#" data-toggle="modal" data-target="#repfvelo">Afficher réparation en fonction d'un vélo</a></li>
+    <li class="" style="text-align: center; margin-bottom: 15px; border:solid 1px; border-radius: 5px; border-color: #CDCACA"><a href="#" data-toggle="modal" data-target="#ajrep">Ajouter des réparations</a></li>
+    <li class="" style="text-align: center; margin-bottom: 15px; border:solid 1px; border-radius: 5px; border-color: #CDCACA"><a href="#" data-toggle="modal" data-target="#suprrep">Supprimer des réparations</a></li>
+    <li class="" style="text-align: center; margin-bottom: 15px; border:solid 1px; border-radius: 5px; border-color: #CDCACA"><a href="#" data-toggle="modal" data-target="#repfvelo">Afficher les réparations en fonction d'un vélo</a></li>
    
   </ul>
 </div>
@@ -66,7 +66,7 @@ function reparation(id_velo){
     <div class="modal-content">
       <div class="modal-header">
         <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
-        <h4 class="modal-title" id="myModalLabel"><strong>Ajouter une reparation</strong></h4>
+        <h4 class="modal-title" id="myModalLabel"><strong>Ajouter une réparation</strong></h4>
       </div>
       <div class="modal-body">
         
@@ -78,7 +78,7 @@ function reparation(id_velo){
   <form role="form" method="POST" action="traitement/ajouter.php">
  
       <div class="form-group">
-      Identifiant du Velo : 
+      Identifiant du vélo : 
           <select class="form-control" name="id_velo" id="id_velo" required>
 
 
@@ -102,12 +102,13 @@ function reparation(id_velo){
 
 
     <div class="form-group">
-      <textarea cols="50" rows="2" class="form-control" id="descr" name="descr" placeholder="description" required></textarea>
+      Description de la réparation :
+      <textarea cols="50" rows="2" class="form-control" id="descr" name="descr" placeholder="Description" required></textarea>
     </div>
 
     <div class="form-group">
-      <label>prix de la réparation</label>
-        <input type="number" class="form-control" id="prix" name="prix" placeholder="prix" required>
+      Prix de la réparation :
+        <input type="number" class="form-control" id="prix" name="prix" placeholder="Prix" required>
       </div>
 
      
@@ -136,7 +137,7 @@ function reparation(id_velo){
     <div class="modal-content">
       <div class="modal-header">
         <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
-        <h4 class="modal-title" id="myModalLabel"><strong>Suprimer des réparation</strong></h4>
+        <h4 class="modal-title" id="myModalLabel"><strong>Supprimer des réparations</strong></h4>
       </div>
       <div class="modal-body">
         
@@ -147,10 +148,10 @@ function reparation(id_velo){
              <table class="bordered-table"style="border:solid 1px #CDCACA; border-radius:50px">
             <thead>
               <tr>
-                <th>idreparation</th>
+                <th>ID réparation</th>
                 <th>Description</th>
-                <th>prix reparation</th>
-                <th>idvelo</th>
+                <th>Prix réparation</th>
+                <th>ID vélo</th>
                 <th>Supprimer</th>
               </tr>
             </thead>
@@ -187,15 +188,15 @@ function reparation(id_velo){
     <div class="modal-content">
       <div class="modal-header">
         <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
-        <h4 class="modal-title" id="myModalLabel"><strong>Afficher les réparation d'un vélo</strong></h4>
+        <h4 class="modal-title" id="myModalLabel"><strong>Afficher les réparations d'un vélo</strong></h4>
       </div>
       <div class="modal-body">
  
 
  <div class="form-group">
-      Identifiant du Velo : 
+      Identifiant du vélo : 
           <select class="form-control" name="id_velo" id="id_velo" required onchange="reparation(this.value)">
-
+          <option></option>
 
             <?php
 
