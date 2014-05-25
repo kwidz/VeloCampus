@@ -9,11 +9,11 @@
 		if ($res){
 			while (NULL !== ($row = $res->fetch_array())) {
 				echo "<br/>Nom du partenaire : <br/>";
-				echo "<input class='form-control' type='text' value='".$row['nom_partenaire']."'><br/>";
+				echo "<input name='nom' id='nom' class='form-control' type='text' value='".$row['nom_partenaire']."'><br/>";
 				echo "<br/>Description du partenaire : <br/>";
-				echo "<textarea class='form-control'>".$row['description_partenaire']."</textarea><br/>";
+				echo "<textarea name='description' id='description' class='form-control'>".$row['description_partenaire']."</textarea><br/>";
 				echo "<br/>Photo du partenaire : <i>(Actuelle : ".$row['photo_partenaire'].")</i><br/>";
-				echo "<input class='form-control' type='file'>";
+				echo "<input name='photo' id='photo' class='form-control' type='file'>";
 			}
 		}
 		else {

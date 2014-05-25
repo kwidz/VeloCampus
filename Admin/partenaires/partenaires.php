@@ -39,7 +39,7 @@
         <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
         <h4 class="modal-title" id="myModalLabel"><strong>Modifier un partenaire</strong></h4>
       </div>
-      <form method="post" action="modifPartenaire.php">
+      <form method="post" action="modifPartenaire.php" enctype="multipart/form-data">
       	<div class="modal-body">
       		<script type="text/javascript" src="script.js"></script>
         	Selectionnez un partenaire à modifier :<br/>
