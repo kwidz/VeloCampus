@@ -35,7 +35,6 @@ while(NULL !== ($row = $res->fetch_array())) {
     '.$i['biographie'].'
   </div>
 </div>
-</div>
 
 <br/><br/>';
 
