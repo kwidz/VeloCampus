@@ -87,8 +87,6 @@ function reparation(id_velo){
             
             $sql='Select * '
             .'from Velo v '
-            .'where v.id_velo not in(Select id_velo '
-                                          .'from Location ) '
             .'order by(id_velo)';
             $res=$mysqli->query($sql);
             while (NULL !== ($row = $res->fetch_array())) {
