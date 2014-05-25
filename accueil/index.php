@@ -6,22 +6,22 @@
   
   if (isset($_COOKIE['Session']) && isset($_SESSION['mail']) && $_COOKIE['Session'] == md5(md5($_SESSION['mail'])) && isset($_SESSION['log']) && $_SESSION['log'] == 1) {
       include("../menulog.html");
+  }
+  else {
+    include("../menu.html");
+    if (isset($_SESSION['log']) && $_SESSION['log'] == 0) {
+      $_SESSION = array(); 
+      include("../banniereErreurConn.html");
     }
-    else {
-      include("../menu.html");
-      if (isset($_SESSION['log']) && $_SESSION['log'] == 0) {
-        $_SESSION = array(); 
-        include("../banniereErreurConn.html");
-      }
-      else if (isset($_SESSION['log']) && $_SESSION['log'] == 2) {
-        $_SESSION = array(); 
-        include("../banniereAttenteConf.html");
-      }
-      else if (isset($_SESSION['log']) && $_SESSION['log'] == 5) {
-         $_SESSION = array(); 
-        include("../banniereAttenteCompteAct.html");
-      }
+    else if (isset($_SESSION['log']) && $_SESSION['log'] == 2) {
+      $_SESSION = array(); 
+      include("../banniereAttenteConf.html");
     }
+    else if (isset($_SESSION['log']) && $_SESSION['log'] == 5) {
+       $_SESSION = array(); 
+      include("../banniereAttenteCompteAct.html");
+    }
+  }
 ?>
 
 <div class="row" style="background-color:#F5F5F5;border-radius:10px;border:3px solid #222222" >

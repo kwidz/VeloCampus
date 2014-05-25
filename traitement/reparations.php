@@ -1,8 +1,8 @@
 <?php
   session_start();
   include("../header.html");
-  if (isset($_SESSION['log']) && $_SESSION['log'] == 1) {
-    include("../menulog.html");
+    if (isset($_COOKIE['Session']) && isset($_SESSION['mail']) && $_COOKIE['Session'] == md5(md5($_SESSION['mail'])) && isset($_SESSION['log']) && $_SESSION['log'] == 1) {
+      include("../menulog.html");
     if (isset($_SESSION['rep']) && $_SESSION['rep'] == 1) {
       include("../banniereReparation.html");
       $_SESSION['rep'] = 0;

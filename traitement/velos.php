@@ -1,9 +1,9 @@
 <?php
   session_start();
   include("../header.html");
-  if (isset($_SESSION['log']) && $_SESSION['log'] == 1) {
+    if (isset($_COOKIE['Session']) && isset($_SESSION['mail']) && $_COOKIE['Session'] == md5(md5($_SESSION['mail'])) && isset($_SESSION['log']) && $_SESSION['log'] == 1) {
       include("../menulog.html");
-    }
+  }
     else {
       include("../menu.html");
       if (isset($_SESSION['log']) && $_SESSION['log'] == 0) {
