@@ -14,7 +14,7 @@
         <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
         <h4 class="modal-title" id="myModalLabel"><strong>Ajouter un partenaire</strong></h4>
       </div>
-      <form method="post" action="addPartenaire.php">
+      <form method="post" action="addPartenaire.php" enctype="multipart/form-data">
       	<div class="modal-body">
       		Entrez le nom du partenaire à ajouter : <br/>
         	<input type="text" class="form-control" name="nom" id="nom" required><br/><br/>
