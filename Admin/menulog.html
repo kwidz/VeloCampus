@@ -90,6 +90,24 @@ if(isset($_SESSION['ajPar']) && $_SESSION['ajPar'] == -1) {
     include("../banniereParaddErr.html");
     $_SESSION['ajPar'] = 0;
 }
+
+if(isset($_SESSION['ajMembre']) && $_SESSION['ajMembre'] == 1) {
+    ?><div class="row"> 
+  <div class="col-md-12">
+    <div class="alert alert-success"><center>Le membre a bien été ajouté.</center></div>
+  </div>
+</div><?php
+    $_SESSION['ajMembre'] = 0;
+}
+if(isset($_SESSION['ajMembre']) && $_SESSION['ajMembre'] == -1) {
+    ?><div class="row"> 
+  <div class="col-md-12">
+    <div class="alert alert-success"><center>Le membre n'a pas pu être ajouté.</center></div>
+  </div>
+</div><?php
+    $_SESSION['ajMembre'] = 0;
+}
+
 if (isset($_SESSION['modPar']) && $_SESSION['modPar'] == 1) {
     include("../banniereParmod.html");
     $_SESSION['modPar'] = 0;
@@ -122,6 +140,7 @@ if (isset($_SESSION['delPar']) && $_SESSION['delPar'] == -1) {
             <!--<a href="#" class="list-group-item list-group-item-danger">Ajouter un historique de reunions</a>
             <a href="#" class="list-group-item list-group-item-danger">Voir les historiques</a> -->
             <a href="../partenaires/" class="list-group-item list-group-item-success">Modifier les partenaires</a>
+            <a href="../membres/" class="list-group-item list-group-item-success">Modifier les membres</a>
             <a href="#" class="list-group-item list-group-item-success" data-toggle="modal" data-target="#modalChangemdp">Changer le mot de passe admin</a>
             <a href="../../accueil/index.php" class="list-group-item list-group-item-success">Voir le site public</a>
             

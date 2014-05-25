@@ -25,15 +25,16 @@ $res=$mysqli->query($sql);
 
 while(NULL !== ($row = $res->fetch_array())) {
       $i=$row;  
-      echo "<div class='row' ><center><h3>".$i['nom_membre']."</h3></center>";
+      echo "<div class='row' style='background-color:#F5F5F5;border-radius:10px;border:3px solid #222222' ><center><h3>".$i['nom_membre']."</h3></center>";
       echo '<div class="row" style="background-color:#F5F5F5;border-radius:10px;border:3px solid #222222" >
   <div class="col-md-4"> <br/>
-    <img src="'.$i['photo'].'" width="380px" />
+    <img src="'.$i['photo'].'" width="380px"/>
   </div>';
       echo '  <div class="col-md-8">
     <h4>Biographie :</h4>
     '.$i['biographie'].'
   </div>
+</div>
 </div>
 
 <br/><br/>';
