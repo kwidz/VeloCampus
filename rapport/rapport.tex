@@ -13,7 +13,7 @@
 \newcommand{\HRule}{\rule{\linewidth}{0.5mm}}
 
 \begin{document}
-
+\renewcommand{\thefootnote}{\fnsymbol{footnote}}
 \begin{titlepage}
 \begin{center}
 
@@ -59,40 +59,54 @@ Alexandru  \textsc{dobrila}
 
 \tableofcontents
 \chapter*{Introduction}
-introduction...
+Vélocampus est une association louant des vélos aux étudiants à très petit tarifs. De plus, elle s’occupe de la réparation et de l'entretien de vélos loués ou non.
+
+Pour ce projet, nous avons voulu réaliser un site permettant à Vélocampus de gérer son administration plus facilement. Pour cela nous vous présenteront d'abord le cahier des charges que nous avons conçus avec les membres de l'association, puis nous expliquerons la base de données que nous avons décidés de mettre en place, ainsi que les fonctionnalités que nous avons implémenté sur le site. Enfin, nous aborderons les problèmes que nous avons rencontrés puis, les améliorations qui pourraient être apporté au site par la suite.
+
+
 \chapter{Le cahier des charges}
-Partie admistrateur :  
-La partie adnistrateur est accéssible par deux admins et certaines parties sont accéssible par des modos aussi    
- Mail liste des adhérents  
-(nom, prénom, formation, date de naissance, lieu de naissance, adresse, code postale, téléphone portable, adresse e-mail, photos)
-  Suivi des vélos  
-(numéro vélo, numeros cadenas(3 cadenas), date location, état du vélo, durée location, prolongation (ou non), date retour, état de retour)
-  Demande de cotisation + acceptation de la demande
-(photos ou paiement en attente)
-  Chat-box entre admin et modo
-  Ra-jout de fiche vélo, fiche de suivi 
- Modification des fiches vélos, fiches de suivi
-  Suivi de réparation du vélo  
-(type réparation, pièce changée, cout réparation, date réparation)
-  Ajout de photos/informations
-  Importation d'un calendrier google+
- Administration du forum
-  Archive en PDF
-(Archive de vélocampus, compte rendu de réunion ect ...)
+Après une réunion avec les membres de l'association, nous sommes arrivés à la conclusion que le site contiendrait une petite partie client, rendant ainsi l'association présente sur le web et une grosse partie administration, permettant toutes la gestions de l'association. 
+Nous avons finalement construit ce cahier des charges :\\
 
+\begin{itemize}
+\item[•] La partie administration : \\
+Elle sera accessible à tous les membres de l'association
+\begin{itemize}
+\item Une mailing liste des adhérents \\
+\textit{(Permettant à l'administrateur d'importer la liste sur une boite mail afin de pouvoir envoyer des messages groupés)}
+\item Un Suivi des vélos \\
+\textit{(Afin de savoir quel vélo est en location, quel vélo a subit quel réparation...)}
+\item Une gestion des demandes d'adhésions faites en lignes 
+\item Une messagerie internet \\
+\textit{(Permettant aux différents administrateurs de communiquer entre eux)}
+\item Une gestion des vélos \\
+\textit{(Pour ajouter des vélos, supprimmer des vélos ou encore modifoer des vélos)}
+\item Une gestion de réparation \\
+\textit{(Permettant d'ajouter des réparations à certain vélo et de connaitre le prix de ces réparations)}
+\item Une gestion du site publique \\
+\textit{(Ajouter des photos, modifier les partenaires, modifier le messages d'acceuil ...)}
+\item L'importation d'un calendrier Gmail \\
+\textit{(Permettant d'importer un calendrier d'évenement sur la partie client du site et d'afficher le calendrier interne de l'association sur la partie administration du site)}
+\end{itemize}
+\end{itemize}
+  
+  
+\begin{itemize}
+\item[•] La partie client :\\
 
-Partie publique
-Certaines parties ne sont accéssible que par les adhérents connectés 
- Formulaire d'adhésion
- Formulaire de demande de réparation  
-(disponibilité du demandeur, urgence ou non de la réparation, type de problème, numero vélo, numero adhérents)
- Formulaire de demande de location  
-(que pour les adhérents (donc personne connecté au site), Etat réservation (validé, en attente, refusé))
-  Calendrier en ligne avec les évenements
-  page présentation, page équipe, page photos, page projet ...
-  Forum avec possibilité d'ajouter des sujets
-  Compte pour les adhérents  
-(avec identifiants, mot de passe et photos)
+\begin{itemize}
+\item Une formulaire d'adhésion \\
+\textit{(Permettant aux visiteurs de s'inscrire en ligne)}
+\item Un formulaire de demande de réparation \footnote{Cette partie n'est accessible que par les adhérents connectés}  \\
+\textit{(Permettant aux adhérents de demander la réparations de leurs vélos )}
+\item Calendrier en ligne avec les événements de l'association 
+\item Une page d'informations  \\
+\textit{(Contenant la présentations de l'association, ses membres et ses partenaires)} 
+\item Une page de photos et videos  
+
+\end{itemize}
+\end{itemize}
+   
 
 \chapter{Base de données}
 \section{le modèle conceptuel de donnée}
