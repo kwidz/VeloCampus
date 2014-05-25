@@ -28,10 +28,10 @@ th{
   }
   ?>
   <ul class="nav nav-pills nav-stacked">
-    <li class="" style="text-align: center; margin-bottom: 15px; border:solid 1px; border-radius: 5px; border-color: #CDCACA"><a href="#" data-toggle="modal" data-target="#creerVelo" >Ajouter un velo</a></li>
-    <li class="" style="text-align: center; margin-bottom: 15px; border:solid 1px; border-radius: 5px; border-color: #CDCACA"><a href="#" data-toggle="modal" data-target="#suppVelo">Supprimer un Velo</a></li>
-    <li class="" style="text-align: center; margin-bottom: 15px; border:solid 1px; border-radius: 5px; border-color: #CDCACA"><a href="#" data-toggle="modal" data-target="#editionVelo">Edition d'un velo</a></li>
-     <li class="" style="text-align: center; margin-bottom: 15px; border:solid 1px; border-radius: 5px; border-color: #CDCACA"><a href="#" data-toggle="modal" data-target="#ajoutCadenas">ajouter un cadenas</a></li>
+    <li class="" style="text-align: center; margin-bottom: 15px; border:solid 1px; border-radius: 5px; border-color: #CDCACA"><a href="#" data-toggle="modal" data-target="#creerVelo" >Ajouter un vélo</a></li>
+    <li class="" style="text-align: center; margin-bottom: 15px; border:solid 1px; border-radius: 5px; border-color: #CDCACA"><a href="#" data-toggle="modal" data-target="#suppVelo">Supprimer un vélo</a></li>
+    <li class="" style="text-align: center; margin-bottom: 15px; border:solid 1px; border-radius: 5px; border-color: #CDCACA"><a href="#" data-toggle="modal" data-target="#editionVelo">Édition d'un vélo</a></li>
+    <li class="" style="text-align: center; margin-bottom: 15px; border:solid 1px; border-radius: 5px; border-color: #CDCACA"><a href="#" data-toggle="modal" data-target="#ajoutCadenas">Ajouter un cadenas</a></li>
   </ul>
 </div>
 
@@ -46,16 +46,17 @@ th{
       <form method="POST" action="traitement/ajouterVelo.php" name="formAjoutVelo">
         <div class="modal-header">
           <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
-          <h4 class="modal-title" id="myModalLabel"><strong>Ajout de Velo</strong></h4>
+          <h4 class="modal-title" id="myModalLabel"><strong>Ajout de vélo</strong></h4>
         </div>
 
         <div class="modal-body">
 
-          Identifiant du velo :
-          <input type="text" name="id_velo" required><br><br>
+          Identifiant du vélo :
+          <input class="form-control" type="text" name="id_velo" required><br/>
 
-          Etat du velo :
+          État du vélo :
           <select class="form-control" name="etat_velo" required>
+          <option></option>
             <?php
             $sql="SELECT * from Etat";
             $res=$mysqli->query($sql);
@@ -65,8 +66,9 @@ th{
             ?>
           </select></br>
 
-          Taille du velo :
+          Taille du vélo :
           <select class="form-control" name="taille_velo" required>
+          <option></option>
             <?php
             $sql="SELECT * from Taille";
             $res = $mysqli->query($sql);
@@ -76,8 +78,9 @@ th{
             ?>
           </select><br>
 
-          Type de velo :
+          Type de vélo :
           <select class="form-control" name="type_velo" required>
+          <option></option>
             <?php
             $sql="SELECT * from _Type";
             $res = $mysqli->query($sql);
@@ -109,12 +112,13 @@ th{
       <form method="POST" action="traitement/suppVelo.php" name="formSuppVelo">
         <div class="modal-header">
           <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
-          <h4 class="modal-title" id="myModalLabel"><strong>Création de Location</strong></h4>
+          <h4 class="modal-title" id="myModalLabel"><strong>Suppression de vélo</strong></h4>
         </div>
         <div class="modal-body">
 
-          Velo a supprimer :
+          Vélo à supprimer :
           <select class="form-control" name="supp_id_velo" required>
+          <option></option>
             <?php
             $sql="SELECT * from Velo";
             $res=$mysqli->query($sql);
@@ -148,8 +152,9 @@ th{
         </div>
         <div class="modal-body">
 
-          selectionner un velo :
+          Sélectionner un vélo :
            <select class="form-control" name="supp_id_velo" onchange="testbibiphoque(this.value)" required>
+           <option></option>
             <?php
             $sql="SELECT * from Velo";
             $res=$mysqli->query($sql);
@@ -180,12 +185,13 @@ th{
       <form method="POST" action="traitement/modifierVelo.php" name="formSuppVelo">
         <div class="modal-header">
           <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
-          <h4 class="modal-title" id="myModalLabel"><strong>Création de Location</strong></h4>
+          <h4 class="modal-title" id="myModalLabel"><strong>Modification de vélo</strong></h4>
         </div>
         <div class="modal-body">
 
-          Velo à modifier :
-          <select class="form-control" name="id_velo"  required>
+          Vélo à modifier :
+          <select class="form-control" name="id_velo" required>
+          <option></option>
             <?php
             $sql="SELECT * from Velo";
             $res=$mysqli->query($sql);
@@ -194,8 +200,9 @@ th{
             }
             ?>
           </select><br/>
-          Etat du velo :
+          État du vélo :
           <select class="form-control" name="etat_velo" required>
+          <option></option>
             <?php
             $sql="SELECT * from Etat";
             $res=$mysqli->query($sql);
@@ -205,8 +212,9 @@ th{
             ?>
           </select><br/>
 
-          Taille du velo :
+          Taille du vélo :
           <select class="form-control" name="taille_velo" required>
+          <option></option>
             <?php
             $sql="SELECT * from Taille";
             $res = $mysqli->query($sql);
@@ -216,8 +224,9 @@ th{
             ?>
           </select><br/>
 
-          Type de velo :
+          Type de vélo :
           <select class="form-control" name="type_velo" required>
+          <option></option>
             <?php
             $sql="SELECT * from _Type";
             $res = $mysqli->query($sql);

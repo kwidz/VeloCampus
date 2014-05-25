@@ -9,7 +9,7 @@
 
 <div class="panel panel-default">
 	<!-- Default panel contents -->
-	<div class="panel-heading">Demande Reparation (A VALIDER) </div>
+	<div class="panel-heading">Demandes de réparation (à valider) </div>
 	<!-- <div class="panel-body"></div>-->
 
 	<!-- Table -->

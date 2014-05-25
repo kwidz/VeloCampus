@@ -55,7 +55,7 @@ function ConfirmationsupprTout(){
   <ul class="nav nav-pills nav-stacked">
     <li class="" style="text-align: center; margin-bottom: 15px; border:solid 1px; border-radius: 5px; border-color: #CDCACA"><a href="#" data-toggle="modal" data-target="#Ladh">Liste des adhérents</a></li>
     <li class="" style="text-align: center; margin-bottom: 15px; border:solid 1px; border-radius: 5px; border-color: #CDCACA"><a href="#" data-toggle="modal" data-target="#Suprad">Supprimer des adhérents</a></li>
-    <li class="" style="text-align: center; margin-bottom: 15px; border:solid 1px; border-radius: 5px; border-color: #CDCACA"><a href="../../">Ajouter des adhérents</a></li>
+    <li class="" style="text-align: center; margin-bottom: 15px; border:solid 1px; border-radius: 5px; border-color: #CDCACA"><a href="#" data-toggle="modal" data-target="#Addadh">Ajouter un adhérent</a></li>
   </ul>
 </div>
 
@@ -65,7 +65,7 @@ function ConfirmationsupprTout(){
     <div class="modal-content">
       <div class="modal-header">
         <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
-        <h4 class="modal-title" id="myModalLabel"><center><strong>Liste des adhérents</strong></center></h4>
+        <h4 class="modal-title" id="myModalLabel"><strong>Liste des adhérents</strong></h4>
       </div>
       <div class="modal-body">
         <form role="form" method="POST" action="traitement/ajouter.php">
@@ -105,7 +105,7 @@ function ConfirmationsupprTout(){
     <div class="modal-content">
       <div class="modal-header">
         <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
-        <h4 class="modal-title" id="myModalLabel"><center><strong>Liste des adhérents</strong></center></h4>
+        <h4 class="modal-title" id="myModalLabel"><strong>Liste des adhérents</strong></h4>
 
       </div>
       <div class="modal-body">
@@ -115,7 +115,7 @@ function ConfirmationsupprTout(){
             <center>
               <br/>
               <table>
-                <tr><th>Nom</th><th>Prenom</th><th>Date Naissance</th><th>adresse</th><th>Code postal</th><th>telephone</th><th>Adresse Mail</th><th>Supprimer</th></tr>
+                <tr><th>Nom</th><th>Prénom</th><th>Date naissance</th><th>Adresse</th><th>Code postal</th><th>Téléphone</th><th>Adresse Mail</th><th>Supprimer</th></tr>
                 <?php
                 $sql = 'Select Adherent.* from Adherent, Cotisation  where Adherent.id_adherent = Cotisation.id_adherent';
                 $res=$mysqli->query($sql);
@@ -129,7 +129,7 @@ function ConfirmationsupprTout(){
               <br/>
               <div id="Confirme"></div>
               <br/>
-              <button  type="button" class="btn btn-default" onclick="ConfirmationsupprTout()">Supprimer TOUS les adhérents</button>
+              <button  type="button" class="btn btn-danger" onclick="ConfirmationsupprTout()">Supprimer TOUS les adhérents</button>
             </center>
           </div>
       </div>
@@ -137,6 +137,24 @@ function ConfirmationsupprTout(){
         <button type="button" class="btn btn-danger" data-dismiss="modal">Annuler</button>
         <input type="submit" class="btn btn-default" name="Ajouter">
       </form>
+    </div>
+  </div>
+</div> 
+</div>
+
+<!-- Troisième Modal Ajouter des adherents -->
+<div class="modal fade" id="Addadh" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true" >
+  <div class="modal-dialog" style="width:1000px;">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h4 class="modal-title" id="myModalLabel"><strong>Ajouter un adhérent</strong></h4>
+      </div>
+      <div class="modal-body">
+          Pour ajouter un adhérent, rendez-vous sur la partie publique du site, puis cliquez sur s'inscrire.
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-danger" data-dismiss="modal">Annuler</button>
+        <input type="submit" class="btn btn-default" name="Aller">
     </div>
   </div>
 </div> 
