@@ -183,6 +183,31 @@ INSERT INTO `Location` VALUES (1,250,'2014-12-12','2014-04-08',1,1,NULL),(2,250,
 UNLOCK TABLES;
 
 --
+-- Table structure for table `Membres`
+--
+
+DROP TABLE IF EXISTS `Membres`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!40101 SET character_set_client = utf8 */;
+CREATE TABLE `Membres` (
+  `id_Membre` int(11) NOT NULL,
+  `nom_membre` varchar(1000) NOT NULL,
+  `biographie` text NOT NULL,
+  `photo` varchar(1000) NOT NULL,
+  PRIMARY KEY (`id_Membre`)
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+/*!40101 SET character_set_client = @saved_cs_client */;
+
+--
+-- Dumping data for table `Membres`
+--
+
+LOCK TABLES `Membres` WRITE;
+/*!40000 ALTER TABLE `Membres` DISABLE KEYS */;
+/*!40000 ALTER TABLE `Membres` ENABLE KEYS */;
+UNLOCK TABLES;
+
+--
 -- Table structure for table `Message`
 --
 
@@ -212,6 +237,31 @@ LOCK TABLES `Message` WRITE;
 UNLOCK TABLES;
 
 --
+-- Table structure for table `Partenaire`
+--
+
+DROP TABLE IF EXISTS `Partenaire`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!40101 SET character_set_client = utf8 */;
+CREATE TABLE `Partenaire` (
+  `id_partenaire` int(11) NOT NULL AUTO_INCREMENT,
+  `nom_partenaire` varchar(50) DEFAULT NULL,
+  `description_partenaire` text,
+  `photo_partenaire` varchar(70) DEFAULT NULL,
+  PRIMARY KEY (`id_partenaire`)
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+/*!40101 SET character_set_client = @saved_cs_client */;
+
+--
+-- Dumping data for table `Partenaire`
+--
+
+LOCK TABLES `Partenaire` WRITE;
+/*!40000 ALTER TABLE `Partenaire` DISABLE KEYS */;
+/*!40000 ALTER TABLE `Partenaire` ENABLE KEYS */;
+UNLOCK TABLES;
+
+--
 -- Table structure for table `Postit`
 --
 
@@ -235,22 +285,6 @@ LOCK TABLES `Postit` WRITE;
 INSERT INTO `Postit` VALUES (4,'geoffrey','je viens de finir les locations, j\'ai fait la gestion de mailling List'),(5,'pierre','faire les foreign key dans la bdd pour les réparations'),(6,'Morgane','le lien \"plus d\'info \" marche :) \r\n'),(7,'geoffrey','cool :)'),(9,'Ã©toilr','Ã©Ã©Ã©Ã©Ã©'),(10,'geoffrééé','tééést'),(11,'geoffrey','Je su');
 /*!40000 ALTER TABLE `Postit` ENABLE KEYS */;
 UNLOCK TABLES;
-
---
--- Table structure for table `Partenaire`
---
-
-DROP TABLE IF EXISTS `Partenaire`;
-/*!40101 SET @saved_cs_client     = @@character_set_client */;
-/*!40101 SET character_set_client = utf8 */;
-CREATE TABLE `Partenaire` (
-  `id_partenaire` int(11) NOT NULL AUTO_INCREMENT,
-  `nom_partenaire` varchar(50) DEFAULT NULL,
-  `description_partenaire` text,
-  `photo_partenaire` varchar(70) DEFAULT NULL,
-  PRIMARY KEY (`id_partenaire`)
-) ENGINE=InnoDB DEFAULT CHARSET=latin1;
-/*!40101 SET character_set_client = @saved_cs_client */;
 
 --
 -- Table structure for table `Reparation`
@@ -412,14 +446,6 @@ LOCK TABLES `subit` WRITE;
 UNLOCK TABLES;
 /*!40103 SET TIME_ZONE=@OLD_TIME_ZONE */;
 
-CREATE TABLE IF NOT EXISTS `Membres` (
-  `id_Membre` int(11) NOT NULL,
-  `nom_membre` varchar(1000) NOT NULL,
-  `biographie` text NOT NULL,
-  `photo` varchar(1000) NOT NULL,
-  PRIMARY KEY (`id_Membre`)
-) ENGINE=InnoDB DEFAULT CHARSET=latin1;
-
 /*!40101 SET SQL_MODE=@OLD_SQL_MODE */;
 /*!40014 SET FOREIGN_KEY_CHECKS=@OLD_FOREIGN_KEY_CHECKS */;
 /*!40014 SET UNIQUE_CHECKS=@OLD_UNIQUE_CHECKS */;
@@ -428,4 +454,4 @@ CREATE TABLE IF NOT EXISTS `Membres` (
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2014-05-23 14:28:21
+-- Dump completed on 2014-05-25 16:49:51
