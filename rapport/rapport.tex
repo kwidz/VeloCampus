@@ -24,7 +24,7 @@
 \\[1cm]
 \textsc{\LARGE iut informatique de belfort-montbéliard}\\[1cm]
 
-\textsc{\Large Projet de bases de données}\\[0.5cm]
+\textsc{\Large Projet de base de données}\\[0.5cm]
 
 % Title
 \HRule \\[0.4cm]
@@ -58,28 +58,57 @@ Alexandru  \textsc{dobrila}
 \end{titlepage}
 
 \tableofcontents
+\chapter*{Introduction}
+introduction...
+\chapter{Le cahier des charges}
+Partie admistrateur :  
+La partie adnistrateur est accéssible par deux admins et certaines parties sont accéssible par des modos aussi    
+ Mail liste des adhérents  
+(nom, prénom, formation, date de naissance, lieu de naissance, adresse, code postale, téléphone portable, adresse e-mail, photos)
+  Suivi des vélos  
+(numéro vélo, numeros cadenas(3 cadenas), date location, état du vélo, durée location, prolongation (ou non), date retour, état de retour)
+  Demande de cotisation + acceptation de la demande
+(photos ou paiement en attente)
+  Chat-box entre admin et modo
+  Ra-jout de fiche vélo, fiche de suivi 
+ Modification des fiches vélos, fiches de suivi
+  Suivi de réparation du vélo  
+(type réparation, pièce changée, cout réparation, date réparation)
+  Ajout de photos/informations
+  Importation d'un calendrier google+
+ Administration du forum
+  Archive en PDF
+(Archive de vélocampus, compte rendu de réunion ect ...)
 
-\chapter{Un chapitre}
-\section{SOUS TITRE}
-Test
-voila le paragraphe
 
-\section {liste essai} % enumerate pour les numeros ou "description"
-\begin{itemize}
-\item Un canard.
-\item Un mammouth.
-\item Un canard.
-\item Un mammouth.
-\item Un canard.
-\item Un mammouth.
-\item[@] Une pintade. % En plaçant un @ entre crochets après \item, j'ai transformé la puce en @
-\item[0] Un lapin.
-\end{itemize}
-\section{du texte en couleur !!!}
-\color{red}{the couleur red}
-\definecolor{test}{rgb}{0.2,1,0.9}
-\color{test}{test}
+Partie publique
+Certaines parties ne sont accéssible que par les adhérents connectés 
+ Formulaire d'adhésion
+ Formulaire de demande de réparation  
+(disponibilité du demandeur, urgence ou non de la réparation, type de problème, numero vélo, numero adhérents)
+ Formulaire de demande de location  
+(que pour les adhérents (donc personne connecté au site), Etat réservation (validé, en attente, refusé))
+  Calendrier en ligne avec les évenements
+  page présentation, page équipe, page photos, page projet ...
+  Forum avec possibilité d'ajouter des sujets
+  Compte pour les adhérents  
+(avec identifiants, mot de passe et photos)
 
+\chapter{Base de données}
+\section{le modèle conceptuel de donnée}
+\begin{center}
+\includegraphics[width=1\textwidth]{MCD.jpg}~
+\end{center}
+
+\section{La réalisation du MCD}
+
+\chapter{Le fonctionnement du site Internet}
+
+\chapter{Les problèmes rencontrés}
+
+\chapter{Les améliorations possibles}
+
+\chapter*{Conclusion}
 \end{document}
 
 
