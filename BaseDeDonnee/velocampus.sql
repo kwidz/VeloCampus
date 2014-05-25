@@ -3,7 +3,7 @@
 -- http://www.phpmyadmin.net
 --
 -- Client: database:3306
--- Généré le: Dim 25 Mai 2014 à 16:20
+-- Généré le: Dim 25 Mai 2014 à 16:32
 -- Version du serveur: 1.0.9
 -- Version de PHP: 5.4.4-14+deb7u9
 
@@ -154,6 +154,20 @@ CREATE TABLE IF NOT EXISTS `Location` (
 INSERT INTO `Location` (`id_location`, `prix_location`, `date_location`, `date_retour_location`, `id_velo`, `id_adherent`, `id_Etat`) VALUES
 (9, 15, '2014-03-05', NULL, 1, 25, NULL),
 (10, 15, '2014-05-24', NULL, 2, 26, NULL);
+
+-- --------------------------------------------------------
+
+--
+-- Structure de la table `Membres`
+--
+
+CREATE TABLE IF NOT EXISTS `Membres` (
+  `id_Membre` int(11) NOT NULL AUTO_INCREMENT,
+  `nom_membre` varchar(1000) NOT NULL,
+  `biographie` text NOT NULL,
+  `photo` varchar(1000) NOT NULL,
+  PRIMARY KEY (`id_Membre`)
+) ENGINE=InnoDB DEFAULT CHARSET=latin1 AUTO_INCREMENT=1 ;
 
 -- --------------------------------------------------------
 
@@ -358,14 +372,6 @@ ALTER TABLE `Velo`
   ADD CONSTRAINT `FK_Velo_id_Etat` FOREIGN KEY (`id_Etat`) REFERENCES `Etat` (`id_Etat`),
   ADD CONSTRAINT `FK_Velo_id_taille` FOREIGN KEY (`id_taille`) REFERENCES `Taille` (`id_taille`),
   ADD CONSTRAINT `FK_Velo_id_type` FOREIGN KEY (`id_type`) REFERENCES `_Type` (`id_type`);
-
-  CREATE TABLE IF NOT EXISTS `Membres` (
-  `id_Membre` int(11) NOT NULL,
-  `nom_membre` varchar(1000) NOT NULL,
-  `biographie` text NOT NULL,
-  `photo` varchar(1000) NOT NULL,
-  PRIMARY KEY (`id_Membre`)
-) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
 /*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;
