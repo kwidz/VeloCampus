@@ -239,7 +239,7 @@ if (isset($_SESSION['delPar']) && $_SESSION['delPar'] == -1) {
                         text-align:center;
                     }
                     </style>
-                    voici votre mailling liste vous pouvez la télécharger :
+                    Vous pouvez télécharger votre <i>mailling list</i> en cliquant sur le lien ci-dessous :
 
                     <?php
                     //ecriture du fichier CSV
@@ -264,8 +264,8 @@ if (isset($_SESSION['delPar']) && $_SESSION['delPar'] == -1) {
                     fclose($fp);
                     ?>
 
-                    <br/>
-                    <a href="../mailling.csv" target=_blank>Télécharger</a>
+                    <br/><br/>
+                    <a href="../mailling.csv" target=_blank>Télécharger</a><br/><br/>
                     <table class="bordered-table"style="border:solid 1px #CDCACA; border-radius:50px">
                         <tbody>
 
