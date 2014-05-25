@@ -3,7 +3,7 @@
 -- http://www.phpmyadmin.net
 --
 -- Client: database:3306
--- Généré le: Jeu 22 Mai 2014 à 11:13
+-- Généré le: Dim 25 Mai 2014 à 16:20
 -- Version du serveur: 1.0.9
 -- Version de PHP: 5.4.4-14+deb7u9
 
@@ -37,19 +37,17 @@ CREATE TABLE IF NOT EXISTS `Adherent` (
   `adresse_mail_adherent` varchar(50) DEFAULT NULL,
   `password_adherent` varchar(100) DEFAULT NULL,
   PRIMARY KEY (`id_adherent`)
-) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=24 ;
+) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=28 ;
 
 --
 -- Contenu de la table `Adherent`
 --
 
 INSERT INTO `Adherent` (`id_adherent`, `nom_adherent`, `prenom_adherent`, `date_naissance_adherent`, `adresse_adherent`, `code_Postal_Adherent`, `telephone_adherent`, `adresse_mail_adherent`, `password_adherent`) VALUES
-(17, 'admin', '1', '0000-00-00', '1', 69000, '012345678', 'toto@gmail.com', '81dc9bdb52d04dc20036dbd8313ed055'),
-(18, 'fuck you', 'nvidia', '0000-00-00', '1', 90000, '33688370492', 'bb@bb.fr', '21ad0bd836b90d08f4cf640b4c298e7c'),
-(20, 'f', 'f', '0000-00-00', 'f', 0, '0', 'f@f.fr', '8fa14cdd754f91cc6554c9e71929cce7'),
-(21, 'test', 'test', '0001-01-01', '0', 0, '0', 't@t.fr', 'e358efa489f58062f10dd7316b65649e'),
-(22, 'Limballe', 'Pierre', '0020-02-22', '1 rue Gaston Defferre', 90000, '33688370492', 'p@l.fr', '83878c91171338902e0fe0fb97a8c47a'),
-(23, 'k', 'k', '1995-08-04', 'k', 9, '9', 'k@k.fr', '8ce4b16b22b58894aa86c421e8759df3');
+(24, 'LATRECHE', 'Omar', '1988-05-31', '37 rue jean de la fontaine', 90000, '0620562286', 'omar.latreche@utbm.fr', 'fd6244efe8b274cd654b975575a30b6d'),
+(25, 'Jourdain', 'Guillaume', '1994-03-21', '80 rue des Tappes', 39570, '0637143144', 'guillaume.jourdain39@gmail.com', '28d0fbc149790facee745f105d671d1e'),
+(26, 'fulg', 'kiki', '1959-10-01', 'rue de la joie ', 90000, '0375243255', 'kiki71@hotmail.fr', '0d61130a6dd5eea85c2c5facfe1c15a7'),
+(27, 'mercier', 'Jeo', '1994-02-21', '33 Rue de la RÃ©publique', 71300, '0692847294', 'fabulousfab@hotmail.com', 'c6c1671bbeeb49359afed0440fb939c1');
 
 -- --------------------------------------------------------
 
@@ -95,17 +93,17 @@ CREATE TABLE IF NOT EXISTS `Cotisation` (
   `id_adherent` int(11) DEFAULT NULL,
   PRIMARY KEY (`id_cotisation`),
   KEY `FK_Cotisation_id_adherent` (`id_adherent`)
-) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=19 ;
+) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=23 ;
 
 --
 -- Contenu de la table `Cotisation`
 --
 
 INSERT INTO `Cotisation` (`id_cotisation`, `id_adherent`) VALUES
-(15, 17),
-(16, 18),
-(17, 21),
-(18, 22);
+(19, 24),
+(20, 25),
+(21, 26),
+(22, 27);
 
 -- --------------------------------------------------------
 
@@ -147,7 +145,15 @@ CREATE TABLE IF NOT EXISTS `Location` (
   KEY `FK_Location_id_velo` (`id_velo`),
   KEY `FK_Location_id_adherent` (`id_adherent`),
   KEY `FK_Location_id_Etat` (`id_Etat`)
-) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=9 ;
+) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=11 ;
+
+--
+-- Contenu de la table `Location`
+--
+
+INSERT INTO `Location` (`id_location`, `prix_location`, `date_location`, `date_retour_location`, `id_velo`, `id_adherent`, `id_Etat`) VALUES
+(9, 15, '2014-03-05', NULL, 1, 25, NULL),
+(10, 15, '2014-05-24', NULL, 2, 26, NULL);
 
 -- --------------------------------------------------------
 
@@ -168,6 +174,20 @@ CREATE TABLE IF NOT EXISTS `Message` (
 -- --------------------------------------------------------
 
 --
+-- Structure de la table `Partenaire`
+--
+
+CREATE TABLE IF NOT EXISTS `Partenaire` (
+  `id_partenaire` int(11) NOT NULL AUTO_INCREMENT,
+  `nom_partenaire` varchar(50) DEFAULT NULL,
+  `description_partenaire` text,
+  `photo_partenaire` varchar(70) DEFAULT NULL,
+  PRIMARY KEY (`id_partenaire`)
+) ENGINE=InnoDB DEFAULT CHARSET=latin1 AUTO_INCREMENT=1 ;
+
+-- --------------------------------------------------------
+
+--
 -- Structure de la table `Postit`
 --
 
@@ -176,17 +196,14 @@ CREATE TABLE IF NOT EXISTS `Postit` (
   `nom_postit` varchar(50) DEFAULT NULL,
   `message_postit` text,
   PRIMARY KEY (`id_postit`)
-) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=38 ;
+) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=39 ;
 
 --
 -- Contenu de la table `Postit`
 --
 
 INSERT INTO `Postit` (`id_postit`, `nom_postit`, `message_postit`) VALUES
-(33, 'Pierro', 'Mission pour Velocampus : nous fournir la liste des partenaires '),
-(34, 'Pierro', 'Ainsi que des liens youtube ou daylimotion pour intÃ©grer les vidÃ©os'),
-(35, 'NoÃ©', 'Je transmet au chargÃ© de partenaires'),
-(36, 'Pierro', 'Cool merci !');
+(38, 'Les infos', 'Date et lieu de soutenance de prÃ©sentation du site : Mardi 27 Mai 16h30 salle DEC bÃ¢timent info, au rez de chaussÃ© en face du secrÃ©tariat');
 
 -- --------------------------------------------------------
 
@@ -202,7 +219,14 @@ CREATE TABLE IF NOT EXISTS `Reparation` (
   `id_velo` int(11) NOT NULL,
   PRIMARY KEY (`id_reparation`),
   KEY `id_velo` (`id_velo`)
-) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=13 ;
+) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=17 ;
+
+--
+-- Contenu de la table `Reparation`
+--
+
+INSERT INTO `Reparation` (`id_reparation`, `description_reparation`, `urgence`, `prix_reparation`, `id_velo`) VALUES
+(16, 'pneu crevÃ©', 2, NULL, 2);
 
 -- --------------------------------------------------------
 
@@ -262,7 +286,14 @@ CREATE TABLE IF NOT EXISTS `Video` (
   `titre_video` varchar(200) DEFAULT NULL,
   `lien_video` varchar(200) DEFAULT NULL,
   PRIMARY KEY (`id_video`)
-) ENGINE=InnoDB DEFAULT CHARSET=latin1 AUTO_INCREMENT=1 ;
+) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=3 ;
+
+--
+-- Contenu de la table `Video`
+--
+
+INSERT INTO `Video` (`id_video`, `titre_video`, `lien_video`) VALUES
+(2, 'Poke', 'vnpW4EVr-bI');
 
 -- --------------------------------------------------------
 
@@ -327,6 +358,14 @@ ALTER TABLE `Velo`
   ADD CONSTRAINT `FK_Velo_id_Etat` FOREIGN KEY (`id_Etat`) REFERENCES `Etat` (`id_Etat`),
   ADD CONSTRAINT `FK_Velo_id_taille` FOREIGN KEY (`id_taille`) REFERENCES `Taille` (`id_taille`),
   ADD CONSTRAINT `FK_Velo_id_type` FOREIGN KEY (`id_type`) REFERENCES `_Type` (`id_type`);
+
+  CREATE TABLE IF NOT EXISTS `Membres` (
+  `id_Membre` int(11) NOT NULL,
+  `nom_membre` varchar(1000) NOT NULL,
+  `biographie` text NOT NULL,
+  `photo` varchar(1000) NOT NULL,
+  PRIMARY KEY (`id_Membre`)
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
 /*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;
