@@ -1,0 +1,86 @@
+\documentclass[11pt,a4paper,titlepage]{report} 
+\usepackage[utf8]{inputenc} 
+\usepackage[french]{babel} 
+\usepackage[T1]{fontenc} 
+\usepackage{amsmath} 
+\usepackage{amsfonts} 
+\usepackage{amssymb} 
+\usepackage{graphicx} 
+\usepackage[final]{pdfpages} 
+\usepackage[toc,page]{appendix} 
+\usepackage[top=2.5cm,bottom=2.5cm,right=2.5cm,left=2.5cm]{geometry} 
+
+\newcommand{\HRule}{\rule{\linewidth}{0.5mm}}
+
+\begin{document}
+
+\begin{titlepage}
+\begin{center}
+
+% Upper part of the page. The '~' is needed because \\
+% only works if a paragraph has started.
+%\includegraphics[width=0.15\textwidth]{./logo}~\\[1cm]
+\includegraphics[width=0.15\textwidth]{logo.png}~
+\\[1cm]
+\textsc{\LARGE iut informatique de belfort-montbéliard}\\[1cm]
+
+\textsc{\Large Projet de bases de données}\\[0.5cm]
+
+% Title
+\HRule \\[0.4cm]
+{ \huge \bfseries Velacampus website \\[0.4cm] }
+
+\HRule \\[1.5cm]
+
+% Author and supervisor
+\begin{minipage}{0.4\textwidth}
+\begin{flushleft} \large
+\emph{Auteur:}\\
+Morgane \textsc{cabrol}\\
+Pierre \textsc{limballe}\\
+Geoffrey \textsc{glangine}\\
+Auguste \textsc{meyer}
+\end{flushleft}
+\end{minipage}
+\begin{minipage}{0.4\textwidth}
+\begin{flushright} \large
+\emph{Superviseur:} \\
+Alexandru  \textsc{dobrila}
+\end{flushright}
+\end{minipage}
+
+\vfill
+
+% Bottom of the page
+{\large \today}
+
+\end{center}
+\end{titlepage}
+
+\tableofcontents
+
+\chapter{Un chapitre}
+\section{SOUS TITRE}
+Test
+voila le paragraphe
+
+\section {liste essai} % enumerate pour les numeros ou "description"
+\begin{itemize}
+\item Un canard.
+\item Un mammouth.
+\item Un canard.
+\item Un mammouth.
+\item Un canard.
+\item Un mammouth.
+\item[@] Une pintade. % En plaçant un @ entre crochets après \item, j'ai transformé la puce en @
+\item[0] Un lapin.
+\end{itemize}
+\section{du texte en couleur !!!}
+\color{red}{the couleur red}
+\definecolor{test}{rgb}{0.2,1,0.9}
+\color{test}{test}
+
+\end{document}
+
+
+
