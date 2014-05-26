@@ -29,6 +29,7 @@ while(NULL !== ($row = $res->fetch_array())) {
       echo '<div class="row" style="background-color:#F5F5F5;border-radius:10px;border:3px solid #222222" >
   <div class="col-md-4"> <br/>
     <img src="'.$i['photo'].'" width="380px"/>
+    <br/> <br/>
   </div>';
       echo '  <div class="col-md-8">
     <h4>Biographie :</h4>
@@ -36,7 +37,7 @@ while(NULL !== ($row = $res->fetch_array())) {
   </div>
 </div>
 
-<br/><br/>';
+';
 
       
   }

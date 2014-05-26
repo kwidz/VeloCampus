@@ -1,8 +1,8 @@
--- MySQL dump 10.13  Distrib 5.5.34, for debian-linux-gnu (x86_64)
+-- MySQL dump 10.13  Distrib 5.5.37, for debian-linux-gnu (x86_64)
 --
 -- Host: localhost    Database: velo
 -- ------------------------------------------------------
--- Server version	5.5.34-0ubuntu0.13.04.1
+-- Server version	5.5.37-0ubuntu0.13.10.1
 
 /*!40101 SET @OLD_CHARACTER_SET_CLIENT=@@CHARACTER_SET_CLIENT */;
 /*!40101 SET @OLD_CHARACTER_SET_RESULTS=@@CHARACTER_SET_RESULTS */;
@@ -190,12 +190,12 @@ DROP TABLE IF EXISTS `Membres`;
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
 /*!40101 SET character_set_client = utf8 */;
 CREATE TABLE `Membres` (
-  `id_Membre` int(11) NOT NULL,
+  `id_Membre` int(11) NOT NULL AUTO_INCREMENT,
   `nom_membre` varchar(1000) NOT NULL,
   `biographie` text NOT NULL,
   `photo` varchar(1000) NOT NULL,
   PRIMARY KEY (`id_Membre`)
-) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB AUTO_INCREMENT=23 DEFAULT CHARSET=latin1;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -204,6 +204,7 @@ CREATE TABLE `Membres` (
 
 LOCK TABLES `Membres` WRITE;
 /*!40000 ALTER TABLE `Membres` DISABLE KEYS */;
+INSERT INTO `Membres` VALUES (1,'webdev','bonjour je suis le créateur de ce fabuleux sute web ','../images/membres/webdev.jpg'),(21,'dzefcre','czecer','../images/membres/p2050.png'),(22,'fervsrhdtyrf','fqsdcfvg','../images/membres/p2050.png');
 /*!40000 ALTER TABLE `Membres` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -302,7 +303,7 @@ CREATE TABLE `Reparation` (
   PRIMARY KEY (`id_reparation`),
   KEY `id_velo` (`id_velo`),
   CONSTRAINT `fk_id_velo` FOREIGN KEY (`id_velo`) REFERENCES `Velo` (`id_velo`)
-) ENGINE=InnoDB AUTO_INCREMENT=26 DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB AUTO_INCREMENT=24 DEFAULT CHARSET=latin1;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -454,4 +455,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2014-05-25 17:03:11
+-- Dump completed on 2014-05-26 10:40:38
