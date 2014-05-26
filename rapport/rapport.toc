@@ -7,4 +7,7 @@
 \contentsline {section}{\numberline {2.2}La r\IeC {\'e}alisation du MCD}{5}
 \contentsline {chapter}{\numberline {3}Le fonctionnement du site Internet}{6}
 \contentsline {chapter}{\numberline {4}Les probl\IeC {\`e}mes rencontr\IeC {\'e}s}{7}
+\contentsline {section}{\numberline {4.1}Adblock :}{7}
+\contentsline {section}{\numberline {4.2}La s\IeC {\'e}curit\IeC {\'e} : }{7}
+\contentsline {section}{\numberline {4.3}R\IeC {\'e}partition du travail : }{7}
 \contentsline {chapter}{\numberline {5}Les am\IeC {\'e}liorations possibles}{8}

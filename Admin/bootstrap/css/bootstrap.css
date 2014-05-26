@@ -5757,7 +5757,7 @@ a.list-group-item.active:focus .list-group-item-text {
 
 .panel-footer {
   padding: 10px 15px;
-  background-color:#222222;
+  
   border-top: 1px solid #dddddd;
   border-bottom-right-radius: 3px;
   border-bottom-left-radius: 3px;
@@ -7112,7 +7112,7 @@ td.visible-print {
 body {
    /*background: #c1deff !important;*/
 
-   background: url(../../images/fond7.jpg) !important;
+   /*background: url(../../images/fond7.jpg) !important;*/
    filter: blur(10px);
    opacity: 1;
 

@@ -50,6 +50,25 @@ function reparation(id_velo){
      include("banniereReparationAddERROR.html");
     $_SESSION['reparation'] = "";
   } 
+
+
+    if (isset($_SESSION['supreparation']) && $_SESSION['supreparation'] == 25) {
+     ?><div class="row"> 
+  <div class="col-md-12">
+    <div class="alert alert-success"><center>La reparation a bien été supprimée !</center></div>
+  </div>
+</div><?php
+    
+    $_SESSION['supreparation'] = "";
+  }
+  else if (isset($_SESSION['supreparation']) && $_SESSION['supreparation'] == -25){
+     ?><div class="row"> 
+  <div class="col-md-12">
+    <div class="alert alert-danger"><center>IL y a une erreur </center></div>
+  </div>
+</div><?php
+    $_SESSION['supreparation'] = "";
+  } 
   ?>
 
 <ul class="nav nav-pills nav-stacked">
