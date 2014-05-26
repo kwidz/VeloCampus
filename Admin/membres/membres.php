@@ -12,7 +12,7 @@
     <div class="modal-content">
       <div class="modal-header">
         <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
-        <h4 class="modal-title" id="myModalLabel"><strong>Ajouter un partenaire</strong></h4>
+        <h4 class="modal-title" id="myModalLabel"><strong>Ajouter un Membre de l'association</strong></h4>
       </div>
       <form method="post" action="addMembre.php" enctype="multipart/form-data">
       	<div class="modal-body">
@@ -37,20 +37,20 @@
     <div class="modal-content">
       <div class="modal-header">
         <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
-        <h4 class="modal-title" id="myModalLabel"><strong>Modifier un partenaire</strong></h4>
+        <h4 class="modal-title" id="myModalLabel"><strong>Modifier un membre</strong></h4>
       </div>
       <form method="post" action="modifPartenaire.php">
       	<div class="modal-body">
       		<script type="text/javascript" src="script.js"></script>
-        	Selectionnez un partenaire à modifier :<br/>
+        	Selectionnez un membre à modifier :<br/>
         	<?php
-				$sql = "SELECT nom_partenaire FROM Partenaire";
+				$sql = "SELECT * FROM Membre";
 				$result = $mysqli->query($sql);
 				if ($result) {
 					echo "<select onchange='afficheForm(this.value)' class='form-control' id='nom' name='nom' required>";
-					echo "<option></option>";
+					echo "<option> </option>";
 					while (NULL !== ($row = $result->fetch_array())) {
-						echo "<option>".$row['nom_partenaire']."</option>";
+						echo "<option value='".$row[0]."'>".$row[1]."</option>";
 					}
 					echo "</select>";
 				}
