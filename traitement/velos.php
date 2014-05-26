@@ -145,7 +145,6 @@
     Pas de descriptif
     <h4>Caractéristiques :</h4>
     Pas de caractéristiques <br/>
-    <br/> Pas de bol
     <br/>
     <?php
       $result = $mysqli->query("SELECT count(*) FROM Velo v WHERE v.id_type=4 and v.id_velo NOT IN (SELECT id_velo from Location);");
