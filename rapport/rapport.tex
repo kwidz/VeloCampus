@@ -137,7 +137,7 @@ Enfin, afin de ne pas se perdre dans tous les fichiers, nous avons suivi une str
  puis des dossiers portant le noms de chaques sous partie du menu, contenant un dossier de traitement ainsi qu'un index.
  
 \section{Les fonctions importantes}
-Ce projet contient beaucoup de fonctions donc pour la suite nous expliquerons le fonctionnement que de certaines parties.  
+Ce projet comporte beaucoup de fonctionnalités donc pour la suite nous expliquerons le fonctionnement que de certaines parties.  
 \subsection{La partie location}
 La partie Location se trouve dans la partie admistration, elle permet de : 
 \begin{itemize}
@@ -158,6 +158,23 @@ Select v.id_velo, c.id_cadenas, ty.libelle_type, t.libelle_taille from Velo v, C
 De plus lorsque l'adhérent retourne son vélo, l'administrateur doit pouvoir modifier l'état du vélo et ajouter une date de retour. 
 
 \subsection{L'affichage des demandes}
+Lorqu'un fait une demande sur le site publique, celle ci est affiché sur la page administration en attente d'être validé ou refusé.
+
+La demande d'inscription est validée si les informations données sont correcte et si la personne qui a fait cette demande est venu payer la cotisation à l'association. C'est seulement à ce moment que la personne pourra se connecter sur le site publique.
+
+Voici un exemple :\\
+\includegraphics[width=0.5\textwidth]{demande.jpg}~
+
+Si l'on clique sur le bouton valider à coter d'un prénom, la personne sera ajouté à la table cotisation qui contient toute les personnes cotisantes.
+\begin{verbatim}
+INSERT INTO Cotisation (`id_cotisation`, `id_adherent`) VALUES (NULL, ".$_GET['id'].");
+\end{verbatim} 
+Par contre si l'on clique sur le bouton supprimer, la personne sera enlévé de la table adhérent.
+\begin{verbatim}
+DELETE  from Adherent where id_adherent='".$_GET['id']."'
+\end{verbatim}
+
+ 
 
 \chapter{Les problèmes rencontrés}
 
