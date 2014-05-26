@@ -1,13 +1,14 @@
 \select@language {french}
-\contentsline {chapter}{\numberline {1}Le cahier des charges}{3}
-\contentsline {section}{\numberline {1.1}La partie administration :}{3}
-\contentsline {section}{\numberline {1.2} La partie client :}{3}
-\contentsline {chapter}{\numberline {2}Base de donn\IeC {\'e}es}{5}
-\contentsline {section}{\numberline {2.1}le mod\IeC {\`e}le conceptuel de donn\IeC {\'e}e}{5}
-\contentsline {section}{\numberline {2.2}La r\IeC {\'e}alisation du MCD}{5}
-\contentsline {chapter}{\numberline {3}Le fonctionnement du site Internet}{6}
-\contentsline {chapter}{\numberline {4}Les probl\IeC {\`e}mes rencontr\IeC {\'e}s}{7}
-\contentsline {section}{\numberline {4.1}Adblock :}{7}
-\contentsline {section}{\numberline {4.2}La s\IeC {\'e}curit\IeC {\'e} : }{7}
-\contentsline {section}{\numberline {4.3}R\IeC {\'e}partition du travail : }{7}
-\contentsline {chapter}{\numberline {5}Les am\IeC {\'e}liorations possibles}{8}
+\contentsline {chapter}{\numberline {1}Le cahier des charges}{3}{chapter.1}
+\contentsline {section}{\numberline {1.1}La partie administration :}{3}{section.1.1}
+\contentsline {section}{\numberline {1.2} La partie client :}{3}{section.1.2}
+\contentsline {chapter}{\numberline {2}Base de donn\IeC {\'e}es}{5}{chapter.2}
+\contentsline {section}{\numberline {2.1}le mod\IeC {\`e}le conceptuel de donn\IeC {\'e}e}{5}{section.2.1}
+\contentsline {section}{\numberline {2.2}La r\IeC {\'e}alisation du MCD}{5}{section.2.2}
+\contentsline {chapter}{\numberline {3}Le fonctionnement du site Internet}{6}{chapter.3}
+\contentsline {section}{\numberline {3.1}La Structure}{6}{section.3.1}
+\contentsline {chapter}{\numberline {4}Les probl\IeC {\`e}mes rencontr\IeC {\'e}s}{7}{chapter.4}
+\contentsline {section}{\numberline {4.1}Adblock :}{7}{section.4.1}
+\contentsline {section}{\numberline {4.2}La s\IeC {\'e}curit\IeC {\'e} : }{7}{section.4.2}
+\contentsline {section}{\numberline {4.3}R\IeC {\'e}partition du travail : }{7}{section.4.3}
+\contentsline {chapter}{\numberline {5}Les am\IeC {\'e}liorations possibles}{8}{chapter.5}
