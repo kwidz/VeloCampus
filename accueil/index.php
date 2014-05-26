@@ -22,6 +22,8 @@
       include("../banniereAttenteCompteAct.html");
     }
   }
+
+
 ?>
 
 <div class="row" style="background-color:#F5F5F5;border-radius:10px;border:3px solid #222222" >

@@ -33,7 +33,7 @@ CREATE TABLE `Adherent` (
   `adresse_mail_adherent` varchar(50) DEFAULT NULL,
   `password_adherent` varchar(100) DEFAULT NULL,
   PRIMARY KEY (`id_adherent`)
-) ENGINE=InnoDB AUTO_INCREMENT=8 DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB AUTO_INCREMENT=9 DEFAULT CHARSET=latin1;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -42,7 +42,7 @@ CREATE TABLE `Adherent` (
 
 LOCK TABLES `Adherent` WRITE;
 /*!40000 ALTER TABLE `Adherent` DISABLE KEYS */;
-INSERT INTO `Adherent` VALUES (1,'Limballe','Pierre','1995-08-04','1 rue gaston defferre Belfort',90000,'0688370492','a@a.fr','1337'),(2,'Glangine','Geoffrey','1994-02-01','3 rue Gaston Defferre',90000,'0677722547','geoffrey.glangine@gmail.com','test'),(4,'test','test','2012-06-06','test',20000,'000','fr@fr.fr','velo'),(5,'atata','atata','0000-00-00','atata',222,'0677722547','ata@ata.fr','velo'),(7,'test','t','0000-00-00','test',222,'0677722547','z@z.fr','098f6bcd4621d373cade4e832627b4f6');
+INSERT INTO `Adherent` VALUES (1,'Limballe','Pierre','1995-08-04','1 rue gaston defferre Belfort',90000,'0688370492','a@a.fr','1337'),(2,'Glangine','Geoffrey','1994-02-01','3 rue Gaston Defferre',90000,'0677722547','geoffrey.glangine@gmail.com','test'),(4,'test','test','2012-06-06','test',20000,'000','fr@fr.fr','velo'),(5,'atata','atata','0000-00-00','atata',222,'0677722547','ata@ata.fr','velo'),(7,'test','t','0000-00-00','test',222,'0677722547','z@z.fr','098f6bcd4621d373cade4e832627b4f6'),(8,'cabrol','Morgane','0000-00-00','3 rue gaston deferre',90000,'0380379602','a@a.fr','098f6bcd4621d373cade4e832627b4f6');
 /*!40000 ALTER TABLE `Adherent` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -455,4 +455,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2014-05-26 14:06:47
+-- Dump completed on 2014-05-26 14:29:19
