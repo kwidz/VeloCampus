@@ -1,6 +1,7 @@
 <!--cette page traite la mise en base de donnée d'un velo
 -->
 <?php
+session_start();
 include('../../co.php');
 //header("Content-Type: text/plain"); // Utilisation d'un header pour spécifier le type de contenu de la page. Ici, il s'agit juste de texte brut (text/plain). 
 if(((!empty($_POST['etat_velo']))
@@ -28,24 +29,15 @@ if(((!empty($_POST['etat_velo']))
     if($ok){
     	$sql='INSERT INTO Velo(id_velo,id_Etat, id_taille, id_type) Values("'.$id.'","'.$etat.'", "'.$taille.'", "'.$type.'")';
 		$res=$mysqli->query($sql);
-		?><script>
-		window.location='../index.php?message=ok';
-		</script><?php
+		$_SESSION['addvelo'] = 1;
+    echo "test";
     }
+
     else{
-    	?>
-	<script>
-	window.location='../index.php?message=errId';
-	</script><?php
+    	$_SESSION['addvelo'] = -1;
     }
-
-
-
-}else{
-	?>
-	<script>
-	window.location='../index.php?message=notok';
-	</script><?php
 }
+else $_SESSION['addvelo'] = -1;
+//header("Location: ".$_SERVER['HTTP_REFERER']);
 ?>
 

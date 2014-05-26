@@ -90,6 +90,14 @@ if(isset($_SESSION['ajPar']) && $_SESSION['ajPar'] == -1) {
     include("../banniereParaddErr.html");
     $_SESSION['ajPar'] = 0;
 }
+if(isset($_SESSION['addvelo']) && $_SESSION['addvelo'] == 1) {
+    include("../banniereaddVelo.html");
+    $_SESSION['addvelo'] = 0;
+}
+if(isset($_SESSION['addvelo']) && $_SESSION['addvelo'] == -1) {
+    include("../banniereaddVeloErr.html");
+    $_SESSION['addvelo'] = 0;
+}
 
 if(isset($_SESSION['ajMembre']) && $_SESSION['ajMembre'] == 1) {
     ?><div class="row"> 
