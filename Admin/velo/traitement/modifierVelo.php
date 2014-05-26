@@ -23,4 +23,4 @@ if(((!empty($_POST['etat_velo']))
 	?>
 	<script>
 	window.location='../index.php?message=ok';
-	</script><?php
+	</script>
