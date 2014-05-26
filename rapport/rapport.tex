@@ -189,6 +189,42 @@ Les membres avaient besoins de pouvoir communiquer entre eux sur la page adminis
 
 Postit est une table à part dans la base de donnée, relier à aucune autres. C'est pour cela qu'elle n'est pas présenté sur le MCD plus haut.
 Ce postit fonctionne simplement avec un formulaire qui envois les valeurs des champs "nom" et "message" à une page php qui elle même les insert dans la base de données. 
+
+\section{Inscription sur le site client}
+Dans ce projet nous avons du créer un formulaire d'inscription sur le site client afin que les visiteurs puisse demander à être adhérents. 
+
+\begin{center}
+\includegraphics[width=0.3\textwidth]{inscr.jpg}~
+\end{center}
+
+Sur cette partie, nous avons du faire face à plusieurs situations : 
+\begin{itemize}
+\item La personne non inscrite
+\item La personne qui est inscrite mais qui n'a pas cotisé
+\item La personne qui essai de se réinscrire
+\item La personne qui a cotisé
+\end{itemize}
+
+Tout d'abord, lorsqu'une personne tente de s'inscrire une fonction ajax vérifie que l'adresse mail entrée n'a jamais été utilisée si elle l'a déjà été, la fonction vérifie que l'adhérent n'est pas déjà cotisant donc déjà inscrit. Si c'est le cas elle retourne un message d'erreur :
+
+\begin{verbatim}
+if ($adresse){ 
+	SELECT Count(*) from Adherent Where adresse_mail_adherent='".$adresse."';
+	....
+	....
+	if($result==0){
+		Message = OK ! 
+	else{
+		"SELECT count(c.id_adherent) from Adherent a, Cotisation c where adresse_mail_adherent='".$adresse."'and c.id_adherent=a.id_adherent";
+		....
+		....
+		if ($result==0){
+			message ="attention cette adresse mail est utilisé pour un compte en attente de cotisation. 
+		else {
+			message ="adresse mail déja utilisé pour un autre compte";
+		}
+\end{verbatim}
+
 \chapter{Les problèmes rencontrés}
 
 \section{Adblock :} 
