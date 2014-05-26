@@ -39,18 +39,19 @@
         <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
         <h4 class="modal-title" id="myModalLabel"><strong>Modifier un membre</strong></h4>
       </div>
-      <form method="post" action="modifPartenaire.php">
+      <form method="post" action="modifMembres.php">
       	<div class="modal-body">
       		<script type="text/javascript" src="script.js"></script>
         	Selectionnez un membre à modifier :<br/>
         	<?php
-				$sql = "SELECT * FROM Membre";
+				$sql = "SELECT * FROM Membres";
 				$result = $mysqli->query($sql);
 				if ($result) {
 					echo "<select onchange='afficheForm(this.value)' class='form-control' id='nom' name='nom' required>";
 					echo "<option> </option>";
 					while (NULL !== ($row = $result->fetch_array())) {
-						echo "<option value='".$row[0]."'>".$row[1]."</option>";
+
+						echo "<option value='".$row['id_Membre']."'>".$row['nom_membre']."</option>";
 					}
 					echo "</select>";
 				}

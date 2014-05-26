@@ -27,7 +27,7 @@ function afficheForm(id){
         		document.getElementById("form").innerHTML= xhr.responseText; // Données textuelles récupérées
         }
 	};
-	xhr.open("GET", "formMembre.php?idMembre="+id, true);
+	xhr.open("GET", "formMembre.php?id="+id, true);
 	xhr.send();
 
 }
