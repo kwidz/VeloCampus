@@ -38,6 +38,6 @@ if(((!empty($_POST['etat_velo']))
     }
 }
 else $_SESSION['addvelo'] = -1;
-//header("Location: ".$_SERVER['HTTP_REFERER']);
+header("Location: ".$_SERVER['HTTP_REFERER']);
 ?>
 

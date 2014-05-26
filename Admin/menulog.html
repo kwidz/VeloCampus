@@ -98,6 +98,14 @@ if(isset($_SESSION['addvelo']) && $_SESSION['addvelo'] == -1) {
     include("../banniereaddVeloErr.html");
     $_SESSION['addvelo'] = 0;
 }
+if(isset($_SESSION['suppvelo']) && $_SESSION['suppvelo'] == 1) {
+    include("../bannieresuppVelo.html");
+    $_SESSION['suppvelo'] = 0;
+}
+if(isset($_SESSION['suppvelo']) && $_SESSION['suppvelo'] == -1) {
+    include("../bannieresuppVeloErr.html");
+    $_SESSION['suppvelo'] = 0;
+}
 
 if(isset($_SESSION['ajMembre']) && $_SESSION['ajMembre'] == 1) {
     ?><div class="row"> 
