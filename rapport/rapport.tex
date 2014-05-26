@@ -7,6 +7,7 @@
 \usepackage{amssymb} 
 \usepackage{hyperref}
 \usepackage{graphicx} 
+\usepackage{verbatim}
 \usepackage[final]{pdfpages} 
 \usepackage[toc,page]{appendix} 
 \usepackage[top=2.5cm,bottom=2.5cm,right=2.5cm,left=2.5cm]{geometry} 
@@ -147,8 +148,16 @@ La partie Location se trouve dans la partie admistration, elle permet de :
 \item Ajouter un retour de location 
 \end{itemize}
 
-Cette partie a été délicate à gerer car lorque l'on loue un vélo il faut connaitre son état, la date de location, les noms des cadenas qui sont loué avec le vélos ... Il nous a donc fallut faire plusieurs jointure. 
- 
+Cette partie a été délicate à gérer car lorsque l'on loue un vélo il faut connaître son état, la date de location, les noms des cadenas qui sont loués avec le vélo ainsi que les informations de l'adhérent qui loue le vélo. Il nous a donc fallut faire plusieurs jointure.\\
+
+Par exemple : Cette requete sert à afficher les vélos non-loués. 
+\begin{verbatim}
+Select v.id_velo, c.id_cadenas, ty.libelle_type, t.libelle_taille from Velo v, Cadenas c, Taille t, _Type ty where v.id_velo not in(Select id_velo from Location where date_retour_location is null ) and c.id_velo=v.id_velo and v.id_type=ty.id_type and v.id_taille=t.id_taille order by(id_velo) 
+\end{verbatim} 
+
+De plus lorsque l'adhérent retourne son vélo, l'administrateur doit pouvoir modifier l'état du vélo et ajouter une date de retour. 
+
+\subsection{L'affichage des demandes}
 
 \chapter{Les problèmes rencontrés}
 

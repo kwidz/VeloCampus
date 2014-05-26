@@ -9,8 +9,9 @@
 \contentsline {section}{\numberline {3.1}La Structure}{6}{section.3.1}
 \contentsline {section}{\numberline {3.2}Les fonctions importantes}{6}{section.3.2}
 \contentsline {subsection}{\numberline {3.2.1}La partie location}{6}{subsection.3.2.1}
-\contentsline {chapter}{\numberline {4}Les probl\IeC {\`e}mes rencontr\IeC {\'e}s}{7}{chapter.4}
-\contentsline {section}{\numberline {4.1}Adblock :}{7}{section.4.1}
-\contentsline {section}{\numberline {4.2}La s\IeC {\'e}curit\IeC {\'e} : }{7}{section.4.2}
-\contentsline {section}{\numberline {4.3}R\IeC {\'e}partition du travail : }{7}{section.4.3}
-\contentsline {chapter}{\numberline {5}Les am\IeC {\'e}liorations possibles}{8}{chapter.5}
+\contentsline {subsection}{\numberline {3.2.2}L'affichage des demandes}{7}{subsection.3.2.2}
+\contentsline {chapter}{\numberline {4}Les probl\IeC {\`e}mes rencontr\IeC {\'e}s}{8}{chapter.4}
+\contentsline {section}{\numberline {4.1}Adblock :}{8}{section.4.1}
+\contentsline {section}{\numberline {4.2}La s\IeC {\'e}curit\IeC {\'e} : }{8}{section.4.2}
+\contentsline {section}{\numberline {4.3}R\IeC {\'e}partition du travail : }{8}{section.4.3}
+\contentsline {chapter}{\numberline {5}Les am\IeC {\'e}liorations possibles}{9}{chapter.5}
