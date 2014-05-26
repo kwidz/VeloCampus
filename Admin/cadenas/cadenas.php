@@ -10,141 +10,113 @@ th{
 }
 </style>
 <div class="col-md-6" >
-  <?php
-
-  if(isset($_GET['message'])
-    && (!empty($_GET['message']))){
-    if ($_GET['message']=="ok"){
-      echo"<div class='alert alert-success'><center><strong>L'opération s'est déroulé avec succès !</center></strong></div>";
-    }
-    else if ($_GET['message']=="errId") {
-      echo"<div class='alert alert-danger'><center><strong>L'Identifiant souhaité est déjà utilisé veuillez en choisir un autre</center></strong></div>";
-    } else {
-      echo"<div class='alert alert-danger'><center><strong>Une erreur inconue à été détectée ! </center></strong></div>";
-    }
-  }
-  ?>
   <ul class="nav nav-pills nav-stacked">
-    <li class="" style="text-align: center; margin-bottom: 15px; border:solid 1px; border-radius: 5px; border-color: #CDCACA"><a href="#" data-toggle="modal" data-target="#creerCadenas" >Ajouter un cadenas</a></li>
-    <li class="" style="text-align: center; margin-bottom: 15px; border:solid 1px; border-radius: 5px; border-color: #CDCACA"><a href="#" data-toggle="modal" data-target="#suppCadenas">Supprimer cadenas</a></li>
-    <li class="" style="text-align: center; margin-bottom: 15px; border:solid 1px; border-radius: 5px; border-color: #CDCACA"><a href="#" data-toggle="modal" data-target="#veloNonRendus">Voir les personnes qui n'ont pas encore rendu leur vélo</a></li>
-    <li class="" style="text-align: center; margin-bottom: 15px; border:solid 1px; border-radius: 5px; border-color: #CDCACA"><a href="#" data-toggle="modal" data-target="#allLocations">Voir toutes les locations de l'année </a></li>
-    <li class="" style="text-align: center; margin-bottom: 15px; border:solid 1px; border-radius: 5px; border-color: #CDCACA"><a href="#" data-toggle="modal" data-target="#retourLoc" onclick="banner(document.form.id_etat.value,document.form.id_location.value)">ajouter un retour de Location</a></li
-    </ul>
-  </div>
-  <!-- Premier Modal creation de location -->
-  <div class="modal fade" id="creerCadenas" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
-    <div class="modal-dialog">
-      <div class="modal-content">
-        <form method="POST" action="traitement/ajouterCadenas.php" name="formAjoutCadenas">
+    <li class="" style="text-align: center; margin-bottom: 15px; border:solid 1px; border-radius: 5px; border-color: #CDCACA"><a href="#" data-toggle="modal" data-target="#ajoutCadenas">Ajouter un cadenas</a></li>
+    <!--<li class="" style="text-align: center; margin-bottom: 15px; border:solid 1px; border-radius: 5px; border-color: #CDCACA"><a href="#" data-toggle="modal" data-target="#modifCadenas">Modifier un cadenas</a></li>
+    --><li class="" style="text-align: center; margin-bottom: 15px; border:solid 1px; border-radius: 5px; border-color: #CDCACA"><a href="#" data-toggle="modal" data-target="#suppCadenas">Supprimer un cadenas</a></li>
+  </ul>
+</div>
+
+<script type="text/javascript" src="ajax.js"></script>
+
+<!-- Modal ajout cadenas sur vélo -->
+<div class="modal fade" id="ajoutCadenas" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <form method="POST" action="traitement/veloAjoutCadenas.php" name="formLiaisonCadenasVelo">
         <div class="modal-header">
           <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
-          <h4 class="modal-title" id="myModalLabel"><strong>Création d'un cadenas</strong></h4>
+          <h4 class="modal-title" id="myModalLabel"><strong>Ajouter un cadenas</strong></h4>
         </div>
-
         <div class="modal-body">
-          Identifiant du nouveau cadenas :
-          <input type="number" name="blop" required></br></br>
 
-          
-
-
+          Sélectionner un vélo :
+           <select class="form-control" name="id_velo" onchange="afficheCadenas(this.value)" required>
+           <option></option>
+            <?php
+            $sql="SELECT id_velo FROM Velo";
+            $res=$mysqli->query($sql);
+            while (NULL !==($row = $res->fetch_array())) {
+              echo '<option value="'.$row["id_velo"].'">'.$row["id_velo"].'</option>';
+            }
+            ?>
+          </select>
+          <div id="cadenas"></div>
         </div>
         <div class="modal-footer">
           <button type="button" class="btn btn-danger" data-dismiss="modal">Annuler</button>
-          <input type="submit" class="btn btn-default"name="creer Cadenas">
+          <input type="submit" class="btn btn-default" name="Ajouter">
         </div>
       </form>
-      </div>
-    </div> 
-  </div>
-  <!-- fin modal creer -->
+    </div>
+  </div> 
+</div>
 
-  <!-- Second Modal affichage des velos non loués -->
-  <div class="modal fade" id="suppCadenas" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
-    <div class="modal-dialog">
-      <div class="modal-content">
-        <form method="POST" action="traitement/suppCadenas.php" name="formSuppCadenas">
+
+<!-- Modal modifs cadenas sur vélo -->
+<div class="modal fade" id="modifCadenas" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <form method="POST" action="traitement/veloModifCadenas.php" name="formLiaisonCadenasVelo">
         <div class="modal-header">
           <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
-          <h4 class="modal-title" id="myModalLabel"><strong> Vélos nons loués </strong></h4>
+          <h4 class="modal-title" id="myModalLabel"><strong>Modifier un cadenas</strong></h4>
         </div>
         <div class="modal-body">
 
-          Identifiant du cadenas à supprimer:
-          <input type="number" name="blop" required></br></br>
-
-
+          Sélectionner un cadenas :
+           <select class="form-control" name="id_cadenas" onchange="afficheVelo(this.value,'modcadenas')" required>
+           <option></option>
+            <?php
+            $sql="SELECT id_cadenas FROM Cadenas";
+            $res=$mysqli->query($sql);
+            while (NULL !==($row = $res->fetch_array())) {
+              echo '<option value="'.$row["id_cadenas"].'">'.$row["id_cadenas"].'</option>';
+            }
+            ?>
+          </select>
+          <div id="modcadenas"></div>
         </div>
         <div class="modal-footer">
           <button type="button" class="btn btn-danger" data-dismiss="modal">Annuler</button>
-          <button type="button" class="btn btn-default" data-dismiss="modal">Ok</button>
+          <input type="submit" class="btn btn-default" name="Ajouter">
         </div>
-        </form>
-      </div>
-    </div> 
-  </div>
+      </form>
+    </div>
+  </div> 
+</div>
 
-  <!-- 3eme Modal affichage des personnes n'ayant pas encore rendu leur velo -->
-  <div class="modal fade" id="veloNonRendus" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
-    <div class="modal-dialog">
-      <div class="modal-content">
+
+<!-- Modal suppression cadenas sur vélo -->
+<div class="modal fade" id="suppCadenas" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <form method="POST" action="traitement/veloSuppCadenas.php" name="formLiaisonCadenasVelo">
         <div class="modal-header">
           <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
-          <h4 class="modal-title" id="myModalLabel"><strong> Vélos nons loués </strong></h4>
+          <h4 class="modal-title" id="myModalLabel"><strong>Supprimer un cadenas</strong></h4>
         </div>
         <div class="modal-body">
 
-
+          Sélectionner un cadenas :
+           <select class="form-control" name="id_cadenas" onchange="afficheVelo(this.value,'suppcadenas')" required>
+           <option></option>
+            <?php
+            $sql="SELECT id_cadenas FROM Cadenas";
+            $res=$mysqli->query($sql);
+            while (NULL !==($row = $res->fetch_array())) {
+              echo '<option value="'.$row["id_cadenas"].'">'.$row["id_cadenas"].'</option>';
+            }
+            ?>
+          </select>
+          <div id="suppcadenas"></div>
         </div>
         <div class="modal-footer">
-          <button type="button" class="btn btn-danger" data-dismiss="modal">Annuler</button>
-          <button type="button" class="btn btn-default" data-dismiss="modal">Ok</button>
+          <button type="button" class="btn btn-default" data-dismiss="modal">Annuler</button>
+          <input type="submit" class="btn btn-danger" name="Supprimer">
         </div>
-      </div>
-    </div> 
-  </div>
+      </form>
+    </div>
+  </div> 
+</div>
 
-
-  <!-- 4eme Modal affichage de toutes les locations -->
-  <div class="modal fade" id="allLocations" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
-    <div class="modal-dialog">
-      <div class="modal-content">
-        <div class="modal-header">
-          <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
-          <h4 class="modal-title" id="myModalLabel"><strong> Vélos nons loués </strong></h4>
-        </div>
-        <div class="modal-body">
-
-        </div>
-        <div class="modal-footer">
-          <button type="button" class="btn btn-danger" data-dismiss="modal">Annuler</button>
-          <button type="button" class="btn btn-default" data-dismiss="modal">Ok</button>
-
-
-
-        </div>
-      </div>
-    </div> 
-  </div>
-
-
-  <!-- 4eme Modal pour le retour des Location -->
-  <div class="modal fade" id="retourLoc" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
-
-    <div class="modal-dialog">
-      <div class="modal-content">
-        <div class="modal-header">
-          <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
-          <h4 class="modal-title" id="myModalLabel"><strong> Retour de Location </strong></h4>
-        </div>
-        <div class="modal-body" >
-
-        </div>
-        <div class="modal-footer">
-          <button type="button" class="btn btn-danger" data-dismiss="modal">Annuler</button>
-          <input type="submit" class="btn btn-default" name="Envoyer">
-        </div>
-      </div>
-    </div> 
-  </div>

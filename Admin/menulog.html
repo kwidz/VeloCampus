@@ -27,7 +27,7 @@
                       <ul class="dropdown-menu">
                         <li><a href="../velo">Vélos</a></li>
                         <li class="divider"></li>
-                        <li><a href="#">Cadenas</a></li>
+                        <li><a href="../cadenas">Cadenas</a></li>
                         <li class="divider"></li>
                         <li><a href="#">Types</a></li>
                         
@@ -152,9 +152,25 @@ if (isset($_SESSION['addcadenas']) && $_SESSION['addcadenas'] == 1) {
     include("../banniereaddCad.html");
     $_SESSION['addcadenas'] = 0;
 }
-if (isset($_SESSION['addcadenas']) && $_SESSION['addcadenas'] == 1) {
+if (isset($_SESSION['addcadenas']) && $_SESSION['addcadenas'] == -1) {
     include("../banniereaddCadErr.html");
     $_SESSION['addcadenas'] = 0;
+}
+if (isset($_SESSION['suppcadenas']) && $_SESSION['suppcadenas'] == 1) {
+    include("../bannieresuppCad.html");
+    $_SESSION['suppcadenas'] = 0;
+}
+if (isset($_SESSION['suppcadenas']) && $_SESSION['suppcadenas'] == -1) {
+    include("../bannieresuppCadErr.html");
+    $_SESSION['suppcadenas'] = 0;
+}
+if (isset($_SESSION['modcadenas']) && $_SESSION['modcadenas'] == 1) {
+    include("../bannieremodCad.html");
+    $_SESSION['modcadenas'] = 0;
+}
+if (isset($_SESSION['modcadenas']) && $_SESSION['modcadenas'] == -1) {
+    include("../bannieremodCadErr.html");
+    $_SESSION['modcadenas'] = 0;
 }
 ?>
 
