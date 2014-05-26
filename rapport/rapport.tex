@@ -48,7 +48,9 @@ Auguste \textsc{meyer}
 Alexandru  \textsc{dobrila}
 \end{flushright}
 \end{minipage}
-
+\\[1cm]
+\includegraphics[width=0.8\textwidth]{site.jpg}~
+\\[1cm]
 \vfill
 
 % Bottom of the page
@@ -61,7 +63,7 @@ Alexandru  \textsc{dobrila}
 \chapter*{Introduction}
 Vélocampus est une association louant des vélos aux étudiants à très petit tarifs. De plus, elle s’occupe de la réparation et de l'entretien de vélos loués ou non.
 
-Pour ce projet, nous avons voulu réaliser un site permettant à Vélocampus de gérer son administration plus facilement. Pour cela nous vous présenteront d'abord le cahier des charges que nous avons conçus avec les membres de l'association, puis nous expliquerons la base de données que nous avons décidés de mettre en place, ainsi que les fonctionnalités que nous avons implémenté sur le site. Enfin, nous aborderons les problèmes que nous avons rencontrés puis, les améliorations qui pourraient être apporté au site par la suite.
+Pour ce projet, nous avons voulu réaliser un site permettant à Vélocampus de gérer son administration plus facilement. Pour cela nous vous présenterons d'abord le cahier des charges que nous avons conçus avec les membres de l'association, puis nous expliquerons la base de données que nous avons décidés de mettre en place, ainsi que les fonctionnalités que nous avons implémenté sur le site. Enfin, nous aborderons les problèmes que nous avons rencontrés puis, les améliorations qui pourraient être apporté au site par la suite.
 
 
 \chapter{Le cahier des charges}
@@ -116,19 +118,32 @@ Elle sera accessible à tous les membres de l'association \\
 
 
 \chapter{Les problèmes rencontrés}
-\begin{itemize}
-\item Adblock bla bla bla
-\item Chemin absolut bla bla bla
-\item Repartition du travail bla bla bla
-\item ??
-\end{itemize}
+
+\section{Adblock :} 
+Adblock est une extension informatique permettant de bloquer les publicités sur les navigateurs. Elle est donc installé sur beaucoup d'ordinateur. 
+Malheureusement, elle ne bloque pas que les publicités, lors de la réalisation du projet nous nous sommes aperçu que celle ci bloquait aussi toutes les actions ajax du site (qui nous permettaient le plus souvent de sécuriser le site) 
+Nous avons donc du modifier notre façon de fonctionner. cela nous a fait perdre un peu de temps.
+
+\section{La sécurité : }
+Ce projet étant utilisés par la suite sur internet, il était primordiale de le sécuriser. Or, nous n'avons aucun cours sur la sécurité internet à l'IUT, nous avons donc du étudier cette aspect de l'informatique par nous même. Cela nous a donc apporté une charge de travail supplémentaire.
+
+\section{Répartition du travail : }
+Finalement, le plus gros problème que nous avons rencontrés est la répartition du travail. 
+Le chef de projet a d'abord partagé les premières taches en pensant vérifier à la fin de la semaine leurs réalisations pour, ensuite, pouvoir en fournir d'autre. Malheureusement, seul trois membres ont travaillés, le quatrième n'avait absolument rien réalisé à la fin de la semaine. 
+La tache de celui-ci étant indispensable pour la suite, le chef de projet a préféré la coder lui même car il s'est rendu compte qu'elle ne serait jamais faites.
+Ce petit manège a recommencer à chaque nouvelle distribution de taches. C'est seulement à la fin du projet que l'élève en question a fini par avouer qu'il avait décidé de ne rien faire pour ce projet car la matière n'était pas assez importante à ses yeux. Cette mésaventure nous a fait perdre beaucoup de temps car nous avons souvent du attendre sur le travail de l'élève en question pour continuer à avancer. De plus, nous avons du travailler plus pour rattraper le travail manquant de se membre.
+Ce projet étant difficilement réalisable à quatre, la difficulté a évolué dès lors que nous sommes passé à seulement trois membres actifs. 
 \chapter{Les améliorations possibles}
+Ce projet n'étant pas entièrement réalisable en un mois, ils restent beaucoup de fonctionnalités qui aurait put être implémenter plus tard, tels que : \\
 \begin{itemize}
-\item Réparation d'un vélo non loué bla bla bla
-\item Demande de location en ligne bla bla
-\item Gestion des compte rendu de reunions bla bla
-\item Ajout d'un forum bla bla
-\item Ajout d'une fontionnalité de paiement en ligne bla bla
+\item La réparation des vélos non loués 
+\item La Demande de location en ligne \\
+\textit{(Nous avons décider de ne pas la faire car il faut de toute façon se rendre à l'association pour récupérer le vélo loué.)}
+\item Gestion des compte rendu de réunions \\ \textit{(Il faudrait créer un éditeur sur la partie administration du site afin que le secrétaire de l'association puisse noter directement en ligne le compte rendu des réunions et les sauvegarder en ligne.)} 
+\item Ajout d'un forum \\
+\textit{(L'association Vélocampus aurait aimé que nous mettions en place un forum pour tous les adhérents, nous avons malheureusement pas eu le temps)} 
+\item Ajout d'une fontionnalité de paiement en ligne \\
+\textit{(Nous aurions pu ajouter un lien paypal mais cela compliquait les choses plus qu'autres choses, de plus l'association préfère le contact humain.)} 
 \end{itemize}
 \chapter*{Conclusion}
 \end{document}
