@@ -1,13 +1,14 @@
 <?php
 	session_start();
-	if (isset($_POST['nom']) && isset($_POST['description'])) {
+	if (isset($_POST['nom']) && isset($_POST['description']) && isset($_POST['fonction'])) {
 		
 		$nom = $_POST['nom'];
 		$description = $_POST['description'];
+		$fonction = $_POST['fonction'];
 		
 		include("../co.php");
 		
-		$sql = "UPDATE Membres SET nom_membre = '".$_POST['nom']."', biographie = '".$_POST['description']."' WHERE id_Membre='".$_POST['id']."'";
+		$sql = "UPDATE Membres SET nom_membre = '".$_POST['nom']."', biographie = '".$_POST['description']."', fonction='".$_POST['fonction']."' WHERE id_Membre='".$_POST['id']."'";
 		$result = $mysqli->query($sql);
 		if ($result) {
 			$_SESSION['ajMembre'] = 1;
