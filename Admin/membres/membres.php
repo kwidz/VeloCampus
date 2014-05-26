@@ -39,7 +39,7 @@
         <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
         <h4 class="modal-title" id="myModalLabel"><strong>Modifier un membre</strong></h4>
       </div>
-      <form method="post" action="modifMembres.php">
+      <form method="post" action="modifMembres.php " enctype="multipart/form-data">
       	<div class="modal-body">
       		<script type="text/javascript" src="script.js"></script>
         	Selectionnez un membre à modifier :<br/>
@@ -47,7 +47,7 @@
 				$sql = "SELECT * FROM Membres";
 				$result = $mysqli->query($sql);
 				if ($result) {
-					echo "<select onchange='afficheForm(this.value)' class='form-control' id='nom' name='nom' required>";
+					echo "<select onchange='afficheForm(this.value)' class='form-control' id='id' name='id' required>";
 					echo "<option> </option>";
 					while (NULL !== ($row = $result->fetch_array())) {
 
@@ -58,7 +58,7 @@
 				else {
 					echo "<select onchange='afficheForm(this.value)' class='form-control' id='nom' name='nom' required><option>test</option><option>haha</option></select>";
 				}
-				echo "<div id='form'> </div>";
+				echo "<div id='form12'> </div>";
 			?>
       	</div>
       	<div class="modal-footer">

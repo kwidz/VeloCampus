@@ -24,7 +24,7 @@ function afficheForm(id){
 	var xhr = getXMLHttpRequest();
 	xhr.onreadystatechange = function() {
         if (xhr.readyState == 4 && (xhr.status == 200 || xhr.status == 0)) {
-        		document.getElementById("form").innerHTML= xhr.responseText; // Données textuelles récupérées
+        		document.getElementById("form12").innerHTML= xhr.responseText; // Données textuelles récupérées
         }
 	};
 	xhr.open("GET", "formMembre.php?id="+id, true);

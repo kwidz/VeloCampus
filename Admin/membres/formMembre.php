@@ -14,7 +14,7 @@
 				echo "<br/>Biographie : <br/>";
 				echo "<textarea name='description' id='description' class='form-control'>".$row[2]."</textarea><br/>";
 				echo "<br/>Photo du membre (facultative) : ";
-				echo "<input name='photo' id='photo' class='form-control' type='file'>";
+				echo '<input type="file" name="icone" id="icone" />';
 			}
 		}
 		else {
