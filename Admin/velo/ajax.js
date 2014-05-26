@@ -19,17 +19,24 @@ function getXMLHttpRequest() {
 	return xhr;
 }
 
-function modifiervelo(noVelo){
-
+function afficheCadenas(noVelo){
 	var xhr = getXMLHttpRequest(); 
 	xhr.onreadystatechange = function() {
-        if (xhr.readyState == 4 && (xhr.status == 200 || xhr.status == 0)) {
-        		
-        		document.getElementById("baniereajaxaralonge").innerHTML= xhr.responseText; // Données textuelles récupérées
-        		
+        if (xhr.readyState == 4 && (xhr.status == 200 || xhr.status == 0)) {	
+        	document.getElementById("cadenas").innerHTML= xhr.responseText; // Données textuelles récupérées
         }
 	};
-	xhr.open("GET", "traitementModifier.php?noVelo="+noVelo+"", true);
+	xhr.open("GET", "traitement/liaisonCadenasVelo.php?idVelo="+noVelo+"&action=infos", true);
 	xhr.send();
+}
 
+function afficheVelo(noCadenas, id){
+	var xhr = getXMLHttpRequest(); 
+	xhr.onreadystatechange = function() {
+        if (xhr.readyState == 4 && (xhr.status == 200 || xhr.status == 0)) {	
+        	document.getElementById(id).innerHTML= xhr.responseText; // Données textuelles récupérées
+        }
+	};
+	xhr.open("GET", "traitement/liaisonVeloCadenas.php?idCadenas="+noCadenas+"&action=infos", true);
+	xhr.send();
 }

@@ -7,22 +7,18 @@ if( (!empty($_GET["action"]) && (!empty($_GET["idVelo"]) ) && ( isset($_GET["act
 		case 'infos':
 			
 			$idVelo=$_GET["idVelo"];
-			$chaine = 'Le velo possede deja les cadenas avec l id suivant : ';
-
 			$sql="SELECT id_cadenas from Cadenas WHERE id_velo = ".$idVelo."";
-
 			$res=$mysqli->query($sql);
-
+			$chaine = "";
 			while (NULL !==($row = $res->fetch_array())) {
               	$chaine = $chaine." ".$row[0]." " ;
             }
+            if ($chaine) {
+				$chaine = '<br/>Le vélo possède déjà les cadenas suivant : '.$chaine;
+            	echo $chaine;
+            }
+            else echo "<br/>Le vélo ne possède encore aucun cadenas.";
 
-            echo $chaine;
-
-			break;
-		
-		default:
-			# code...
 			break;
 	}
 }

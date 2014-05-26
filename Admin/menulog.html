@@ -148,6 +148,14 @@ if (isset($_SESSION['delPar']) && $_SESSION['delPar'] == -1) {
     include("../bannierePardelErr.html");
     $_SESSION['delPar'] = 0;
 }
+if (isset($_SESSION['addcadenas']) && $_SESSION['addcadenas'] == 1) {
+    include("../banniereaddCad.html");
+    $_SESSION['addcadenas'] = 0;
+}
+if (isset($_SESSION['addcadenas']) && $_SESSION['addcadenas'] == 1) {
+    include("../banniereaddCadErr.html");
+    $_SESSION['addcadenas'] = 0;
+}
 ?>
 
 
