@@ -174,7 +174,13 @@ Par contre si l'on clique sur le bouton supprimer, la personne sera enlévé de 
 DELETE  from Adherent where id_adherent='".$_GET['id']."'
 \end{verbatim}
 
- 
+\subsection{L'ajout d'image}
+Nous voulions créer une fonctionnalité simple qui permettrait aux membres de Vélocampus d'ajouter ou supprimer des photos sur leur site. De plus nous ne voulions pas ajouter seulement un lien vers l'image dans la base de donnée car nous voulions que lors de la suppression d'image, l'image soit réellement supprimer et pas seulement le lien qui mène à elle dans la base de donnée.
+\begin{center}
+\includegraphics[width=0.3\textwidth]{addImage.jpg}~
+\end{center}
+
+
 
 \chapter{Les problèmes rencontrés}
 
