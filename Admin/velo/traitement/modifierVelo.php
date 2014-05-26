@@ -1,6 +1,6 @@
 <?php
+session_start();
 include('../../co.php');
-//header("Content-Type: text/plain"); // Utilisation d'un header pour spécifier le type de contenu de la page. Ici, il s'agit juste de texte brut (text/plain). 
 if(((!empty($_POST['etat_velo']))
 	&&(!empty($_POST['id_velo']))
 	&&(!empty($_POST['taille_velo']))
@@ -17,10 +17,9 @@ if(((!empty($_POST['etat_velo']))
 
 	$sql='UPDATE Velo SET id_Etat = '.$etat.', id_taille = '.$taille.', id_type = '.$type.' where id_velo='.$id.'';
 	$res=$mysqli->query($sql);
-	
+	if ($res) $_SESSION['modvelo'] = 1;	
+	else $_SESSION['modvelo'] = -1;	
 }
 
-	?>
-	<script>
-	window.location='../index.php?message=ok';
-	</script>
+header("Location: ".$_SERVER['HTTP_REFERER']);
+?>
