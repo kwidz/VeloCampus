@@ -30,7 +30,8 @@
 
 % Title
 \HRule \\[0.4cm]
-{ \huge \bfseries Velacampus website \\[0.4cm] }
+{ \huge \bfseries Site internet administratif de\\
+l'association Vélocampus \\[0.4cm] }
 
 \HRule \\[1.5cm]
 
@@ -40,8 +41,7 @@
 \emph{Auteur:}\\
 Morgane \textsc{cabrol}\\
 Pierre \textsc{limballe}\\
-Geoffrey \textsc{glangine}\\
-Auguste \textsc{meyer}
+Geoffrey \textsc{glangine}
 \end{flushleft}
 \end{minipage}
 \begin{minipage}{0.4\textwidth}
@@ -63,39 +63,39 @@ Alexandru  \textsc{dobrila}
 
 \tableofcontents
 \chapter*{Introduction}
-Vélocampus est une association louant des vélos aux étudiants à très petit tarifs. De plus, elle s’occupe de la réparation et de l'entretien de vélos loués ou non.
+Vélocampus est une association proposant une location de vélos aux étudiants à très petit tarifs. De plus, elle s'occupe de la réparation et de l'entretien de vélos loués à l'association ou non.
 
-Pour ce projet, nous avons voulu réaliser un site web administratif permettant à Vélocampus de gérer son administration plus facilement. Pour cela nous vous présenterons d'abord le cahier des charges que nous avons conçu avec les membres de l'association, puis nous expliquerons la base de données que nous avons décidés de mettre en place, ainsi que les fonctionnalités que nous avons implémenté sur le site. Enfin, nous aborderons les problèmes que nous avons rencontrés puis, les améliorations qui pourraient être apporté au site par la suite.
+Pour ce projet, nous avons voulu réaliser un site web administratif permettant à Vélocampus de gérer son administration plus facilement. Pour cela nous vous présenterons d'abord le cahier des charges que nous avons conçu avec les membres de l'association, puis nous expliquerons la base de données que nous avons décidés de mettre en place, ainsi que les fonctionnalités que nous avons implémenté sur le site. Enfin, nous aborderons les problèmes que nous avons rencontrés puis, les améliorations qui pourraient être apportées au site par la suite.
 
 
 \chapter{Le cahier des charges}
-Après une réunion avec les membres de l'association, nous sommes arrivés à la conclusion que le site contiendrait une petite partie client, rendant ainsi l'association présente sur le web et une grosse partie administration, permettant toute la gestions de l'association. 
-Nous avons finalement construit ce cahier des charges :\\
+Après une réunion avec les membres de l'association, nous en avons conclu que le site contiendrait une partie client, rendant ainsi l'association présente sur le web et une partie administration, permettant toute la gestion de l'association. 
+Nous avons finalement construit le cahier des charges suivant.\\
 
 
-\section{La partie administration :} 
+\section{La partie administration} 
 Elle sera accessible à tous les membres de l'association \\
 \begin{itemize}
 \item Une mailing-list des adhérents \\
 \textit{(Permettant à l'administrateur d'importer la liste sur une boite mail afin de pouvoir envoyer des messages groupés)}
-\item Un Suivi des vélos \\
+\item Un suivi des vélos \\
 \textit{(Afin de savoir quel vélo est en location, quel vélo a subit quelle réparation...)}
-\item Une gestion des demandes d'adhésions faites en ligne
+\item Une gestion des demandes d'adhésion faites en ligne
 \item Une messagerie interne \\
 \textit{(Permettant aux différents administrateurs de communiquer entre eux)}
 \item Une gestion des vélos \\
 \textit{(Pour ajouter des vélos, supprimer des vélos ou encore modifier des vélos)}
 \item Une gestion de réparation \\
-\textit{(Permettant d'ajouter des réparations à certains vélo et de connaître le prix de ces réparations)}
+\textit{(Permettant d'ajouter des réparations à certains vélos et de connaître le prix de ces réparations)}
 \item Une gestion du site côté client \\
-\textit{(Ajouter des photos, modifier les partenaires, modifier le messages d'acceuil ...)}
+\textit{(Ajouter des photos, modifier les partenaires, modifier le message d'accueil ...)}
 \item L'importation d'un calendrier Gmail \\
-\textit{(Permettant d'importer un calendrier d’événement sur la partie client du site et d'afficher le calendrier interne de l'association sur la partie administration du site)}
+\textit{(Permettant d'importer un calendrier évènement sur la partie client du site et d'afficher le calendrier interne de l'association sur la partie administration du site)}
 \end{itemize}
 
   
   
-\section{ La partie client :}
+\section{La partie client}
 
 \begin{itemize}
 \item Une formulaire d'adhésion \\
@@ -105,52 +105,52 @@ Elle sera accessible à tous les membres de l'association \\
 \item Calendrier en ligne avec les événements de l'association 
 \item Une page d'informations  \\
 \textit{(Contenant la présentations de l'association, ses membres et ses partenaires)} 
-\item Une page de photos et videos  
+\item Une page de photos et vidéos  
 
 \end{itemize}
 \chapter{Base de données}
-\section{le modèle conceptuel de donnée}
+\section{Le modèle conceptuel de données}
 \begin{center}
 \includegraphics[width=1\textwidth]{MCD.jpg}~
 \end{center}
 
 \section{La réalisation du MCD}
 
-Tout d'abord, nous avons mis en place un MCD pour avoir une représentation graphique de notre Base de données avant de l'implémenter.
+Tout d'abord, nous avons mis en place un MCD pour avoir une représentation graphique de notre base de données avant de l'implémenter.
 Le MCD devait répondre à plusieurs contraintes :
 \begin{itemize}
 \item Les adhérents doivent avoir payé une cotisation
 \item Les adhérents ont plusieurs attributs (nom, prénoms, etc..)
 \item Les adhérents peuvent louer des vélos 
-\item Une location possède un prix, une date de départ, une date d'arrivée et un état de retour.
-\item Si l'état de retour est différent de l'état de base du vélo alors on modifie l'état du velo et on impose une taxe au locataire, ou on garde la caution.
-\item Un velo a : 
+\item Une location possède un prix, une date de départ, une date d'arrivée et un état de retour
+\item Si l'état de retour est différent de l'état de base du vélo alors on modifie l'état du vélo et on impose une taxe au locataire, où on garde la caution.
+\item Un vélo a : 
 \begin{itemize}
 \item Un état
 \item Une taille
 \item 3 cadenas
-\item Un type(modèle)
+\item Un type (modèle)
 \end{itemize}
 \item Un vélo peut subir des réparations
 \end{itemize}
 
-\chapter{Le fonctionnement du site Internet}
-Le site est organisés en deux parties, une partie administration assez conséquente et une partie client.
+\chapter{Le fonctionnement du site internet}
+Le site est organisé en deux parties, une partie administration assez conséquente et une partie client.
 \section{La Structure}
-Tous d'abord nous avons utilisés Github qui est un logiciel de gestion de version.
-Vous pouvez trouvez notre projet via ce lien :
+Tous d'abord nous avons utilisé Github qui est un logiciel de gestion de version.
+Vous pouvez donc trouver notre projet via ce lien :
 \url{https://github.com/kwidz/VeloCampus}
-De plus nous avons utiliser un framework CSS : Bootstrap, pour avoir un site ergonomique et complet sans avoir à utiliser des procédés complexes de css et de HTML5, Bootstrap gère aussi le "mobile-responsive" pour adapter le site web sur un smartphone.
-Enfin, afin de ne pas se perdre dans tous les fichiers, nous avons mis en place une arborescence(possibilité de la visionner entièrement sur notre github):
+De plus nous avons utilisé un framework CSS nommé Bootstrap, pour avoir un site ergonomique et complet sans avoir à utiliser des procédés complexes de CSS et de HTML5. Bootstrap gère aussi le "mobile-responsive" pour adapter le site web sur un smartphone.
+Enfin, afin de ne pas se perdre dans tous les fichiers, nous avons mis en place une arborescence (possibilité de la visionner entièrement sur notre Github):
 \begin{itemize}
 \item index.php \\
 \textit{(Ce fichier inclue les différentes pages html)}
 \item footer.html
 \item header.html
 \item menu.html \\
-\textit{(Ce fichier contient le menu que l'utilisateur vois lorqu'il n'est pas connecté)}
+\textit{(Ce fichier contient le menu que l'utilisateur vois lorsqu'il n'est pas connecté)}
 \item menulog.html \\
-\textit{(Ce fichier contient le menu que l'utilisateur vois lorqu'il est connecté)}
+\textit{(Ce fichier contient le menu que l'utilisateur vois lorsqu'il est connecté)}
 \end{itemize}
  puis des dossiers portant le nom de chaque sous partie du menu, contenant un dossier de traitement ainsi qu'un index.
  
@@ -166,9 +166,9 @@ La partie Location se trouve dans la partie administration, elle permet de :
 \item Ajouter un retour de location 
 \end{itemize}
 
-Cette partie a été délicate à gérer car lorsque l'on loue un vélo il faut connaître son état, la date de location, les noms des cadenas qui sont loués avec le vélo ainsi que les informations de l'adhérent qui loue le vélo. Il nous a donc fallut faire plusieurs jointure.\\
+Cette partie a été délicate à gérer car lorsque l'on loue un vélo il faut connaître son état, la date de location, les noms des cadenas qui sont loués avec le vélo ainsi que les informations de l'adhérent qui loue le vélo. Il nous a donc fallu faire plusieurs jointure.\\
 
-Par exemple : Cette requete sert à afficher les vélos non-loués. 
+Par exemple : Cette requète sert à afficher les vélos non-loués. 
 \begin{verbatim}
 SELECT v.id_velo, c.id_cadenas, ty.libelle_type, t.libelle_taille
 FROM Velo v, Cadenas c, Taille t, _Type ty 
@@ -187,25 +187,25 @@ ORDER BY(id_velo)
 De plus lorsque l'adhérent retourne son vélo, l'administrateur doit pouvoir modifier l'état du vélo et ajouter une date de retour. 
 
 \subsection{L'affichage des demandes}
-Lorsqu'on fait une demande d'adhésion sur le site côté client, celle ci est affiché sur la page administration en attente d'être validé ou refusé.
+Lorsque l'on fait une demande d'adhésion sur le site côté client, celle-ci est affiché sur la page d'administration en attente d'être validé ou refusé.
 
-La demande d'inscription est validée si les informations données sont correcte et si la personne qui a fait cette demande est venu payer la cotisation à l'association. C'est seulement à ce moment que la personne pourra se connecter sur le site publique.
+La demande d'inscription est validée si les informations données sont correctes et si la personne qui a fait cette demande est venu payer la cotisation à l'association. C'est seulement à ce moment là que la personne pourra se connecter sur le site public.
 
-Voici un exemple :\\
+Voici un exemple :\\\\
 \includegraphics[width=0.5\textwidth]{demande.jpg}~
 
-Si l'on clique sur le bouton valider à coter d'un prénom, la personne sera ajouté à la table cotisation qui contient toute les personnes cotisantes.
+Si l'on clique sur le bouton valider à coté d'un prénom, la personne sera ajouté à la table cotisation qui contient toutes les personnes cotisantes.
 \begin{verbatim}
 INSERT INTO Cotisation (`id_cotisation`, `id_adherent`)
 VALUES (NULL, ".$_GET['id'].");
 \end{verbatim} 
-Par contre si l'on clique sur le bouton supprimer, la personne sera enlévé de la table adhérent.
+Par contre si l'on clique sur le bouton supprimer, la personne sera enlevé de la table adhérent.
 \begin{verbatim}
 DELETE  from Adherent where id_adherent='".$_GET['id']."'
 \end{verbatim}
 
 \subsection{L'ajout d'image}
-Nous voulions créer une fonctionnalité simple qui permettrait aux membres de Vélocampus d'ajouter ou supprimer des photos sur leur site. De plus nous ne voulions pas ajouter seulement un lien vers l'image dans la base de donnée car nous voulions que lors de la suppression d'image, l'image soit réellement supprimée et pas seulement le lien qui mène à elle dans la base de donnée.
+Nous voulions créer une fonctionnalité simple qui permettrait aux membres de Vélocampus d'ajouter ou supprimer des photos sur leur site. De plus nous ne voulions pas ajouter seulement un lien vers l'image dans la base de données car nous voulions que lors de la suppression d'image, l'image soit réellement supprimée et pas seulement le lien qui mène à elle dans la base de données.
 \begin{center}
 \includegraphics[width=0.3\textwidth]{addImage.jpg}~
 \end{center}
@@ -225,12 +225,12 @@ Fonction parcoursDossier(UnDossier){
 \end{verbatim}
  
 \subsection{Le Postit}
-Les membres avaient besoins de pouvoir communiquer entre eux sur la page administration. Nous avons d'abord pensé à créer un compte administrateur pour chaque membre afin qu'ils puissent communiquer. Finalement, puisque tous les membres avaient tous les mêmes droits sur la page administration, il semblait plus logique de ne faire qu'une seule session administrateur. C'est ainsi que nous avons crée "le postit" :   
+Les membres avaient besoin de pouvoir communiquer entre eux sur la page d'administration. Nous avons d'abord pensé à créer un compte administrateur pour chaque membre afin qu'ils puissent communiquer. Finalement, puisque tous les membres avaient tous les mêmes droits sur la page administration, il semblait plus logique de ne faire qu'une seule session administrateur. C'est ainsi que nous avons crée "le postit" :   
 \begin{center}
 \includegraphics[width=0.3\textwidth]{postit.jpg}~
 \end{center}
 
-Postit est une table à part dans la base de donnée, relier à aucune autres. C'est pour cela qu'elle n'est pas présenté sur le MCD plus haut.
+Postit est une table à part dans la base de données, relier à aucune autres. C'est pour cela qu'elle n'est pas présenté sur le MCD plus haut.
 Ce postit fonctionne simplement avec un formulaire qui envoie les valeurs des champs "nom" et "message" à une page php qui elle même les insert dans la base de données. 
 
 \section{Inscription sur le site client}
@@ -240,15 +240,15 @@ Dans ce projet nous avons du créer un formulaire d'inscription sur le site clie
 \includegraphics[width=0.3\textwidth]{inscr.jpg}~
 \end{center}
 
-Sur cette partie, nous avons du faire face à plusieurs situations : 
+Sur cette partie, nous avons du faire face à plusieurs situations :
 \begin{itemize}
 \item La personne non inscrite
 \item La personne qui est inscrite mais qui n'a pas cotisé
-\item La personne qui essai de se réinscrire
+\item La personne qui essai de se réinscrire en étant déjà inscrite
 \item La personne qui a cotisé
 \end{itemize}
 
-Lorsqu'une personne tente de s'inscrire une fonction ajax vérifie que l'adresse mail entrée n'a jamais été utilisée si elle l'a déjà été, la fonction vérifie que l'adhérent n'est pas déjà cotisant donc déjà inscrit. Si c'est le cas elle retourne un message d'erreur :
+Lorsqu'une personne tente de s'inscrire, une fonction Ajax vérifie que l'adresse mail entrée n'a jamais été utilisée si elle l'a déjà été, la fonction vérifie que l'adhérent n'est pas déjà cotisant donc déjà inscrit. Si c'est le cas elle retourne un message d'erreur :
 \\
 \textcolor{green}{Algorithme de la fonction}
 \begin{verbatim}
@@ -272,14 +272,13 @@ SI (adresse_mail == VRAI) :
 
 
 \section{Gestion du site client depuis la partie administration}
-L'intérêt de ce site était aussi de permettre aux administrateurs de gérer facilement la partie client de leur site. Nous avons donc créer quelques fonctions de gestion tels que "modifier le texte de l'accueil" ou "modifier les partenaires". 
+L'intérêt de ce site était aussi de permettre aux administrateurs de gérer facilement la partie client de leur site. Nous avons donc créé quelques fonctions de gestion tels que "modifier le texte de l'accueil" ou "modifier les partenaires". 
 
-La fonction "modifier le texte de l'accueil" est gérer par des fichiers \textit{.txt} dans lesquels nous enregistrons les modifications.
+La fonction "modifier le texte de l'accueil" est géré par des fichiers \textit{.txt} dans lesquels nous enregistrons les modifications.
 
-La fonction "modifier les partenaires" est elles par contre gérer par une table partenaires. 
+La fonction "modifier les partenaires" est elle par contre gérée par une table partenaires. 
 Elle permet aussi l'ajout de photo.
 
- 
 
 \begin{center}
 \includegraphics[width=0.3\textwidth]{gestion.png}~
@@ -287,36 +286,40 @@ Elle permet aussi l'ajout de photo.
 
 \chapter{Les problèmes rencontrés}
 
-\section{Adblock :} 
-Adblock est une extension informatique permettant de bloquer les publicités sur les navigateurs. Elle est donc installé sur beaucoup d'ordinateur. 
-Malheureusement, elle ne bloque pas que les publicités, lors de la réalisation du projet nous nous sommes aperçu que celle ci bloquait aussi toutes les actions ajax du site (qui nous permettaient le plus souvent de sécuriser le site) 
-Nous avons donc du modifier notre façon de fonctionner. cela nous a fait perdre un peu de temps.
+\section{Adblock} 
+Adblock est une extension informatique permettant de bloquer les publicités sur les navigateurs. Elle est donc installé sur beaucoup d'ordinateurs. 
+Malheureusement, elle ne bloque pas que les publicités, lors de la réalisation du projet nous nous sommes aperçu que celle-ci bloquait aussi toutes les actions Ajax du site (qui nous permettaient le plus souvent de sécuriser le site).
+Nous avons donc du modifier notre façon de fonctionner. Cela nous a fait perdre un peu de temps.
 
-\section{La sécurité : }
-Ce projet étant utilisés par la suite sur internet, il était primordiale de le sécuriser. Or, nous n'avons aucun cours sur la sécurité internet à l'IUT, nous avons donc du étudier cette aspect de l'informatique par nous même. Cela nous a donc apporté une charge de travail supplémentaire.
+\section{Les dates}
+En fonction des navigateurs, la gestion des dates est différente. Par exemple, sur le navigateur Google Chrome, un champ de type date est géré avec un calendrier. Sous Firefox, ce même champ est géré de la même manière qu'un champ text. Il a donc fallu traiter le format de date manuellement en fonction du navigateur que la personne utilise.
 
-\section{Répartition du travail : }
+\section{La sécurité}
+Ce projet étant utilisés par la suite sur internet, il était primordiale de le sécuriser. Or, nous n'avons aucun cours sur la sécurité informatique et internet à l'IUT. Nous avons donc dû étudier cette aspect de l'informatique par nous même. Cela nous a donc apporté une charge de travail supplémentaire.
+
+\section{Répartition du travail}
 Finalement, le plus gros problème que nous avons rencontrés est la répartition du travail. 
-Le chef de projet a d'abord partagé les premières taches en pensant vérifier à la fin de la semaine leurs réalisations pour, ensuite, pouvoir en fournir d'autre. Malheureusement, seul trois membres ont travaillés, le quatrième n'avait absolument rien réalisé à la fin de la semaine. 
-La tache de celui-ci étant indispensable pour la suite, le chef de projet a préféré la coder lui même car il s'est rendu compte qu'elle ne serait jamais faites.
-Ce petit manège a recommencer à chaque nouvelle distribution de taches. C'est seulement à la fin du projet que l'élève en question a fini par avouer qu'il avait décidé de ne rien faire pour ce projet car la matière n'était pas assez importante à ses yeux. Cette mésaventure nous a fait perdre beaucoup de temps car nous avons souvent du attendre sur le travail de l'élève en question pour continuer à avancer. De plus, nous avons du travailler plus pour rattraper le travail manquant de se membre.
-Ce projet étant difficilement réalisable à quatre, la difficulté a évolué dès lors que nous sommes passé à seulement trois membres actifs. 
+Le chef de projet a d'abord partagé les premières tâches en pensant vérifier à la fin de la semaine leurs réalisations pour, ensuite, pouvoir en fournir d'autres. Malheureusement, seul trois membres ont travaillés, le quatrième n'avait rien réalisé à la fin de la semaine. 
+La tâche de celui-ci étant indispensable pour la suite, le chef de projet a préféré la coder lui même car il s'est rendu compte qu'elle ne sera pas faite.
+Ce petit manège a recommencé à chaque nouvelle distribution de tâches. C'est seulement à la fin du projet que l'élève en question a fini par avouer qu'il avait décidé de ne rien faire pour ce projet car la matière n'était pas assez importante à ses yeux. Cette mésaventure nous a fait perdre beaucoup de temps car nous avons souvent dû attendre sur le travail de l'élève en question pour continuer à avancer. De plus, nous avons du travailler plus pour rattraper le travail manquant de ce membre.
+Ce projet étant difficilement réalisable à quatre, la difficulté a évolué dès lors que nous sommes passé à seulement trois membres actifs (pour ainsi dire depuis le début). 
 \chapter{Les améliorations possibles}
-Ce projet n'étant pas entièrement réalisable en un mois, ils restent beaucoup de fonctionnalités qui aurait put être implémenter plus tard, tels que : \\
+Ce projet n'étant pas entièrement réalisable en un mois, ils restent beaucoup de fonctionnalités qui auraient pu être implémentées plus tard, tels que : \\
 \begin{itemize}
 \item La réparation des vélos non loués 
-\item La Demande de location en ligne \\
+\item La demande de location en ligne \\
 \textit{(Nous avons décider de ne pas la faire car il faut de toute façon se rendre à l'association pour récupérer le vélo loué.)}
-\item Gestion des compte rendu de réunions \\ \textit{(Il faudrait créer un éditeur sur la partie administration du site afin que le secrétaire de l'association puisse noter directement en ligne le compte rendu des réunions et les sauvegarder en ligne.)} 
+\item Gestion des comptes-rendus de réunions\\ \textit{(Il faudrait créer un éditeur sur la partie administration du site afin que le secrétaire de l'association puisse noter directement en ligne le compte-rendu des réunions et les sauvegarder en ligne.)} 
 \item Ajout d'un forum \\
-\textit{(L'association Vélocampus aurait aimé que nous mettions en place un forum pour tous les adhérents, nous avons malheureusement pas eu le temps)} 
-\item Ajout d'une fontionnalité de paiement en ligne \\
-\textit{(Nous aurions pu ajouter un lien paypal mais cela compliquait les choses plus qu'autres choses, de plus l'association préfère le contact humain.)} 
-\item Creer une application android
+\textit{(L'association Vélocampus aurait aimé que nous mettions en place un forum pour tous les adhérents, nous n'avons malheureusement pas eu le temps)} 
+\item Ajout d'une fonctionnalité de paiement en ligne \\
+\textit{(Nous aurions pu ajouter un lien Paypal mais cela compliquait les choses, de plus l'association préfère le contact humain.)} 
+\item Créer une application Android
 \end{itemize}
 \chapter*{Conclusion}
 Finalement, ce projet était enrichissant car il devait à la fois répondre à la demande du professeur et à la demande du client. 
-De plus, il nous a permis de découvrir le travail en collaboration avec un client qui compte sur nous. Enfin ... ?
+De plus, il nous a permis de découvrir le travail en collaboration avec un client qui compte sur nous. 
+Enfin, le fait de développer un site qui sera utilisé par une association permet d'avoir une motivation autre qu'un projet banal, et de travailler dans une autre dynamique. L'envie de faire mieux est constamment présente.
 \end{document}
 
 
