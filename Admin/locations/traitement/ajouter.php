@@ -2,6 +2,7 @@
 -->
 
 <?php
+session_start();
 include('../../co.php');
 if(((!empty($_POST['id_adherent']))
 	&&(!empty($_POST['id_velo']))
@@ -15,12 +16,10 @@ if(((!empty($_POST['id_adherent']))
 				. " VALUES('{$_POST['prix']}', '{$_POST['date']}', '{$_POST['id_velo']}', '{$_POST['id_adherent']}')";
 				
 				$res=$mysqli->query($sql);
-				?><script>
-					window.location='../index.php?message=ok';
-				</script><?php
+				$_SESSION['addloc'] = 1;
 			}
 			else{
-				?><script>
-					window.location='../index.php?message=notok';
-				</script><?php
+				$_SESSION['addloc'] = -1;
 			}
+
+header("Location: ".$_SERVER['HTTP_REFERER']);

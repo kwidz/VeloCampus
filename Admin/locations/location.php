@@ -10,19 +10,6 @@ pour l'utilisateur  -->
   }
 </style>
 <div class="col-md-6" >
-  <?php
-
-  if(isset($_GET['message'])
-    && (!empty($_GET['message']))){
-    if ($_GET['message']=="ok"){
-      echo"<div class='alert alert-success'><center><strong>L'opération s'est déroulé avec succès !</center></strong></div>";
-    }
-    else{
-      echo"<div class='alert alert-danger'><center><strong>Une erreur inconue à été détectée ! </center></strong></div>";
-    }
-
-  }
-  ?>
   <ul class="nav nav-pills nav-stacked">
     <li class="" style="text-align: center; margin-bottom: 15px; border:solid 1px; border-radius: 5px; border-color: #CDCACA"><a href="#" data-toggle="modal" data-target="#creerLocation" onclick="gestionEtat(document.form2.id_velo.value)">Créer une location</a></li>
     <li class="" style="text-align: center; margin-bottom: 15px; border:solid 1px; border-radius: 5px; border-color: #CDCACA"><a href="#" data-toggle="modal" data-target="#veloNonLoués">Voir les vélos non-loués</a></li>

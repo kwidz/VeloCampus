@@ -1,4 +1,5 @@
 <?php
+session_start();
 include('../../co.php');
 if(((!empty($_POST['id_location']))
 		&&(!empty($_POST['date'])))
@@ -15,12 +16,9 @@ if(((!empty($_POST['id_location']))
 				$velo123=$row[0];
 				$sql2="UPDATE `velo`.`Velo` SET `id_Etat` = $etat WHERE `Velo`.`id_velo` = $velo123";
 				$res=$mysqli->query($sql2);
-				?><script>
-					window.location='../index.php?message=ok';
-				</script><?php
+				$_SESSION['retloc'] = 1;
 			}
 			else{
-				?><script>
-					window.location='../index.php?message=notok';
-				</script><?php
+				$_SESSION['retloc'] = -1;
 			}
+header("Location: ".$_SERVER['HTTP_REFERER']);

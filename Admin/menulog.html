@@ -207,7 +207,6 @@ if (isset($_SESSION['modcadenas']) && $_SESSION['modcadenas'] == -12) {
     $_SESSION['suppMod'] = 0;
 }
 
-
 if (isset($_SESSION['addMod']) && $_SESSION['addMod'] == 1) {
        ?><div class="row"> 
   <div class="col-md-12">
@@ -224,6 +223,41 @@ if (isset($_SESSION['addMod']) && $_SESSION['addMod'] == -1) {
 </div><?php
     $_SESSION['addMod'] = 0;
 }
+
+if (isset($_SESSION['addloc']) && $_SESSION['addloc'] == 1) {
+    ?><div class="row"> 
+  <div class="col-md-12">
+    <div class="alert alert-success"><center>La location a bien été ajouté.</center></div>
+  </div>
+</div><?php
+    $_SESSION['addloc'] = 0;
+}
+if (isset($_SESSION['addloc']) && $_SESSION['addloc'] == -1) {
+    ?><div class="row"> 
+  <div class="col-md-12">
+    <div class="alert alert-danger"><center>La location n'a pas pu être ajouté.</center></div>
+  </div>
+</div><?php
+    $_SESSION['addloc'] = 0;
+}
+
+if (isset($_SESSION['retloc']) && $_SESSION['retloc'] == 1) {
+    ?><div class="row"> 
+  <div class="col-md-12">
+    <div class="alert alert-success"><center>Le retour de location a bien été fait.</center></div>
+  </div>
+</div><?php
+    $_SESSION['retloc'] = 0;
+}
+if (isset($_SESSION['retloc']) && $_SESSION['retloc'] == -1) {
+    ?><div class="row"> 
+  <div class="col-md-12">
+    <div class="alert alert-danger"><center>Le retour de location n'a pas pu être fait.</center></div>
+  </div>
+</div><?php
+    $_SESSION['retloc'] = 0;
+}
+
 
 ?>
 
