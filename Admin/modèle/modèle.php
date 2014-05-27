@@ -10,14 +10,20 @@ th{
 }
 </style>
 <div class="col-md-6" >
+  <?php
+  
+
+  ?>
   <ul class="nav nav-pills nav-stacked">
     <li class="" style="text-align: center; margin-bottom: 15px; border:solid 1px; border-radius: 5px; border-color: #CDCACA"><a href="#" data-toggle="modal" data-target="#creerVelo" >Ajouter un vélo</a></li>
     <li class="" style="text-align: center; margin-bottom: 15px; border:solid 1px; border-radius: 5px; border-color: #CDCACA"><a href="#" data-toggle="modal" data-target="#editionVelo">Modifier un vélo</a></li>
     <li class="" style="text-align: center; margin-bottom: 15px; border:solid 1px; border-radius: 5px; border-color: #CDCACA"><a href="#" data-toggle="modal" data-target="#suppVelo">Supprimer un vélo</a></li>
-    <li class="" style="text-align: center; margin-bottom: 15px; border:solid 1px; border-radius: 5px; border-color: #CDCACA"><a href="#" data-toggle="modal" data-target="#veloAffichage">Afficher tous les vélos</a></li>
     <br/>
     </ul>
 </div>
+
+
+
 
 
 <!-- Premier Modal ajout de vélo -->
@@ -31,9 +37,6 @@ th{
         </div>
 
         <div class="modal-body">
-          ID du vélo :
-          <input type="text" class="form-control" name="id_velo" onkeyup="verifid(this.value)" required>
-          <div id="confirmid" name="confirmid"></div><br/>
 
           État du vélo :
           <select class="form-control" name="etat_velo" required>
@@ -188,76 +191,3 @@ th{
   </div> 
 </div>
 <!-- fin modal modifier -->
-
-<div class="modal fade" id="veloAffichage" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true"  >
-  <div class="modal-dialog" >
-    <div class="modal-content">
-      <div class="modal-header">
-        <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
-        <h4 class="modal-title" id="myModalLabel"><strong> Vélos </strong></h4>
-      </div>
-      <div class="modal-body">
-        <center>
-          <table class="bordered-table"style="border:solid 1px #CDCACA; border-radius:50px">
-            <thead>
-              <tr>
-                <th>Numéro du vélo</th>
-                <th>Type du vélo</th>
-                <th>Taille du vélo</th>
-                <th>Cadenas associés</th>
-              </tr>
-            </thead>
-            <tbody>
-            <?php
-
-              $sql="SELECT v.id_velo, c.id_cadenas, ty.libelle_type, t.libelle_taille "
-              ."from Velo v, Cadenas c, Taille t, _Type ty "
-              .""
-              ."where c.id_velo=v.id_velo "
-              ."and v.id_type=ty.id_type "
-              ."and v.id_taille=t.id_taille "
-              ."order by(id_velo) ";
-                $res=$mysqli->query($sql);
-                $number=0;
-                while (NULL !== ($row = $res->fetch_array())) {
-                  if($number==$row[0]){
-                    echo ", ".$row[1];
-                  }
-                  else if ($number==0){
-                    $number=$row[0];
-                      echo "<th>".$row[0]."</th>";
-                      echo "<th>".$row[2]."</th>";
-                      echo "<th>".$row[3]."</th>";
-                      echo "<th>".$row[1];
-
-                  }
-                  else{
-                    $number=$row[0];
-                    echo "</th>";
-                    echo "</tr>";
-                    echo "<th>".$row[0]."</th>";
-                    echo "<th>".$row[2]."</th>";
-                    echo "<th>".$row[3]."</th>";
-                    echo "<th>".$row[1];
-                  }
-                  
-                  
-
-                }
-
-        ?>
-      </tbody>
-          </table>
-        </center>
-       
-        </div>
-        <div class="modal-footer">
-          <button type="button" class="btn btn-danger" data-dismiss="modal">Annuler</button>
-          <button type="button" class="btn btn-default" data-dismiss="modal">Fermer</button>
-        
-
-
-      </div>
-    </div>
-  </div> 
-</div>

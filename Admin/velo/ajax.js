@@ -19,24 +19,13 @@ function getXMLHttpRequest() {
 	return xhr;
 }
 
-function afficheCadenas(noVelo){
+function verifid(id) {
 	var xhr = getXMLHttpRequest(); 
 	xhr.onreadystatechange = function() {
         if (xhr.readyState == 4 && (xhr.status == 200 || xhr.status == 0)) {	
-        	document.getElementById("cadenas").innerHTML= xhr.responseText; // Données textuelles récupérées
+        	document.getElementById("confirmid").innerHTML = xhr.responseText; // Données textuelles récupérées
         }
 	};
-	xhr.open("GET", "traitement/liaisonCadenasVelo.php?idVelo="+noVelo+"&action=infos", true);
-	xhr.send();
-}
-
-function afficheVelo(noCadenas, id){
-	var xhr = getXMLHttpRequest(); 
-	xhr.onreadystatechange = function() {
-        if (xhr.readyState == 4 && (xhr.status == 200 || xhr.status == 0)) {	
-        	document.getElementById(id).innerHTML= xhr.responseText; // Données textuelles récupérées
-        }
-	};
-	xhr.open("GET", "traitement/liaisonVeloCadenas.php?idCadenas="+noCadenas+"&action=infos", true);
+	xhr.open("GET", "traitement/verifID.php?id="+id, true);
 	xhr.send();
 }
