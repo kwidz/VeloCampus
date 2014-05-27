@@ -71,6 +71,17 @@ th{
             ?>
           </select><br> 
 
+          ID cadenas n°1 :
+          <input type="text" class="form-control" name="cad1" id="cad1" onkeyup="verifcad1(this.value)" required>
+          <div id='verifcad1'></div><br/>
+
+          <i>ID cadenas n°2 (facultatif) :</i>
+          <input type="text" class="form-control" name="cad2" id="cad2" onkeyup="verifcad2(this.value)">
+          <div id='verifcad2'></div><br/>
+
+          <i>ID cadenas n°3 (facultatif) :</i>
+          <input type="text" class="form-control" name="cad3" id="cad3" onkeyup="verifcad3(this.value)">
+          <div id='verifcad3'></div><br/>
         </div>
 
 

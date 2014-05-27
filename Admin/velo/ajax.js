@@ -29,3 +29,36 @@ function verifid(id) {
 	xhr.open("GET", "traitement/verifID.php?id="+id, true);
 	xhr.send();
 }
+
+function verifcad1(id) {
+	var xhr = getXMLHttpRequest(); 
+	xhr.onreadystatechange = function() {
+        if (xhr.readyState == 4 && (xhr.status == 200 || xhr.status == 0)) {	
+        	document.getElementById("verifcad1").innerHTML = xhr.responseText; // Données textuelles récupérées
+        }
+	};
+	xhr.open("GET", "traitement/verifID.php?id="+id, true);
+	xhr.send();
+}
+
+function verifcad2(id) {
+	var xhr = getXMLHttpRequest(); 
+	xhr.onreadystatechange = function() {
+        if (xhr.readyState == 4 && (xhr.status == 200 || xhr.status == 0)) {	
+        	document.getElementById("verifcad2").innerHTML = xhr.responseText; // Données textuelles récupérées
+        }
+	};
+	xhr.open("GET", "traitement/verifID.php?id="+id, true);
+	xhr.send();
+}
+
+function verifcad3(id) {
+	var xhr = getXMLHttpRequest(); 
+	xhr.onreadystatechange = function() {
+        if (xhr.readyState == 4 && (xhr.status == 200 || xhr.status == 0)) {	
+        	document.getElementById("verifcad3").innerHTML = xhr.responseText; // Données textuelles récupérées
+        }
+	};
+	xhr.open("GET", "traitement/verifID.php?id="+id, true);
+	xhr.send();
+}
