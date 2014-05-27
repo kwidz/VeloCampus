@@ -19,24 +19,18 @@
 		<?php
 		include("../co.php");
 		//$sql='select * from Reparation order by urgence';
-		$sql ='Select Reparation.description_reparation, Reparation.id_velo, Reparation.urgence, Adherent.adresse_mail_adherent From Reparation, Location, Adherent where Reparation.id_velo = Location.id_velo and Location.id_adherent = Adherent.id_adherent GROUP BY Reparation.id_reparation';
+		$sql ='Select Reparation.description_reparation, Reparation.id_velo, Reparation.urgence, Adherent.adresse_mail_adherent, Adherent.nom_adherent, Adherent.prenom_adherent From Reparation, Location, Adherent where Reparation.id_velo = Location.id_velo and Location.id_adherent = Adherent.id_adherent GROUP BY Reparation.id_reparation ORDER BY Reparation.id_reparation';
 		$res=$mysqli->query($sql);
 		while (NULL !== ($row = $res->fetch_array())) {
 			if($row[2] != -1){
 				switch ($row[2]) {
 					case 1:
-					echo '<tr ><td style="background-color:#faf591"><b>'.$row[0].'</></td><td><a href="#" >';
-					/*$sql2='Select a.adresse_mail_adherent from Adherent a, Reparation r, Location l where r.id_velo = l.id_velo and l.id_adherent = a.id_adherent and r.id_reparation='.$row[0];
-
-			
-					$res2=$mysqli->query($sql2);
-					$row = $res2->fetch_array();*/
-
+					echo '<tr ><td style="background-color:#faf591"><b>'.$row[0].'</></td><td>'.$row[4].' '.$row[5].'<br/><a href="#" >';
 
 					echo $row[3].'</a></td></tr>';
 					break;
 					case 2:
-					echo '<tr ><td style="background-color:#ffb246"><b>'.$row[0].'</b></td><td><a href="#" >';
+					echo '<tr ><td style="background-color:#ffb246"><b>'.$row[0].'</b></td><td>'.$row[4].' '.$row[5].'<br/><a href="#" >';
 /*$sql2='Select a.adresse_mail_adherent from Adherent a, Reparation r, Location l where r.id_velo = l.id_velo and l.id_adherent = a.id_adherent and r.id_reparation='.$row[0];
 
 				
@@ -47,7 +41,7 @@
 					echo $row[3].'</a></td></tr>';
 					break;
 					case 3:
-					echo '<tr ><td style="background-color:#e8584f"><b>'.$row[0].'</b></td><td><a href="#" >';
+					echo '<tr ><td style="background-color:#e8584f"><b>'.$row[0].'</b></td><td>'.$row[4].' '.$row[5].'<br/><a href="#" >';
 /*$sql2='Select a.adresse_mail_adherent from Adherent a, Reparation r, Location l where r.id_velo = l.id_velo and l.id_adherent = a.id_adherent and r.id_reparation='.$row[0];
 				
 					$res2=$mysqli->query($sql2);
@@ -60,7 +54,7 @@
 					break;
 
 					default:
-					echo '<tr><td><b>'.$row[0].'</b></td><td><a href="#">';
+					echo '<tr><td><b>'.$row[0].'</b></td><td>'.$row[4].' '.$row[5].'<br/><a href="#">';
 
 /*$sql2='Select a.adresse_mail_adherent from Adherent a, Reparation r, Location l where r.id_velo = l.id_velo and l.id_adherent = a.id_adherent and r.id_reparation='.$row[0];
 					
