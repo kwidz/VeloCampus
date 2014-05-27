@@ -49,7 +49,7 @@ pour l'utilisateur  -->
           <option></option>
 
             <?php
-            $sql='Select * from Adherent order by nom_adherent';
+            $sql='SELECT * FROM Adherent a, Cotisation c WHERE a.id_adherent = c.id_adherent ORDER BY a.nom_adherent';
             $res=$mysqli->query($sql);
             while (NULL !== ($row = $res->fetch_array())) {
 

@@ -13,6 +13,8 @@
 				echo "<input name='nom' id='nom' class='form-control' type='text' value='".$row[1]."'><br/>";
 				echo "<br/>Biographie : <br/>";
 				echo "<textarea name='description' id='description' class='form-control'>".$row[2]."</textarea><br/>";
+				echo "<br/>Fonction dans l'association :<br/>";
+				echo "<input name='fonction' id='fonction' class='form-control' type='text' value='".$row[3]."'>";
 				echo "<br/>Photo du membre (facultative) : ";
 				echo '<input type="file" name="icone" id="icone" />';
 			}

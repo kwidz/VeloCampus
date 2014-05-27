@@ -12,14 +12,16 @@
     <div class="modal-content">
       <div class="modal-header">
         <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
-        <h4 class="modal-title" id="myModalLabel"><strong>Ajouter un Membre de l'association</strong></h4>
+        <h4 class="modal-title" id="myModalLabel"><strong>Ajouter un membre de l'association</strong></h4>
       </div>
       <form method="post" action="addMembre.php" enctype="multipart/form-data">
       	<div class="modal-body">
-      		Entrez les noms, prénoms, et/ou pseudo du Membre à ajouter : <br/>
+      		Entrez les noms, prénoms, et/ou pseudo du membre à ajouter : <br/>
         	<input type="text" class="form-control" name="nom" id="nom" required><br/><br/>
         	Entrez une brève biographie du membre : <br/>
         	<textarea class="form-control" name="description" id="description" required></textarea><br/><br/>
+          Entrez la fonction dans l'association du membre à ajouter : <br/>
+          <input type="text" class="form-control" name="fonction" id="fonction" required><br/><br/>
         	Choisissez la photo du membre : <br/>
         	<input type="file" name="icone" id="icone" required/>
       	</div>
@@ -50,7 +52,6 @@
 					echo "<select onchange='afficheForm(this.value)' class='form-control' id='id' name='id' required>";
 					echo "<option> </option>";
 					while (NULL !== ($row = $result->fetch_array())) {
-
 						echo "<option value='".$row['id_Membre']."'>".$row['nom_membre']."</option>";
 					}
 					echo "</select>";

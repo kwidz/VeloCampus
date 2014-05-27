@@ -2,7 +2,6 @@
 tous les autres div sont commentés
 chaque action s'effectera dans un Modal pour eviter les lourds changement de page 
 pour l'utilisateur  -->
-<script type="text/javascript" src="script.js"></script>
 <script type="text/javascript" src="ajax.js"></script>
 <style>
 th{
@@ -17,17 +16,17 @@ th{
   ?>
   <ul class="nav nav-pills nav-stacked">
     <li class="" style="text-align: center; margin-bottom: 15px; border:solid 1px; border-radius: 5px; border-color: #CDCACA"><a href="#" data-toggle="modal" data-target="#creerVelo" >Ajouter un vélo</a></li>
-    <li class="" style="text-align: center; margin-bottom: 15px; border:solid 1px; border-radius: 5px; border-color: #CDCACA"><a href="#" data-toggle="modal" data-target="#suppVelo">Supprimer un vélo</a></li>
     <li class="" style="text-align: center; margin-bottom: 15px; border:solid 1px; border-radius: 5px; border-color: #CDCACA"><a href="#" data-toggle="modal" data-target="#editionVelo">Modifier un vélo</a></li>
-    <li class="" style="text-align: center; margin-bottom: 15px; border:solid 1px; border-radius: 5px; border-color: #CDCACA"><a href="#" data-toggle="modal" data-target="#ajoutCadenas">Ajouter un cadenas</a></li>
-  </ul>
+    <li class="" style="text-align: center; margin-bottom: 15px; border:solid 1px; border-radius: 5px; border-color: #CDCACA"><a href="#" data-toggle="modal" data-target="#suppVelo">Supprimer un vélo</a></li>
+    <br/>
+    </ul>
 </div>
 
 
 
 
 
-<!-- Premier Modal creation de location -->
+<!-- Premier Modal ajout de vélo -->
 <div class="modal fade" id="creerVelo" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
   <div class="modal-dialog">
     <div class="modal-content">
@@ -38,9 +37,6 @@ th{
         </div>
 
         <div class="modal-body">
-
-          Identifiant du vélo :
-          <input class="form-control" type="text" name="id_velo" required><br/>
 
           État du vélo :
           <select class="form-control" name="etat_velo" required>
@@ -83,7 +79,7 @@ th{
 
         <div class="modal-footer">
           <button type="button" class="btn btn-danger" data-dismiss="modal">Annuler</button>
-          <input type="submit" class="btn btn-default" name="creer la Location">
+          <input type="submit" class="btn btn-default" name="Ajouter">
         </div>
       </form>
     </div>
@@ -118,8 +114,8 @@ th{
         </div>
 
         <div class="modal-footer">
-          <button type="button" class="btn btn-danger" data-dismiss="modal">Annuler</button>
-          <input type="submit" class="btn btn-default"name="creer la Location">
+          <button type="button" class="btn btn-default" data-dismiss="modal">Annuler</button>
+          <input type="submit" class="btn btn-danger" name="Supprimer">
         </div>
       </form>
     </div>
@@ -127,44 +123,6 @@ th{
 </div>
 <!-- fin modal creer -->
 
-
-
-
-<div class="modal fade" id="ajoutCadenas" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
-  <div class="modal-dialog">
-    <div class="modal-content">
-      <form method="POST" action="traitement/veloAjoutCadenas.php" name="formLiaisonCadenasVelo">
-        <div class="modal-header">
-          <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
-          <h4 class="modal-title" id="myModalLabel"><strong>Ajouter un cadenas</strong></h4>
-        </div>
-        <div class="modal-body">
-
-          Sélectionner un vélo :
-           <select class="form-control" name="supp_id_velo" onchange="testbibiphoque(this.value)" required>
-           <option></option>
-            <?php
-            $sql="SELECT * from Velo";
-            $res=$mysqli->query($sql);
-            while (NULL !==($row = $res->fetch_array())) {
-              echo '<option value="'.$row["id_velo"].'">'.$row["id_velo"].'</option>';
-            }
-            ?>
-          </select>
-          
-          <div id="test"></div>
-
-
-        </div>
-
-        <div class="modal-footer">
-          <button type="button" class="btn btn-danger" data-dismiss="modal">Annuler</button>
-          <input type="submit" class="btn btn-default"name="creer la Location">
-        </div>
-      </form>
-    </div>
-  </div> 
-</div>
 
 <!-- Second Modal modifier Velo -->
 <div class="modal fade" id="editionVelo" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
@@ -226,7 +184,7 @@ th{
 
         <div class="modal-footer">
           <button type="button" class="btn btn-danger" data-dismiss="modal">Annuler</button>
-          <input type="submit" class="btn btn-default"name="creer la Location">
+          <input type="submit" class="btn btn-default" name="Modifier">
         </div>
       </form>
     </div>

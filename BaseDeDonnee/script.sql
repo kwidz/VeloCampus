@@ -193,6 +193,7 @@ CREATE TABLE `Membres` (
   `id_Membre` int(11) NOT NULL AUTO_INCREMENT,
   `nom_membre` varchar(1000) NOT NULL,
   `biographie` text NOT NULL,
+  `fonction` text NOT NULL,
   `photo` varchar(1000) NOT NULL,
   PRIMARY KEY (`id_Membre`)
 ) ENGINE=InnoDB AUTO_INCREMENT=23 DEFAULT CHARSET=latin1;
@@ -204,7 +205,7 @@ CREATE TABLE `Membres` (
 
 LOCK TABLES `Membres` WRITE;
 /*!40000 ALTER TABLE `Membres` DISABLE KEYS */;
-INSERT INTO `Membres` VALUES (1,'webdev','bonjour je suis le créateur de ce fabuleux sute web ','../images/membres/webdev.jpg'),(21,'dzefcre','czecer','../images/membres/p2050.png'),(22,'fervsrhdtyrf','fqsdcfvg','../images/membres/p2050.png');
+INSERT INTO `Membres` VALUES (1,'webdev','bonjour je suis le créateur de ce fabuleux sute web ','test','../images/membres/webdev.jpg'),(21,'dzefcre','czecer','essai','../images/membres/p2050.png'),(22,'fervsrhdtyrf','fqsdcfvg','COOOL','../images/membres/p2050.png');
 /*!40000 ALTER TABLE `Membres` ENABLE KEYS */;
 UNLOCK TABLES;
 

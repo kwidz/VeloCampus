@@ -1,13 +1,14 @@
 <?php
 	session_start();
-	if (isset($_POST['nom']) && isset($_POST['description']) && isset($_FILES['icone'])) {
+	if (isset($_POST['nom']) && isset($_POST['description']) && isset($_POST['fonction']) && isset($_FILES['icone'])) {
 		
 		$nom = $_POST['nom'];
 		$description = $_POST['description'];
+		$fonction = $_POST['fonction'];
 		$photo = "../images/membres/".$_FILES['icone']['name'];
 		include("../co.php");
 		
-		$sql = "INSERT INTO Membres VALUES(null,'".$nom."','".$description."','".$photo."');";
+		$sql = "INSERT INTO Membres VALUES(null,'".$nom."','".$description."','".$fonction."','".$photo."');";
 		$result = $mysqli->query($sql);
 		if ($result) {
 			$_SESSION['ajMembre'] = 1;
