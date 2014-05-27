@@ -20,7 +20,7 @@
         	<input type="text" class="form-control" name="nom" id="nom" required><br/><br/>
         	Entrez une brève biographie du membre : <br/>
         	<textarea class="form-control" name="description" id="description" required></textarea><br/><br/>
-          Entrez la fonction dans l'association du membre à ajouter : <br/>
+          Entrez le statut du membre à ajouter : <br/>
           <input type="text" class="form-control" name="fonction" id="fonction" required><br/><br/>
         	Choisissez la photo du membre : <br/>
         	<input type="file" name="icone" id="icone" required/>
@@ -76,11 +76,11 @@
     <div class="modal-content">
       <div class="modal-header">
         <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
-        <h4 class="modal-title" id="myModalLabel"><strong>Supprimer un partenaire</strong></h4>
+        <h4 class="modal-title" id="myModalLabel"><strong>Supprimer un membre</strong></h4>
       </div>
       <form method="post" action="delMembres.php">
       	<div class="modal-body">
-        	Selectionnez un partenaire à supprimer :<br/>
+        	Selectionnez un membre à supprimer :<br/>
         	<?php
 				$sql = "SELECT id_Membre, nom_membre FROM Membres";
 				$result = $mysqli->query($sql);
