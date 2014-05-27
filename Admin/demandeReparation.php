@@ -19,7 +19,7 @@
 		<?php
 		include("../co.php");
 		//$sql='select * from Reparation order by urgence';
-		$sql ='Select Reparation.description_reparation, Reparation.id_velo, Reparation.urgence, Adherent.adresse_mail_adherent, Adherent.nom_adherent, Adherent.prenom_adherent From Reparation, Location, Adherent where Reparation.id_velo = Location.id_velo and Location.id_adherent = Adherent.id_adherent GROUP BY Reparation.id_reparation ORDER BY Reparation.id_reparation';
+		$sql ='Select Reparation.description_reparation, Reparation.id_velo, Reparation.urgence, Adherent.adresse_mail_adherent, Adherent.nom_adherent, Adherent.prenom_adherent From Reparation, Location, Adherent where Reparation.id_velo = Location.id_velo and Location.id_adherent = Adherent.id_adherent GROUP BY Reparation.id_reparation ORDER BY Reparation.urgence DESC ';
 		$res=$mysqli->query($sql);
 		while (NULL !== ($row = $res->fetch_array())) {
 			if($row[2] != -1){
