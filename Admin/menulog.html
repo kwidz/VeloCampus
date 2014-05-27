@@ -148,7 +148,7 @@ if (isset($_SESSION['delPar']) && $_SESSION['delPar'] == -1) {
     include("../bannierePardelErr.html");
     $_SESSION['delPar'] = 0;
 }
-if (isset($_SESSION['delMembre']) && $_SESSION['delPar'] == 1) {
+if (isset($_SESSION['delMembre']) && $_SESSION['delMembre'] == 1) {
     ?><div class="row"> 
   <div class="col-md-12">
     <div class="alert alert-success"><center>Le membre a bien été supprimé.</center></div>
@@ -156,7 +156,7 @@ if (isset($_SESSION['delMembre']) && $_SESSION['delPar'] == 1) {
 </div><?php
     $_SESSION['delMembre'] = 0;
 }
-if (isset($_SESSION['delMembre']) && $_SESSION['delPar'] == -1) {
+if (isset($_SESSION['delMembre']) && $_SESSION['delMembre'] == -1) {
     ?><div class="row"> 
   <div class="col-md-12">
     <div class="alert alert-danger"><center>Le membre n'a pas pu être supprimé.</center></div>
@@ -231,7 +231,7 @@ if (isset($_SESSION['modcadenas']) && $_SESSION['modcadenas'] == -12) {
 
     <!-- Modal Déconnexion -->
     <div class="modal fade" id="modalDeconnnexion" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
-        <div class="modal-dialog">
+        <div class="modal-dialog" >
             <div class="modal-content">
                 <div class="modal-header">
                     <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
