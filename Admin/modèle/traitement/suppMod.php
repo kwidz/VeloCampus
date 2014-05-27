@@ -3,13 +3,13 @@
 <?php
 session_start();
 include('../../co.php');
-if((!empty($_POST["supp_id_velo"])) && ((isset($_POST["supp_id_velo"])))){
+if((!empty($_POST["supp_mod"])) && ((isset($_POST["supp_mod"])))){
 	//$id = $_POST["supp_id_velo"];
-	$sql='delete from Velo where id_velo = '.$_POST["supp_id_velo"];
+	$sql='delete from _Type where id_type = '.$_POST["supp_mod"];
 	$res=$mysqli->query($sql);
-	$_SESSION['suppvelo'] = 1;
+	$_SESSION['suppMod'] = 12;
 	
 }
-else $_SESSION['suppvelo'] = -1;
+else $_SESSION['suppMod'] = -12;
 header("Location: ".$_SERVER['HTTP_REFERER']);
 ?>

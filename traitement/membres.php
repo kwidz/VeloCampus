@@ -35,7 +35,7 @@ while(NULL !== ($row = $res->fetch_array())) {
             <h4>Biographie :</h4>
             '.$i['biographie'].'
             <br/><br/>
-            <h4>Fonction :</h4>
+            <h4>Statut :</h4>
             '.$i['fonction'].'
             </div>
             </div>
