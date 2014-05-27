@@ -10,10 +10,6 @@ th{
 }
 </style>
 <div class="col-md-6" >
-  <?php
-  
-
-  ?>
   <ul class="nav nav-pills nav-stacked">
     <li class="" style="text-align: center; margin-bottom: 15px; border:solid 1px; border-radius: 5px; border-color: #CDCACA"><a href="#" data-toggle="modal" data-target="#creerVelo" >Ajouter un vélo</a></li>
     <li class="" style="text-align: center; margin-bottom: 15px; border:solid 1px; border-radius: 5px; border-color: #CDCACA"><a href="#" data-toggle="modal" data-target="#editionVelo">Modifier un vélo</a></li>
@@ -21,9 +17,6 @@ th{
     <br/>
     </ul>
 </div>
-
-
-
 
 
 <!-- Premier Modal ajout de vélo -->
@@ -37,6 +30,9 @@ th{
         </div>
 
         <div class="modal-body">
+          ID du vélo :
+          <input type="text" class="form-control" name="id_velo" onkeyup="verifid(this.value)" required>
+          <div id="confirmid" name="confirmid"></div><br/>
 
           État du vélo :
           <select class="form-control" name="etat_velo" required>
