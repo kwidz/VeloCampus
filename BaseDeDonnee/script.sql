@@ -356,10 +356,10 @@ CREATE TABLE `Velo` (
   KEY `FK_Velo_id_Etat` (`id_Etat`),
   KEY `FK_Velo_id_taille` (`id_taille`),
   KEY `FK_Velo_id_type` (`id_type`),
+  CONSTRAINT `Velo_ibfk_1` FOREIGN KEY (`id_type`) REFERENCES `_Type` (`id_type`) ON DELETE SET NULL,
   CONSTRAINT `FK_Velo_id_Etat` FOREIGN KEY (`id_Etat`) REFERENCES `Etat` (`id_Etat`),
-  CONSTRAINT `FK_Velo_id_taille` FOREIGN KEY (`id_taille`) REFERENCES `Taille` (`id_taille`),
-  CONSTRAINT `FK_Velo_id_type` FOREIGN KEY (`id_type`) REFERENCES `_Type` (`id_type`)
-) ENGINE=InnoDB AUTO_INCREMENT=27 DEFAULT CHARSET=latin1;
+  CONSTRAINT `FK_Velo_id_taille` FOREIGN KEY (`id_taille`) REFERENCES `Taille` (`id_taille`)
+) ENGINE=InnoDB AUTO_INCREMENT=1338 DEFAULT CHARSET=latin1;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -368,7 +368,7 @@ CREATE TABLE `Velo` (
 
 LOCK TABLES `Velo` WRITE;
 /*!40000 ALTER TABLE `Velo` DISABLE KEYS */;
-INSERT INTO `Velo` VALUES (1,1,1,1),(2,1,1,1),(3,1,1,1),(4,1,1,1),(5,1,1,1),(6,1,1,1),(7,1,1,1),(8,1,3,1),(9,1,2,1),(10,1,3,1),(11,1,2,1),(12,1,3,1),(13,1,2,1),(14,1,3,2),(15,1,2,2),(16,1,3,2),(17,1,3,2),(18,1,2,2),(19,1,3,2),(20,1,3,2),(21,1,3,2),(22,1,3,2),(23,1,3,3),(24,1,3,3),(25,1,2,3),(26,1,2,4);
+INSERT INTO `Velo` VALUES (1,1,1,1),(2,1,1,1),(3,1,1,1),(4,1,1,1),(5,1,1,1),(6,1,1,1),(7,1,1,1),(8,1,3,1),(9,1,2,1),(10,1,3,1),(11,1,2,1),(12,1,3,1),(13,1,2,1),(14,1,3,NULL),(15,1,2,NULL),(16,1,3,NULL),(17,1,3,NULL),(18,1,2,NULL),(19,1,3,NULL),(20,1,3,NULL),(21,1,3,NULL),(22,1,3,NULL),(23,1,3,3),(24,1,3,3),(25,1,2,3),(26,1,2,4);
 /*!40000 ALTER TABLE `Velo` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -416,7 +416,7 @@ CREATE TABLE `_Type` (
 
 LOCK TABLES `_Type` WRITE;
 /*!40000 ALTER TABLE `_Type` DISABLE KEYS */;
-INSERT INTO `_Type` VALUES (1,'VTT'),(2,'VTC'),(3,'Pliable'),(4,'Tandem');
+INSERT INTO `_Type` VALUES (1,'VTT'),(3,'Pliable'),(4,'Tandem');
 /*!40000 ALTER TABLE `_Type` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -455,4 +455,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2014-05-27 13:30:08
+-- Dump completed on 2014-05-27 14:13:25
