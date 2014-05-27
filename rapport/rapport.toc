@@ -13,6 +13,7 @@
 \contentsline {subsection}{\numberline {3.2.3}L'ajout d'image}{7}{subsection.3.2.3}
 \contentsline {subsection}{\numberline {3.2.4}Le Postit}{8}{subsection.3.2.4}
 \contentsline {section}{\numberline {3.3}Inscription sur le site client}{8}{section.3.3}
+\contentsline {section}{\numberline {3.4}Gestion du site client depuis la partie administration}{9}{section.3.4}
 \contentsline {chapter}{\numberline {4}Les probl\IeC {\`e}mes rencontr\IeC {\'e}s}{10}{chapter.4}
 \contentsline {section}{\numberline {4.1}Adblock :}{10}{section.4.1}
 \contentsline {section}{\numberline {4.2}La s\IeC {\'e}curit\IeC {\'e} : }{10}{section.4.2}

@@ -193,7 +193,6 @@ CREATE TABLE `Membres` (
   `id_Membre` int(11) NOT NULL AUTO_INCREMENT,
   `nom_membre` varchar(1000) NOT NULL,
   `biographie` text NOT NULL,
-  `fonction` text NOT NULL,
   `photo` varchar(1000) NOT NULL,
   PRIMARY KEY (`id_Membre`)
 ) ENGINE=InnoDB AUTO_INCREMENT=23 DEFAULT CHARSET=latin1;
@@ -205,7 +204,7 @@ CREATE TABLE `Membres` (
 
 LOCK TABLES `Membres` WRITE;
 /*!40000 ALTER TABLE `Membres` DISABLE KEYS */;
-INSERT INTO `Membres` VALUES (1,'webdev','bonjour je suis le créateur de ce fabuleux sute web ','test','../images/membres/webdev.jpg'),(21,'dzefcre','czecer','essai','../images/membres/p2050.png'),(22,'fervsrhdtyrf','fqsdcfvg','COOOL','../images/membres/p2050.png');
+INSERT INTO `Membres` VALUES (1,'webdev','bonjour je suis le créateur de ce fabuleux sute web ','../images/membres/webdev.jpg'),(21,'dzefcre','czecer','../images/membres/p2050.png'),(22,'fervsrhdtyrf','fqsdcfvg','../images/membres/p2050.png');
 /*!40000 ALTER TABLE `Membres` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -275,7 +274,7 @@ CREATE TABLE `Postit` (
   `nom_postit` varchar(50) DEFAULT NULL,
   `message_postit` text,
   PRIMARY KEY (`id_postit`)
-) ENGINE=InnoDB AUTO_INCREMENT=12 DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB AUTO_INCREMENT=8 DEFAULT CHARSET=latin1;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -304,7 +303,7 @@ CREATE TABLE `Reparation` (
   PRIMARY KEY (`id_reparation`),
   KEY `id_velo` (`id_velo`),
   CONSTRAINT `fk_id_velo` FOREIGN KEY (`id_velo`) REFERENCES `Velo` (`id_velo`)
-) ENGINE=InnoDB AUTO_INCREMENT=25 DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB AUTO_INCREMENT=24 DEFAULT CHARSET=latin1;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -456,4 +455,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2014-05-26 19:02:43
+-- Dump completed on 2014-05-27 13:11:21
