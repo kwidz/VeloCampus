@@ -205,25 +205,38 @@ Sur cette partie, nous avons du faire face à plusieurs situations :
 \item La personne qui a cotisé
 \end{itemize}
 
-Tout d'abord, lorsqu'une personne tente de s'inscrire une fonction ajax vérifie que l'adresse mail entrée n'a jamais été utilisée si elle l'a déjà été, la fonction vérifie que l'adhérent n'est pas déjà cotisant donc déjà inscrit. Si c'est le cas elle retourne un message d'erreur :
-
+Lorsqu'une personne tente de s'inscrire une fonction ajax vérifie que l'adresse mail entrée n'a jamais été utilisée si elle l'a déjà été, la fonction vérifie que l'adhérent n'est pas déjà cotisant donc déjà inscrit. Si c'est le cas elle retourne un message d'erreur :
+\\
+\textcolor{green}{Algorithme de la fonction}
 \begin{verbatim}
-if ($adresse){ 
-	SELECT Count(*) from Adherent Where adresse_mail_adherent='".$adresse."';
-	....
-	....
-	if($result==0){
+// adresse_mail est la variable adresse_mail récupéré par la fonction.
+SI (adresse_mail == VRAI) :
+	RESULTAT = SELECT Count(*) from Adherent Where    	adresse_mail_adherent=adresse_mail
+	SI (RESULTAT == 0) :
 		Message = OK ! 
-	else{
-		"SELECT count(c.id_adherent) from Adherent a, Cotisation c where adresse_mail_adherent='".$adresse."'and c.id_adherent=a.id_adherent";
-		....
-		....
-		if ($result==0){
-			message ="attention cette adresse mail est utilisé pour un compte en attente de cotisation. 
-		else {
-			message ="adresse mail déja utilisé pour un autre compte";
-		}
+	SINON :
+		RESULTAT = SELECT count(c.id_adherent) from Adherent a, Cotisation c where adresse_mail_adherent= adresse_mail and c.id_adherent=a.id_adherent
+		 SI (RESULTAT == 0):
+			Message ="attention cette adresse mail est utilisé pour un compte en attente de cotisation." 
+		 SINON :
+			Message ="adresse mail déjà utilisée pour un autre compte"
+		
 \end{verbatim}
+
+
+\section{Gestion du site client depuis la partie administration}
+L'intérêt de ce site était aussi de permettre aux administrateurs de gérer facilement la partie client de leurs sites. Nous avons donc créer quelques fonctions de gestion tels que "modifier le texte de l'accueil" ou "modifier les partenaires". 
+
+La fonction "modifier le texte de l'accueil" est gérer par des fichiers \textit{.txt} dans lesquels nous enregistrons les modifications.
+
+La fonction "modifier les partenaires" est elles par contre gérer par une table partenaires. 
+Elle permet aussi l'ajout de photo.
+
+ 
+
+\begin{center}
+\includegraphics[width=0.3\textwidth]{gestion.png}~
+\end{center}
 
 \chapter{Les problèmes rencontrés}
 

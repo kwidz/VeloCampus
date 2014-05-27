@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.1415926-2.4-1.40.13 (TeX Live 2012/Debian) (format=pdflatex 2014.5.13)  26 MAY 2014 18:59
+This is pdfTeX, Version 3.1415926-2.4-1.40.13 (TeX Live 2012/Debian) (format=pdflatex 2014.5.13)  27 MAY 2014 13:10
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -663,7 +663,7 @@ e
 * \@reversemarginfalse
 * (1in=72.27pt=25.4mm, 1cm=28.453pt)
 
-<logo.png, id=80, 175.25475pt x 119.60686pt>
+<logo.png, id=84, 175.25475pt x 119.60686pt>
 File: logo.png Graphic file (type png)
  <use logo.png>
 Package pdftex.def Info: logo.png used on input line 25.
@@ -678,7 +678,7 @@ LaTeX Font Info:    Try loading font information for U+msb on input line 46.
 (/usr/share/texlive/texmf-dist/tex/latex/amsfonts/umsb.fd
 File: umsb.fd 2009/06/22 v3.00 AMS symbols B
 )
-<site.jpg, id=82, 1118.1775pt x 863.225pt>
+<site.jpg, id=86, 1118.1775pt x 863.225pt>
 File: site.jpg Graphic file (type jpg)
  <use site.jpg>
 Package pdftex.def Info: site.jpg used on input line 54.
@@ -715,7 +715,7 @@ Underfull \hbox (badness 10000) in paragraph at lines 77--78
 
 ] [4]
 Chapitre 2.
-<MCD.jpg, id=141, 1705.37125pt x 887.315pt>
+<MCD.jpg, id=146, 1705.37125pt x 887.315pt>
 File: MCD.jpg Graphic file (type jpg)
  <use MCD.jpg>
 Package pdftex.def Info: MCD.jpg used on input line 114.
@@ -743,7 +743,7 @@ t id_velo from Location where date_retour_location is null ) and c.id_velo=v.id
 _velo and v.id_type=ty.id_type and v.id_taille=t.id_taille order by(id_velo) 
  []
 
-<demande.jpg, id=154, 340.27126pt x 358.33875pt>
+<demande.jpg, id=159, 340.27126pt x 358.33875pt>
 File: demande.jpg Graphic file (type jpg)
  <use demande.jpg>
 Package pdftex.def Info: demande.jpg used on input line 166.
@@ -754,68 +754,79 @@ Overfull \hbox (37.03416pt too wide) in paragraph at lines 170--170
 LUES (NULL, ".$_GET['id']."); 
  []
 
-<addImage.jpg, id=155, 542.025pt x 330.23375pt>
+<addImage.jpg, id=160, 542.025pt x 330.23375pt>
 File: addImage.jpg Graphic file (type jpg)
  <use addImage.jpg>
 Package pdftex.def Info: addImage.jpg used on input line 180.
 (pdftex.def)             Requested size: 136.57462pt x 83.20825pt.
- [7 <./demande.jpg> <./addImage.jpg>] <postit.jpg, id=160, 528.97626pt x 543.02
+ [7 <./demande.jpg> <./addImage.jpg>] <postit.jpg, id=166, 528.97626pt x 543.02
 875pt>
 File: postit.jpg Graphic file (type jpg)
 
 <use postit.jpg>
 Package pdftex.def Info: postit.jpg used on input line 187.
 (pdftex.def)             Requested size: 136.57462pt x 140.1981pt.
- <inscr.jpg, id=161, 714.67pt x 905.3825pt>
+ <inscr.jpg, id=167, 714.67pt x 905.3825pt>
 File: inscr.jpg Graphic file (type jpg)
  <use inscr.jpg>
 Package pdftex.def Info: inscr.jpg used on input line 197.
 (pdftex.def)             Requested size: 136.57462pt x 173.01913pt.
 
 [8 <./postit.jpg> <./inscr.jpg>]
-Overfull \hbox (302.9776pt too wide) in paragraph at lines 218--218
-[]\T1/cmtt/m/n/10.95 "SELECT count(c.id_adherent) from Adherent a, Cotisation c
- where adresse_mail_adherent='".$adresse."'and c.id_adherent=a.id_adherent";[] 
-
+Overfull \hbox (25.71742pt too wide) in paragraph at lines 214--214
+[]\T1/cmtt/m/n/10.95 RESULTAT = SELECT Count(*) from Adherent Where     adresse
+_mail_adherent=adresse_mail[] 
  []
 
 
-Overfull \hbox (59.66765pt too wide) in paragraph at lines 222--222
-[]\T1/cmtt/m/n/10.95 message ="attention cette adresse mail est utilisé pour un
- compte en attente de cotisation.[] 
+Overfull \hbox (348.24457pt too wide) in paragraph at lines 218--218
+[]\T1/cmtt/m/n/10.95 RESULTAT = SELECT count(c.id_adherent) from Adherent a, Co
+tisation c where adresse_mail_adherent= adresse_mail and c.id_adherent=a.id_adh
+erent[] 
  []
 
-[9]
+
+Overfull \hbox (65.32602pt too wide) in paragraph at lines 220--220
+[]\T1/cmtt/m/n/10.95 Message ="attention cette adresse mail est utilisé pour un
+ compte en attente de cotisation."[] 
+ []
+
+<gestion.png, id=172, 243.91125pt x 309.155pt>
+File: gestion.png Graphic file (type png)
+ <use gestion.png>
+Package pdftex.def Info: gestion.png used on input line 238.
+(pdftex.def)             Requested size: 136.57462pt x 173.10674pt.
+ [9 <./gestion.png>]
 Chapitre 4.
 [10
 
 ]
 Chapitre 5.
 
-Underfull \hbox (badness 10000) in paragraph at lines 245--246
+Underfull \hbox (badness 10000) in paragraph at lines 258--259
 
  []
 
 [11
 
 ]
-Package atveryend Info: Empty hook `BeforeClearDocument' on input line 257.
+Package atveryend Info: Empty hook `BeforeClearDocument' on input line 270.
  [12
 
 ]
-Package atveryend Info: Empty hook `AfterLastShipout' on input line 257.
+Package atveryend Info: Empty hook `AfterLastShipout' on input line 270.
  (./rapport.aux)
-Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 257.
-Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 257.
+Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 270.
+Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 270.
 Package rerunfilecheck Info: File `rapport.out' has not changed.
-(rerunfilecheck)             Checksum: BC6572537E7A97AC1E24F91A15618D0D;1285.
-Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 257.
+(rerunfilecheck)             Checksum: C138B3F2A43FCB4496404C5712C0833B;1386.
+Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 270.
  ) 
 Here is how much of TeX's memory you used:
- 8704 strings out of 493485
- 121349 string characters out of 3143526
+ 8711 strings out of 493485
+ 121447 string characters out of 3143526
  225090 words of memory out of 3000000
- 11830 multiletter control sequences out of 15000+200000
+ 11835 multiletter control sequences out of 15000+200000
  24126 words of font info for 60 fonts, out of 3000000 for 9000
  957 hyphenation exceptions out of 8191
  37i,7n,39p,568b,496s stack positions out of 5000i,500n,10000p,200000b,50000s
@@ -833,10 +844,10 @@ ic/cm-super/sfrm0900.pfb></usr/share/texmf/fonts/type1/public/cm-super/sfrm1095
 mf/fonts/type1/public/cm-super/sfti1095.pfb></usr/share/texmf/fonts/type1/publi
 c/cm-super/sfti1200.pfb></usr/share/texmf/fonts/type1/public/cm-super/sftt1095.
 pfb>
-Output written on rapport.pdf (13 pages, 1021192 bytes).
+Output written on rapport.pdf (13 pages, 1031716 bytes).
 PDF statistics:
- 247 PDF objects out of 1000 (max. 8388607)
- 205 compressed objects within 3 object streams
- 36 named destinations out of 1000 (max. 500000)
- 188 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 257 PDF objects out of 1000 (max. 8388607)
+ 213 compressed objects within 3 object streams
+ 37 named destinations out of 1000 (max. 500000)
+ 201 words of extra memory for PDF output out of 10000 (max. 10000000)
 
