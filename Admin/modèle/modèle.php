@@ -27,18 +27,19 @@ th{
 
 
 <!-- Premier Modal ajout d'un modèle -->
-<div class="modal fade" id="creerVelo" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+<div class="modal fade" id="addMod" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
   <div class="modal-dialog">
     <div class="modal-content">
-      <form method="POST" action="traitement/ajouterVelo.php" name="formAjoutVelo">
+      <form method="POST" action="traitement/ajouterMod.php" name="formAjoutMod">
         <div class="modal-header">
           <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
-          <h4 class="modal-title" id="myModalLabel"><strong>Ajout de vélo</strong></h4>
+          <h4 class="modal-title" id="myModalLabel"><strong>Ajout d'un modèle de vélo </strong></h4>
         </div>
 
         <div class="modal-body">
 
-         
+         Entrer le libéllé du modèle : 
+         <input type="text" class="form-control" id="inputLibelle" placeholder="Ex : VTT" name="inputLibelle" required/><br/>
 
         </div>
 
@@ -62,7 +63,7 @@ th{
       <form method="POST" action="traitement/suppMod.php" name="formSuppVelo">
         <div class="modal-header">
           <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
-          <h4 class="modal-title" id="myModalLabel"><strong>Suppression de Modèle</strong></h4>
+          <h4 class="modal-title" id="myModalLabel"><strong>Suppression de modèle</strong></h4>
         </div>
         <div class="modal-body">
 
