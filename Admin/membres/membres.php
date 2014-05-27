@@ -78,17 +78,17 @@
         <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
         <h4 class="modal-title" id="myModalLabel"><strong>Supprimer un partenaire</strong></h4>
       </div>
-      <form method="post" action="delPartenaire.php">
+      <form method="post" action="delMembres.php">
       	<div class="modal-body">
         	Selectionnez un partenaire à supprimer :<br/>
         	<?php
-				$sql = "SELECT nom_partenaire FROM Partenaire";
+				$sql = "SELECT id_Membre, nom_membre FROM Membres";
 				$result = $mysqli->query($sql);
 				if ($result) {
 					echo "<select class='form-control' id='nom' name='nom' required>";
 					echo "<option></option>";
 					while (NULL !== ($row = $result->fetch_array())) {
-						echo "<option>".$row['nom_partenaire']."</option>";
+						echo "<option value='".$row['id_Membre']."'>".$row['nom_membre']."</option>";
 					}
 					echo "</select>";
 				}
