@@ -407,7 +407,7 @@ CREATE TABLE `_Type` (
   `id_type` int(11) NOT NULL AUTO_INCREMENT,
   `libelle_type` varchar(25) DEFAULT NULL,
   PRIMARY KEY (`id_type`)
-) ENGINE=InnoDB AUTO_INCREMENT=5 DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB AUTO_INCREMENT=7 DEFAULT CHARSET=latin1;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -416,7 +416,7 @@ CREATE TABLE `_Type` (
 
 LOCK TABLES `_Type` WRITE;
 /*!40000 ALTER TABLE `_Type` DISABLE KEYS */;
-INSERT INTO `_Type` VALUES (1,'VTT'),(3,'Pliable'),(4,'Tandem');
+INSERT INTO `_Type` VALUES (1,'VTT'),(3,'Pliable'),(4,'Tandem'),(5,'VTI'),(6,'VTI');
 /*!40000 ALTER TABLE `_Type` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -455,4 +455,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2014-05-27 14:13:25
+-- Dump completed on 2014-05-27 14:35:04
