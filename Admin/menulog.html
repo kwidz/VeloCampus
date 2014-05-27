@@ -188,6 +188,24 @@ if (isset($_SESSION['modcadenas']) && $_SESSION['modcadenas'] == -1) {
     include("../bannieremodCadErr.html");
     $_SESSION['modcadenas'] = 0;
 }
+
+
+if (isset($_SESSION['suppMod']) && $_SESSION['suppMod'] == 12) {
+    ?><div class="row"> 
+  <div class="col-md-12">
+    <div class="alert alert-success"><center>Le modèle a bien été supprimer</center></div>
+  </div>
+</div><?php
+    $_SESSION['suppMod'] = 0;
+}
+if (isset($_SESSION['modcadenas']) && $_SESSION['modcadenas'] == -12) {
+      ?><div class="row"> 
+  <div class="col-md-12">
+    <div class="alert alert-danger"><center>Le modèle n'a pas pu être supprimer</center></div>
+  </div>
+</div><?php
+    $_SESSION['suppMod'] = 0;
+}
 ?>
 
 
