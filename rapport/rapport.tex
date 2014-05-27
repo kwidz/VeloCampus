@@ -65,32 +65,32 @@ Alexandru  \textsc{dobrila}
 \chapter*{Introduction}
 Vélocampus est une association louant des vélos aux étudiants à très petit tarifs. De plus, elle s’occupe de la réparation et de l'entretien de vélos loués ou non.
 
-Pour ce projet, nous avons voulu réaliser un site permettant à Vélocampus de gérer son administration plus facilement. Pour cela nous vous présenterons d'abord le cahier des charges que nous avons conçus avec les membres de l'association, puis nous expliquerons la base de données que nous avons décidés de mettre en place, ainsi que les fonctionnalités que nous avons implémenté sur le site. Enfin, nous aborderons les problèmes que nous avons rencontrés puis, les améliorations qui pourraient être apporté au site par la suite.
+Pour ce projet, nous avons voulu réaliser un site web administratif permettant à Vélocampus de gérer son administration plus facilement. Pour cela nous vous présenterons d'abord le cahier des charges que nous avons conçu avec les membres de l'association, puis nous expliquerons la base de données que nous avons décidés de mettre en place, ainsi que les fonctionnalités que nous avons implémenté sur le site. Enfin, nous aborderons les problèmes que nous avons rencontrés puis, les améliorations qui pourraient être apporté au site par la suite.
 
 
 \chapter{Le cahier des charges}
-Après une réunion avec les membres de l'association, nous sommes arrivés à la conclusion que le site contiendrait une petite partie client, rendant ainsi l'association présente sur le web et une grosse partie administration, permettant toutes la gestions de l'association. 
+Après une réunion avec les membres de l'association, nous sommes arrivés à la conclusion que le site contiendrait une petite partie client, rendant ainsi l'association présente sur le web et une grosse partie administration, permettant toute la gestions de l'association. 
 Nous avons finalement construit ce cahier des charges :\\
 
 
 \section{La partie administration :} 
 Elle sera accessible à tous les membres de l'association \\
 \begin{itemize}
-\item Une mailing liste des adhérents \\
+\item Une mailing-list des adhérents \\
 \textit{(Permettant à l'administrateur d'importer la liste sur une boite mail afin de pouvoir envoyer des messages groupés)}
 \item Un Suivi des vélos \\
-\textit{(Afin de savoir quel vélo est en location, quel vélo a subit quel réparation...)}
-\item Une gestion des demandes d'adhésions faites en lignes 
-\item Une messagerie internet \\
+\textit{(Afin de savoir quel vélo est en location, quel vélo a subit quelle réparation...)}
+\item Une gestion des demandes d'adhésions faites en ligne
+\item Une messagerie interne \\
 \textit{(Permettant aux différents administrateurs de communiquer entre eux)}
 \item Une gestion des vélos \\
-\textit{(Pour ajouter des vélos, supprimmer des vélos ou encore modifoer des vélos)}
+\textit{(Pour ajouter des vélos, supprimer des vélos ou encore modifier des vélos)}
 \item Une gestion de réparation \\
-\textit{(Permettant d'ajouter des réparations à certain vélo et de connaitre le prix de ces réparations)}
-\item Une gestion du site publique \\
+\textit{(Permettant d'ajouter des réparations à certains vélo et de connaître le prix de ces réparations)}
+\item Une gestion du site côté client \\
 \textit{(Ajouter des photos, modifier les partenaires, modifier le messages d'acceuil ...)}
 \item L'importation d'un calendrier Gmail \\
-\textit{(Permettant d'importer un calendrier d'évenement sur la partie client du site et d'afficher le calendrier interne de l'association sur la partie administration du site)}
+\textit{(Permettant d'importer un calendrier d’événement sur la partie client du site et d'afficher le calendrier interne de l'association sur la partie administration du site)}
 \end{itemize}
 
   
@@ -116,14 +116,32 @@ Elle sera accessible à tous les membres de l'association \\
 
 \section{La réalisation du MCD}
 
+Tout d'abord, nous avons mis en place un MCD pour avoir une représentation graphique de notre Base de données avant de l'implémenter.
+Le MCD devait répondre à plusieurs contraintes :
+\begin{itemize}
+\item Les adhérents doivent avoir payé une cotisation
+\item Les adhérents ont plusieurs attributs (nom, prénoms, etc..)
+\item Les adhérents peuvent louer des vélos 
+\item Une location possède un prix, une date de départ, une date d'arrivée et un état de retour.
+\item Si l'état de retour est différent de l'état de base du vélo alors on modifie l'état du velo et on impose une taxe au locataire, ou on garde la caution.
+\item Un velo a : 
+\begin{itemize}
+\item Un état
+\item Une taille
+\item 3 cadenas
+\item Un type(modèle)
+\end{itemize}
+\item Un vélo peut subir des réparations
+\end{itemize}
+
 \chapter{Le fonctionnement du site Internet}
 Le site est organisés en deux parties, une partie administration assez conséquente et une partie client.
 \section{La Structure}
-Tous d'abord nous avons utilisés GITHUB qui est un très bonne outils de gestion de développement.
-Vous pouvez trouvez notre projet à ce lien :
+Tous d'abord nous avons utilisés Github qui est un logiciel de gestion de version.
+Vous pouvez trouvez notre projet via ce lien :
 \url{https://github.com/kwidz/VeloCampus}
-De plus nous avons utiliser un framework CSS : Bootstrap, pour que notre site internet s'adapte à tous type d'écrans sans trop de problèmes.
-Enfin, afin de ne pas se perdre dans tous les fichiers, nous avons suivi une struture assez simple : Nous avons plusieurs fichiers :
+De plus nous avons utiliser un framework CSS : Bootstrap, pour avoir un site ergonomique et complet sans avoir à utiliser des procédés complexes de css et de HTML5, Bootstrap gère aussi le "mobile-responsive" pour adapter le site web sur un smartphone.
+Enfin, afin de ne pas se perdre dans tous les fichiers, nous avons mis en place une arborescence(possibilité de la visionner entièrement sur notre github):
 \begin{itemize}
 \item index.php \\
 \textit{(Ce fichier inclue les différentes pages html)}
@@ -134,12 +152,12 @@ Enfin, afin de ne pas se perdre dans tous les fichiers, nous avons suivi une str
 \item menulog.html \\
 \textit{(Ce fichier contient le menu que l'utilisateur vois lorqu'il est connecté)}
 \end{itemize}
- puis des dossiers portant le noms de chaques sous partie du menu, contenant un dossier de traitement ainsi qu'un index.
+ puis des dossiers portant le nom de chaque sous partie du menu, contenant un dossier de traitement ainsi qu'un index.
  
 \section{Les fonctions importantes}
 Ce projet comporte beaucoup de fonctionnalités donc pour la suite nous expliquerons le fonctionnement que de certaines parties.  
 \subsection{La partie location}
-La partie Location se trouve dans la partie admistration, elle permet de : 
+La partie Location se trouve dans la partie administration, elle permet de : 
 \begin{itemize}
 \item Créer une location
 \item Voir les vélos non loués
@@ -152,13 +170,24 @@ Cette partie a été délicate à gérer car lorsque l'on loue un vélo il faut 
 
 Par exemple : Cette requete sert à afficher les vélos non-loués. 
 \begin{verbatim}
-Select v.id_velo, c.id_cadenas, ty.libelle_type, t.libelle_taille from Velo v, Cadenas c, Taille t, _Type ty where v.id_velo not in(Select id_velo from Location where date_retour_location is null ) and c.id_velo=v.id_velo and v.id_type=ty.id_type and v.id_taille=t.id_taille order by(id_velo) 
+SELECT v.id_velo, c.id_cadenas, ty.libelle_type, t.libelle_taille
+FROM Velo v, Cadenas c, Taille t, _Type ty 
+WHERE v.id_velo not in
+(
+    SELECT id_velo 
+    FROM Location 
+    WHERE date_retour_location is null
+)
+AND c.id_velo=v.id_velo
+AND v.id_type=ty.id_type
+AND v.id_taille=t.id_taille
+ORDER BY(id_velo) 
 \end{verbatim} 
 
 De plus lorsque l'adhérent retourne son vélo, l'administrateur doit pouvoir modifier l'état du vélo et ajouter une date de retour. 
 
 \subsection{L'affichage des demandes}
-Lorqu'un fait une demande sur le site publique, celle ci est affiché sur la page administration en attente d'être validé ou refusé.
+Lorsqu'on fait une demande d'adhésion sur le site côté client, celle ci est affiché sur la page administration en attente d'être validé ou refusé.
 
 La demande d'inscription est validée si les informations données sont correcte et si la personne qui a fait cette demande est venu payer la cotisation à l'association. C'est seulement à ce moment que la personne pourra se connecter sur le site publique.
 
@@ -167,7 +196,8 @@ Voici un exemple :\\
 
 Si l'on clique sur le bouton valider à coter d'un prénom, la personne sera ajouté à la table cotisation qui contient toute les personnes cotisantes.
 \begin{verbatim}
-INSERT INTO Cotisation (`id_cotisation`, `id_adherent`) VALUES (NULL, ".$_GET['id'].");
+INSERT INTO Cotisation (`id_cotisation`, `id_adherent`)
+VALUES (NULL, ".$_GET['id'].");
 \end{verbatim} 
 Par contre si l'on clique sur le bouton supprimer, la personne sera enlévé de la table adhérent.
 \begin{verbatim}
@@ -175,12 +205,25 @@ DELETE  from Adherent where id_adherent='".$_GET['id']."'
 \end{verbatim}
 
 \subsection{L'ajout d'image}
-Nous voulions créer une fonctionnalité simple qui permettrait aux membres de Vélocampus d'ajouter ou supprimer des photos sur leur site. De plus nous ne voulions pas ajouter seulement un lien vers l'image dans la base de donnée car nous voulions que lors de la suppression d'image, l'image soit réellement supprimer et pas seulement le lien qui mène à elle dans la base de donnée.
+Nous voulions créer une fonctionnalité simple qui permettrait aux membres de Vélocampus d'ajouter ou supprimer des photos sur leur site. De plus nous ne voulions pas ajouter seulement un lien vers l'image dans la base de donnée car nous voulions que lors de la suppression d'image, l'image soit réellement supprimée et pas seulement le lien qui mène à elle dans la base de donnée.
 \begin{center}
 \includegraphics[width=0.3\textwidth]{addImage.jpg}~
 \end{center}
 
-A FINIR ! 
+Nous avons mis en place un formulaire d'upload de fichier "classique" avec un bouton parcourir ainsi qu'un drag and drop pour uploader plusieurs images d'un seul coup.
+Les images sont mises dans un dossier portant le nom de l'album et nous affichons les images de manières récursives :
+\begin{verbatim}
+Fonction parcoursDossier(UnDossier){
+    pour chaque fichier dans UnDossier:
+        si fichier.Type = DOSSIER:
+        	    parcoursDossier(fichier)
+        	sinon : 
+        	    on affiche l'image
+        	fin si
+    fin pour
+}
+\end{verbatim}
+ 
 \subsection{Le Postit}
 Les membres avaient besoins de pouvoir communiquer entre eux sur la page administration. Nous avons d'abord pensé à créer un compte administrateur pour chaque membre afin qu'ils puissent communiquer. Finalement, puisque tous les membres avaient tous les mêmes droits sur la page administration, il semblait plus logique de ne faire qu'une seule session administrateur. C'est ainsi que nous avons crée "le postit" :   
 \begin{center}
@@ -188,7 +231,7 @@ Les membres avaient besoins de pouvoir communiquer entre eux sur la page adminis
 \end{center}
 
 Postit est une table à part dans la base de donnée, relier à aucune autres. C'est pour cela qu'elle n'est pas présenté sur le MCD plus haut.
-Ce postit fonctionne simplement avec un formulaire qui envois les valeurs des champs "nom" et "message" à une page php qui elle même les insert dans la base de données. 
+Ce postit fonctionne simplement avec un formulaire qui envoie les valeurs des champs "nom" et "message" à une page php qui elle même les insert dans la base de données. 
 
 \section{Inscription sur le site client}
 Dans ce projet nous avons du créer un formulaire d'inscription sur le site client afin que les visiteurs puisse demander à être adhérents. 
@@ -211,21 +254,25 @@ Lorsqu'une personne tente de s'inscrire une fonction ajax vérifie que l'adresse
 \begin{verbatim}
 // adresse_mail est la variable adresse_mail récupéré par la fonction.
 SI (adresse_mail == VRAI) :
-	RESULTAT = SELECT Count(*) from Adherent Where    	adresse_mail_adherent=adresse_mail
-	SI (RESULTAT == 0) :
-		Message = OK ! 
-	SINON :
-		RESULTAT = SELECT count(c.id_adherent) from Adherent a, Cotisation c where adresse_mail_adherent= adresse_mail and c.id_adherent=a.id_adherent
-		 SI (RESULTAT == 0):
-			Message ="attention cette adresse mail est utilisé pour un compte en attente de cotisation." 
-		 SINON :
-			Message ="adresse mail déjà utilisée pour un autre compte"
+    RESULTAT = SELECT Count(*) from Adherent Where    	adresse_mail_adherent=adresse_mail
+    SI (RESULTAT == 0) :
+        Message = OK ! 
+    SINON :
+        RESULTAT = SELECT count(c.id_adherent)
+        FROM Adherent a, Cotisation c
+        WHERE adresse_mail_adherent= adresse_mail 
+        AND c.id_adherent=a.id_adherent
+        SI (RESULTAT == 0):
+            Message ="attention cette adresse mail est utilisé pour un compte
+            en attente de cotisation." 
+        SINON :
+            Message ="adresse mail déjà utilisée pour un autre compte"
 		
 \end{verbatim}
 
 
 \section{Gestion du site client depuis la partie administration}
-L'intérêt de ce site était aussi de permettre aux administrateurs de gérer facilement la partie client de leurs sites. Nous avons donc créer quelques fonctions de gestion tels que "modifier le texte de l'accueil" ou "modifier les partenaires". 
+L'intérêt de ce site était aussi de permettre aux administrateurs de gérer facilement la partie client de leur site. Nous avons donc créer quelques fonctions de gestion tels que "modifier le texte de l'accueil" ou "modifier les partenaires". 
 
 La fonction "modifier le texte de l'accueil" est gérer par des fichiers \textit{.txt} dans lesquels nous enregistrons les modifications.
 

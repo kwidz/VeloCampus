@@ -10,12 +10,12 @@
 \contentsline {section}{\numberline {3.2}Les fonctions importantes}{6}{section.3.2}
 \contentsline {subsection}{\numberline {3.2.1}La partie location}{6}{subsection.3.2.1}
 \contentsline {subsection}{\numberline {3.2.2}L'affichage des demandes}{7}{subsection.3.2.2}
-\contentsline {subsection}{\numberline {3.2.3}L'ajout d'image}{7}{subsection.3.2.3}
+\contentsline {subsection}{\numberline {3.2.3}L'ajout d'image}{8}{subsection.3.2.3}
 \contentsline {subsection}{\numberline {3.2.4}Le Postit}{8}{subsection.3.2.4}
-\contentsline {section}{\numberline {3.3}Inscription sur le site client}{8}{section.3.3}
+\contentsline {section}{\numberline {3.3}Inscription sur le site client}{9}{section.3.3}
 \contentsline {section}{\numberline {3.4}Gestion du site client depuis la partie administration}{9}{section.3.4}
-\contentsline {chapter}{\numberline {4}Les probl\IeC {\`e}mes rencontr\IeC {\'e}s}{10}{chapter.4}
-\contentsline {section}{\numberline {4.1}Adblock :}{10}{section.4.1}
-\contentsline {section}{\numberline {4.2}La s\IeC {\'e}curit\IeC {\'e} : }{10}{section.4.2}
-\contentsline {section}{\numberline {4.3}R\IeC {\'e}partition du travail : }{10}{section.4.3}
-\contentsline {chapter}{\numberline {5}Les am\IeC {\'e}liorations possibles}{11}{chapter.5}
+\contentsline {chapter}{\numberline {4}Les probl\IeC {\`e}mes rencontr\IeC {\'e}s}{11}{chapter.4}
+\contentsline {section}{\numberline {4.1}Adblock :}{11}{section.4.1}
+\contentsline {section}{\numberline {4.2}La s\IeC {\'e}curit\IeC {\'e} : }{11}{section.4.2}
+\contentsline {section}{\numberline {4.3}R\IeC {\'e}partition du travail : }{11}{section.4.3}
+\contentsline {chapter}{\numberline {5}Les am\IeC {\'e}liorations possibles}{12}{chapter.5}
