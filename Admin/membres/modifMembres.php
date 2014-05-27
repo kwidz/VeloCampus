@@ -17,7 +17,7 @@
 			$_SESSION['ajMembre'] = -1;
 		}
 		
-		if(isset($_FILES['icone']) && !empty($_FILES['icone']) ){
+		if(isset($_FILES['icone']) && !empty($_FILES['icone']['name']) ){
 
 			$photo = "../images/membres/".$_FILES['icone']['name'];
 		if ($_FILES['icone']['error'] > 0) $erreur = "Erreur lors du transfert";
