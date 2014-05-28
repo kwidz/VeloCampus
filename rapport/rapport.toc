@@ -1,0 +1,23 @@
+\select@language {french}
+\contentsline {chapter}{\numberline {1}Le cahier des charges}{3}{chapter.1}
+\contentsline {section}{\numberline {1.1}La partie administration}{3}{section.1.1}
+\contentsline {section}{\numberline {1.2}La partie client}{3}{section.1.2}
+\contentsline {chapter}{\numberline {2}Base de donn\IeC {\'e}es}{5}{chapter.2}
+\contentsline {section}{\numberline {2.1}Le mod\IeC {\`e}le conceptuel de donn\IeC {\'e}es}{5}{section.2.1}
+\contentsline {section}{\numberline {2.2}La r\IeC {\'e}alisation du MCD}{5}{section.2.2}
+\contentsline {chapter}{\numberline {3}Le fonctionnement du site internet}{6}{chapter.3}
+\contentsline {section}{\numberline {3.1}La Structure}{6}{section.3.1}
+\contentsline {section}{\numberline {3.2}Les fonctions importantes}{6}{section.3.2}
+\contentsline {subsection}{\numberline {3.2.1}La partie location}{6}{subsection.3.2.1}
+\contentsline {subsection}{\numberline {3.2.2}L'affichage des demandes}{7}{subsection.3.2.2}
+\contentsline {subsection}{\numberline {3.2.3}L'ajout d'image}{8}{subsection.3.2.3}
+\contentsline {subsection}{\numberline {3.2.4}Le Postit}{9}{subsection.3.2.4}
+\contentsline {section}{\numberline {3.3}Inscription sur le site client}{9}{section.3.3}
+\contentsline {paragraph}{Algorithme de la fonction :}{10}{section*.3}
+\contentsline {section}{\numberline {3.4}Gestion du site client depuis la partie administration}{10}{section.3.4}
+\contentsline {chapter}{\numberline {4}Les probl\IeC {\`e}mes rencontr\IeC {\'e}s}{11}{chapter.4}
+\contentsline {section}{\numberline {4.1}Adblock}{11}{section.4.1}
+\contentsline {section}{\numberline {4.2}Les dates}{11}{section.4.2}
+\contentsline {section}{\numberline {4.3}La s\IeC {\'e}curit\IeC {\'e}}{11}{section.4.3}
+\contentsline {section}{\numberline {4.4}R\IeC {\'e}partition du travail}{11}{section.4.4}
+\contentsline {chapter}{\numberline {5}Les am\IeC {\'e}liorations possibles}{12}{chapter.5}

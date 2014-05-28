@@ -12,6 +12,14 @@
 \usepackage[toc,page]{appendix} 
 \usepackage[top=2.5cm,bottom=2.5cm,right=2.5cm,left=2.5cm]{geometry} 
 
+\definecolor{vert}{rgb}{0.1,0.6,0.1}
+\usepackage{hyperref}                 
+ \hypersetup{
+    hyperfigures = true,
+    colorlinks = true,
+    linkcolor=black
+    }
+
 \newcommand{\HRule}{\rule{\linewidth}{0.5mm}}
 
 \begin{document}
@@ -74,23 +82,23 @@ Nous avons finalement construit le cahier des charges suivant.\\
 
 
 \section{La partie administration} 
-Elle sera accessible à tous les membres de l'association \\
+Elle sera accessible à tous les membres de l'association.\\
 \begin{itemize}
-\item Une mailing-list des adhérents \\
+\item Une mailing-list des adhérents 
 \textit{(Permettant à l'administrateur d'importer la liste sur une boite mail afin de pouvoir envoyer des messages groupés)}
-\item Un suivi des vélos \\
+\item Un suivi des vélos 
 \textit{(Afin de savoir quel vélo est en location, quel vélo a subit quelle réparation...)}
 \item Une gestion des demandes d'adhésion faites en ligne
-\item Une messagerie interne \\
+\item Une messagerie interne 
 \textit{(Permettant aux différents administrateurs de communiquer entre eux)}
-\item Une gestion des vélos \\
+\item Une gestion des vélos 
 \textit{(Pour ajouter des vélos, supprimer des vélos ou encore modifier des vélos)}
-\item Une gestion de réparation \\
+\item Une gestion de réparation 
 \textit{(Permettant d'ajouter des réparations à certains vélos et de connaître le prix de ces réparations)}
-\item Une gestion du site côté client \\
+\item Une gestion du site côté client 
 \textit{(Ajouter des photos, modifier les partenaires, modifier le message d'accueil ...)}
-\item L'importation d'un calendrier Gmail \\
-\textit{(Permettant d'importer un calendrier évènement sur la partie client du site et d'afficher le calendrier interne de l'association sur la partie administration du site)}
+\item L'importation d'un calendrier Gmail 
+\textit{(Permettant d'importer un calendrier événement sur la partie client du site et d'afficher le calendrier interne de l'association sur la partie administration du site)}
 \end{itemize}
 
   
@@ -104,7 +112,7 @@ Elle sera accessible à tous les membres de l'association \\
 \textit{(Permettant aux adhérents de demander la réparations de leurs vélos )}
 \item Calendrier en ligne avec les événements de l'association 
 \item Une page d'informations  \\
-\textit{(Contenant la présentations de l'association, ses membres et ses partenaires)} 
+\textit{(Contenant la présentation de l'association, ses membres et ses partenaires)} 
 \item Une page de photos et vidéos  
 
 \end{itemize}
@@ -155,7 +163,7 @@ Enfin, afin de ne pas se perdre dans tous les fichiers, nous avons mis en place 
  puis des dossiers portant le nom de chaque sous partie du menu, contenant un dossier de traitement ainsi qu'un index.
  
 \section{Les fonctions importantes}
-Ce projet comporte beaucoup de fonctionnalités donc pour la suite nous expliquerons le fonctionnement que de certaines parties.  
+Ce projet comporte beaucoup de fonctionnalités donc par la suite nous expliquerons le fonctionnement de seulement quelques parties.  
 \subsection{La partie location}
 La partie Location se trouve dans la partie administration, elle permet de : 
 \begin{itemize}
@@ -181,7 +189,7 @@ WHERE v.id_velo not in
 AND c.id_velo=v.id_velo
 AND v.id_type=ty.id_type
 AND v.id_taille=t.id_taille
-ORDER BY(id_velo) 
+ORDER BY(id_velo);
 \end{verbatim} 
 
 De plus lorsque l'adhérent retourne son vélo, l'administrateur doit pouvoir modifier l'état du vélo et ajouter une date de retour. 
@@ -192,14 +200,17 @@ Lorsque l'on fait une demande d'adhésion sur le site côté client, celle-ci es
 La demande d'inscription est validée si les informations données sont correctes et si la personne qui a fait cette demande est venu payer la cotisation à l'association. C'est seulement à ce moment là que la personne pourra se connecter sur le site public.
 
 Voici un exemple :\\\\
-\includegraphics[width=0.5\textwidth]{demande.jpg}~
+\begin{center}
+\includegraphics[width=0.4\textwidth]{demande.jpg}~
+\end{center}
+\pagebreak
 
-Si l'on clique sur le bouton valider à coté d'un prénom, la personne sera ajouté à la table cotisation qui contient toutes les personnes cotisantes.
+Si l'on clique sur le bouton valider à coté d'un prénom, la personne sera ajoutée à la table cotisation qui contient toutes les personnes cotisantes.
 \begin{verbatim}
 INSERT INTO Cotisation (`id_cotisation`, `id_adherent`)
 VALUES (NULL, ".$_GET['id'].");
 \end{verbatim} 
-Par contre si l'on clique sur le bouton supprimer, la personne sera enlevé de la table adhérent.
+Par contre si l'on clique sur le bouton supprimer, la personne sera retirée de la table adhérent.
 \begin{verbatim}
 DELETE  from Adherent where id_adherent='".$_GET['id']."'
 \end{verbatim}
@@ -207,7 +218,7 @@ DELETE  from Adherent where id_adherent='".$_GET['id']."'
 \subsection{L'ajout d'image}
 Nous voulions créer une fonctionnalité simple qui permettrait aux membres de Vélocampus d'ajouter ou supprimer des photos sur leur site. De plus nous ne voulions pas ajouter seulement un lien vers l'image dans la base de données car nous voulions que lors de la suppression d'image, l'image soit réellement supprimée et pas seulement le lien qui mène à elle dans la base de données.
 \begin{center}
-\includegraphics[width=0.3\textwidth]{addImage.jpg}~
+\includegraphics[width=0.6\textwidth]{addImage.jpg}~
 \end{center}
 
 Nous avons mis en place un formulaire d'upload de fichier "classique" avec un bouton parcourir ainsi qu'un drag and drop pour uploader plusieurs images d'un seul coup.
@@ -223,18 +234,18 @@ Fonction parcoursDossier(UnDossier){
     fin pour
 }
 \end{verbatim}
- 
+\pagebreak
 \subsection{Le Postit}
 Les membres avaient besoin de pouvoir communiquer entre eux sur la page d'administration. Nous avons d'abord pensé à créer un compte administrateur pour chaque membre afin qu'ils puissent communiquer. Finalement, puisque tous les membres avaient tous les mêmes droits sur la page administration, il semblait plus logique de ne faire qu'une seule session administrateur. C'est ainsi que nous avons crée "le postit" :   
 \begin{center}
 \includegraphics[width=0.3\textwidth]{postit.jpg}~
 \end{center}
 
-Postit est une table à part dans la base de données, relier à aucune autres. C'est pour cela qu'elle n'est pas présenté sur le MCD plus haut.
-Ce postit fonctionne simplement avec un formulaire qui envoie les valeurs des champs "nom" et "message" à une page php qui elle même les insert dans la base de données. 
+Postit est une table à part dans la base de données, reliée à aucune autres. C'est pour cela qu'elle n'est pas présentée sur le MCD plus haut.
+Ce postit fonctionne simplement avec un formulaire qui envoie les valeurs des champs "nom" et "message" à une page php qui elle même les ajoute dans la base de données. 
 
 \section{Inscription sur le site client}
-Dans ce projet nous avons du créer un formulaire d'inscription sur le site client afin que les visiteurs puisse demander à être adhérents. 
+Dans ce projet nous avons du créer un formulaire d'inscription sur le site client afin que les visiteurs puisse demander à devenir adhérents. 
 
 \begin{center}
 \includegraphics[width=0.3\textwidth]{inscr.jpg}~
@@ -244,17 +255,18 @@ Sur cette partie, nous avons du faire face à plusieurs situations :
 \begin{itemize}
 \item La personne non inscrite
 \item La personne qui est inscrite mais qui n'a pas cotisé
-\item La personne qui essai de se réinscrire en étant déjà inscrite
+\item La personne qui essaie de se réinscrire en étant déjà inscrite
 \item La personne qui a cotisé
 \end{itemize}
 
 Lorsqu'une personne tente de s'inscrire, une fonction Ajax vérifie que l'adresse mail entrée n'a jamais été utilisée si elle l'a déjà été, la fonction vérifie que l'adhérent n'est pas déjà cotisant donc déjà inscrit. Si c'est le cas elle retourne un message d'erreur :
 \\
-\textcolor{green}{Algorithme de la fonction}
+\paragraph{Algorithme de la fonction :}
 \begin{verbatim}
 // adresse_mail est la variable adresse_mail récupéré par la fonction.
 SI (adresse_mail == VRAI) :
-    RESULTAT = SELECT Count(*) from Adherent Where    	adresse_mail_adherent=adresse_mail
+    RESULTAT = SELECT Count(*) from Adherent
+               WHERE adresse_mail_adherent=adresse_mail
     SI (RESULTAT == 0) :
         Message = OK ! 
     SINON :
@@ -281,41 +293,43 @@ Elle permet aussi l'ajout de photo.
 
 
 \begin{center}
-\includegraphics[width=0.3\textwidth]{gestion.png}~
+\includegraphics[width=0.5\textwidth]{gestion.png}~
 \end{center}
 
 \chapter{Les problèmes rencontrés}
 
 \section{Adblock} 
-Adblock est une extension informatique permettant de bloquer les publicités sur les navigateurs. Elle est donc installé sur beaucoup d'ordinateurs. 
-Malheureusement, elle ne bloque pas que les publicités, lors de la réalisation du projet nous nous sommes aperçu que celle-ci bloquait aussi toutes les actions Ajax du site (qui nous permettaient le plus souvent de sécuriser le site).
+Adblock est un plug-in pour navigateur web permettant de bloquer les publicités sur les navigateurs. Elle est donc installée sur beaucoup d'ordinateurs. 
+Malheureusement, elle ne bloque pas que les publicités, lors de la réalisation du projet nous nous sommes aperçu que celui-ci bloquait aussi toutes les requêtes Ajax du site (qui nous permettaient le plus souvent d’empêcher l'utilisateur de rentrer des données erronées dans un formulaire sur le site).
 Nous avons donc du modifier notre façon de fonctionner. Cela nous a fait perdre un peu de temps.
 
 \section{Les dates}
-En fonction des navigateurs, la gestion des dates est différente. Par exemple, sur le navigateur Google Chrome, un champ de type date est géré avec un calendrier. Sous Firefox, ce même champ est géré de la même manière qu'un champ text. Il a donc fallu traiter le format de date manuellement en fonction du navigateur que la personne utilise.
+En fonction des navigateurs, la gestion des dates est différente. Par exemple, sur le navigateur Google Chrome, un champ de type date est géré avec un calendrier. Sous Firefox, ce même champ est géré de la même manière qu'un champ de type text. Il a donc fallu traiter le format de date manuellement en fonction du navigateur que la personne utilise.
 
 \section{La sécurité}
-Ce projet étant utilisés par la suite sur internet, il était primordiale de le sécuriser. Or, nous n'avons aucun cours sur la sécurité informatique et internet à l'IUT. Nous avons donc dû étudier cette aspect de l'informatique par nous même. Cela nous a donc apporté une charge de travail supplémentaire.
+Ce projet étant utilisés par la suite sur internet, il était primordiale de le sécuriser. Or, nous n'avons aucun cours sur la sécurité informatique et internet à l'IUT. Nous avons donc dû étudier cet aspect de l'informatique par nous même. Cela nous a donc apporté une charge de travail supplémentaire.
 
 \section{Répartition du travail}
 Finalement, le plus gros problème que nous avons rencontrés est la répartition du travail. 
 Le chef de projet a d'abord partagé les premières tâches en pensant vérifier à la fin de la semaine leurs réalisations pour, ensuite, pouvoir en fournir d'autres. Malheureusement, seul trois membres ont travaillés, le quatrième n'avait rien réalisé à la fin de la semaine. 
 La tâche de celui-ci étant indispensable pour la suite, le chef de projet a préféré la coder lui même car il s'est rendu compte qu'elle ne sera pas faite.
 Ce petit manège a recommencé à chaque nouvelle distribution de tâches. C'est seulement à la fin du projet que l'élève en question a fini par avouer qu'il avait décidé de ne rien faire pour ce projet car la matière n'était pas assez importante à ses yeux. Cette mésaventure nous a fait perdre beaucoup de temps car nous avons souvent dû attendre sur le travail de l'élève en question pour continuer à avancer. De plus, nous avons du travailler plus pour rattraper le travail manquant de ce membre.
-Ce projet étant difficilement réalisable à quatre, la difficulté a évolué dès lors que nous sommes passé à seulement trois membres actifs (pour ainsi dire depuis le début). 
+Ce projet étant difficilement réalisable à quatre, la difficulté a évolué dès lors que nous sommes passés à seulement trois membres actifs. 
+
 \chapter{Les améliorations possibles}
-Ce projet n'étant pas entièrement réalisable en un mois, ils restent beaucoup de fonctionnalités qui auraient pu être implémentées plus tard, tels que : \\
+Ce projet n'étant pas entièrement réalisable en un mois, il reste beaucoup de fonctionnalités qui auraient pu être implémentées plus tard, tels que : \\
 \begin{itemize}
 \item La réparation des vélos non loués 
-\item La demande de location en ligne \\
-\textit{(Nous avons décider de ne pas la faire car il faut de toute façon se rendre à l'association pour récupérer le vélo loué.)}
-\item Gestion des comptes-rendus de réunions\\ \textit{(Il faudrait créer un éditeur sur la partie administration du site afin que le secrétaire de l'association puisse noter directement en ligne le compte-rendu des réunions et les sauvegarder en ligne.)} 
-\item Ajout d'un forum \\
+\item La demande de location en ligne 
+\textit{(Nous avons décidé de ne pas la faire car il faut de toute façon se rendre à l'association pour récupérer le vélo loué.)}
+\item Gestion des comptes-rendus de réunions  \textit{(Il faudrait créer un éditeur sur la partie administration du site afin que le secrétaire de l'association puisse noter directement en ligne le compte-rendu des réunions et les sauvegarder en ligne.)} 
+\item Ajout d'un forum 
 \textit{(L'association Vélocampus aurait aimé que nous mettions en place un forum pour tous les adhérents, nous n'avons malheureusement pas eu le temps)} 
 \item Ajout d'une fonctionnalité de paiement en ligne \\
 \textit{(Nous aurions pu ajouter un lien Paypal mais cela compliquait les choses, de plus l'association préfère le contact humain.)} 
 \item Créer une application Android
 \end{itemize}
+
 \chapter*{Conclusion}
 Finalement, ce projet était enrichissant car il devait à la fois répondre à la demande du professeur et à la demande du client. 
 De plus, il nous a permis de découvrir le travail en collaboration avec un client qui compte sur nous. 
