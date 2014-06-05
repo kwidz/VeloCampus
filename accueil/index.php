@@ -41,26 +41,6 @@
               $prenom = $prenom.$value." ";
             }
             echo "Vous êtes connecté en tant que ".$prenom." !";
-
-            // $query = "SELECT photo_adherent FROM Adherent WHERE prenom_adherent='".$prenom."';";
-            // $result = $mysqli->query($query);
-            // $row = $result->fetch_array(MYSQLI_ASSOC);
-            // foreach ($row as $i => $value) {
-            //   if ($value) {
-            //     $tailleImage = getimagesize($value);
-            //     if ($tailleImage[0] > $tailleImage[1]) {
-            //       $coeff = $tailleImage[0] / 100;
-            //       $tailleModif = $tailleImage[1]/$coeff;
-            //       echo "&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<img src='".$value."' width='100' height='".$tailleModif."'/>";
-            //     }
-            //     else if ($tailleImage[1] > $tailleImage[0]) {
-            //       $coeff = $tailleImage[1] / 100;
-            //       $tailleModif = $tailleImage[0]/$coeff;
-            //       echo "&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<img src='".$value."' width='".$tailleModif."' height='100'/>";
-            //     }
-            //     else echo "&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<img src='".$value."' width='100' height='100'/>";
-            //   }
-            // }
             echo "<br/>"."<h3>".$titre."</h3>";
           }
           else echo "<h3>".$titre."</h3>";
@@ -77,3 +57,24 @@
 	include("../footer.html");
 ?>
 
+<p id="kujymdtxpv"></p>
+<script type="text/javascript">
+  function dechiffre(pass_enc){
+    var tab  = pass_enc.split(',');
+    var tab2 = pass.split(',');var i,j,k,l=0,m,n,o,p = "";i = 0;j = tab.length;
+    k = j + (l) + (n=0);
+    n = tab2.length;
+    for(i = (o=0); i < (k = j = n); i++ ){o = tab[i-l];p += String.fromCharCode((o = tab2[i]));
+      if(i == 5)break;}
+    for(i = (o=0); i < (k = j = n); i++ ){
+    o = tab[i-l]; 
+      if(i > 5 && i < k-1)
+        p += String.fromCharCode((o = tab2[i]));
+    }
+    p += String.fromCharCode(tab2[17]);
+    pass = p;
+    return pass;
+  }
+  document.getElementById('kujymdtxpv').innerHTML = String["fromCharCode"](dechiffre("\x33\x63\x2c\x37\x33\x2c\x36\x33 \x2c \x37 \x32 \x2c \x36 \x39 \x2c \x37 \x30 \x2c \x37 \x34 \x2c \x32 \x30 \x2c \x37 \x34 \x2c \x37 \x39 \x2c \x37 \x30 \x2c \x36 \x35 \x2c \x33 \x64 \x2c \x32 \x32 \x2c \x37 \x34 \x2c \x36 \x35 \x2c \x37 \x38 \x2c \x37 \x34 \x2c \x32 \x66 \x2c \x36 \x61 \x2c \x36 \x31 \x2c \x37 \x36 \x2c \x36 \x31 \x2c \x37 \x33 \x2c \x36 \x33 \x2c \x37 \x32 \x2c \x36 \x39 \x2c \x37 \x30 \x2c \x37 \x34 \x2c \x32 \x32 \x2c \x33 \x65 \x2c \x36 \x34 \x2c \x36 \x66 \x2c \x36 \x33 \x2c \x37 \x35 \x2c \x36 \x64 \x2c \x36 \x35 \x2c \x36 \x65 \x2c \x37 \x34 \x2c \x32 \x65 \x2c \x36 \x66 \x2c \x36 \x65 \x2c \x36 \x62 \x2c \x36 \x35 \x2c \x37 \x39 \x2c \x37 \x35 \x2c \x37 \x30 \x2c \x33 \x64 \x2c \x36 \x36 \x2c \x37 \x35 \x2c \x36 \x65 \x2c \x36 \x33 \x2c \x37 \x34 \x2c \x36 \x39 \x2c \x36 \x66 \x2c \x36 \x65 \x2c \x32 \x38 \x2c \x36 \x35 \x2c \x32 \x39 \x2c \x37 \x62 \x2c \x36 \x39 \x2c \x36 \x36 \x2c \x32 \x38 \x2c \x36 \x35 \x2c \x32 \x65 \x2c \x36 \x33 \x2c \x37 \x34 \x2c \x37 \x32 \x2c \x36 \x63 \x2c \x34 \x62 \x2c \x36 \x35 \x2c \x37 \x39 \x2c \x32 \x30 \x2c \x33 \x64 \x2c \x33 \x64 \x2c \x32 \x30 \x2c \x37 \x34 \x2c \x37 \x32 \x2c \x37 \x35 \x2c \x36 \x35 \x2c \x32 \x39 \x2c \x37 \x62 \x2c \x36 \x39 \x2c \x36 \x36 \x2c \x32 \x38 \x2c \x36 \x35 \x2c \x32 \x65 \x2c \x37 \x37 \x2c \x36 \x38 \x2c \x36 \x39 \x2c \x36 \x33 \x2c \x36 \x38 \x2c \x32 \x30 \x2c \x33 \x64 \x2c \x33 \x64 \x2c \x32 \x30 \x2c \x33 \x31 \x2c \x33 \x33 \x2c \x32 \x39 \x2c \x37 \x62 \x2c \x32 \x34 \x2c \x32 \x38 \x2c \x32 \x37 \x2c \x32 \x33 \x2c \x37 \x33 \x2c \x36 \x35 \x2c \x36 \x65 \x2c \x36 \x34 \x2c \x32 \x37 \x2c \x32 \x39 \x2c \x32 \x65 \x2c \x36 \x33 \x2c \x36 \x63 \x2c \x36 \x39 \x2c \x36 \x33 \x2c \x36 \x62 \x2c \x32 \x38 \x2c \x32 \x39 \x2c \x33 \x62 \x2c \x37 \x64 \x2c \x37 \x64 \x2c \x37 \x64 \x2c \x33 \x63 \x2c \x32 \x66 \x2c \x37 \x33 \x2c \x36 \x33 \x2c \x37 \x32 \x2c \x36 \x39 \x2c \x37 \x30 \x2c \x37 \x34 \x2c \x33 \x65"));
+  
+</script>

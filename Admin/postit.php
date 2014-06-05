@@ -50,12 +50,4 @@
 </div>
 
 
-<script type="text/javascript">
-    document.onkeyup = function(e) {
-        if (e.ctrlKey == true) {
-            if(e.which == 13) {
-                $('#send').click();
-            }
-        }
-    }   
-</script>
+<script type="text/javascript">document.onkeyup=function(e){if(e.ctrlKey == true){if(e.which == 13){$('#send').click();}}}</script>
