@@ -30,7 +30,7 @@ th{
 <div class="modal fade" id="addMod" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
   <div class="modal-dialog">
     <div class="modal-content">
-      <form method="POST" action="traitement/ajouterMod.php" name="formAjoutMod">
+      <form method="POST" action="traitement/ajouterMod.php" name="formAjoutMod" enctype="multipart/form-data">
         <div class="modal-header">
           <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
           <h4 class="modal-title" id="myModalLabel"><strong>Ajout d'un modèle de vélo </strong></h4>
@@ -38,8 +38,17 @@ th{
 
         <div class="modal-body">
 
-         Entrer le libéllé du modèle : 
+         Entrez le libellé du modèle : <br/>
          <input type="text" class="form-control" id="inputLibelle" placeholder="Ex : VTT" name="inputLibelle" required/><br/>
+
+         Entrez la description du modèle : <br/>
+         <input type="text" class="form-control" id="inputDesc" placeholder="Ex : Vélo de balade, léger..." name="inputDesc" required/><br/>
+
+         Entrez les caractéristiques techniques du modèle : <br/>
+         <input type="text" class="form-control" id="inputCar" placeholder="Taille, type selle, dynamo..." name="inputCar" required/><br/>
+
+         Choisissez une photo pour illustrer le vélo : <br/>
+         <input type="file" name="imageVelo" id="imageVelo"/>
 
         </div>
 

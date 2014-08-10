@@ -47,7 +47,7 @@
 <div>
 <?php
 echo '<form method="post" action="upload_simple.php?dossier='.$_GET['dossier'].'" enctype="multipart/form-data">';?>
-<input type="file" name="file" id="file" /><br />
+<input type="file" name="file" id="file"/><br />
 
 <input type="submit" name="submit" value="Envoyer" />
 </form>

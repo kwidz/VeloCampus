@@ -406,6 +406,9 @@ DROP TABLE IF EXISTS `_Type`;
 CREATE TABLE `_Type` (
   `id_type` int(11) NOT NULL AUTO_INCREMENT,
   `libelle_type` varchar(25) DEFAULT NULL,
+  `description_type` text DEFAULT NULL,
+  `caracteristiques_type` text DEFAULT NULL,
+  `lien_image` text DEFAULT NULL,
   PRIMARY KEY (`id_type`)
 ) ENGINE=InnoDB AUTO_INCREMENT=7 DEFAULT CHARSET=latin1;
 /*!40101 SET character_set_client = @saved_cs_client */;
@@ -416,7 +419,8 @@ CREATE TABLE `_Type` (
 
 LOCK TABLES `_Type` WRITE;
 /*!40000 ALTER TABLE `_Type` DISABLE KEYS */;
-INSERT INTO `_Type` VALUES (1,'VTT'),(3,'Pliable'),(4,'Tandem'),(5,'VTI'),(6,'VTI');
+-- INSERT INTO `_Type` VALUES (1,'VTT'),(3,'Pliable'),(4,'Tandem'),(5,'VTI'),(6,'VTI');
+INSERT INTO `_Type` VALUES (1,'VTT','essai','pédales pliantes','toncul'), (2,'VTC','essai','guidon carré','toncul');
 /*!40000 ALTER TABLE `_Type` ENABLE KEYS */;
 UNLOCK TABLES;
 

@@ -22,7 +22,50 @@
     include("../co.php");
 ?>
 
-<center><h3>VTC original b'Twin 5 night & day</h3></center>
+<?php
+  $compteur = 0;
+  $result = $mysqli->query("SELECT id_type, libelle_type, description_type,caracteristiques_type, lien_image FROM _Type");
+  while (NULL !== ($row = $result->fetch_array())) {
+    $compteur++;
+    echo "<center><h3>$row[libelle_type]</h3></center>"; ?>
+    <div class="row" style="background-color:#F5F5F5;border-radius:10px;border:3px solid #222222" >
+      <div class="col-md-4"> <br/>
+        <img src="../images/velos/<?php echo $row['lien_image'];?>" width="380px" height="350px"/><br/><br/>
+      </div>
+      <div class="col-md-8">
+        <br/>
+        <h4>Description :</h4>
+        <?php echo $row["description_type"];?>
+        <br/>
+        <h4>Caractéristiques : </h4>
+        <?php echo $row["caracteristiques_type"];?>
+        <br/><br/><br/>
+        <?php
+          $result2 = $mysqli->query("SELECT count(*) FROM Velo v WHERE v.id_type=".$row['id_type']." and v.id_velo NOT IN (SELECT id_velo from Location);");
+          $row2 = $result2->fetch_array(MYSQLI_ASSOC);
+          if ($row2) {
+           foreach ($row2 as $i => $value) {
+           $nombre = $value;
+           if ($nombre > 0) {
+              echo "Vélos encore disponibles : <b>".$value."</b><br/><br/>";
+           }
+           else {
+             echo "Plus de vélos disponibles !";
+            }
+          }
+         }
+        ?>
+      </div>
+    </div>
+    <br/><br/>
+    <?php
+  }
+  if ($compteur == 0) {
+    echo "<center><h1>Pas de vélos !</h1></center>";
+  }
+?>
+
+<!-- <center><h3>VTC original b'Twin 5 night & day</h3></center>
 <div class="row" style="background-color:#F5F5F5;border-radius:10px;border:3px solid #222222" >
   <div class="col-md-4"> <br/>
     <img src="../images/velos/velo3.png" width="380px" height="350px"/>
@@ -162,7 +205,7 @@
       }
     ?>
   </div>
-</div>
+</div> -->
 
 <?php
 	include("../footer.html");
