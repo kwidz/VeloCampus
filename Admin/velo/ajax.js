@@ -26,7 +26,7 @@ function verifid(id) {
         	document.getElementById("confirmid").innerHTML = xhr.responseText; // Données textuelles récupérées
         }
 	};
-	xhr.open("GET", "traitement/verifID.php?id="+id, true);
+	xhr.open("GET", "traitement/verifID.php?id="+id+"&type=v", true);
 	xhr.send();
 }
 
@@ -37,7 +37,7 @@ function verifcad1(id) {
         	document.getElementById("verifcad1").innerHTML = xhr.responseText; // Données textuelles récupérées
         }
 	};
-	xhr.open("GET", "traitement/verifID.php?id="+id, true);
+	xhr.open("GET", "traitement/verifID.php?id="+id+"&type=c", true);
 	xhr.send();
 }
 
@@ -48,7 +48,7 @@ function verifcad2(id) {
         	document.getElementById("verifcad2").innerHTML = xhr.responseText; // Données textuelles récupérées
         }
 	};
-	xhr.open("GET", "traitement/verifID.php?id="+id, true);
+	xhr.open("GET", "traitement/verifID.php?id="+id+"&type=c", true);
 	xhr.send();
 }
 
@@ -59,6 +59,6 @@ function verifcad3(id) {
         	document.getElementById("verifcad3").innerHTML = xhr.responseText; // Données textuelles récupérées
         }
 	};
-	xhr.open("GET", "traitement/verifID.php?id="+id, true);
+	xhr.open("GET", "traitement/verifID.php?id="+id+"&type=c", true);
 	xhr.send();
 }

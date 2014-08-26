@@ -16,8 +16,8 @@ th{
   ?>
   <ul class="nav nav-pills nav-stacked">
     <li class="" style="text-align: center; margin-bottom: 15px; border:solid 1px; border-radius: 5px; border-color: #CDCACA"><a href="#" data-toggle="modal" data-target="#addMod" >Ajouter un modèle de vélo</a></li>
-   <!-- <li class="" style="text-align: center; margin-bottom: 15px; border:solid 1px; border-radius: 5px; border-color: #CDCACA"><a href="#" data-toggle="modal" data-target="#modMod">Modifier un vélo</a></li>-->
-    <li class="" style="text-align: center; margin-bottom: 15px; border:solid 1px; border-radius: 5px; border-color: #CDCACA"><a href="#" data-toggle="modal" data-target="#suppMod">Supprimer un modéle de vélo</a></li>
+    <li class="" style="text-align: center; margin-bottom: 15px; border:solid 1px; border-radius: 5px; border-color: #CDCACA"><a href="#" data-toggle="modal" data-target="#modMod">Modifier un modèle de vélo (non fonctionnel)</a></li>
+    <li class="" style="text-align: center; margin-bottom: 15px; border:solid 1px; border-radius: 5px; border-color: #CDCACA"><a href="#" data-toggle="modal" data-target="#suppMod">Supprimer un modèle de vélo</a></li>
     <br/>
     </ul>
 </div>
@@ -76,7 +76,7 @@ th{
         </div>
         <div class="modal-body">
 
-          Vélo à supprimer :
+          Modèle à supprimer :
           <select class="form-control" name="supp_mod" required>
           <option></option>
             <?php
@@ -97,6 +97,37 @@ th{
     </div>
   </div> 
 </div>
-<!-- fin modal creer -->
 
 
+<!-- Modal Modifier Modèle -->
+<div class="modal fade" id="modMod" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <form method="POST" action="traitement/modMod.php" name="formSuppVelo">
+        <div class="modal-header">
+          <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+          <h4 class="modal-title" id="myModalLabel"><strong>Modification de modèle</strong></h4>
+        </div>
+        <div class="modal-body">
+
+          Modèle à modifier :
+          <select class="form-control" name="idType" required>
+          <option></option>
+            <?php
+            $sql="SELECT * from _Type";
+            $res=$mysqli->query($sql);
+            while (NULL !==($row = $res->fetch_array())) {
+              echo '<option value="'.$row["id_type"].'">'.$row["libelle_type"].'</option>';
+            }
+            ?>
+          </select>
+        </div>
+
+        <div class="modal-footer">
+          <button type="button" class="btn btn-danger" data-dismiss="modal">Annuler</button>
+          <input type="submit" class="btn btn-default" name="Modifier">
+        </div>
+      </form>
+    </div>
+  </div> 
+</div>

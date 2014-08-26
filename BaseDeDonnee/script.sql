@@ -79,7 +79,7 @@ DROP TABLE IF EXISTS `Cadenas`;
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
 /*!40101 SET character_set_client = utf8 */;
 CREATE TABLE `Cadenas` (
-  `id_cadenas` int(11) NOT NULL AUTO_INCREMENT,
+  `id_cadenas` int(11) NOT NULL,
   `id_velo` int(11) DEFAULT NULL,
   PRIMARY KEY (`id_cadenas`),
   KEY `FK_Cadenas_id_velo` (`id_velo`),
@@ -419,8 +419,7 @@ CREATE TABLE `_Type` (
 
 LOCK TABLES `_Type` WRITE;
 /*!40000 ALTER TABLE `_Type` DISABLE KEYS */;
--- INSERT INTO `_Type` VALUES (1,'VTT'),(3,'Pliable'),(4,'Tandem'),(5,'VTI'),(6,'VTI');
-INSERT INTO `_Type` VALUES (1,'VTT','essai','pédales pliantes','toncul'), (2,'VTC','essai','guidon carré','toncul');
+-- INSERT INTO `_Type` VALUES (1,'VTT','essai','pédales pliantes','toncul'), (2,'VTC','essai','guidon carré','toncul');
 /*!40000 ALTER TABLE `_Type` ENABLE KEYS */;
 UNLOCK TABLES;
 

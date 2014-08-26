@@ -1,5 +1,3 @@
-<!--cette page traite la mise en base de donnée d'un velo
--->
 <?php
 session_start();
 include('../../co.php');
@@ -28,6 +26,7 @@ if(((!empty($_POST['etat_velo']))
 else $_SESSION['addvelo'] = -1;
 
 if(isset($_POST['cad1'])) {
+	$_SESSION['addcadenas'] = 1;
 	$sql = "INSERT INTO Cadenas Values('".$_POST['cad1']."','".$_POST['id_velo']."')";
 	$res=$mysqli->query($sql);
 	if (!$res) $_SESSION['addcadenas'] = -1;
