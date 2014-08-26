@@ -2,7 +2,7 @@
 tous les autres div sont commentés
 chaque action s'effectera dans un Modal pour eviter les lourds changement de page 
 pour l'utilisateur  -->
-<script type="text/javascript" src="script.js"></script>
+<script type="text/javascript" src="ajax.js"></script>
 <style>
 th{
   border:solid 1px #CDCACA;
@@ -41,7 +41,10 @@ th{
             }
             ?>
           </select>
-          <div id="cadenas"></div>
+          <div id="cadenas"></div><br/>
+          Entrez le numéro du cadenas à ajouter :
+          <input type="text" class="form-control" name="id_cadenas" onkeyup="verifcad1(this.value)" required>
+          <div id="verifcad1" name="verifcad1"></div>
         </div>
         <div class="modal-footer">
           <button type="button" class="btn btn-danger" data-dismiss="modal">Annuler</button>
@@ -63,7 +66,6 @@ th{
           <h4 class="modal-title" id="myModalLabel"><strong>Modifier un cadenas</strong></h4>
         </div>
         <div class="modal-body">
-
           Sélectionner un cadenas :
            <select class="form-control" name="id_cadenas" onchange="afficheVelo(this.value,'modcadenas')" required>
            <option></option>
@@ -75,7 +77,18 @@ th{
             }
             ?>
           </select>
-          <div id="modcadenas"></div>
+          <div id="modcadenas"></div><br/>
+          Sélectionner le nouveau vélo :
+          <select class="form-control" name="id_velo" required>
+           <option></option>
+            <?php
+            $sql="SELECT id_velo FROM Velo";
+            $res=$mysqli->query($sql);
+            while (NULL !==($row = $res->fetch_array())) {
+              echo '<option value="'.$row["id_velo"].'">'.$row["id_velo"].'</option>';
+            }
+            ?>
+          </select>
         </div>
         <div class="modal-footer">
           <button type="button" class="btn btn-danger" data-dismiss="modal">Annuler</button>
