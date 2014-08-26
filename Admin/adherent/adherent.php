@@ -92,7 +92,7 @@ function ConfirmationsupprTout(){
       </div>
       <div class="modal-footer">
         <button type="button" class="btn btn-danger" data-dismiss="modal">Annuler</button>
-        <input type="submit" class="btn btn-default" name="Ajouter">
+        <button type="button" class="btn btn-default" data-dismiss="modal">Valider</button>
       </form>
     </div>
   </div>
@@ -110,7 +110,7 @@ function ConfirmationsupprTout(){
 
       </div>
       <div class="modal-body">
-        <form role="form" method="POST" action="traitement/ajouter.php">
+        <form role="form" method="POST">
 
           <div class="form-group">
             <center>
@@ -136,7 +136,7 @@ function ConfirmationsupprTout(){
       </div>
       <div class="modal-footer">
         <button type="button" class="btn btn-danger" data-dismiss="modal">Annuler</button>
-        <input type="submit" class="btn btn-default" name="Ajouter">
+        <button type="button" class="btn btn-default" data-dismiss="modal">Valider</button>
       </form>
     </div>
   </div>
