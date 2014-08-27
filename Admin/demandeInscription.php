@@ -6,13 +6,9 @@
 	
 	xmlhttp.onreadystatechange=function(){
 		if (xmlhttp.readyState==4 && xmlhttp.status==200)  //si on est bien a letape 4
-			
 			document.getElementById('div').innerHTML= xmlhttp.responseText; //balise select dans le html
-			
-
-
-
 	}
+	
 	xmlhttp.open("GET","../traitement/descr.php?id="+id,true);
 	xmlhttp.send();
 }</script>

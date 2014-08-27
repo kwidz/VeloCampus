@@ -40,3 +40,14 @@ function afficheVelo(noCadenas, id){
 	xhr.open("GET", "traitement/liaisonVeloCadenas.php?idCadenas="+noCadenas+"&action=infos", true);
 	xhr.send();
 }
+
+function afficheDescModele(mod) {
+	var xhr = getXMLHttpRequest(); 
+	xhr.onreadystatechange = function() {
+        if (xhr.readyState == 4 && (xhr.status == 200 || xhr.status == 0)) {	
+        	document.getElementById("formulaire").innerHTML= xhr.responseText; // Données textuelles récupérées
+        }
+	};
+	xhr.open("GET", "traitement/modMod.php?mod="+mod, true);
+	xhr.send();
+}

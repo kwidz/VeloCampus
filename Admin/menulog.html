@@ -224,6 +224,23 @@ if (isset($_SESSION['addMod']) && $_SESSION['addMod'] == -1) {
     $_SESSION['addMod'] = 0;
 }
 
+if (isset($_SESSION['modMod']) && $_SESSION['modMod'] == 1) {
+       ?><div class="row"> 
+  <div class="col-md-12">
+    <div class="alert alert-success"><center>Le modèle a bien été modifié.</center></div>
+  </div>
+</div><?php
+    $_SESSION['modMod'] = 0;
+}
+if (isset($_SESSION['modMod']) && $_SESSION['modMod'] == -1) {
+          ?><div class="row"> 
+  <div class="col-md-12">
+    <div class="alert alert-danger"><center>Le modèle n'a pas pu être modifié.</center></div>
+  </div>
+</div><?php
+    $_SESSION['modMod'] = 0;
+}
+
 if (isset($_SESSION['addloc']) && $_SESSION['addloc'] == 1) {
     ?><div class="row"> 
   <div class="col-md-12">

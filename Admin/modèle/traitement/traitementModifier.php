@@ -1,42 +1,15 @@
 <?php
-include('../co.php');
-header("Content-Type: text/plain");
-$id_velo = (isset($_GET["noVelo"])) ? $_GET["noVelo"] : NULL;
-
-$sql="SELECT * from Velo where id_velo = $id_velo";
-$res=$mysqli->query($sql);
-$row = $res->fetch_array();
-$statsVelo=$row[0];
+session_start();
+include('../../../co.php');
+if (isset($_POST["idType"]) && isset($_POST["desc"]) && isset($_POST["car"])) {
+  $idType = $_POST["idType"];
+  $desc = $_POST["desc"];
+  $car = $_POST["car"];
+  $sql = "UPDATE _Type SET description_type = '$desc', caracteristiques_type = '$car' WHERE id_type = $idType";
+  $res=$mysqli->query($sql);
+  if ($res) $_SESSION["modMod"] = 1;
+  else $_SESSION["modMod"] = -1;
+}
+else $_SESSION["modMod"] = -1;
+header("Location: ".$_SERVER['HTTP_REFERER']);
 ?>
-Etat du velo :
-          <select class="form-control" name="etat_velo" required>
-            <?php
-            $sql="SELECT * from Etat";
-            $res=$mysqli->query($sql);
-            while (NULL !== ($row = $res->fetch_array())){
-              echo'<option value="'.$row["id_Etat"].'">'.$row["libelle_etat"].'';
-            }
-            ?>
-          </select></br>
-
-          Taille du velo :
-          <select class="form-control" name="taille_velo" required>
-            <?php
-            $sql="SELECT * from Taille";
-            $res = $mysqli->query($sql);
-            while (NULL !== ($row = $res->fetch_array())) {
-              echo'<option value="'.$row["id_taille"].'">'.$row["libelle_taille"].'</option>';
-            }
-            ?>
-          </select><br>
-
-          Type de velo :
-          <select class="form-control" name="type_velo" required>
-            <?php
-            $sql="SELECT * from _Type";
-            $res = $mysqli->query($sql);
-            while (NULL !== ($row = $res->fetch_array())) {
-              echo '<option value="'.$row["id_type"].'">'.$row["libelle_type"].'</option>';
-            }
-
-            ?>
