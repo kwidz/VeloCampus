@@ -8,7 +8,7 @@
 	$Message = Trim(stripslashes($_POST['message'])); 
 	
 	$Body = "Message de : ".$Name."\n"."Adresse de contact : ".$Email."\n"."Contenu : \n\n".$Message;
-	$success = mail($EmailTo, $Subject, $Body, "From: $EmailFrom");
+	//$success = mail($EmailTo, $Subject, $Body, "From: $EmailFrom");
 	echo "test";
 	$success = mail("pierre.limballe@gmail.com", "test","test");
 	echo $success;
