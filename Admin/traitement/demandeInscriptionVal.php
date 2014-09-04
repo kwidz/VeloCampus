@@ -7,13 +7,15 @@ if(isset($_GET['id'])){
 
 	$sql="SELECT prenom_adherent, adresse_mail_adherent FROM Adherent WHERE id_adherent=".$_GET['id'];
 	$res=$mysqli->query($sql);
-	while (NULL !== ($row = $res->fetch_array()));
+	while (NULL !== ($row = $res->fetch_array())) {
+		echo $row["adresse_mail_adherent"];
+		$EmailTo = $row["adresse_mail_adherent"];
+	}
 
 	$EmailFrom = "site@velocampus.fr";
-	$EmailTo = $row["adresse_mail_adherent"];
 	$Subject = "Validation de l'inscription à Vélocampus";
-	
+	echo $EmailTo;
 	$Body = "Félicitation ".$row["prenom_adherent"].", votre inscription a été validé par un administrateur du site !";
 	$success = mail($EmailTo, $Subject, $Body, "From: <$EmailFrom>");
 }
-header("Location: ".$_SERVER['HTTP_REFERER']);
+//header("Location: ".$_SERVER['HTTP_REFERER']);

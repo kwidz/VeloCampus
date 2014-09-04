@@ -12,7 +12,7 @@ $sql="delete from Adherent where id_adherent =".$_GET['id_adherent'];
 if(!$res=$mysqli->query($sql)){ $bool = False; }
 
 if($bool == True){
-	echo '<div class="alert alert-success">L\'adhérent a bien été supprimer</div>';
-}else{ echo '<div class="alert alert-danger">erreur</div>'; }
+	echo '<div class="alert alert-success">L\'adhérent a bien été supprimé.</div>';
+}else{ echo '<div class="alert alert-danger">L\'adhérent n\' pas pu est supprimé.</div>'; }
 
 ?>
