@@ -2,16 +2,13 @@
 	session_start();
 	$Email = $_POST['email']; 
 	$EmailFrom = "site@velocampus.fr";
-	$EmailTo = "pierre.limballe@gmail.com";
+	$EmailTo = "velocampusdulion@gmail.com";
 	$Subject = $_POST['subject'];
 	$Name = Trim(stripslashes($_POST['name'])); 
 	$Message = Trim(stripslashes($_POST['message'])); 
 	
 	$Body = "Message de : ".$Name."\n"."Adresse de contact : ".$Email."\n"."Contenu : \n\n".$Message;
-	//$success = mail($EmailTo, $Subject, $Body, "From: $EmailFrom");
-	$success = mail("pierre.limballe@gmail.com", "test","test");
-	echo "test";
-	echo $success;
+	$success = mail($EmailTo, $Subject, $Body, "From: $EmailFrom");
 	
 	if ($success) {
 		$_SESSION['email'] = 1;
