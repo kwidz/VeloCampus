@@ -10,10 +10,6 @@ th{
 }
 </style>
 <div class="col-md-6" >
-  <?php
-  
-
-  ?>
   <ul class="nav nav-pills nav-stacked">
     <li class="" style="text-align: center; margin-bottom: 15px; border:solid 1px; border-radius: 5px; border-color: #CDCACA"><a href="#" data-toggle="modal" data-target="#addMod" >Ajouter un modèle de vélo</a></li>
     <li class="" style="text-align: center; margin-bottom: 15px; border:solid 1px; border-radius: 5px; border-color: #CDCACA"><a href="#" data-toggle="modal" data-target="#modMod">Modifier un modèle de vélo</a></li>
@@ -21,9 +17,6 @@ th{
     <br/>
     </ul>
 </div>
-
-
-
 
 
 <!-- Premier Modal ajout d'un modèle -->

@@ -1,0 +1,45 @@
+%http://mcclinews.free.fr/latex/introbeamer/elements_contenu.html
+
+\documentclass[12pt]{beamer}
+\usepackage[french]{babel}
+\usepackage[T1]{fontenc}
+\usepackage[utf8]{inputenc}
+\usecolortheme{whale}
+
+%\usetheme{Warsaw}
+\usetheme{Marburg}
+
+\title{Présentation du site web de VéloCampus}
+\author{DELAUNAY Déborah}
+\institute{IUTBM - VéloCampus}
+\date{\today}
+\AtBeginSection[]{
+	\begin{frame}
+	\frametitle{Sommaire}
+	\tableofcontents[currentsection, hideothersubsections]
+	\end{frame}
+}
+
+\begin{document}
+\logo{\includegraphics[height=1cm]{logo.png}}
+\begin{frame}
+	\titlepage{}
+\end{frame}
+
+
+\section{Introduction}
+\subsection{Présentation}
+\begin{frame}
+	\frametitle{Who am I?}
+	\setbeamercovered{transparent}
+	\begin{itemize}[<+->]
+		\onslide
+			\item Étudiant en informatique à l'IUTBM
+		\onslide		
+			\item Saisonnier à RTE du 21/07 au 14/08
+	\end{itemize}
+\end{frame}
+
+
+
+\end{document}

@@ -1,0 +1,4 @@
+\beamer@endinputifotherversion {3.33pt}
+\select@language {french}
+\beamer@sectionintoc {1}{Introduction}{2}{0}{1}
+\beamer@subsectionintoc {1}{1}{Pr\IeC {\'e}sentation}{3}{0}{1}
