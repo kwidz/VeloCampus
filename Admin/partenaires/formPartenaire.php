@@ -16,8 +16,13 @@
 				echo "<input name='photo' id='photo' class='form-control' type='file'>";
 			}
 		}
-		else {
-			echo "Normal !";
-		}
+        $sql = "SELECT id_partenaire FROM Partenaire WHERE nom_partenaire = '$nom_partenaire'";
+        $result = $mysqli->query($sql);
+        if ($result) {
+          while (NULL !== ($rowp = $result->fetch_array())) {
+           $id_partenaire = $rowp['id_partenaire'];
+           echo "<input type='hidden' name='id_partenaire' id='id_partenaire' value='$id_partenaire'>";
+          }
+        }
 	}
 ?>

@@ -32,8 +32,6 @@ if ($result) {
     echo "<h3>".$row['nom_partenaire']."</h3>";
     echo "<i>".$row['description_partenaire']."</i><br/><br/>";
     echo "<img heigth='200px' width='200px' src='../Admin/partenaires/".$row['photo_partenaire']."'></img><br/><br/><br/>";
-    //echo "<h3>".$row['nom_adherent']."</h3>";
-    //echo "<i>".$row['prenom_adherent']."</i><br/><br/>";
   }
   echo "</center>";
 }
