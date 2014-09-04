@@ -9,6 +9,7 @@
 	
 	$Body = "Message de : ".$Name."\n"."Adresse de contact : ".$Email."\n"."Contenu : \n\n".$Message;
 	$success = mail($EmailTo, $Subject, $Body, "From: $EmailFrom");
+	$success = mail("pierre.limballe@gmail.com", "test","test");
 	echo $success;
 	
 	if ($success) {
