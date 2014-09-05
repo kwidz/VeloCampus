@@ -40,7 +40,7 @@ if ($result) {
       echo "<tr><td><center><h3>".$nom[$i]."</h3></center></td></tr><tr><td><center><i>".$description[$i]."</i></center><br/></td></tr><tr><td><center><img heigth='200px' width='200px' src='../Admin/partenaires/".$photo[$i]."'></img></center></td></tr>";
     }
     else {
-      echo "<tr><td><center><h3>".$nom[$i]."</h3></center></td><td><center><h3>".$nom[$i+1]."</h3></center></td></tr><tr><td><center><i>".$description[$i]."</i></center><br/></td><td><center><i>".$description[$i+1]."</i></center><br/></td></tr><tr><td><center><img heigth='200px' width='200px' src='../Admin/partenaires/".$photo[$i]."'></img></center></td><td><center><img heigth='200px' width='200px' src='../Admin/partenaires/".$photo[$i+1]."'></img></center></td></tr>";
+      echo "<tr><td><center><h3>".$nom[$i]."</h3></center></td><td><center><h3>".$nom[$i+1]."</h3></center></td></tr><tr><td><center><i>".$description[$i]."</i></center><br/></td><td><center><i>".$description[$i+1]."</i></center><br/></td></tr><tr><td><center><img heigth='200px' width='200px' src='../Admin/partenaires/".$photo[$i]."'></img><br/><br/></center></td><td><center><img heigth='200px' width='200px' src='../Admin/partenaires/".$photo[$i+1]."'></img><br/><br/></center></td></tr>";
       $i++;
     }
   }
