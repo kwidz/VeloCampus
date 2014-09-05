@@ -21,7 +21,7 @@
  	}
 
 include("../co.php");
-$sql = "SELECT nom_partenaire, description_partenaire, photo_partenaire FROM Partenaire";
+$sql = "SELECT nom_partenaire, description_partenaire, photo_partenaire FROM Partenaire ORDER BY nom_partenaire";
 $result = $mysqli->query($sql);
 if ($result) {
   echo "<center><table width='80%'>";

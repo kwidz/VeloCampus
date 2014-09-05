@@ -4,7 +4,7 @@
 	header("Content-Type: text/plain");
 	$nom_partenaire = (isset($_GET["nom_partenaire"])) ? $_GET["nom_partenaire"] : NULL;
 	if ($nom_partenaire) {
-		$sql = "SELECT nom_partenaire, description_partenaire, photo_partenaire FROM Partenaire WHERE nom_partenaire='".$nom_partenaire."'";
+		$sql = "SELECT nom_partenaire, description_partenaire, photo_partenaire FROM Partenaire WHERE nom_partenaire='".addslashes($nom_partenaire)."'";
 		$res=$mysqli->query($sql);
 		if ($res){
 			while (NULL !== ($row = $res->fetch_array())) {
