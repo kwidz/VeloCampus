@@ -5,9 +5,9 @@
 	print_r($_FILES);
 	if (isset($_POST['nom']) && isset($_POST['description']) && isset($_POST['id_partenaire']) && !(isset($_FILES))) {
 		echo "A";
-		$nom = $_POST['nom'];
-		$description = $_POST['description'];
-		$id_partenaire = $_POST['id_partenaire'];
+		$nom = mysql_real_escape_string($_POST['nom']);
+		$description = mysql_real_escape_string($_POST['description']);
+		$id_partenaire = mysql_real_escape_string($_POST['id_partenaire']);
 		$result = $mysqli->query("UPDATE Partenaire SET nom_partenaire='".$nom."',description_partenaire='".$description."' WHERE id_partenaire='$id_partenaire'");	
 		if ($result) {
 			$_SESSION['modPar'] = 1;
@@ -15,9 +15,9 @@
 	}
 	else if (isset($_POST['nom']) && isset($_POST['description']) && isset($_POST['id_partenaire']) && isset($_FILES)) {
 		echo "B";
-		$nom = $_POST['nom'];
-		$description = $_POST['description'];
-		$id_partenaire = $_POST['id_partenaire'];
+		$nom = mysql_real_escape_string($_POST['nom']);
+		$description = mysql_real_escape_string($_POST['description']);
+		$id_partenaire = mysql_real_escape_string($_POST['id_partenaire']);
 		$result = $mysqli->query("UPDATE Partenaire SET nom_partenaire='".$nom."',description_partenaire='".$description."', photo_partenaire='photos/".$_FILES['photo']['name']."' WHERE id_partenaire='$id_partenaire'");	
 		if ($result) {
 			$types = array('image/jpg','image/jpeg','image/png','image/gif','image/bmp');

@@ -1,8 +1,8 @@
 <?php
 	session_start();
 	if (isset($_POST['nom']) && isset($_POST['description'])) {
-		$nom = $_POST['nom'];
-		$description = $_POST['description'];
+		$nom = mysql_real_escape_string($_POST['nom']);
+		$description = mysql_real_escape_string($_POST['description']);
 		$photo = "photos/".$_FILES['photo']['name'];
 		include("../co.php");
 		$sql = "INSERT INTO Partenaire VALUES(null,'".$nom."','".$description."','".$photo."');";

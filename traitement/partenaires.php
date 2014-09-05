@@ -21,9 +21,6 @@
  	}
 
 include("../co.php");
-//
-// Les parties commentées sont les "vraies"
-//
 $sql = "SELECT nom_partenaire, description_partenaire, photo_partenaire FROM Partenaire";
 $result = $mysqli->query($sql);
 if ($result) {
