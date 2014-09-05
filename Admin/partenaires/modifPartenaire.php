@@ -3,12 +3,12 @@
 	echo '<script type="text/javascript" src="script.js"></script>';
 	include("../co.php");
 	print_r($_FILES);
-	if (isset($_POST['nom']) && isset($_POST['description']) && isset($_POST['id_partenaire']) && !(isset($_FILES))) {
+	if (isset($_POST['nom']) && isset($_POST['description']) && isset($_POST['id_partenaire']) && isset($_FILES) && $_FILES['photo']['name'] == "") {
 		echo "A";
 		$nom = addslashes($_POST['nom']);
 		$description = addslashes($_POST['description']);
 		$id_partenaire = addslashes($_POST['id_partenaire']);
-		$result = $mysqli->query("UPDATaddslashesE Partenaire SET nom_partenaire='".$nom."',description_partenaire='".$description."' WHERE id_partenaire='$id_partenaire'");	
+		$result = $mysqli->query("UPDATE Partenaire SET nom_partenaire='".$nom."',description_partenaire='".$description."' WHERE id_partenaire='$id_partenaire'");	
 		if ($result) {
 			$_SESSION['modPar'] = 1;
 		}
