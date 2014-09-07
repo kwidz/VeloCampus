@@ -396,7 +396,7 @@ if (isset($_SESSION['retloc']) && $_SESSION['retloc'] == -1) {
                     <?php
                     //ecriture du fichier CSV
                     include('../co.php');
-                    $sql="Select nom_adherent, prenom_adherent, adresse_mail_adherent from Adherent";
+                    $sql="SELECT a.nom_adherent, a.prenom_adherent, a.adresse_mail_adherent FROM Adherent a WHERE a.id_adherent IN (SELECT id_adherent FROM Cotisation)";
                     $res=$mysqli->query($sql);
                     
                     $list = array();
