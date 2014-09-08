@@ -28,5 +28,5 @@
 			$_SESSION['log']=0;
 		}
 	}
-	//header("Location: ".$_SERVER['HTTP_REFERER']);
+	header("Location: ".$_SERVER['HTTP_REFERER']);
 ?>
