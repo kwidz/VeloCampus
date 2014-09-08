@@ -1,8 +1,8 @@
 <?php
 	session_start();
 	if (isset($_POST['inputNom']) && isset($_POST['inputPrenom']) && isset($_POST['inputDateNaissance']) && isset($_POST['inputAdresse']) && isset($_POST['inputCP']) && isset($_POST['inputTelephone']) && isset($_POST['inputEmail']) && isset($_POST['inputPassword']) && isset($_POST['inputConfirmPassword'])) {
-		$nom = $_POST['inputNom'];
-		$prenom = $_POST['inputPrenom'];
+		$nom = htmlentities($_POST['inputNom']);
+		$prenom = htmlentities($_POST['inputPrenom']);
 		$dateNaissance = $_POST['inputDateNaissance'];
 		$u_agent = $_SERVER['HTTP_USER_AGENT'];
         if (strstr($u_agent,"Mozilla")) {
@@ -11,7 +11,7 @@
                 $dateNaissance = $tabDate[2]."-".$tabDate[1]."-".$tabDate[0];
             }
         } 
-		$adresse = $_POST['inputAdresse'];
+		htmlentities($adresse = $_POST['inputAdresse']);
 		$codepostal = $_POST['inputCP'];
 		$telephone = $_POST['inputTelephone'];
 		$mail = $_POST['inputEmail'];
