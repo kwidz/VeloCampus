@@ -11,8 +11,8 @@ if(isset($_GET['id'])){
 		$EmailTo = $row["adresse_mail_adherent"];
 	}
 
-	$EmailFrom = "site@velocampus.fr";
-	$Subject = "Validation de l'inscription à Vélocampus";
+	$EmailFrom = "velocampusdulion90@gmail.com";
+	$Subject = "Validation de l'inscription Velocampus";
 	$Body = "Félicitation ".$row["prenom_adherent"].", votre inscription a été validé par un administrateur du site !";
 	$success = mail($EmailTo, $Subject, $Body, "From: <$EmailFrom>");
 }
