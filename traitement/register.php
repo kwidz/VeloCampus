@@ -11,7 +11,7 @@
                 $dateNaissance = $tabDate[2]."-".$tabDate[1]."-".$tabDate[0];
             }
         } 
-		addslashes($adresse = $_POST['inputAdresse']);
+		$adresse = addslashes($_POST['inputAdresse']);
 		$codepostal = $_POST['inputCP'];
 		$telephone = $_POST['inputTelephone'];
 		$mail = $_POST['inputEmail'];
@@ -28,5 +28,5 @@
 			$_SESSION['log']=0;
 		}
 	}
-	header("Location: ".$_SERVER['HTTP_REFERER']);
+	//header("Location: ".$_SERVER['HTTP_REFERER']);
 ?>
